@@ -933,6 +933,566 @@
   </p>
 
 </div>
+<!-- QUESTION 11 -->
 
+<div class="question-block">
+
+  <div class="question">
+    Q11. Write SQL Queries to Demonstrate Selection, Projection, and Join Operations on Given Relational Tables.
+  </div>
+
+  <p>
+    Consider the following two tables:
+  </p>
+
+  <!-- Q11-1 PNG: STUDENT AND COURSE TABLES -->
+  <div class="diagram">
+    <img src="q11-1.png" alt="STUDENT and COURSE Tables">
+  </div>
+
+
+  <div class="section-title">
+    1. Selection
+  </div>
+
+  <p>
+    Selection retrieves specific rows from a table based on a condition.
+  </p>
+
+  <p>
+    <span class="point-name">SQL Query:</span><br>
+    SELECT * FROM STUDENT WHERE Branch = 'CS';
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q11-2 PNG: SELECTION OUTPUT -->
+  <div class="diagram">
+    <img src="q11-2.png" alt="Selection Output">
+  </div>
+
+
+  <div class="section-title">
+    2. Projection
+  </div>
+
+  <p>
+    Projection retrieves specific columns from a table.
+  </p>
+
+  <p>
+    <span class="point-name">SQL Query:</span><br>
+    SELECT Name, Marks FROM STUDENT;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q11-3 PNG: PROJECTION OUTPUT -->
+  <div class="diagram">
+    <img src="q11-3.png" alt="Projection Output">
+  </div>
+
+
+  <div class="section-title">
+    3. Join
+  </div>
+
+  <p>
+    Join combines related data from two tables using a common attribute.
+  </p>
+
+  <p>
+    Here, Student_ID is the common attribute.
+  </p>
+
+  <p>
+    <span class="point-name">SQL Query:</span><br>
+    SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q11-4 PNG: JOIN OUTPUT -->
+  <div class="diagram">
+    <img src="q11-4.png" alt="Join Output">
+  </div>
+
+
+  <p>
+    This demonstrates that Selection retrieves rows, Projection retrieves columns,
+    and Join combines related data from two tables.
+  </p>
+
+</div>
+<!-- QUESTION 13 -->
+
+<div class="question-block">
+
+  <div class="question">
+    Q13. Write SQL Queries Using Aggregate Functions (SUM, AVG, COUNT, MAX, MIN) with GROUP BY and HAVING Clauses.
+  </div>
+
+  <p>
+    Aggregate Functions perform calculations on a group of values and return a single result.
+  </p>
+
+  <p>
+    Consider the following STUDENT table:
+  </p>
+
+  <!-- Q13-1: STUDENT TABLE -->
+  <div class="diagram">
+    <img src="q13-1.png" alt="STUDENT Table">
+  </div>
+
+
+  <div class="section-title">
+    1. SUM()
+  </div>
+
+  <p>
+    SUM() calculates the total of numeric values.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT SUM(Marks) AS Total_Marks FROM STUDENT;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q13-2: SUM OUTPUT -->
+  <div class="diagram">
+    <img src="q13-2.png" alt="SUM Output">
+  </div>
+
+
+  <div class="section-title">
+    2. AVG()
+  </div>
+
+  <p>
+    AVG() calculates the average of numeric values.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT AVG(Marks) AS Average_Marks FROM STUDENT;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q13-3: AVG OUTPUT -->
+  <div class="diagram">
+    <img src="q13-3.png" alt="AVG Output">
+  </div>
+
+
+  <div class="section-title">
+    3. COUNT()
+  </div>
+
+  <p>
+    COUNT() returns the number of records.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT COUNT(*) AS Total_Students FROM STUDENT;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q13-4: COUNT OUTPUT -->
+  <div class="diagram">
+    <img src="q13-4.png" alt="COUNT Output">
+  </div>
+
+
+  <div class="section-title">
+    4. MAX()
+  </div>
+
+  <p>
+    MAX() returns the highest value.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT MAX(Marks) AS Highest_Marks FROM STUDENT;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q13-5: MAX OUTPUT -->
+  <div class="diagram">
+    <img src="q13-5.png" alt="MAX Output">
+  </div>
+
+
+  <div class="section-title">
+    5. MIN()
+  </div>
+
+  <p>
+    MIN() returns the lowest value.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT MIN(Marks) AS Lowest_Marks FROM STUDENT;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q13-6: MIN OUTPUT -->
+  <div class="diagram">
+    <img src="q13-6.png" alt="MIN Output">
+  </div>
+
+
+  <div class="section-title">
+    6. GROUP BY Clause
+  </div>
+
+  <p>
+    GROUP BY is used to group rows having the same value and apply aggregate functions to each group.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT Branch, AVG(Marks) AS Avg_Marks FROM STUDENT GROUP BY Branch;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q13-7: GROUP BY OUTPUT -->
+  <div class="diagram">
+    <img src="q13-7.png" alt="GROUP BY Output">
+  </div>
+
+
+  <div class="section-title">
+    7. HAVING Clause
+  </div>
+
+  <p>
+    HAVING is used to filter groups after GROUP BY based on a condition.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT Branch, AVG(Marks) AS Avg_Marks FROM STUDENT GROUP BY Branch HAVING AVG(Marks) &gt; 80;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q13-8: HAVING OUTPUT -->
+  <div class="diagram">
+    <img src="q13-8.png" alt="HAVING Output">
+  </div>
+
+</div>
+    
+<!-- QUESTION 15 -->
+
+<div class="question-block">
+
+  <div class="question">
+    Q15. Design SQL Queries to Perform Different Types of Joins (Inner, Left, Right, Full Outer) on Given Tables.
+  </div>
+
+  <p>
+    A Join is used to combine related records from two tables based on a common attribute.
+  </p>
+
+  <p>
+    Consider the following tables:
+  </p>
+
+  <!-- Q15-1: STUDENT AND COURSE TABLES -->
+  <div class="diagram">
+    <img src="q15-1.png" alt="STUDENT and COURSE Tables">
+  </div>
+
+  <p>
+    Here, Student_ID is the common attribute.
+  </p>
+
+
+  <div class="section-title">
+    1. Inner Join
+  </div>
+
+  <p>
+    Inner Join returns only the records that have matching values in both tables.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT INNER JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q15-2: INNER JOIN OUTPUT -->
+  <div class="diagram">
+    <img src="q15-2.png" alt="Inner Join Output">
+  </div>
+
+
+  <div class="section-title">
+    2. Left Join
+  </div>
+
+  <p>
+    Left Join returns all records from the left table and matching records
+    from the right table. If there is no match, NULL is returned.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT LEFT JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q15-3: LEFT JOIN OUTPUT -->
+  <div class="diagram">
+    <img src="q15-3.png" alt="Left Join Output">
+  </div>
+
+
+  <div class="section-title">
+    3. Right Join
+  </div>
+
+  <p>
+    Right Join returns all records from the right table and matching records
+    from the left table. If there is no match, NULL is returned.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT RIGHT JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q15-4: RIGHT JOIN OUTPUT -->
+  <div class="diagram">
+    <img src="q15-4.png" alt="Right Join Output">
+  </div>
+
+
+  <div class="section-title">
+    4. Full Outer Join
+  </div>
+
+  <p>
+    Full Outer Join returns all records from both tables. Matching records
+    are combined, and unmatched records contain NULL values.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT FULL OUTER JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q15-5: FULL OUTER JOIN OUTPUT -->
+  <div class="diagram">
+    <img src="q15-5.png" alt="Full Outer Join Output">
+  </div>
+
+</div>
+<!-- QUESTION 17 -->
+
+<div class="question-block">
+
+  <div class="question">
+    Q17. Discuss Nested Subqueries and Joined Relations in SQL with Appropriate Examples.
+  </div>
+
+  <div class="section-title">
+    1. Nested Subqueries
+  </div>
+
+  <p>
+    A Nested Subquery is an SQL query written inside another SQL query.
+    The query inside is called the inner query, and the main query is called
+    the outer query.
+  </p>
+
+  <p>
+    First, the inner query finds the required value or data. Then, the outer
+    query uses that result to produce the final answer.
+  </p>
+
+  <p>
+    Consider the following STUDENT table:
+  </p>
+
+  <!-- Q17-1: STUDENT TABLE -->
+  <div class="diagram">
+    <img src="q17-1.png" alt="STUDENT Table for Nested Subquery">
+  </div>
+
+  <p>
+    <span class="point-name">Example:</span>
+    Find students whose marks are greater than the average marks.
+  </p>
+
+  <p>
+    <span class="point-name">SQL Query:</span><br>
+    SELECT Name, Marks FROM STUDENT WHERE Marks &gt; (SELECT AVG(Marks) FROM STUDENT);
+  </p>
+
+  <p>
+    Here, the inner query calculates the average marks:
+  </p>
+
+  <p>
+    Average Marks = (80 + 90 + 70) / 3 = 80
+  </p>
+
+  <p>
+    The outer query then compares each student's marks with 80 and displays
+    students having marks greater than 80.
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q17-2: NESTED SUBQUERY OUTPUT -->
+  <div class="diagram">
+    <img src="q17-2.png" alt="Nested Subquery Output">
+  </div>
+
+  <div class="section-title">
+    Types of Nested Subqueries
+  </div>
+
+  <ol>
+    <li>
+      <span class="point-name">Scalar Subquery:</span>
+      Returns only one value.
+    </li>
+
+    <li>
+      <span class="point-name">Row/Column Subquery:</span>
+      Returns a row or a column of values.
+    </li>
+
+    <li>
+      <span class="point-name">Table Subquery:</span>
+      Returns multiple rows and columns.
+    </li>
+
+    <li>
+      <span class="point-name">Correlated Subquery:</span>
+      The inner query uses a value from the outer query. Therefore, the inner
+      query may run again for each record checked by the outer query.
+    </li>
+  </ol>
+
+  <div class="section-title">
+    2. Joined Relations
+  </div>
+
+  <p>
+    A Joined Relation combines related records from two or more tables using
+    a common attribute.
+  </p>
+
+  <p>
+    Consider the following tables:
+  </p>
+
+  <!-- Q17-3: STUDENT AND COURSE TABLES -->
+  <div class="diagram">
+    <img src="q17-3.png" alt="STUDENT and COURSE Tables">
+  </div>
+
+  <p>
+    Here, Student_ID is the common attribute in both tables.
+  </p>
+
+  <p>
+    <span class="point-name">Example:</span>
+    Display the name of each student along with the course name.
+  </p>
+
+  <p>
+    <span class="point-name">SQL Query:</span><br>
+    SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;
+  </p>
+
+  <p>
+    The JOIN compares Student_ID in both tables. When the IDs are the same,
+    the corresponding student name and course name are combined into one result.
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q17-4: JOIN OUTPUT -->
+  <div class="diagram">
+    <img src="q17-4.png" alt="Joined Relations Output">
+  </div>
+
+  <div class="section-title">
+    Types of Joined Relations
+  </div>
+
+  <ol>
+    <li>
+      <span class="point-name">Natural Join:</span>
+      Joins two tables automatically using columns having the same name.
+    </li>
+
+    <li>
+      <span class="point-name">Self Join:</span>
+      A table is joined with itself.
+    </li>
+
+    <li>
+      <span class="point-name">Multi-table Join:</span>
+      Used to combine related data from more than two tables.
+    </li>
+  </ol>
+
+</div>
 </body>
     </html>
