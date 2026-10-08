@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DBMS Study Notes</title>
+
+  <!-- Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Permanent CSS -->
+  <style>
+
+    /* Reset */
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Page */
+    body {
+      margin: 0;
+      padding: 30px 0;
+      background: #e5e5e5;
+      color: #0645ad;
+      font-family: "Patrick Hand", cursive;
+      font-size: 20px;
+      line-height: 1.8;
+      text-align: left;
+    }
+
+    /* Paper */
+    .paper {
+      width: 100%;
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 45px 65px 70px 65px;
+
+      background-color: #fffef9;
+
+      /* Ruled paper */
+      background-image: linear-gradient(
+        to bottom,
+        transparent 36px,
+        rgba(80, 130, 190, 0.15) 37px
+      );
+
+      background-size: 100% 38px;
+
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+      border-radius: 2px;
+    }
+
+    /* Questions */
+    .question-block {
+      padding-bottom: 40px;
+      margin-bottom: 45px;
+      border-bottom: 1px solid rgba(70, 115, 175, 0.14);
+    }
+
+    .question-block:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    /* Question heading */
+    .question {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 28px;
+      line-height: 1.55;
+      text-decoration: underline;
+    }
+
+    /* Section heading */
+    .section-title {
+      margin-top: 22px;
+      margin-bottom: 10px;
+      font-size: 24px;
+      line-height: 1.6;
+      text-decoration: underline;
+    }
+
+    /* Paragraphs */
+    p {
+      margin-top: 8px;
+      margin-bottom: 14px;
+    }
+
+    /* Lists */
+    ol,
+    ul {
+      margin-top: 8px;
+      margin-bottom: 15px;
+      padding-left: 32px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    /* Emphasis */
+    .point-name,
+    .relationship {
+      text-decoration: underline;
+    }
+
+    /* Diagrams */
+    .diagram {
+      width: 100%;
+      margin: 16px auto 25px;
+      padding: 5px 0;
+      text-align: center;
+    }
+
+    .diagram img {
+      display: block;
+      width: 100%;
+      max-width: 720px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    /* Mobile */
+    @media (max-width: 700px) {
+
+      body {
+        padding: 0;
+        font-size: 17px;
+        line-height: 1.8;
+      }
+
+      .paper {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 30px 25px 50px 25px;
+
+        box-shadow: none;
+        border-radius: 0;
+
+        background-image: linear-gradient(
+          to bottom,
+          transparent 30px,
+          rgba(80, 130, 190, 0.15) 31px
+        );
+
+        background-size: 100% 31px;
+      }
+
+      .question {
+        margin-bottom: 18px;
+        font-size: 21px;
+        line-height: 1.55;
+      }
+
+      .section-title {
+        margin-top: 20px;
+        margin-bottom: 9px;
+        font-size: 19px;
+        line-height: 1.6;
+      }
+
+      ol,
+      ul {
+        padding-left: 26px;
+      }
+
+      li {
+        margin-bottom: 9px;
+      }
+
+      .diagram {
+        margin-top: 14px;
+        margin-bottom: 22px;
+      }
+
+      .diagram img {
+        max-width: 100%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="paper">
+
+    <!-- ==================== QUESTION 1 ==================== -->
+
+    <div class="question-block">
+
+      <div class="question">
+        Q1. What is a Database System? Explain its Purpose and Importance in Modern Organizations.
+      </div>
+
+      <div class="section-title">
+        1. Definition of Database System
+      </div>
+
+      <p>
+        A database is an organized collection of related data stored and accessed electronically.
+      </p>
+
+      <p>
+        A Database Management System (DBMS) is software used to create, store, retrieve, update, and manage data in a database. (e.g., MySQL, Oracle, PostgreSQL, SQL Server).
+      </p>
+
+      <p>
+        Database System = Database + DBMS + Application Programs + Users
+      </p>
+
+      <div class="section-title">
+        2. Diagram of Database System
+      </div>
+
+      <div class="diagram">
+        <img src="q1.png" alt="Database System Diagram">
+      </div>
+
+      <p>
+        Users use application programs. The application communicates with the DBMS, and the DBMS manages the data stored in the database.
+      </p>
+
+      <div class="section-title">
+        3. Purpose of a Database System
+      </div>
+
+      <ul>
+        <li>Store data – Keeps large amounts of data in an organized way.</li>
+        <li>Retrieve data easily – Allows users to quickly search for required information.</li>
+        <li>Update data – Makes adding, modifying, and deleting data easy.</li>
+        <li>Reduce redundancy – Avoids unnecessary duplication of data.</li>
+        <li>Maintain consistency – Keeps data accurate and consistent.</li>
+        <li>Provide security – Controls who can access or modify data.</li>
+        <li>Handle multiple users – Allows many users to access data safely at the same time.</li>
+        <li>Maintain data integrity – Enforces rules and constraints on stored data.</li>
+      </ul>
+
+      <div class="section-title">
+        4. Importance in Modern Organizations
+      </div>
+
+      <p>
+        Database systems are important because organizations deal with large amounts of data every day.
+      </p>
+
+      <p>
+        They help organizations to:
+      </p>
+
+      <ul>
+        <li>make data available quickly,</li>
+        <li>manage data efficiently,</li>
+        <li>protect important information,</li>
+        <li>reduce errors and duplication,</li>
+        <li>support multiple users,</li>
+        <li>and maintain reliable and consistent data.</li>
+      </ul>
+
+      <p>
+        <span class="point-name">Example:</span>
+      </p>
+
+      <p>
+        In a college database system, information about students, courses, faculty, and marks can be stored in the database. The college portal can use the DBMS to add a new student, update marks, or search for students who scored above 90%.
+      </p>
+
+    </div>
+
+
+    <!-- ==================== QUESTION 2 ==================== -->
+
+    <div class="question-block">
+
+      <div class="question">
+        Q2. Design an ER Diagram for a Library Management System, identifying entities, attributes, keys, and relationships.
+      </div>
+
+      <p>
+        An ER (Entity-Relationship) Diagram is a graphical representation of the structure of a database. It shows entities, their attributes, keys, and relationships between entities.
+      </p>
+
+      <p>
+        <span class="point-name">ER Diagram of Library Management System:</span>
+      </p>
+
+      <div class="diagram">
+        <img src="q2.png" alt="ER Diagram of Library Management System">
+      </div>
+
+      <div class="section-title">
+        1. Entity
+      </div>
+
+      <p>
+        An entity is a real-world object about which data is stored in a database.
+      </p>
+
+      <p>
+        In the Library Management System, the main entities are:
+      </p>
+
+      <ul>
+        <li><span class="point-name">BOOK</span> – represents books in the library.</li>
+        <li><span class="point-name">MEMBER</span> – represents people who borrow books.</li>
+        <li><span class="point-name">PUBLISHER</span> – represents publishers of books.</li>
+      </ul>
+
+      <p>
+        In an ER diagram, an entity is represented by a rectangle.
+      </p>
+
+      <div class="section-title">
+        2. Attributes
+      </div>
+
+      <p>
+        An attribute is a property or characteristic that describes an entity.
+      </p>
+
+      <ul>
+        <li><span class="point-name">BOOK:</span> Book_ID, Title, Author, Price</li>
+        <li><span class="point-name">MEMBER:</span> Member_ID, Name, Phone, Address</li>
+        <li><span class="point-name">PUBLISHER:</span> Pub_ID, Name, Address</li>
+      </ul>
+
+      <p>
+        In an ER diagram, an attribute is represented by an oval.
+      </p>
+
+      <div class="section-title">
+        3. Keys
+      </div>
+
+      <p>
+        A key is an attribute that uniquely identifies each entity record.
+      </p>
+
+      <ul>
+        <li>Book_ID → Primary Key of BOOK</li>
+        <li>Member_ID → Primary Key of MEMBER</li>
+        <li>Pub_ID → Primary Key of PUBLISHER</li>
+      </ul>
+
+      <p>
+        In an ER diagram, key is shown by underlining the attribute name.
+      </p>
+
+      <div class="section-title">
+        4. Relationships
+      </div>
+
+      <p>
+        A relationship shows how two or more entities are connected.
+      </p>
+
+      <p>
+        <span class="relationship">BORROWS</span>
+      </p>
+
+      <ul>
+        <li>Connects MEMBER and BOOK.</li>
+        <li>A member can borrow many books, and a book can be borrowed by many members over time.</li>
+        <li>Cardinality: Many-to-Many (M:N)</li>
+        <li>Relationship attributes: Issue_Date, Return_Date</li>
+      </ul>
+
+      <p>
+        <span class="relationship">PUBLISHED_BY</span>
+      </p>
+
+      <ul>
+        <li>Connects BOOK and PUBLISHER.</li>
+        <li>One publisher can publish many books, while each book is published by one publisher.</li>
+        <li>Cardinality: Many-to-One (N:1)</li>
+      </ul>
+
+      <p>
+        In an ER diagram, a relationship is represented by a diamond.
+      </p>
+
+    </div>
+
+
+    <!-- ==================== QUESTION 3 ==================== -->
+
+    <div class="question-block">
+
+      <div class="question">
+        Q3. Assess the Concept of Relational Databases and Their Key Characteristics.
+      </div>
+
+      <p>
+        A Relational Database stores data in the form of tables. Each table contains rows and columns. The relational model was introduced by E. F. Codd in 1970.
+      </p>
+
+      <p>
+        <span class="point-name">Example of Relational Database:</span>
+      </p>
+
+      <div class="diagram">
+        <img src="q3.png" alt="Example of Relational Database">
+      </div>
+
+      <div class="section-title">
+        Key Characteristics:
+      </div>
+
+      <ol>
+        <li>
+          <span class="point-name">Table-based Structure</span><br>
+          Data is organized in tables containing rows and columns.<br>
+          Example: STUDENT TABLE.
+        </li>
+
+        <li>
+          <span class="point-name">Relation</span><br>
+          A table is called a relation.<br>
+          Example: STUDENT TABLE is a relation.
+        </li>
+
+        <li>
+          <span class="point-name">Tuple</span><br>
+          A row is called a tuple or record.<br>
+          Example: 101 | Rahul | B.Sc. CS | 8.2 is one tuple.
+        </li>
+
+        <li>
+          <span class="point-name">Attribute</span><br>
+          A column is called an attribute or field.<br>
+          Example: ID, Name, Program, CGPA are attributes.
+        </li>
+
+        <li>
+          <span class="point-name">Domain</span><br>
+          A domain specifies the allowed values or data type of an attribute.<br>
+          Example: CGPA contains numeric values.
+        </li>
+
+        <li>
+          <span class="point-name">Keys</span><br>
+          Keys identify records and help establish relationships between tables.<br>
+          Primary Key: uniquely identifies a record. ID can be the primary key in this table.<br>
+          Foreign Key: refers to the primary key of another table.
+        </li>
+
+        <li>
+          <span class="point-name">Degree</span><br>
+          The number of columns in a relation is called its degree.<br>
+          Here, Degree = 4 (ID, Name, Program, CGPA).
+        </li>
+
+        <li>
+          <span class="point-name">Cardinality</span><br>
+          The number of rows in a relation is called its cardinality.<br>
+          Here, Cardinality = 3 because there are 3 student records.
+        </li>
+      </ol>
+
+      <div class="section-title">
+        Conclusion
+      </div>
+
+      <p>
+        A relational database organizes data into relations (tables) using attributes, tuples, domains, and keys. Degree and cardinality describe the structure of a relation.
+      </p>
+
+    </div>
+
+
+    <!-- ==================== QUESTION 4 ==================== -->
+
+    <div class="question-block">
+
+      <div class="question">
+        Q4. Explain the Concept of Transaction Management in a Database System.
+      </div>
+
+      <div class="section-title">
+        1. Meaning of Transaction Management
+      </div>
+
+      <p>
+        Transaction Management is the process of managing database transactions so that they are completed correctly, safely, and reliably.
+      </p>
+
+      <p>
+        A transaction is a single logical unit of work in a database. It follows an all-or-nothing approach.
+      </p>
+
+      <p>
+        <span class="point-name">Example:</span>
+      </p>
+
+      <p>
+        In a bank transfer of ₹5,000:
+      </p>
+
+      <ul>
+        <li>₹5,000 is debited from Account A.</li>
+        <li>₹5,000 is credited to Account B.</li>
+      </ul>
+
+      <p>
+        Both operations must be completed. If an error occurs, the transaction should be cancelled to avoid incorrect data.
+      </p>
+
+      <div class="section-title">
+        2. Diagram of Transaction States
+      </div>
+
+      <div class="diagram">
+        <img src="q4.png" alt="Transaction States Diagram">
+      </div>
+
+      <p>
+        <span class="point-name">States shown in the diagram:</span>
+      </p>
+
+      <ul>
+        <li><span class="point-name">Active:</span> Transaction is being executed.</li>
+        <li><span class="point-name">Committed:</span> Transaction completed successfully and changes become permanent.</li>
+        <li><span class="point-name">Failed:</span> An error occurs during the transaction.</li>
+        <li><span class="point-name">Aborted:</span> Failed transaction is cancelled and its changes are undone.</li>
+      </ul>
+
+      <div class="section-title">
+        3. ACID Properties
+      </div>
+
+      <p>
+        <span class="point-name">A – Atomicity:</span><br>
+        All operations of a transaction are completed, or none are completed.
+      </p>
+
+      <p>
+        <span class="point-name">C – Consistency:</span><br>
+        The database remains in a valid state before and after the transaction.
+      </p>
+
+      <p>
+        <span class="point-name">I – Isolation:</span><br>
+        Multiple transactions can run at the same time without interfering with each other.
+      </p>
+
+      <p>
+        <span class="point-name">D – Durability:</span><br>
+        Once a transaction is committed, its changes remain permanent even after a system failure.
+      </p>
+
+      <p>
+        ACID properties help maintain the integrity and consistency of the database.
+      </p>
+
+    </div>
+
+
+    <!-- ==================== QUESTION 5 ==================== -->
+
+    <div class="question-block">
+
+      <div class="question">
+        Q5. Discuss the Concept of "View of Data" in a Database System with the Help of Three-Level Architecture.
+      </div>
+
+      <p>
+        View of Data means showing database information at different levels of abstraction. It hides unnecessary details and allows users to see only the data they need.
+      </p>
+
+      <p>
+        Three levels of Data Abstraction (ANSI/SPARC):
+      </p>
+
+      <div class="diagram">
+        <img src="q5.png" alt="Three-Level Data Abstraction Architecture">
+      </div>
+
+      <div class="section-title">
+        1. Levels of Data Abstraction
+      </div>
+
+      <ol>
+        <li>
+          <span class="point-name">External Level (View Level)</span><br>
+          Highest level of abstraction.<br>
+          Shows only the data required by a particular user or application.<br>
+          Different users can have different views.<br>
+          Example: A student sees marks, while an administrator sees student and fee details.
+        </li>
+
+        <li>
+          <span class="point-name">Conceptual Level (Logical Level)</span><br>
+          Describes the complete logical structure of the database.<br>
+          Shows what data is stored and the relationships between data.<br>
+          It does not describe how data is physically stored.
+        </li>
+
+        <li>
+          <span class="point-name">Internal Level (Physical Level)</span><br>
+          Lowest level of abstraction.<br>
+          Describes how data is actually stored in the computer.<br>
+          Includes files, indexes, pointers, and storage structures.
+        </li>
+      </ol>
+
+      <div class="section-title">
+        2. Schema and Instance
+      </div>
+
+      <ul>
+        <li><span class="point-name">Schema:</span> Overall logical design or structure of the database. It changes rarely.</li>
+        <li><span class="point-name">Instance:</span> Actual data stored in the database at a particular moment. It changes frequently.</li>
+      </ul>
+
+      <div class="section-title">
+        3. Importance of Three-Level Architecture
+      </div>
+
+      <ul>
+        <li>Hides unnecessary database details.</li>
+        <li>Provides different views for different users.</li>
+        <li>Makes database management easier.</li>
+        <li>Provides data independence.</li>
+        <li>Changes at one level can be made with less effect on other levels.</li>
+      </ul>
+
+    </div>
+
+
+    <!-- ==================== QUESTION 6 ==================== -->
+
+    <!-- Q6 will be added here later -->
+
+
+    <!-- ==================== QUESTION 7 ==================== -->
+
+    <div class="question-block">
+
+      <div class="question">
+        Q7. Describe the Database Architecture (Client-Server, Centralized, Distributed) with a Suitable Diagram.
+      </div>
+
+      <p>
+        Database Architecture describes how the database, DBMS, users, and applications are organized and connected.
+      </p>
+
+      <p>
+        The three common architectures are Centralized, Client-Server, and Distributed Database Architecture.
+      </p>
+
+      <div class="section-title">
+        1. Centralized Database Architecture
+      </div>
+
+      <p>
+        In a centralized database, the database and DBMS are located at one central server/system. Users access the same central database.
+      </p>
+
+      <div class="diagram">
+        <img src="q7-1.png" alt="Centralized Database Architecture">
+      </div>
+
+      <p>
+        <span class="point-name">Example:</span> A college keeps all student records in one central database.
+      </p>
+
+      <p>
+        <span class="point-name">Main feature:</span> Data is stored and managed at one central location.
+      </p>
+
+      <div class="section-title">
+        2. Client-Server Architecture
+      </div>
+
+      <p>
+        In client-server architecture, the client sends requests to a database server. The server processes the requests and returns the required data.
+      </p>
+
+      <div class="diagram">
+        <img src="q7-2.png" alt="Client-Server Database Architecture">
+      </div>
+
+      <p>
+        <span class="point-name">Example:</span> A college marks portal where students use a web application to request their marks from the database server.
+      </p>
+
+      <p>
+        <span class="point-name">Main feature:</span> The client handles user interaction, while the server manages the database.
+      </p>
+
+      <div class="section-title">
+        3. Distributed Database Architecture
+      </div>
+
+      <p>
+        In a distributed database, data is stored at multiple network-connected locations. The locations work together as one database system.
+      </p>
+
+      <div class="diagram">
+        <img src="q7-3.png" alt="Distributed Database Architecture">
+      </div>
+
+      <p>
+        <span class="point-name">Example:</span> A bank maintains databases at different branches that are connected through a network.
+      </p>
+
+      <p>
+        <span class="point-name">Main feature:</span> Data is distributed across multiple locations but can be accessed as part of one database system.
+      </p>
+
+    </div>
+
+
+    <!-- ==================== QUESTION 8 ==================== -->
+
+    <div class="question-block">
+
+      <div class="question">
+        Q8. What are Data Models? Discuss the Evolution of Data Models from Hierarchical to Relational and Object-Oriented Models.
+      </div>
+
+      <div class="section-title">
+        1. Meaning of Data Model
+      </div>
+
+      <p>
+        A data model is a collection of concepts and notations used to describe:
+      </p>
+
+      <ul>
+        <li>Data</li>
+        <li>Relationships between data</li>
+        <li>Constraints on data</li>
+      </ul>
+
+      <p>
+        It provides a common language for database designers, developers, and users to understand how data is organized.
+      </p>
+
+      <div class="section-title">
+        2. Evolution of Data Models
+      </div>
+
+      <div class="diagram">
+        <img src="q8.png" alt="Evolution of Data Models">
+      </div>
+
+      <p>
+        Data models evolved over time to handle increasingly complex data and requirements
+      </p>
+
+      <div class="section-title">
+        3. Major Data Models
+      </div>
+
+      <ol>
+        <li>
+          <span class="point-name">File-Based Model</span><br>
+          Used in the early 1960s.<br>
+          Data was stored in separate files.<br>
+          Managing relationships between files was difficult.
+        </li>
+
+        <li>
+          <span class="point-name">Hierarchical Model</span><br>
+          Developed during the 1960s–1970s.<br>
+          Organizes data in a tree-like structure.<br>
+          Supports parent-child relationships.<br>
+          One parent can have many children.
+        </li>
+
+        <li>
+          <span class="point-name">Network Model</span><br>
+          Developed during the 1960s–1970s.<br>
+          Represents data using a network of relationships.<br>
+          Supports more complex relationships than the hierarchical model.
+        </li>
+
+        <li>
+          <span class="point-name">Relational Model</span><br>
+          Introduced by E. F. Codd in 1970.<br>
+          Organizes data into tables consisting of rows and columns.<br>
+          Uses keys and relationships to connect tables.<br>
+          Became the dominant traditional database model.
+        </li>
+
+        <li>
+          <span class="point-name">Object-Oriented Model</span><br>
+          Became important during the 1980s–1990s.<br>
+          Represents data as objects, combining data and behavior.<br>
+          Useful for complex data and object-oriented applications.
+        </li>
+      </ol>
+
+    </div>
+
+    <!-- QUESTION 10 -->
+
+<div class="question-block">
+
+  <div class="question">
+    Q10. Explain the Logical View of Data and the Concept of Keys in a Relational Database with Examples.
+  </div>
+
+  <div class="section-title">
+    1. Logical View of Data
+  </div>
+
+  <p>
+    The logical view of data describes how data is organized in a database as
+    tables, rows, and columns, without showing how the data is physically stored
+    on disk.
+  </p>
+
+  <p>
+    For example, in a college application, users can see student IDs, names,
+    marks, and other required information. They do not need to know where or
+    how these records are physically stored.
+  </p>
+
+
+  <div class="section-title">
+    2. Concept of Keys in a Relational Database
+  </div>
+
+  <p>
+    A key is an attribute or a set of attributes used to uniquely identify a
+    record in a relational table and to establish relationships between tables.
+  </p>
+
+  <p>
+    Consider the following STUDENT table:
+  </p>
+
+  <!-- Q10-1 PNG: STUDENT TABLE -->
+  <div class="diagram">
+    <img src="q10-1.png" alt="STUDENT Table">
+  </div>
+
+
+  <ol>
+
+    <li>
+      <span class="point-name">Super Key</span><br>
+      A Super Key is an attribute or combination of attributes that can uniquely
+      identify a record in a table.<br>
+      Example: Student_ID can uniquely identify a student. A combination such as
+      Student_ID + Name can also uniquely identify a student. Therefore, both
+      are Super Keys.
+    </li>
+
+
+    <li>
+      <span class="point-name">Candidate Key</span><br>
+      A Candidate Key is a minimal Super Key, meaning it uniquely identifies a
+      record without any unnecessary attribute.<br>
+      Example: If both Student_ID and Email are unique, then Student_ID and
+      Email can be Candidate Keys.
+    </li>
+
+
+    <li>
+      <span class="point-name">Primary Key</span><br>
+      A Primary Key is the Candidate Key selected as the main identifier of
+      records in a table. It cannot contain NULL values.<br>
+      Example: Student_ID can be selected as the Primary Key of the STUDENT
+      table.
+    </li>
+
+
+    <li>
+      <span class="point-name">Alternate Key</span><br>
+      An Alternate Key is a Candidate Key that is not selected as the Primary
+      Key.<br>
+      Example: If Student_ID is selected as the Primary Key and Email is another
+      Candidate Key, then Email becomes the Alternate Key.
+    </li>
+
+
+    <li>
+      <span class="point-name">Foreign Key</span><br>
+      A Foreign Key is an attribute in one table that refers to the Primary Key
+      of another table. It is used to establish a relationship between tables.
+    </li>
+
+  </ol>
+
+
+  <!-- Q10-2 PNG: FOREIGN KEY RELATIONSHIP -->
+  <div class="diagram">
+    <img src="q10-2.png" alt="Foreign Key Relationship">
+  </div>
+
+  <p>
+    Here, Student_ID in the ENROLLMENT table refers to Student_ID in the
+    STUDENT table.
+  </p>
+
+
+  <ol start="6">
+
+    <li>
+      <span class="point-name">Composite Key</span><br>
+      A Composite Key is a key consisting of two or more attributes that
+      together uniquely identify a record.
+    </li>
+
+  </ol>
+
+
+  <!-- Q10-3 PNG: COMPOSITE KEY -->
+  <div class="diagram">
+    <img src="q10-3.png" alt="Composite Key Example">
+  </div>
+
+  <p>
+    Here, Student_ID alone is not unique and Course_ID alone is not unique.
+    Together, Student_ID and Course_ID uniquely identify an enrollment record.
+    Therefore, they form a Composite Key.
+  </p>
+
+</div>
+<!-- QUESTION 11 -->
+
+<div class="question-block">
+
+  <div class="question">
+    Q11. Write SQL Queries to Demonstrate Selection, Projection, and Join Operations on Given Relational Tables.
+  </div>
+
+  <p>
+    Consider the following two tables:
+  </p>
+
+  <!-- Q11-1 PNG: STUDENT AND COURSE TABLES -->
+  <div class="diagram">
+    <img src="q11-1.png" alt="STUDENT and COURSE Tables">
+  </div>
+
+
+  <div class="section-title">
+    1. Selection
+  </div>
+
+  <p>
+    Selection retrieves specific rows from a table based on a condition.
+  </p>
+
+  <p>
+    <span class="point-name">SQL Query:</span><br>
+    SELECT * FROM STUDENT WHERE Branch = 'CS';
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q11-2 PNG: SELECTION OUTPUT -->
+  <div class="diagram">
+    <img src="q11-2.png" alt="Selection Output">
+  </div>
+
+
+  <div class="section-title">
+    2. Projection
+  </div>
+
+  <p>
+    Projection retrieves specific columns from a table.
+  </p>
+
+  <p>
+    <span class="point-name">SQL Query:</span><br>
+    SELECT Name, Marks FROM STUDENT;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q11-3 PNG: PROJECTION OUTPUT -->
+  <div class="diagram">
+    <img src="q11-3.png" alt="Projection Output">
+  </div>
+
+
+  <div class="section-title">
+    3. Join
+  </div>
+
+  <p>
+    Join combines related data from two tables using a common attribute.
+  </p>
+
+  <p>
+    Here, Student_ID is the common attribute.
+  </p>
+
+  <p>
+    <span class="point-name">SQL Query:</span><br>
+    SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q11-4 PNG: JOIN OUTPUT -->
+  <div class="diagram">
+    <img src="q11-4.png" alt="Join Output">
+  </div>
+
+
+  <p>
+    This demonstrates that Selection retrieves rows, Projection retrieves columns,
+    and Join combines related data from two tables.
+  </p>
+
+</div>
+<!-- QUESTION 13 -->
+
+<div class="question-block">
+
+  <div class="question">
+    Q13. Write SQL Queries Using Aggregate Functions (SUM, AVG, COUNT, MAX, MIN) with GROUP BY and HAVING Clauses.
+  </div>
+
+  <p>
+    Aggregate Functions perform calculations on a group of values and return a single result.
+  </p>
+
+  <p>
+    Consider the following STUDENT table:
+  </p>
+
+  <!-- Q13-1: STUDENT TABLE -->
+  <div class="diagram">
+    <img src="q13-1.png" alt="STUDENT Table">
+  </div>
+
+
+  <div class="section-title">
+    1. SUM()
+  </div>
+
+  <p>
+    SUM() calculates the total of numeric values.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT SUM(Marks) AS Total_Marks FROM STUDENT;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q13-2: SUM OUTPUT -->
+  <div class="diagram">
+    <img src="q13-2.png" alt="SUM Output">
+  </div>
+
+
+  <div class="section-title">
+    2. AVG()
+  </div>
+
+  <p>
+    AVG() calculates the average of numeric values.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT AVG(Marks) AS Average_Marks FROM STUDENT;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q13-3: AVG OUTPUT -->
+  <div class="diagram">
+    <img src="q13-3.png" alt="AVG Output">
+  </div>
+
+
+  <div class="section-title">
+    3. COUNT()
+  </div>
+
+  <p>
+    COUNT() returns the number of records.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT COUNT(*) AS Total_Students FROM STUDENT;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q13-4: COUNT OUTPUT -->
+  <div class="diagram">
+    <img src="q13-4.png" alt="COUNT Output">
+  </div>
+
+
+  <div class="section-title">
+    4. MAX()
+  </div>
+
+  <p>
+    MAX() returns the highest value.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT MAX(Marks) AS Highest_Marks FROM STUDENT;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q13-5: MAX OUTPUT -->
+  <div class="diagram">
+    <img src="q13-5.png" alt="MAX Output">
+  </div>
+
+
+  <div class="section-title">
+    5. MIN()
+  </div>
+
+  <p>
+    MIN() returns the lowest value.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT MIN(Marks) AS Lowest_Marks FROM STUDENT;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q13-6: MIN OUTPUT -->
+  <div class="diagram">
+    <img src="q13-6.png" alt="MIN Output">
+  </div>
+
+
+  <div class="section-title">
+    6. GROUP BY Clause
+  </div>
+
+  <p>
+    GROUP BY is used to group rows having the same value and apply aggregate functions to each group.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT Branch, AVG(Marks) AS Avg_Marks FROM STUDENT GROUP BY Branch;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q13-7: GROUP BY OUTPUT -->
+  <div class="diagram">
+    <img src="q13-7.png" alt="GROUP BY Output">
+  </div>
+
+
+  <div class="section-title">
+    7. HAVING Clause
+  </div>
+
+  <p>
+    HAVING is used to filter groups after GROUP BY based on a condition.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT Branch, AVG(Marks) AS Avg_Marks FROM STUDENT GROUP BY Branch HAVING AVG(Marks) &gt; 80;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q13-8: HAVING OUTPUT -->
+  <div class="diagram">
+    <img src="q13-8.png" alt="HAVING Output">
+  </div>
+
+</div>
+    
+<!-- QUESTION 15 -->
+
+<div class="question-block">
+
+  <div class="question">
+    Q15. Design SQL Queries to Perform Different Types of Joins (Inner, Left, Right, Full Outer) on Given Tables.
+  </div>
+
+  <p>
+    A Join is used to combine related records from two tables based on a common attribute.
+  </p>
+
+  <p>
+    Consider the following tables:
+  </p>
+
+  <!-- Q15-1: STUDENT AND COURSE TABLES -->
+  <div class="diagram">
+    <img src="q15-1.png" alt="STUDENT and COURSE Tables">
+  </div>
+
+  <p>
+    Here, Student_ID is the common attribute.
+  </p>
+
+
+  <div class="section-title">
+    1. Inner Join
+  </div>
+
+  <p>
+    Inner Join returns only the records that have matching values in both tables.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT INNER JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q15-2: INNER JOIN OUTPUT -->
+  <div class="diagram">
+    <img src="q15-2.png" alt="Inner Join Output">
+  </div>
+
+
+  <div class="section-title">
+    2. Left Join
+  </div>
+
+  <p>
+    Left Join returns all records from the left table and matching records
+    from the right table. If there is no match, NULL is returned.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT LEFT JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q15-3: LEFT JOIN OUTPUT -->
+  <div class="diagram">
+    <img src="q15-3.png" alt="Left Join Output">
+  </div>
+
+
+  <div class="section-title">
+    3. Right Join
+  </div>
+
+  <p>
+    Right Join returns all records from the right table and matching records
+    from the left table. If there is no match, NULL is returned.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT RIGHT JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q15-4: RIGHT JOIN OUTPUT -->
+  <div class="diagram">
+    <img src="q15-4.png" alt="Right Join Output">
+  </div>
+
+
+  <div class="section-title">
+    4. Full Outer Join
+  </div>
+
+  <p>
+    Full Outer Join returns all records from both tables. Matching records
+    are combined, and unmatched records contain NULL values.
+  </p>
+
+  <p>
+    <span class="point-name">Query:</span><br>
+    SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT FULL OUTER JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q15-5: FULL OUTER JOIN OUTPUT -->
+  <div class="diagram">
+    <img src="q15-5.png" alt="Full Outer Join Output">
+  </div>
+
+</div>
+<!-- QUESTION 17 -->
+
+<div class="question-block">
+
+  <div class="question">
+    Q17. Discuss Nested Subqueries and Joined Relations in SQL with Appropriate Examples.
+  </div>
+
+  <div class="section-title">
+    1. Nested Subqueries
+  </div>
+
+  <p>
+    A Nested Subquery is an SQL query written inside another SQL query.
+    The query inside is called the inner query, and the main query is called
+    the outer query.
+  </p>
+
+  <p>
+    First, the inner query finds the required value or data. Then, the outer
+    query uses that result to produce the final answer.
+  </p>
+
+  <p>
+    Consider the following STUDENT table:
+  </p>
+
+  <!-- Q17-1: STUDENT TABLE -->
+  <div class="diagram">
+    <img src="q17-1.png" alt="STUDENT Table for Nested Subquery">
+  </div>
+
+  <p>
+    <span class="point-name">Example:</span>
+    Find students whose marks are greater than the average marks.
+  </p>
+
+  <p>
+    <span class="point-name">SQL Query:</span><br>
+    SELECT Name, Marks FROM STUDENT WHERE Marks &gt; (SELECT AVG(Marks) FROM STUDENT);
+  </p>
+
+  <p>
+    Here, the inner query calculates the average marks:
+  </p>
+
+  <p>
+    Average Marks = (80 + 90 + 70) / 3 = 80
+  </p>
+
+  <p>
+    The outer query then compares each student's marks with 80 and displays
+    students having marks greater than 80.
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q17-2: NESTED SUBQUERY OUTPUT -->
+  <div class="diagram">
+    <img src="q17-2.png" alt="Nested Subquery Output">
+  </div>
+
+  <div class="section-title">
+    Types of Nested Subqueries
+  </div>
+
+  <ol>
+    <li>
+      <span class="point-name">Scalar Subquery:</span>
+      Returns only one value.
+    </li>
+
+    <li>
+      <span class="point-name">Row/Column Subquery:</span>
+      Returns a row or a column of values.
+    </li>
+
+    <li>
+      <span class="point-name">Table Subquery:</span>
+      Returns multiple rows and columns.
+    </li>
+
+    <li>
+      <span class="point-name">Correlated Subquery:</span>
+      The inner query uses a value from the outer query. Therefore, the inner
+      query may run again for each record checked by the outer query.
+    </li>
+  </ol>
+
+  <div class="section-title">
+    2. Joined Relations
+  </div>
+
+  <p>
+    A Joined Relation combines related records from two or more tables using
+    a common attribute.
+  </p>
+
+  <p>
+    Consider the following tables:
+  </p>
+
+  <!-- Q17-3: STUDENT AND COURSE TABLES -->
+  <div class="diagram">
+    <img src="q17-3.png" alt="STUDENT and COURSE Tables">
+  </div>
+
+  <p>
+    Here, Student_ID is the common attribute in both tables.
+  </p>
+
+  <p>
+    <span class="point-name">Example:</span>
+    Display the name of each student along with the course name.
+  </p>
+
+  <p>
+    <span class="point-name">SQL Query:</span><br>
+    SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;
+  </p>
+
+  <p>
+    The JOIN compares Student_ID in both tables. When the IDs are the same,
+    the corresponding student name and course name are combined into one result.
+  </p>
+
+  <p>
+    <span class="point-name">Output:</span>
+  </p>
+
+  <!-- Q17-4: JOIN OUTPUT -->
+  <div class="diagram">
+    <img src="q17-4.png" alt="Joined Relations Output">
+  </div>
+
+  <div class="section-title">
+    Types of Joined Relations
+  </div>
+
+  <ol>
+    <li>
+      <span class="point-name">Natural Join:</span>
+      Joins two tables automatically using columns having the same name.
+    </li>
+
+    <li>
+      <span class="point-name">Self Join:</span>
+      A table is joined with itself.
+    </li>
+
+    <li>
+      <span class="point-name">Multi-table Join:</span>
+      Used to combine related data from more than two tables.
+    </li>
+  </ol>
+
+</div>
+</body>
+    </html>
