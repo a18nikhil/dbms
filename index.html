@@ -6,11 +6,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Database Management Systems | Study Notes</title>
+<title>DBMS | Questions & Answers</title>
 
 <style>
 
-/* General */
+/* GENERAL */
 
 * {
     box-sizing: border-box;
@@ -25,98 +25,69 @@ body {
     background: #F4F4F1;
     color: #242424;
     font-family: Georgia, Cambria, "Times New Roman", serif;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 25px 18px 45px;
+    padding: 12px 12px 20px;
 }
 
-/* Header */
+/* HEADER */
 
 .header {
-    text-align: center;
     background: #FFFFFF;
+    border-top: 4px solid #263B5E;
     border-radius: 9px;
-    margin-bottom: 28px;
-    border-top: 5px solid #263B5E;
-    overflow: hidden;
-}
-
-.header-content {
-    padding: 30px 20px 24px;
+    text-align: center;
+    padding: 19px 12px 17px;
+    margin-bottom: 20px;
 }
 
 .header h1 {
     margin: 0;
-    font-size: 32px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    line-height: 1.3;
     color: #1D2F4D;
+    font-size: 27px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    line-height: 1.25;
 }
 
 .subtitle {
-    margin: 10px 0 0;
-    font-family: system-ui, sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1.7px;
-    text-transform: uppercase;
+    margin: 8px 0 0;
     color: #526A7D;
+    font-family: system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
 }
 
-/* Database Banner */
-
-.hero-image {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 6;
-    object-fit: cover;
-    object-position: center;
-    background: #E8EAE8;
-}
-
-/* Section Heading */
+/* SECTION HEADING */
 
 .section-title {
-    font-size: 23px;
-    font-weight: 400;
     color: #1D2F4D;
-    margin: 0 0 19px;
-    border-bottom: 1px solid #C9C9C5;
-    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 13px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #D1D4D1;
 }
 
-/* Unit Cards */
+/* UNIT CARDS */
 
 .unit-card {
     display: block;
     background: #FFFFFF;
-    margin-bottom: 16px;
-    padding: 23px 22px;
-    border-radius: 9px;
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    padding: 16px 17px;
+    margin-bottom: 11px;
     text-decoration: none;
     color: inherit;
-    border-left: 5px solid var(--accent);
-    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
-    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
-
-.unit-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.09);
-}
-
-.unit-card:focus-visible {
-    outline: 2px solid #245487;
-    outline-offset: 3px;
-}
-
-/* Unit Colors */
 
 .unit-one {
     --accent: #315F83;
@@ -133,112 +104,103 @@ body {
     --light: #E9F2ED;
 }
 
-/* Unit Top Row */
+/* UNIT TOP */
 
 .unit-top {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 12px;
+    align-items: center;
+    gap: 10px;
 }
 
 .unit-number {
-    display: inline-block;
     background: var(--light);
     color: var(--accent);
-    padding: 5px 12px;
     border-radius: 20px;
-    font-size: 13px;
-    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    font-size: 12px;
 }
 
 .question-count {
-    color: #92999B;
+    color: #93999B;
     font-family: system-ui, sans-serif;
-    font-size: 11px;
-    font-weight: 400;
+    font-size: 10px;
     white-space: nowrap;
 }
 
-/* Unit Title */
+/* UNIT TITLE */
 
 .unit-card h2 {
-    margin: 15px 0 14px;
-    font-size: 23px;
-    font-weight: 400;
-    line-height: 1.4;
     color: #1D2F4D;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.35;
+    margin: 10px 0 8px;
 }
 
-/* Navigation */
+/* NAVIGATION */
 
 .open-unit {
-    font-size: 15px;
     color: var(--accent);
+    font-size: 13px;
 }
 
-/* Mobile */
+.unit-card:hover {
+    background: #FCFCFA;
+}
 
-@media (max-width: 600px) {
+.unit-card:focus-visible {
+    outline: 2px solid #245487;
+    outline-offset: 3px;
+}
+
+/* DESKTOP */
+
+@media (min-width: 700px) {
 
     .container {
-        padding: 14px 10px 30px;
+        padding-top: 28px;
     }
 
     .header {
+        padding: 25px 20px;
         margin-bottom: 25px;
     }
 
-    .header-content {
-        padding: 25px 12px 20px;
-    }
-
     .header h1 {
-        font-size: 25px;
-        letter-spacing: 0;
+        font-size: 32px;
     }
 
     .subtitle {
-        font-size: 10px;
-        letter-spacing: 1px;
-        line-height: 1.6;
-    }
-
-    .hero-image {
-        aspect-ratio: 16 / 8;
-    }
-
-    .section-title {
-        font-size: 21px;
-        margin-bottom: 15px;
+        font-size: 12px;
     }
 
     .unit-card {
-        padding: 19px 17px;
-        margin-bottom: 13px;
-    }
-
-    .unit-number {
-        font-size: 12px;
-        padding: 5px 11px;
-    }
-
-    .question-count {
-        font-size: 10px;
+        padding: 20px 22px;
+        margin-bottom: 14px;
     }
 
     .unit-card h2 {
-        font-size: 19px;
-        margin: 12px 0 11px;
-        line-height: 1.4;
+        font-size: 22px;
     }
 
     .open-unit {
-        font-size: 14px;
+        font-size: 15px;
     }
 }
 
-@media (max-width: 380px) {
+/* SMALL MOBILE */
+
+@media (max-width: 400px) {
+
+    .container {
+        padding: 9px 9px 12px;
+    }
+
+    .header {
+        padding: 15px 10px 14px;
+        margin-bottom: 16px;
+    }
 
     .header h1 {
         font-size: 23px;
@@ -246,16 +208,48 @@ body {
 
     .subtitle {
         font-size: 9px;
+        letter-spacing: 0.7px;
+    }
+
+    .section-title {
+        font-size: 19px;
+        margin-bottom: 11px;
+    }
+
+    .unit-card {
+        padding: 13px 14px;
+        margin-bottom: 9px;
     }
 
     .unit-card h2 {
-        font-size: 18px;
+        font-size: 17px;
+        margin: 9px 0 7px;
+    }
+
+    .open-unit {
+        font-size: 12px;
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
+/* SHORT SCREENS */
+
+@media (max-height: 700px) and (max-width: 699px) {
+
+    .header {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        margin-bottom: 13px;
+    }
+
     .unit-card {
-        transition: none;
+        padding-top: 11px;
+        padding-bottom: 11px;
+        margin-bottom: 8px;
+    }
+
+    .unit-card h2 {
+        margin-top: 7px;
+        margin-bottom: 6px;
     }
 }
 
@@ -270,31 +264,23 @@ body {
 
 <header class="header">
 
-    <div class="header-content">
+    <h1>
+        DATABASE MANAGEMENT SYSTEMS
+    </h1>
 
-        <h1>DATABASE MANAGEMENT SYSTEMS</h1>
-
-        <p class="subtitle">
-            STUDY NOTES &amp; EXAM PREPARATION
-        </p>
-
-    </div>
-
-    <img
-        src="database.png"
-        alt="Database Management Systems"
-        class="hero-image"
-        width="1600"
-        height="600"
-    >
+    <p class="subtitle">
+        EXAM ORIENTED QUESTIONS &amp; ANSWERS
+    </p>
 
 </header>
 
-<!-- MAIN CONTENT -->
+<!-- MAIN -->
 
 <main>
 
-<h2 class="section-title">Select a Unit</h2>
+<h2 class="section-title">
+    Select a Unit
+</h2>
 
 <!-- UNIT I -->
 
