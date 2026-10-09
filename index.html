@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,8 @@
 <title>Database Management Systems | Study Notes</title>
 
 <style>
-:root {
-    --navy: #18324D;
-    --text: #242424;
-    --muted: #606B73;
-    --background: #F4F4F1;
-    --paper: #FFFFFF;
-    --line: #D8DDD9;
-}
+
+/* General */
 
 * {
     box-sizing: border-box;
@@ -27,312 +22,243 @@ html {
 
 body {
     margin: 0;
-    background: var(--background);
-    color: var(--text);
+    background: #F4F4F1;
+    color: #242424;
     font-family: Georgia, Cambria, "Times New Roman", serif;
-    line-height: 1.55;
+    line-height: 1.5;
 }
 
 .container {
-    max-width: 1050px;
-    margin: auto;
-    padding: 22px 18px 48px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 25px 18px 45px;
 }
 
 /* Header */
 
-.site-header {
-    background: var(--paper);
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 30px;
-    border-top: 5px solid var(--navy);
-}
-
-.header-text {
+.header {
     text-align: center;
-    padding: 30px 18px 25px;
+    background: #FFFFFF;
+    border-radius: 9px;
+    margin-bottom: 28px;
+    border-top: 5px solid #263B5E;
+    overflow: hidden;
 }
 
-.site-header h1 {
+.header-content {
+    padding: 30px 20px 24px;
+}
+
+.header h1 {
     margin: 0;
-    color: var(--navy);
     font-size: 32px;
     font-weight: 400;
     letter-spacing: 0.5px;
     line-height: 1.3;
+    color: #1D2F4D;
 }
 
 .subtitle {
     margin: 10px 0 0;
-    color: #53677A;
-    font: 500 12px/1.6 system-ui, sans-serif;
+    font-family: system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.7px;
     text-transform: uppercase;
-    letter-spacing: 1.8px;
+    color: #526A7D;
 }
 
-/* Banner */
+/* Database Banner */
 
-.hero {
+.hero-image {
+    display: block;
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 6;
     object-fit: cover;
-    display: block;
+    object-position: center;
     background: #E8EAE8;
 }
 
-/* Introduction */
-
-.intro {
-    margin: 0 0 28px;
-    padding: 0 3px;
-}
-
-.intro h2 {
-    color: var(--navy);
-    font-size: 25px;
-    font-weight: 400;
-    margin: 0 0 8px;
-}
-
-.intro p {
-    color: #505A62;
-    font-size: 16px;
-    margin: 0;
-    line-height: 1.7;
-}
-
-/* Section */
+/* Section Heading */
 
 .section-title {
-    color: var(--navy);
     font-size: 23px;
     font-weight: 400;
+    color: #1D2F4D;
     margin: 0 0 19px;
+    border-bottom: 1px solid #C9C9C5;
     padding-bottom: 10px;
-    border-bottom: 1px solid var(--line);
 }
 
 /* Unit Cards */
 
-.units {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
+.unit-card {
+    display: block;
+    background: #FFFFFF;
+    margin-bottom: 16px;
+    padding: 23px 22px;
+    border-radius: 9px;
+    text-decoration: none;
+    color: inherit;
+    border-left: 5px solid var(--accent);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.unit-card {
-    display: flex;
-    flex-direction: column;
-    background: var(--paper);
-    border: 1px solid #E2E4E1;
-    border-top: 4px solid var(--accent);
-    border-radius: 9px;
-    padding: 23px 20px 20px;
-    min-width: 0;
+.unit-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.09);
 }
+
+.unit-card:focus-visible {
+    outline: 2px solid #245487;
+    outline-offset: 3px;
+}
+
+/* Unit Colors */
 
 .unit-one {
     --accent: #315F83;
-    --accent-bg: #E8F0F5;
+    --light: #E8F0F5;
 }
 
 .unit-two {
     --accent: #926D30;
-    --accent-bg: #F5EFE3;
+    --light: #F5EFE3;
 }
 
 .unit-three {
     --accent: #376B5A;
-    --accent-bg: #E9F2ED;
+    --light: #E9F2ED;
 }
 
-.unit-meta {
+/* Unit Top Row */
+
+.unit-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
-    margin-bottom: 15px;
+    gap: 12px;
 }
 
-.unit-label {
-    background: var(--accent-bg);
+.unit-number {
+    display: inline-block;
+    background: var(--light);
     color: var(--accent);
-    border-radius: 30px;
     padding: 5px 12px;
+    border-radius: 20px;
     font-size: 13px;
     letter-spacing: 0.5px;
 }
 
 .question-count {
-    color: var(--muted);
-    font: 12px system-ui, sans-serif;
+    color: #92999B;
+    font-family: system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 400;
     white-space: nowrap;
 }
 
-.unit-card h3 {
-    color: var(--navy);
-    font-size: 21px;
+/* Unit Title */
+
+.unit-card h2 {
+    margin: 15px 0 14px;
+    font-size: 23px;
     font-weight: 400;
-    line-height: 1.35;
-    margin: 0 0 16px;
-    min-height: 85px;
+    line-height: 1.4;
+    color: #1D2F4D;
 }
 
-.topic-heading {
-    border-top: 1px solid var(--line);
-    padding-top: 15px;
-    margin: 0 0 11px;
-    color: var(--muted);
-    font: 600 11px system-ui, sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+/* Navigation */
 
-.topic-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 23px;
-    flex-grow: 1;
-}
-
-.topic-list li {
-    position: relative;
-    padding: 0 0 0 17px;
-    margin-bottom: 11px;
-    font-size: 14px;
-    line-height: 1.55;
-}
-
-.topic-list li::before {
-    content: "";
-    position: absolute;
-    left: 1px;
-    top: 9px;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-}
-
-.unit-link {
-    display: block;
-    padding: 13px 12px;
-    border-radius: 6px;
-    background: var(--accent);
-    color: #FFFFFF;
-    text-decoration: none;
-    text-align: center;
+.open-unit {
     font-size: 15px;
-    transition: filter 0.2s;
-}
-
-.unit-link:hover {
-    filter: brightness(0.9);
-}
-
-.unit-link:focus-visible {
-    outline: 3px solid var(--navy);
-    outline-offset: 3px;
-}
-
-/* Footer */
-
-.footer {
-    margin-top: 35px;
-    text-align: center;
-    color: #7A8286;
-    font: 12px system-ui, sans-serif;
-}
-
-/* Tablet */
-
-@media (max-width: 850px) {
-    .units {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .unit-card h3 {
-        min-height: 0;
-    }
-
-    .topic-list {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: 22px;
-    }
+    color: var(--accent);
 }
 
 /* Mobile */
 
 @media (max-width: 600px) {
+
     .container {
-        padding: 12px 10px 30px;
+        padding: 14px 10px 30px;
     }
 
-    .site-header {
+    .header {
         margin-bottom: 25px;
     }
 
-    .header-text {
+    .header-content {
         padding: 25px 12px 20px;
     }
 
-    .site-header h1 {
-        font-size: 24px;
+    .header h1 {
+        font-size: 25px;
         letter-spacing: 0;
     }
 
     .subtitle {
         font-size: 10px;
         letter-spacing: 1px;
+        line-height: 1.6;
     }
 
-    .hero {
+    .hero-image {
         aspect-ratio: 16 / 8;
-    }
-
-    .intro {
-        margin-bottom: 25px;
-    }
-
-    .intro h2 {
-        font-size: 22px;
-    }
-
-    .intro p {
-        font-size: 14px;
     }
 
     .section-title {
         font-size: 21px;
+        margin-bottom: 15px;
     }
 
     .unit-card {
-        padding: 20px 17px;
+        padding: 19px 17px;
+        margin-bottom: 13px;
     }
 
-    .unit-card h3 {
-        font-size: 20px;
+    .unit-number {
+        font-size: 12px;
+        padding: 5px 11px;
     }
 
-    .topic-list {
-        display: block;
+    .question-count {
+        font-size: 10px;
     }
 
-    .topic-list li {
+    .unit-card h2 {
+        font-size: 19px;
+        margin: 12px 0 11px;
+        line-height: 1.4;
+    }
+
+    .open-unit {
         font-size: 14px;
-        margin-bottom: 9px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .header h1 {
+        font-size: 23px;
+    }
+
+    .subtitle {
+        font-size: 9px;
+    }
+
+    .unit-card h2 {
+        font-size: 18px;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .unit-link {
+    .unit-card {
         transition: none;
     }
 }
+
 </style>
 </head>
 
@@ -340,148 +266,118 @@ body {
 
 <div class="container">
 
-<header class="site-header">
+<!-- HEADER -->
 
-    <div class="header-text">
+<header class="header">
+
+    <div class="header-content">
+
         <h1>DATABASE MANAGEMENT SYSTEMS</h1>
+
         <p class="subtitle">
-            Study Notes &amp; Exam Preparation
+            STUDY NOTES &amp; EXAM PREPARATION
         </p>
+
     </div>
 
     <img
         src="database.png"
-        alt="Database management systems academic banner"
-        class="hero"
+        alt="Database Management Systems"
+        class="hero-image"
         width="1600"
         height="600"
     >
 
 </header>
 
-<main>
+<!-- MAIN CONTENT -->
 
-<section class="intro">
-    <h2>Database Management Systems</h2>
-    <p>
-        Explore database concepts, relational models,
-        SQL, transaction management and PL/SQL through
-        organized study notes, examples and diagrams.
-    </p>
-</section>
+<main>
 
 <h2 class="section-title">Select a Unit</h2>
 
-<div class="units">
-
 <!-- UNIT I -->
 
-<article class="unit-card unit-one">
+<a href="unit1/index.html"
+   class="unit-card unit-one">
 
-    <div class="unit-meta">
-        <span class="unit-label">UNIT I</span>
-        <span class="question-count">13 Questions</span>
+    <div class="unit-top">
+
+        <span class="unit-number">
+            UNIT I
+        </span>
+
+        <span class="question-count">
+            13 Questions
+        </span>
+
     </div>
 
-    <h3>
+    <h2>
         Introduction to Databases and Database Design
-    </h3>
+    </h2>
 
-    <p class="topic-heading">Topics Covered</p>
-
-    <ul class="topic-list">
-        <li>Database System and Purpose</li>
-        <li>View of Data and Abstraction</li>
-        <li>Relational Databases</li>
-        <li>Database Architecture</li>
-        <li>Transaction Management</li>
-        <li>Data Models and Evolution</li>
-        <li>Business Rules</li>
-        <li>ER Model and ER Diagrams</li>
-        <li>Weak Entities and Codd's Rules</li>
-        <li>UML and Database Design</li>
-    </ul>
-
-    <a href="unit1/index.html" class="unit-link">
+    <div class="open-unit">
         View Unit I &#8594;
-    </a>
+    </div>
 
-</article>
+</a>
 
 <!-- UNIT II -->
 
-<article class="unit-card unit-two">
+<a href="unit2/index.html"
+   class="unit-card unit-two">
 
-    <div class="unit-meta">
-        <span class="unit-label">UNIT II</span>
-        <span class="question-count">11 Questions</span>
+    <div class="unit-top">
+
+        <span class="unit-number">
+            UNIT II
+        </span>
+
+        <span class="question-count">
+            11 Questions
+        </span>
+
     </div>
 
-    <h3>
+    <h2>
         Relational Database Model and SQL
-    </h3>
+    </h2>
 
-    <p class="topic-heading">Topics Covered</p>
-
-    <ul class="topic-list">
-        <li>Logical View of Data and Keys</li>
-        <li>Integrity Rules</li>
-        <li>Normalization and BCNF</li>
-        <li>Relational Algebra</li>
-        <li>Relational Calculus</li>
-        <li>SQL Joins</li>
-        <li>Aggregate Functions</li>
-        <li>Null Values</li>
-        <li>Nested Subqueries</li>
-        <li>Joined Relations</li>
-    </ul>
-
-    <a href="unit2/index.html" class="unit-link">
+    <div class="open-unit">
         View Unit II &#8594;
-    </a>
+    </div>
 
-</article>
+</a>
 
 <!-- UNIT III -->
 
-<article class="unit-card unit-three">
+<a href="unit3/index.html"
+   class="unit-card unit-three">
 
-    <div class="unit-meta">
-        <span class="unit-label">UNIT III</span>
-        <span class="question-count">8 Questions</span>
+    <div class="unit-top">
+
+        <span class="unit-number">
+            UNIT III
+        </span>
+
+        <span class="question-count">
+            8 Questions
+        </span>
+
     </div>
 
-    <h3>
+    <h2>
         Transaction Management and PL/SQL
-    </h3>
+    </h2>
 
-    <p class="topic-heading">Topics Covered</p>
-
-    <ul class="topic-list">
-        <li>ACID Properties</li>
-        <li>Serializability</li>
-        <li>Concurrency Control</li>
-        <li>Lock-Based Concurrency Control</li>
-        <li>Two-Phase Locking (2PL)</li>
-        <li>Deadlocks</li>
-        <li>Timestamping Methods</li>
-        <li>PL/SQL Basics and Control Structures</li>
-        <li>Cursors in PL/SQL</li>
-    </ul>
-
-    <a href="unit3/index.html" class="unit-link">
+    <div class="open-unit">
         View Unit III &#8594;
-    </a>
+    </div>
 
-</article>
-
-</div>
+</a>
 
 </main>
-
-<footer class="footer">
-    Database Management Systems
-</footer>
 
 </div>
 
