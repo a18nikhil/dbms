@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q17 - Discuss Nested Subqueries and Joined Relations in SQL with Appropriate Examples. | DBMS</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="unit2">
+<div class="container">
+<nav><a href="index.html" class="back-link">&#8592; Back to Unit II</a></nav>
+<main class="answer">
+<h1>Q17. Discuss Nested Subqueries and Joined Relations in SQL with Appropriate Examples.</h1>
+<h2>1. Nested Subqueries</h2>
+<p>A Nested Subquery is an SQL query written inside another SQL query. The query inside is called the inner query, and the main query is called the outer query.</p>
+<p>First, the inner query finds the required value or data. Then, the outer query uses that result to produce the final answer.</p>
+<p>Consider the following STUDENT table:</p>
+<div class="diagram"><img src="../q17-1.png" alt="STUDENT Table for Nested Subquery" loading="lazy"></div>
+<p><strong>Example:</strong> Find students whose marks are greater than the average marks.</p>
+<p><strong>SQL Query:</strong></p>
+<div class="sql-query">SELECT Name, Marks FROM STUDENT WHERE Marks &gt; (SELECT AVG(Marks) FROM STUDENT);</div>
+<p>Here, the inner query calculates the average marks:</p>
+<p>Average Marks = (80 + 90 + 70) / 3 = 80</p>
+<p>The outer query then compares each student's marks with 80 and displays students having marks greater than 80.</p>
+<p><strong>Output:</strong></p>
+<div class="diagram"><img src="../q17-2.png" alt="Nested Subquery Output" loading="lazy"></div>
+<h2>Types of Nested Subqueries</h2>
+<ol>
+<li><strong>Scalar Subquery:</strong> Returns only one value.</li>
+<li><strong>Row/Column Subquery:</strong> Returns a row or a column of values.</li>
+<li><strong>Table Subquery:</strong> Returns multiple rows and columns.</li>
+<li><strong>Correlated Subquery:</strong> The inner query uses a value from the outer query. Therefore, the inner query may run again for each record checked by the outer query.</li>
+</ol>
+<h2>2. Joined Relations</h2>
+<p>A Joined Relation combines related records from two or more tables using a common attribute.</p>
+<p>Consider the following tables:</p>
+<div class="diagram"><img src="../q17-3.png" alt="STUDENT and COURSE Tables" loading="lazy"></div>
+<p>Here, Student_ID is the common attribute in both tables.</p>
+<p><strong>Example:</strong> Display the name of each student along with the course name.</p>
+<p><strong>SQL Query:</strong></p>
+<div class="sql-query">SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;</div>
+<p>The JOIN compares Student_ID in both tables. When the IDs are the same, the corresponding student name and course name are combined into one result.</p>
+<p><strong>Output:</strong></p>
+<div class="diagram"><img src="../q17-4.png" alt="Joined Relations Output" loading="lazy"></div>
+<h2>Types of Joined Relations</h2>
+<ol>
+<li><strong>Natural Join:</strong> Joins two tables automatically using columns having the same name.</li>
+<li><strong>Self Join:</strong> A table is joined with itself.</li>
+<li><strong>Multi-table Join:</strong> Used to combine related data from more than two tables.</li>
+</ol>
+
+</main>
+<nav class="page-nav">
+<a href="q16.html">&#8592; Previous: Q16</a>
+<a href="q19.html">Next: Q19 &#8594;</a>
+</nav>
+</div>
+</body>
+</html>

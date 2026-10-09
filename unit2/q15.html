@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q15 - Design SQL Queries to Perform Different Types of Joins (Inner, Left, Right, Full Outer) on Given Tables. | DBMS</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="unit2">
+<div class="container">
+<nav><a href="index.html" class="back-link">&#8592; Back to Unit II</a></nav>
+<main class="answer">
+<h1>Q15. Design SQL Queries to Perform Different Types of Joins (Inner, Left, Right, Full Outer) on Given Tables.</h1>
+<p>A Join is used to combine related records from two tables based on a common attribute.</p>
+<p>Consider the following tables:</p>
+<div class="diagram"><img src="../q15-1.png" alt="STUDENT and COURSE Tables" loading="lazy"></div>
+<p>Here, Student_ID is the common attribute.</p>
+<h2>1. Inner Join</h2>
+<p>Inner Join returns only the records that have matching values in both tables.</p>
+<p><strong>Query:</strong></p>
+<div class="sql-query">SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT INNER JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;</div>
+<p><strong>Output:</strong></p>
+<div class="diagram"><img src="../q15-2.png" alt="Inner Join Output" loading="lazy"></div>
+<h2>2. Left Join</h2>
+<p>Left Join returns all records from the left table and matching records from the right table. If there is no match, NULL is returned.</p>
+<p><strong>Query:</strong></p>
+<div class="sql-query">SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT LEFT JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;</div>
+<p><strong>Output:</strong></p>
+<div class="diagram"><img src="../q15-3.png" alt="Left Join Output" loading="lazy"></div>
+<h2>3. Right Join</h2>
+<p>Right Join returns all records from the right table and matching records from the left table. If there is no match, NULL is returned.</p>
+<p><strong>Query:</strong></p>
+<div class="sql-query">SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT RIGHT JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;</div>
+<p><strong>Output:</strong></p>
+<div class="diagram"><img src="../q15-4.png" alt="Right Join Output" loading="lazy"></div>
+<h2>4. Full Outer Join</h2>
+<p>Full Outer Join returns all records from both tables. Matching records are combined, and unmatched records contain NULL values.</p>
+<p><strong>Query:</strong></p>
+<div class="sql-query">SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT FULL OUTER JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;</div>
+<p><strong>Output:</strong></p>
+<div class="diagram"><img src="../q15-5.png" alt="Full Outer Join Output" loading="lazy"></div>
+
+</main>
+<nav class="page-nav">
+<a href="q14.html">&#8592; Previous: Q14</a>
+<a href="q16.html">Next: Q16 &#8594;</a>
+</nav>
+</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q13 - Write SQL Queries Using Aggregate Functions (SUM, AVG, COUNT, MAX, MIN) with GROUP BY and HAVING Clauses. | DBMS</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="unit2">
+<div class="container">
+<nav><a href="index.html" class="back-link">&#8592; Back to Unit II</a></nav>
+<main class="answer">
+<h1>Q13. Write SQL Queries Using Aggregate Functions (SUM, AVG, COUNT, MAX, MIN) with GROUP BY and HAVING Clauses.</h1>
+<p>Aggregate Functions perform calculations on a group of values and return a single result.</p>
+<p>Consider the following STUDENT table:</p>
+<div class="diagram"><img src="../q13-1.png" alt="STUDENT Table" loading="lazy"></div>
+<h2>1. SUM()</h2>
+<p>SUM() calculates the total of numeric values.</p>
+<p><strong>Query:</strong></p>
+<div class="sql-query">SELECT SUM(Marks) AS Total_Marks FROM STUDENT;</div>
+<p><strong>Output:</strong></p>
+<div class="diagram"><img src="../q13-2.png" alt="SUM Output" loading="lazy"></div>
+<h2>2. AVG()</h2>
+<p>AVG() calculates the average of numeric values.</p>
+<p><strong>Query:</strong></p>
+<div class="sql-query">SELECT AVG(Marks) AS Average_Marks FROM STUDENT;</div>
+<p><strong>Output:</strong></p>
+<div class="diagram"><img src="../q13-3.png" alt="AVG Output" loading="lazy"></div>
+<h2>3. COUNT()</h2>
+<p>COUNT() returns the number of records.</p>
+<p><strong>Query:</strong></p>
+<div class="sql-query">SELECT COUNT(*) AS Total_Students FROM STUDENT;</div>
+<p><strong>Output:</strong></p>
+<div class="diagram"><img src="../q13-4.png" alt="COUNT Output" loading="lazy"></div>
+<h2>4. MAX()</h2>
+<p>MAX() returns the highest value.</p>
+<p><strong>Query:</strong></p>
+<div class="sql-query">SELECT MAX(Marks) AS Highest_Marks FROM STUDENT;</div>
+<p><strong>Output:</strong></p>
+<div class="diagram"><img src="../q13-5.png" alt="MAX Output" loading="lazy"></div>
+<h2>5. MIN()</h2>
+<p>MIN() returns the lowest value.</p>
+<p><strong>Query:</strong></p>
+<div class="sql-query">SELECT MIN(Marks) AS Lowest_Marks FROM STUDENT;</div>
+<p><strong>Output:</strong></p>
+<div class="diagram"><img src="../q13-6.png" alt="MIN Output" loading="lazy"></div>
+<h2>6. GROUP BY Clause</h2>
+<p>GROUP BY is used to group rows having the same value and apply aggregate functions to each group.</p>
+<p><strong>Query:</strong></p>
+<div class="sql-query">SELECT Branch, AVG(Marks) AS Avg_Marks FROM STUDENT GROUP BY Branch;</div>
+<p><strong>Output:</strong></p>
+<div class="diagram"><img src="../q13-7.png" alt="GROUP BY Output" loading="lazy"></div>
+<h2>7. HAVING Clause</h2>
+<p>HAVING is used to filter groups after GROUP BY based on a condition.</p>
+<p><strong>Query:</strong></p>
+<div class="sql-query">SELECT Branch, AVG(Marks) AS Avg_Marks FROM STUDENT GROUP BY Branch HAVING AVG(Marks) &gt; 80;</div>
+<p><strong>Output:</strong></p>
+<div class="diagram"><img src="../q13-8.png" alt="HAVING Output" loading="lazy"></div>
+
+</main>
+<nav class="page-nav">
+<a href="q12.html">&#8592; Previous: Q12</a>
+<a href="q14.html">Next: Q14 &#8594;</a>
+</nav>
+</div>
+</body>
+</html>

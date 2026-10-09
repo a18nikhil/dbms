@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q11 - Write SQL Queries to Demonstrate Selection, Projection, and Join Operations on Given Relational Tables. | DBMS</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="unit2">
+<div class="container">
+<nav><a href="index.html" class="back-link">&#8592; Back to Unit II</a></nav>
+<main class="answer">
+<h1>Q11. Write SQL Queries to Demonstrate Selection, Projection, and Join Operations on Given Relational Tables.</h1>
+
+<p>Consider the following two tables:</p>
+<div class="diagram"><img src="../q11-1.png" alt="STUDENT and COURSE Tables" loading="lazy"></div>
+<h2>1. Selection</h2>
+<p>Selection retrieves specific rows from a table based on a condition.</p>
+<p><strong>SQL Query:</strong></p>
+<div class="sql-query">SELECT * FROM STUDENT WHERE Branch = 'CS';</div>
+<p><strong>Output:</strong></p>
+<div class="diagram"><img src="../q11-2.png" alt="Selection Output" loading="lazy"></div>
+<h2>2. Projection</h2>
+<p>Projection retrieves specific columns from a table.</p>
+<p><strong>SQL Query:</strong></p>
+<div class="sql-query">SELECT Name, Marks FROM STUDENT;</div>
+<p><strong>Output:</strong></p>
+<div class="diagram"><img src="../q11-3.png" alt="Projection Output" loading="lazy"></div>
+<h2>3. Join</h2>
+<p>Join combines related data from two tables using a common attribute.</p>
+<p>Here, Student_ID is the common attribute.</p>
+<p><strong>SQL Query:</strong></p>
+<div class="sql-query">SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;</div>
+<p><strong>Output:</strong></p>
+<div class="diagram"><img src="../q11-4.png" alt="Join Output" loading="lazy"></div>
+<p>This demonstrates that Selection retrieves rows, Projection retrieves columns, and Join combines related data from two tables.</p>
+</main>
+<nav class="page-nav">
+<a href="q10.html">&#8592; Previous: Q10</a>
+<a href="q12.html">Next: Q12 &#8594;</a>
+</nav>
+</div>
+</body>
+</html>
