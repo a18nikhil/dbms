@@ -10,6 +10,8 @@
 
 <style>
 
+/* GENERAL */
+
 * {
     box-sizing: border-box;
 }
@@ -32,7 +34,7 @@ body {
     padding: 22px 16px 45px;
 }
 
-/* Navigation */
+/* BACK NAVIGATION */
 
 .back-link {
     display: inline-block;
@@ -46,7 +48,7 @@ body {
     text-decoration: underline;
 }
 
-/* Unit Header */
+/* UNIT HEADER */
 
 .unit-header {
     background: #FFFFFF;
@@ -86,14 +88,14 @@ body {
     color: #1D2F4D;
 }
 
-/* Syllabus */
+/* SYLLABUS */
 
 .syllabus {
     background: #FFFFFF;
     border: 1px solid #E4E6E3;
     border-radius: 9px;
     padding: 23px 25px;
-    margin-bottom: 28px;
+    margin-bottom: 20px;
 }
 
 .section-heading {
@@ -110,42 +112,15 @@ body {
     color: #4B545B;
 }
 
-/* Question Section */
-
-.question-section {
-    margin-top: 4px;
-}
-
-.question-heading {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 12px;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #D2D7D3;
-}
-
-.question-heading h2 {
-    margin: 0;
-    color: #1D2F4D;
-    font-size: 22px;
-    font-weight: 400;
-}
-
-.question-heading span {
-    font-family: system-ui, sans-serif;
-    color: #8A9195;
-    font-size: 11px;
-}
-
-/* Question Cards */
+/* QUESTION LIST */
 
 .question-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
+
+/* QUESTION CARDS */
 
 .question-card {
     display: flex;
@@ -170,6 +145,8 @@ body {
     outline-offset: 2px;
 }
 
+/* QUESTION NUMBER */
+
 .question-number {
     flex: 0 0 47px;
     width: 47px;
@@ -182,6 +159,8 @@ body {
     font-size: 13px;
     font-weight: 600;
 }
+
+/* QUESTION TEXT */
 
 .question-text {
     flex: 1;
@@ -197,7 +176,7 @@ body {
     font-size: 19px;
 }
 
-/* Footer Navigation */
+/* BOTTOM NAVIGATION */
 
 .bottom-nav {
     text-align: center;
@@ -214,7 +193,7 @@ body {
     text-decoration: underline;
 }
 
-/* Mobile */
+/* MOBILE */
 
 @media (max-width: 600px) {
 
@@ -238,7 +217,7 @@ body {
 
     .syllabus {
         padding: 19px 17px;
-        margin-bottom: 24px;
+        margin-bottom: 16px;
     }
 
     .section-heading {
@@ -249,10 +228,6 @@ body {
     .syllabus p {
         font-size: 14px;
         line-height: 1.8;
-    }
-
-    .question-heading h2 {
-        font-size: 20px;
     }
 
     .question-card {
@@ -287,6 +262,8 @@ body {
 <body>
 
 <div class="container">
+
+<!-- BACK NAVIGATION -->
 
 <nav>
     <a href="../index.html" class="back-link">
@@ -347,228 +324,216 @@ body {
 
 </section>
 
-<!-- QUESTION BANK -->
+<!-- QUESTIONS -->
 
-<section class="question-section">
+<div class="question-list">
 
-    <div class="question-heading">
+    <!-- Q1 -->
 
-        <h2>Question Bank</h2>
+    <a href="q1.html" class="question-card">
 
-        <span>13 Questions</span>
+        <span class="question-number">Q1</span>
 
-    </div>
+        <span class="question-text">
+            What is a Database System?
+            Explain its purpose and importance
+            in modern organizations.
+        </span>
 
-    <div class="question-list">
+        <span class="arrow">&#8250;</span>
 
-        <!-- Q1 -->
+    </a>
 
-        <a href="q1.html" class="question-card">
+    <!-- Q2 -->
 
-            <span class="question-number">Q1</span>
+    <a href="q2.html" class="question-card">
 
-            <span class="question-text">
-                What is a Database System?
-                Explain its purpose and importance
-                in modern organizations.
-            </span>
+        <span class="question-number">Q2</span>
 
-            <span class="arrow">&#8250;</span>
+        <span class="question-text">
+            Design an ER Diagram for a Library
+            Management System, identifying entities,
+            attributes, keys, and relationships.
+        </span>
 
-        </a>
+        <span class="arrow">&#8250;</span>
 
-        <!-- Q2 -->
+    </a>
 
-        <a href="q2.html" class="question-card">
+    <!-- Q3 -->
 
-            <span class="question-number">Q2</span>
+    <a href="q3.html" class="question-card">
 
-            <span class="question-text">
-                Design an ER Diagram for a Library
-                Management System, identifying entities,
-                attributes, keys, and relationships.
-            </span>
+        <span class="question-number">Q3</span>
 
-            <span class="arrow">&#8250;</span>
+        <span class="question-text">
+            Assess the concept of Relational Databases
+            and their key characteristics.
+        </span>
 
-        </a>
+        <span class="arrow">&#8250;</span>
 
-        <!-- Q3 -->
+    </a>
 
-        <a href="q3.html" class="question-card">
+    <!-- Q4 -->
 
-            <span class="question-number">Q3</span>
+    <a href="q4.html" class="question-card">
 
-            <span class="question-text">
-                Assess the concept of Relational Databases
-                and their key characteristics.
-            </span>
+        <span class="question-number">Q4</span>
 
-            <span class="arrow">&#8250;</span>
+        <span class="question-text">
+            Explain the concept of Transaction
+            Management in a database system.
+        </span>
 
-        </a>
+        <span class="arrow">&#8250;</span>
 
-        <!-- Q4 -->
+    </a>
 
-        <a href="q4.html" class="question-card">
+    <!-- Q5 -->
 
-            <span class="question-number">Q4</span>
+    <a href="q5.html" class="question-card">
 
-            <span class="question-text">
-                Explain the concept of Transaction
-                Management in a database system.
-            </span>
+        <span class="question-number">Q5</span>
 
-            <span class="arrow">&#8250;</span>
+        <span class="question-text">
+            Discuss the concept of "View of Data"
+            in a database system with the help
+            of the three-level architecture.
+        </span>
 
-        </a>
+        <span class="arrow">&#8250;</span>
 
-        <!-- Q5 -->
+    </a>
 
-        <a href="q5.html" class="question-card">
+    <!-- Q6 -->
 
-            <span class="question-number">Q5</span>
+    <a href="q6.html" class="question-card">
 
-            <span class="question-text">
-                Discuss the concept of "View of Data"
-                in a database system with the help
-                of the three-level architecture.
-            </span>
+        <span class="question-number">Q6</span>
 
-            <span class="arrow">&#8250;</span>
+        <span class="question-text">
+            Create a UML class diagram for a
+            College Management System and map
+            it to relational schemas.
+        </span>
 
-        </a>
+        <span class="arrow">&#8250;</span>
 
-        <!-- Q6 -->
+    </a>
 
-        <a href="q6.html" class="question-card">
+    <!-- Q7 -->
 
-            <span class="question-number">Q6</span>
+    <a href="q7.html" class="question-card">
 
-            <span class="question-text">
-                Create a UML class diagram for a
-                College Management System and map
-                it to relational schemas.
-            </span>
+        <span class="question-number">Q7</span>
 
-            <span class="arrow">&#8250;</span>
+        <span class="question-text">
+            Describe the Database Architecture
+            (client-server, centralized, distributed)
+            with a suitable diagram.
+        </span>
 
-        </a>
+        <span class="arrow">&#8250;</span>
 
-        <!-- Q7 -->
+    </a>
 
-        <a href="q7.html" class="question-card">
+    <!-- Q8 -->
 
-            <span class="question-number">Q7</span>
+    <a href="q8.html" class="question-card">
 
-            <span class="question-text">
-                Describe the Database Architecture
-                (client-server, centralized, distributed)
-                with a suitable diagram.
-            </span>
+        <span class="question-number">Q8</span>
 
-            <span class="arrow">&#8250;</span>
+        <span class="question-text">
+            What are Data Models?
+            Discuss the evolution of data models
+            from hierarchical to relational
+            and object-oriented models.
+        </span>
 
-        </a>
+        <span class="arrow">&#8250;</span>
 
-        <!-- Q8 -->
+    </a>
 
-        <a href="q8.html" class="question-card">
+    <!-- Q9 -->
 
-            <span class="question-number">Q8</span>
+    <a href="q9.html" class="question-card">
 
-            <span class="question-text">
-                What are Data Models?
-                Discuss the evolution of data models
-                from hierarchical to relational
-                and object-oriented models.
-            </span>
+        <span class="question-number">Q9</span>
 
-            <span class="arrow">&#8250;</span>
+        <span class="question-text">
+            Create a database schema with appropriate
+            tables, primary keys, and foreign keys
+            for a Student Management System.
+        </span>
 
-        </a>
+        <span class="arrow">&#8250;</span>
 
-        <!-- Q9 -->
+    </a>
 
-        <a href="q9.html" class="question-card">
+    <!-- Q25 -->
 
-            <span class="question-number">Q9</span>
+    <a href="q25.html" class="question-card">
 
-            <span class="question-text">
-                Create a database schema with appropriate
-                tables, primary keys, and foreign keys
-                for a Student Management System.
-            </span>
+        <span class="question-number">Q25</span>
 
-            <span class="arrow">&#8250;</span>
+        <span class="question-text">
+            Explain Weak Entity Sets, Codd's Rules,
+            and Relational Schemas with suitable examples.
+        </span>
 
-        </a>
+        <span class="arrow">&#8250;</span>
 
-        <!-- Q25 -->
+    </a>
 
-        <a href="q25.html" class="question-card">
+    <!-- Q27 -->
 
-            <span class="question-number">Q25</span>
+    <a href="q27.html" class="question-card">
 
-            <span class="question-text">
-                Explain Weak Entity Sets, Codd's Rules,
-                and Relational Schemas with suitable examples.
-            </span>
+        <span class="question-number">Q27</span>
 
-            <span class="arrow">&#8250;</span>
+        <span class="question-text">
+            Discuss the Degrees of Abstraction
+            in a database system with a neat diagram.
+        </span>
 
-        </a>
+        <span class="arrow">&#8250;</span>
 
-        <!-- Q27 -->
+    </a>
 
-        <a href="q27.html" class="question-card">
+    <!-- Q29 -->
 
-            <span class="question-number">Q27</span>
+    <a href="q29.html" class="question-card">
 
-            <span class="question-text">
-                Discuss the Degrees of Abstraction
-                in a database system with a neat diagram.
-            </span>
+        <span class="question-number">Q29</span>
 
-            <span class="arrow">&#8250;</span>
+        <span class="question-text">
+            Discuss the ER Model.
+            Construct an ER Diagram for a University
+            Management System, clearly showing
+            entities, attributes, and relationships.
+        </span>
 
-        </a>
+        <span class="arrow">&#8250;</span>
 
-        <!-- Q29 -->
+    </a>
 
-        <a href="q29.html" class="question-card">
+    <!-- Q31 -->
 
-            <span class="question-number">Q29</span>
+    <a href="q31.html" class="question-card">
 
-            <span class="question-text">
-                Discuss the ER Model.
-                Construct an ER Diagram for a University
-                Management System, clearly showing
-                entities, attributes, and relationships.
-            </span>
+        <span class="question-number">Q31</span>
 
-            <span class="arrow">&#8250;</span>
+        <span class="question-text">
+            Explain the concept of Business Rules
+            and their role in database design.
+        </span>
 
-        </a>
+        <span class="arrow">&#8250;</span>
 
-        <!-- Q31 -->
+    </a>
 
-        <a href="q31.html" class="question-card">
-
-            <span class="question-number">Q31</span>
-
-            <span class="question-text">
-                Explain the concept of Business Rules
-                and their role in database design.
-            </span>
-
-            <span class="arrow">&#8250;</span>
-
-        </a>
-
-    </div>
-
-</section>
+</div>
 
 </main>
 
