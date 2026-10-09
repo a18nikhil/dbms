@@ -1,0 +1,285 @@
+
+/* =====================================
+   DBMS - SHARED QUESTION PAGE STYLES
+   ===================================== */
+
+/* GLOBAL */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: #F4F4F2;
+    color: #1A1A1A;
+    font-family: Georgia, Cambria, "Times New Roman", serif;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* PAGE CONTAINER */
+
+.container {
+    max-width: 790px;
+    margin: 0 auto;
+    padding: 24px 16px 50px;
+}
+
+/* UNIT COLORS */
+
+body.unit1 {
+    --unit-color: #315F83;
+}
+
+body.unit2 {
+    --unit-color: #926D30;
+}
+
+body.unit3 {
+    --unit-color: #47715B;
+}
+
+/* DEFAULT COLOR */
+
+body {
+    --unit-color: #315F83;
+}
+
+/* TOP NAVIGATION */
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--unit-color);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* ANSWER CARD */
+
+.answer {
+    background: #FAFAF7;
+    border: 1px solid #E5E5E0;
+    border-radius: 8px;
+    padding: 36px 42px 40px;
+}
+
+/* QUESTION TITLE */
+
+h1 {
+    margin: 0 0 28px;
+    color: #102A43;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+/* SECTION HEADINGS */
+
+h2 {
+    margin: 28px 0 12px;
+    color: #102A43;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+h3 {
+    margin: 22px 0 10px;
+    color: #102A43;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* PARAGRAPHS */
+
+p {
+    margin: 0 0 15px;
+    text-align: left;
+}
+
+/* LISTS */
+
+ul,
+ol {
+    margin: 10px 0 18px;
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 12px;
+    padding-left: 3px;
+}
+
+/* EMPHASIS */
+
+strong {
+    color: #102A43;
+    font-weight: 600;
+}
+
+/* DIAGRAMS */
+
+.diagram {
+    margin: 18px 0 22px;
+    text-align: center;
+}
+
+.diagram img {
+    display: block;
+    width: 100%;
+    max-width: 680px;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* SQL QUERIES */
+
+.sql-query {
+    margin: 10px 0 20px;
+    padding: 13px 16px;
+    background: #F0F3F5;
+    border-left: 3px solid var(--unit-color);
+    border-radius: 3px;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #102A43;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+/* GENERAL CODE */
+
+code,
+pre {
+    font-family: Consolas, "Courier New", monospace;
+}
+
+pre {
+    overflow-x: auto;
+}
+
+/* TABLES */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin: 16px 0 22px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th,
+td {
+    border: 1px solid #D9DFE3;
+    padding: 9px 12px;
+    text-align: left;
+}
+
+th {
+    background: #EEF1F3;
+    color: #102A43;
+    font-weight: 600;
+}
+
+/* BOTTOM NAVIGATION */
+
+.page-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 25px;
+}
+
+.page-nav a {
+    color: var(--unit-color);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.page-nav a:hover {
+    text-decoration: underline;
+}
+
+/* =====================================
+   MOBILE RESPONSIVE DESIGN
+   ===================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .container {
+        padding: 14px 10px 35px;
+    }
+
+    .back-link {
+        margin-bottom: 14px;
+        font-size: 13px;
+    }
+
+    .answer {
+        padding: 24px 19px 30px;
+        border-radius: 7px;
+    }
+
+    h1 {
+        font-size: 21px;
+        line-height: 1.5;
+        margin-bottom: 23px;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    ul,
+    ol {
+        padding-left: 22px;
+    }
+
+    li {
+        margin-bottom: 11px;
+    }
+
+    .diagram img {
+        max-width: 100%;
+    }
+
+    .sql-query {
+        padding: 12px 13px;
+        font-size: 12px;
+    }
+
+    .page-nav a {
+        font-size: 13px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+}
