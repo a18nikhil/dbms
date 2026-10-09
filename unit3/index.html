@@ -1,0 +1,472 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Unit III | Database Management Systems</title>
+
+<style>
+
+/* GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: #F4F4F1;
+    color: #252525;
+    font-family: Georgia, Cambria, "Times New Roman", serif;
+    line-height: 1.65;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 22px 16px 45px;
+}
+
+/* BACK NAVIGATION */
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 19px;
+    color: #47715B;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* UNIT HEADER */
+
+.unit-header {
+    background: #FFFFFF;
+    border-top: 4px solid #47715B;
+    border-radius: 9px;
+    padding: 25px 25px 23px;
+    margin-bottom: 22px;
+}
+
+.unit-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 11px;
+}
+
+.unit-label {
+    font-family: system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    color: #47715B;
+}
+
+.question-count {
+    font-family: system-ui, sans-serif;
+    font-size: 11px;
+    color: #828B90;
+}
+
+.unit-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.35;
+    color: #1D2F4D;
+}
+
+/* SYLLABUS */
+
+.syllabus {
+    background: #FFFFFF;
+    border: 1px solid #E4E6E3;
+    border-radius: 9px;
+    padding: 23px 25px;
+    margin-bottom: 20px;
+}
+
+.section-heading {
+    margin: 0 0 14px;
+    font-size: 21px;
+    font-weight: 400;
+    color: #1D2F4D;
+}
+
+.syllabus p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.85;
+    color: #4B545B;
+}
+
+/* QUESTION LIST */
+
+.question-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* QUESTION CARDS */
+
+.question-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #FFFFFF;
+    border: 1px solid #E4E6E3;
+    border-radius: 8px;
+    padding: 16px 17px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.question-card:hover {
+    background: #FCFDFC;
+    border-color: #9CB7A7;
+}
+
+.question-card:focus-visible {
+    outline: 2px solid #47715B;
+    outline-offset: 2px;
+}
+
+/* QUESTION NUMBER */
+
+.question-number {
+    flex: 0 0 47px;
+    width: 47px;
+    padding: 9px 0;
+    background: #EAF2EC;
+    color: #47715B;
+    border-radius: 6px;
+    text-align: center;
+    font-family: system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* QUESTION TEXT */
+
+.question-text {
+    flex: 1;
+    min-width: 0;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #293541;
+}
+
+.arrow {
+    flex-shrink: 0;
+    color: #779786;
+    font-size: 19px;
+}
+
+/* BOTTOM NAVIGATION */
+
+.bottom-nav {
+    text-align: center;
+    margin-top: 32px;
+}
+
+.bottom-nav a {
+    color: #47715B;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.bottom-nav a:hover {
+    text-decoration: underline;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 14px 10px 35px;
+    }
+
+    .back-link {
+        margin-bottom: 14px;
+        font-size: 13px;
+    }
+
+    .unit-header {
+        padding: 21px 17px;
+        margin-bottom: 15px;
+    }
+
+    .unit-header h1 {
+        font-size: 23px;
+    }
+
+    .syllabus {
+        padding: 19px 17px;
+        margin-bottom: 16px;
+    }
+
+    .section-heading {
+        font-size: 19px;
+        margin-bottom: 10px;
+    }
+
+    .syllabus p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .question-card {
+        gap: 12px;
+        padding: 14px 12px;
+    }
+
+    .question-number {
+        flex-basis: 42px;
+        width: 42px;
+        font-size: 12px;
+    }
+
+    .question-text {
+        font-size: 14px;
+    }
+
+    .arrow {
+        font-size: 17px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .question-card {
+        transition: none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- BACK NAVIGATION -->
+
+<nav>
+    <a href="../index.html" class="back-link">
+        &#8592; All Units
+    </a>
+</nav>
+
+<!-- UNIT HEADER -->
+
+<header class="unit-header">
+
+    <div class="unit-meta">
+
+        <span class="unit-label">UNIT III</span>
+
+        <span class="question-count">
+            8 Questions
+        </span>
+
+    </div>
+
+    <h1>
+        Transaction Management and PL/SQL
+    </h1>
+
+</header>
+
+<main>
+
+<!-- SYLLABUS TOPICS -->
+
+<section class="syllabus">
+
+    <h2 class="section-heading">
+        Syllabus Topics
+    </h2>
+
+    <p>
+        Transaction Management,
+        ACID Properties,
+        Serializability,
+        Concurrency Control,
+        Lock-Based Concurrency Control,
+        Two-Phase Locking (2PL),
+        Deadlocks,
+        Timestamping Methods,
+        Recovery Management,
+        PL/SQL Basics,
+        Control Structures,
+        Cursors,
+        Procedures,
+        Functions,
+        Exception Handling,
+        Packages,
+        Triggers.
+    </p>
+
+</section>
+
+<!-- QUESTIONS -->
+
+<div class="question-list">
+
+    <!-- Q18 -->
+
+    <a href="q18.html" class="question-card">
+
+        <span class="question-number">Q18</span>
+
+        <span class="question-text">
+            State the ACID Properties of a transaction
+            with suitable examples.
+        </span>
+
+        <span class="arrow">&#8250;</span>
+
+    </a>
+
+    <!-- Q20 -->
+
+    <a href="q20.html" class="question-card">
+
+        <span class="question-number">Q20</span>
+
+        <span class="question-text">
+            Describe Lock-Based Concurrency Control
+            and explain the Two-Phase Locking (2PL)
+            protocol.
+        </span>
+
+        <span class="arrow">&#8250;</span>
+
+    </a>
+
+    <!-- Q22 -->
+
+    <a href="q22.html" class="question-card">
+
+        <span class="question-number">Q22</span>
+
+        <span class="question-text">
+            Assess the concept of Serializability
+            and its importance in maintaining
+            database consistency.
+        </span>
+
+        <span class="arrow">&#8250;</span>
+
+    </a>
+
+    <!-- Q24 -->
+
+    <a href="q24.html" class="question-card">
+
+        <span class="question-number">Q24</span>
+
+        <span class="question-text">
+            Extend the concepts of Timestamping Methods
+            used for concurrency control in
+            database transactions.
+        </span>
+
+        <span class="arrow">&#8250;</span>
+
+    </a>
+
+    <!-- Q26 -->
+
+    <a href="q26.html" class="question-card">
+
+        <span class="question-number">Q26</span>
+
+        <span class="question-text">
+            Extend Concurrency Control and the need
+            for it in a multi-user database environment.
+        </span>
+
+        <span class="arrow">&#8250;</span>
+
+    </a>
+
+    <!-- Q28 -->
+
+    <a href="q28.html" class="question-card">
+
+        <span class="question-number">Q28</span>
+
+        <span class="question-text">
+            Inspect the basics of PL/SQL and its
+            various Control Structures with examples.
+        </span>
+
+        <span class="arrow">&#8250;</span>
+
+    </a>
+
+    <!-- Q30 -->
+
+    <a href="q30.html" class="question-card">
+
+        <span class="question-number">Q30</span>
+
+        <span class="question-text">
+            What are Deadlocks?
+            Explain the methods used for deadlock
+            detection, prevention, and avoidance.
+        </span>
+
+        <span class="arrow">&#8250;</span>
+
+    </a>
+
+    <!-- Q32 -->
+
+    <a href="q32.html" class="question-card">
+
+        <span class="question-number">Q32</span>
+
+        <span class="question-text">
+            What are Cursors in PL/SQL?
+            Explain implicit and explicit cursors
+            with an example program.
+        </span>
+
+        <span class="arrow">&#8250;</span>
+
+    </a>
+
+</div>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="bottom-nav">
+
+    <a href="../index.html">
+        &#8592; Back to All Units
+    </a>
+
+</nav>
+
+</div>
+
+</body>
+</html>
