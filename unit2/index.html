@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Unit II | Database Management Systems</title>
+
+<style>
+
+/* GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: #F4F4F1;
+    color: #252525;
+    font-family: Georgia, Cambria, "Times New Roman", serif;
+    line-height: 1.65;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 22px 16px 45px;
+}
+
+/* BACK NAVIGATION */
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 19px;
+    color: #926D30;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* UNIT HEADER */
+
+.unit-header {
+    background: #FFFFFF;
+    border-top: 4px solid #926D30;
+    border-radius: 9px;
+    padding: 25px 25px 23px;
+    margin-bottom: 22px;
+}
+
+.unit-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 11px;
+}
+
+.unit-label {
+    font-family: system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    color: #926D30;
+}
+
+.question-count {
+    font-family: system-ui, sans-serif;
+    font-size: 11px;
+    color: #828B90;
+}
+
+.unit-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.35;
+    color: #1D2F4D;
+}
+
+/* SYLLABUS */
+
+.syllabus {
+    background: #FFFFFF;
+    border: 1px solid #E4E6E3;
+    border-radius: 9px;
+    padding: 23px 25px;
+    margin-bottom: 20px;
+}
+
+.section-heading {
+    margin: 0 0 14px;
+    font-size: 21px;
+    font-weight: 400;
+    color: #1D2F4D;
+}
+
+.syllabus p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.85;
+    color: #4B545B;
+}
+
+/* QUESTION LIST */
+
+.question-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* QUESTION CARDS */
+
+.question-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #FFFFFF;
+    border: 1px solid #E4E6E3;
+    border-radius: 8px;
+    padding: 16px 17px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.question-card:hover {
+    background: #FCFDFC;
+    border-color: #B9A27C;
+}
+
+.question-card:focus-visible {
+    outline: 2px solid #926D30;
+    outline-offset: 2px;
+}
+
+/* QUESTION NUMBER */
+
+.question-number {
+    flex: 0 0 47px;
+    width: 47px;
+    padding: 9px 0;
+    background: #F5EFE3;
+    color: #926D30;
+    border-radius: 6px;
+    text-align: center;
+    font-family: system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* QUESTION TEXT */
+
+.question-text {
+    flex: 1;
+    min-width: 0;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #293541;
+}
+
+.arrow {
+    flex-shrink: 0;
+    color: #A18B67;
+    font-size: 19px;
+}
+
+/* BOTTOM NAVIGATION */
+
+.bottom-nav {
+    text-align: center;
+    margin-top: 32px;
+}
+
+.bottom-nav a {
+    color: #926D30;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.bottom-nav a:hover {
+    text-decoration: underline;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 14px 10px 35px;
+    }
+
+    .back-link {
+        margin-bottom: 14px;
+        font-size: 13px;
+    }
+
+    .unit-header {
+        padding: 21px 17px;
+        margin-bottom: 15px;
+    }
+
+    .unit-header h1 {
+        font-size: 23px;
+    }
+
+    .syllabus {
+        padding: 19px 17px;
+        margin-bottom: 16px;
+    }
+
+    .section-heading {
+        font-size: 19px;
+        margin-bottom: 10px;
+    }
+
+    .syllabus p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .question-card {
+        gap: 12px;
+        padding: 14px 12px;
+    }
+
+    .question-number {
+        flex-basis: 42px;
+        width: 42px;
+        font-size: 12px;
+    }
+
+    .question-text {
+        font-size: 14px;
+    }
+
+    .arrow {
+        font-size: 17px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .question-card {
+        transition: none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- BACK NAVIGATION -->
+
+<nav>
+    <a href="../index.html" class="back-link">
+        &#8592; All Units
+    </a>
+</nav>
+
+<!-- UNIT HEADER -->
+
+<header class="unit-header">
+
+    <div class="unit-meta">
+
+        <span class="unit-label">UNIT II</span>
+
+        <span class="question-count">
+            11 Questions
+        </span>
+
+    </div>
+
+    <h1>
+        Relational Database Model and SQL
+    </h1>
+
+</header>
+
+<main>
+
+<!-- SYLLABUS TOPICS -->
+
+<section class="syllabus">
+
+    <h2 class="section-heading">
+        Syllabus Topics
+    </h2>
+
+    <p>
+        Relational Database Model,
+        Logical View of Data,
+        Keys in Relational Database,
+        Integrity Rules,
+        Relational Algebra,
+        Selection,
+        Projection,
+        Join,
+        Division,
+        Relational Calculus,
+        Tuple Relational Calculus,
+        Domain Relational Calculus,
+        Normalization,
+        First Normal Form (1NF),
+        Second Normal Form (2NF),
+        Third Normal Form (3NF),
+        Boyce-Codd Normal Form (BCNF),
+        SQL,
+        Aggregate Functions,
+        GROUP BY and HAVING Clauses,
+        Null Values,
+        Inner Join,
+        Left Join,
+        Right Join,
+        Full Outer Join,
+        Nested Subqueries,
+        Joined Relations.
+    </p>
+
+</section>
+
+<!-- QUESTIONS -->
+
+<div class="question-list">
+
+    <!-- Q10 -->
+
+    <a href="q10.html" class="question-card">
+
+        <span class="question-number">Q10</span>
+
+        <span class="question-text">
+            Explain the Logical View of Data and the
+            concept of Keys in a relational database
+            with examples.
+        </span>
+
+        <span class="arrow">&#8250;</span>
+
+    </a>
+
+    <!-- Q11 -->
+
+    <a href="q11.html" class="question-card">
+
+        <span class="question-number">Q11</span>
+
+        <span class="question-text">
+            Write SQL queries to demonstrate Selection,
+            Projection, and Join operations on given
+            relational tables.
+        </span>
+
+        <span class="arrow">&#8250;</span>
+
+    </a>
+
+    <!-- Q12 -->
+
+    <a href="q12.html" class="question-card">
+
+        <span class="question-number">Q12</span>
+
+        <span class="question-text">
+            Explain the process of Normalization.
+            Discuss 1NF, 2NF, and 3NF with
+            suitable examples.
+        </span>
+
+        <span class="arrow">&#8250;</span>
+
+    </a>
+
+    <!-- Q13 -->
+
+    <a href="q13.html" class="question-card">
+
+        <span class="question-number">Q13</span>
+
+        <span class="question-text">
+            Write SQL queries using Aggregate Functions
+            (SUM, AVG, COUNT, MAX, MIN) with GROUP BY
+            and HAVING clauses.
+        </span>
+
+        <span class="arrow">&#8250;</span>
+
+    </a>
+
+    <!-- Q14 -->
+
+    <a href="q14.html" class="question-card">
+
+        <span class="question-number">Q14</span>
+
+        <span class="question-text">
+            Discuss the Integrity Rules
+            (Entity Integrity and Referential Integrity)
+            in the relational model.
+        </span>
+
+        <span class="arrow">&#8250;</span>
+
+    </a>
+
+    <!-- Q15 -->
+
+    <a href="q15.html" class="question-card">
+
+        <span class="question-number">Q15</span>
+
+        <span class="question-text">
+            Design SQL queries to perform different
+            types of Joins (Inner, Left, Right,
+            Full Outer) on given tables.
+        </span>
+
+        <span class="arrow">&#8250;</span>
+
+    </a>
+
+    <!-- Q16 -->
+
+    <a href="q16.html" class="question-card">
+
+        <span class="question-number">Q16</span>
+
+        <span class="question-text">
+            What is BCNF (Boyce-Codd Normal Form)?
+            Explain how it differs from 3NF
+            with an example.
+        </span>
+
+        <span class="arrow">&#8250;</span>
+
+    </a>
+
+    <!-- Q17 -->
+
+    <a href="q17.html" class="question-card">
+
+        <span class="question-number">Q17</span>
+
+        <span class="question-text">
+            Discuss Nested Subqueries and Joined
+            Relations in SQL with appropriate examples.
+        </span>
+
+        <span class="arrow">&#8250;</span>
+
+    </a>
+
+    <!-- Q19 -->
+
+    <a href="q19.html" class="question-card">
+
+        <span class="question-number">Q19</span>
+
+        <span class="question-text">
+            Discuss Relational Calculus and differentiate
+            between Tuple Relational Calculus and
+            Domain Relational Calculus.
+        </span>
+
+        <span class="arrow">&#8250;</span>
+
+    </a>
+
+    <!-- Q21 -->
+
+    <a href="q21.html" class="question-card">
+
+        <span class="question-number">Q21</span>
+
+        <span class="question-text">
+            Explain Aggregate Functions and Null Values
+            in SQL with suitable examples.
+        </span>
+
+        <span class="arrow">&#8250;</span>
+
+    </a>
+
+    <!-- Q23 -->
+
+    <a href="q23.html" class="question-card">
+
+        <span class="question-number">Q23</span>
+
+        <span class="question-text">
+            Explain the Selection, Projection, Join,
+            and Division operations in relational
+            algebra with examples.
+        </span>
+
+        <span class="arrow">&#8250;</span>
+
+    </a>
+
+</div>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="bottom-nav">
+
+    <a href="../index.html">
+        &#8592; Back to All Units
+    </a>
+
+</nav>
+
+</div>
+
+</body>
+</html>
