@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Q8 - Data Models and Their Evolution | DBMS</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: #F4F4F2;
+    color: #1A1A1A;
+    font-family: Georgia, Cambria, "Times New Roman", serif;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 790px;
+    margin: 0 auto;
+    padding: 24px 16px 50px;
+}
+
+/* TOP NAVIGATION */
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #315F83;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* ANSWER PAGE */
+
+.answer {
+    background: #FAFAF7;
+    border: 1px solid #E5E5E0;
+    border-radius: 8px;
+    padding: 36px 42px 40px;
+}
+
+/* QUESTION HEADING */
+
+h1 {
+    margin: 0 0 28px;
+    color: #102A43;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+/* SECTION HEADINGS */
+
+h2 {
+    margin: 28px 0 12px;
+    color: #102A43;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+/* PARAGRAPHS */
+
+p {
+    margin: 0 0 15px;
+    text-align: left;
+}
+
+/* LISTS */
+
+ul,
+ol {
+    margin: 10px 0 18px;
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 12px;
+    padding-left: 3px;
+}
+
+/* EMPHASIS */
+
+strong {
+    color: #102A43;
+    font-weight: 600;
+}
+
+/* DIAGRAM */
+
+.diagram {
+    margin: 18px 0 22px;
+    text-align: center;
+}
+
+.diagram img {
+    display: block;
+    width: 100%;
+    max-width: 680px;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* BOTTOM NAVIGATION */
+
+.page-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 25px;
+}
+
+.page-nav a {
+    color: #315F83;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.page-nav a:hover {
+    text-decoration: underline;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .container {
+        padding: 14px 10px 35px;
+    }
+
+    .back-link {
+        margin-bottom: 14px;
+        font-size: 13px;
+    }
+
+    .answer {
+        padding: 24px 19px 30px;
+        border-radius: 7px;
+    }
+
+    h1 {
+        font-size: 21px;
+        line-height: 1.5;
+        margin-bottom: 23px;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+
+    ul,
+    ol {
+        padding-left: 22px;
+    }
+
+    li {
+        margin-bottom: 11px;
+    }
+
+    .diagram img {
+        max-width: 100%;
+    }
+
+    .page-nav a {
+        font-size: 13px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- BACK TO UNIT -->
+
+<nav>
+    <a href="index.html" class="back-link">
+        &#8592; Back to Unit I
+    </a>
+</nav>
+
+<main class="answer">
+
+    <!-- QUESTION 8 -->
+
+    <h1>
+        Q8. What are Data Models? Discuss the Evolution of Data Models from Hierarchical to Relational and Object-Oriented Models.
+    </h1>
+
+    <!-- SECTION 1 -->
+
+    <h2>1. Meaning of Data Model</h2>
+
+    <p>
+        A data model is a collection of concepts and notations used to describe:
+    </p>
+
+    <ul>
+        <li>Data</li>
+        <li>Relationships between data</li>
+        <li>Constraints on data</li>
+    </ul>
+
+    <p>
+        It provides a common language for database designers, developers, and users to understand how data is organized.
+    </p>
+
+    <!-- SECTION 2 -->
+
+    <h2>2. Evolution of Data Models</h2>
+
+    <div class="diagram">
+        <img
+            src="../q8.png"
+            alt="Evolution of Data Models"
+            loading="lazy"
+        >
+    </div>
+
+    <p>
+        Data models evolved over time to handle increasingly complex data and requirements.
+    </p>
+
+    <!-- SECTION 3 -->
+
+    <h2>3. Major Data Models</h2>
+
+    <ol>
+
+        <li>
+            <strong>File-Based Model</strong><br>
+            Used in the early 1960s.<br>
+            Data was stored in separate files.<br>
+            Managing relationships between files was difficult.
+        </li>
+
+        <li>
+            <strong>Hierarchical Model</strong><br>
+            Developed during the 1960s–1970s.<br>
+            Organizes data in a tree-like structure.<br>
+            Supports parent-child relationships.<br>
+            One parent can have many children.
+        </li>
+
+        <li>
+            <strong>Network Model</strong><br>
+            Developed during the 1960s–1970s.<br>
+            Represents data using a network of relationships.<br>
+            Supports more complex relationships than the hierarchical model.
+        </li>
+
+        <li>
+            <strong>Relational Model</strong><br>
+            Introduced by E. F. Codd in 1970.<br>
+            Organizes data into tables consisting of rows and columns.<br>
+            Uses keys and relationships to connect tables.<br>
+            Became the dominant traditional database model.
+        </li>
+
+        <li>
+            <strong>Object-Oriented Model</strong><br>
+            Became important during the 1980s–1990s.<br>
+            Represents data as objects, combining data and behavior.<br>
+            Useful for complex data and object-oriented applications.
+        </li>
+
+    </ol>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="page-nav">
+
+    <a href="q7.html">
+        &#8592; Previous: Q7
+    </a>
+
+    <a href="q9.html">
+        Next: Q9 &#8594;
+    </a>
+
+</nav>
+
+</div>
+
+</body>
+</html>
