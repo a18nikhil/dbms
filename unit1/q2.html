@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Q2 - Library Management System ER Diagram | DBMS</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: #F4F4F2;
+    color: #1A1A1A;
+    font-family: Georgia, Cambria, "Times New Roman", serif;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 790px;
+    margin: 0 auto;
+    padding: 24px 16px 50px;
+}
+
+/* TOP NAVIGATION */
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #315F83;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* ANSWER PAGE */
+
+.answer {
+    background: #FAFAF7;
+    border: 1px solid #E5E5E0;
+    border-radius: 8px;
+    padding: 36px 42px 40px;
+}
+
+/* QUESTION HEADING */
+
+h1 {
+    margin: 0 0 28px;
+    color: #102A43;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+/* SECTION HEADINGS */
+
+h2 {
+    margin: 28px 0 12px;
+    color: #102A43;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+/* PARAGRAPHS */
+
+p {
+    margin: 0 0 15px;
+    text-align: left;
+}
+
+/* LISTS */
+
+ul {
+    margin: 10px 0 18px;
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 9px;
+    padding-left: 3px;
+}
+
+/* EMPHASIS */
+
+strong {
+    color: #102A43;
+    font-weight: 600;
+}
+
+/* DIAGRAM */
+
+.diagram {
+    margin: 18px 0 22px;
+    text-align: center;
+}
+
+.diagram img {
+    display: block;
+    width: 100%;
+    max-width: 680px;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* BOTTOM NAVIGATION */
+
+.page-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 25px;
+}
+
+.page-nav a {
+    color: #315F83;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.page-nav a:hover {
+    text-decoration: underline;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .container {
+        padding: 14px 10px 35px;
+    }
+
+    .back-link {
+        margin-bottom: 14px;
+        font-size: 13px;
+    }
+
+    .answer {
+        padding: 24px 19px 30px;
+        border-radius: 7px;
+    }
+
+    h1 {
+        font-size: 21px;
+        line-height: 1.5;
+        margin-bottom: 23px;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+
+    ul {
+        padding-left: 22px;
+    }
+
+    .diagram img {
+        max-width: 100%;
+    }
+
+    .page-nav a {
+        font-size: 13px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- BACK TO UNIT -->
+
+<nav>
+    <a href="index.html" class="back-link">
+        &#8592; Back to Unit I
+    </a>
+</nav>
+
+<main class="answer">
+
+    <!-- QUESTION 2 -->
+
+    <h1>
+        Q2. Design an ER Diagram for a Library Management System, identifying entities, attributes, keys, and relationships.
+    </h1>
+
+    <p>
+        An ER (Entity-Relationship) Diagram is a graphical representation of the structure of a database. It shows entities, their attributes, keys, and relationships between entities.
+    </p>
+
+    <p>
+        <strong>ER Diagram of Library Management System:</strong>
+    </p>
+
+    <div class="diagram">
+        <img
+            src="../q2.png"
+            alt="ER Diagram of Library Management System"
+            loading="lazy"
+        >
+    </div>
+
+    <!-- SECTION 1 -->
+
+    <h2>1. Entity</h2>
+
+    <p>
+        An entity is a real-world object about which data is stored in a database.
+    </p>
+
+    <p>
+        In the Library Management System, the main entities are:
+    </p>
+
+    <ul>
+        <li>
+            <strong>BOOK:</strong> Represents books in the library.
+        </li>
+
+        <li>
+            <strong>MEMBER:</strong> Represents people who borrow books.
+        </li>
+
+        <li>
+            <strong>PUBLISHER:</strong> Represents publishers of books.
+        </li>
+    </ul>
+
+    <p>
+        In an ER diagram, an entity is represented by a rectangle.
+    </p>
+
+    <!-- SECTION 2 -->
+
+    <h2>2. Attributes</h2>
+
+    <p>
+        An attribute is a property or characteristic that describes an entity.
+    </p>
+
+    <ul>
+        <li>
+            <strong>BOOK:</strong> Book_ID, Title, Author, Price
+        </li>
+
+        <li>
+            <strong>MEMBER:</strong> Member_ID, Name, Phone, Address
+        </li>
+
+        <li>
+            <strong>PUBLISHER:</strong> Pub_ID, Name, Address
+        </li>
+    </ul>
+
+    <p>
+        In an ER diagram, an attribute is represented by an oval.
+    </p>
+
+    <!-- SECTION 3 -->
+
+    <h2>3. Keys</h2>
+
+    <p>
+        A key is an attribute that uniquely identifies each entity record.
+    </p>
+
+    <ul>
+        <li>
+            <strong>Book_ID</strong> &rarr; Primary Key of BOOK
+        </li>
+
+        <li>
+            <strong>Member_ID</strong> &rarr; Primary Key of MEMBER
+        </li>
+
+        <li>
+            <strong>Pub_ID</strong> &rarr; Primary Key of PUBLISHER
+        </li>
+    </ul>
+
+    <p>
+        In an ER diagram, a key is shown by underlining the attribute name.
+    </p>
+
+    <!-- SECTION 4 -->
+
+    <h2>4. Relationships</h2>
+
+    <p>
+        A relationship shows how two or more entities are connected.
+    </p>
+
+    <p>
+        <strong>BORROWS</strong>
+    </p>
+
+    <ul>
+        <li>
+            Connects MEMBER and BOOK.
+        </li>
+
+        <li>
+            A member can borrow many books, and a book can be borrowed by many members over time.
+        </li>
+
+        <li>
+            <strong>Cardinality:</strong> Many-to-Many (M:N)
+        </li>
+
+        <li>
+            <strong>Relationship attributes:</strong> Issue_Date, Return_Date
+        </li>
+    </ul>
+
+    <p>
+        <strong>PUBLISHED_BY</strong>
+    </p>
+
+    <ul>
+        <li>
+            Connects BOOK and PUBLISHER.
+        </li>
+
+        <li>
+            One publisher can publish many books, while each book is published by one publisher.
+        </li>
+
+        <li>
+            <strong>Cardinality:</strong> Many-to-One (N:1)
+        </li>
+    </ul>
+
+    <p>
+        In an ER diagram, a relationship is represented by a diamond.
+    </p>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="page-nav">
+
+    <a href="q1.html">
+        &#8592; Previous: Q1
+    </a>
+
+    <a href="q3.html">
+        Next: Q3 &#8594;
+    </a>
+
+</nav>
+
+</div>
+
+</body>
+</html>
