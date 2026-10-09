@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Q5 - View of Data | DBMS</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: #F4F4F2;
+    color: #1A1A1A;
+    font-family: Georgia, Cambria, "Times New Roman", serif;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 790px;
+    margin: 0 auto;
+    padding: 24px 16px 50px;
+}
+
+/* TOP NAVIGATION */
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #315F83;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* ANSWER PAGE */
+
+.answer {
+    background: #FAFAF7;
+    border: 1px solid #E5E5E0;
+    border-radius: 8px;
+    padding: 36px 42px 40px;
+}
+
+/* QUESTION HEADING */
+
+h1 {
+    margin: 0 0 28px;
+    color: #102A43;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+/* SECTION HEADINGS */
+
+h2 {
+    margin: 28px 0 12px;
+    color: #102A43;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+/* PARAGRAPHS */
+
+p {
+    margin: 0 0 15px;
+    text-align: left;
+}
+
+/* LISTS */
+
+ul,
+ol {
+    margin: 10px 0 18px;
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 12px;
+    padding-left: 3px;
+}
+
+/* EMPHASIS */
+
+strong {
+    color: #102A43;
+    font-weight: 600;
+}
+
+/* DIAGRAM */
+
+.diagram {
+    margin: 18px 0 22px;
+    text-align: center;
+}
+
+.diagram img {
+    display: block;
+    width: 100%;
+    max-width: 680px;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* BOTTOM NAVIGATION */
+
+.page-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 25px;
+}
+
+.page-nav a {
+    color: #315F83;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.page-nav a:hover {
+    text-decoration: underline;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .container {
+        padding: 14px 10px 35px;
+    }
+
+    .back-link {
+        margin-bottom: 14px;
+        font-size: 13px;
+    }
+
+    .answer {
+        padding: 24px 19px 30px;
+        border-radius: 7px;
+    }
+
+    h1 {
+        font-size: 21px;
+        line-height: 1.5;
+        margin-bottom: 23px;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+
+    ul,
+    ol {
+        padding-left: 22px;
+    }
+
+    li {
+        margin-bottom: 11px;
+    }
+
+    .diagram img {
+        max-width: 100%;
+    }
+
+    .page-nav a {
+        font-size: 13px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- BACK TO UNIT -->
+
+<nav>
+    <a href="index.html" class="back-link">
+        &#8592; Back to Unit I
+    </a>
+</nav>
+
+<main class="answer">
+
+    <!-- QUESTION 5 -->
+
+    <h1>
+        Q5. Discuss the Concept of "View of Data" in a Database System with the Help of Three-Level Architecture.
+    </h1>
+
+    <p>
+        View of Data means showing database information at different levels of abstraction. It hides unnecessary details and allows users to see only the data they need.
+    </p>
+
+    <p>
+        Three levels of Data Abstraction (ANSI/SPARC):
+    </p>
+
+    <div class="diagram">
+        <img
+            src="../q5.png"
+            alt="Three-Level Data Abstraction Architecture"
+            loading="lazy"
+        >
+    </div>
+
+    <!-- SECTION 1 -->
+
+    <h2>1. Levels of Data Abstraction</h2>
+
+    <ol>
+
+        <li>
+            <strong>External Level (View Level)</strong><br>
+            Highest level of abstraction.<br>
+            Shows only the data required by a particular user or application.<br>
+            Different users can have different views.<br>
+            Example: A student sees marks, while an administrator sees student and fee details.
+        </li>
+
+        <li>
+            <strong>Conceptual Level (Logical Level)</strong><br>
+            Describes the complete logical structure of the database.<br>
+            Shows what data is stored and the relationships between data.<br>
+            It does not describe how data is physically stored.
+        </li>
+
+        <li>
+            <strong>Internal Level (Physical Level)</strong><br>
+            Lowest level of abstraction.<br>
+            Describes how data is actually stored in the computer.<br>
+            Includes files, indexes, pointers, and storage structures.
+        </li>
+
+    </ol>
+
+    <!-- SECTION 2 -->
+
+    <h2>2. Schema and Instance</h2>
+
+    <ul>
+        <li>
+            <strong>Schema:</strong>
+            Overall logical design or structure of the database. It changes rarely.
+        </li>
+
+        <li>
+            <strong>Instance:</strong>
+            Actual data stored in the database at a particular moment. It changes frequently.
+        </li>
+    </ul>
+
+    <!-- SECTION 3 -->
+
+    <h2>3. Importance of Three-Level Architecture</h2>
+
+    <ul>
+        <li>Hides unnecessary database details.</li>
+        <li>Provides different views for different users.</li>
+        <li>Makes database management easier.</li>
+        <li>Provides data independence.</li>
+        <li>Changes at one level can be made with less effect on other levels.</li>
+    </ul>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="page-nav">
+
+    <a href="q4.html">
+        &#8592; Previous: Q4
+    </a>
+
+    <a href="q6.html">
+        Next: Q6 &#8594;
+    </a>
+
+</nav>
+
+</div>
+
+</body>
+</html>
