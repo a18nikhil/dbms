@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Q4 - Transaction Management | DBMS</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: #F4F4F2;
+    color: #1A1A1A;
+    font-family: Georgia, Cambria, "Times New Roman", serif;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 790px;
+    margin: 0 auto;
+    padding: 24px 16px 50px;
+}
+
+/* TOP NAVIGATION */
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #315F83;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* ANSWER PAGE */
+
+.answer {
+    background: #FAFAF7;
+    border: 1px solid #E5E5E0;
+    border-radius: 8px;
+    padding: 36px 42px 40px;
+}
+
+/* QUESTION HEADING */
+
+h1 {
+    margin: 0 0 28px;
+    color: #102A43;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+/* SECTION HEADINGS */
+
+h2 {
+    margin: 28px 0 12px;
+    color: #102A43;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+/* PARAGRAPHS */
+
+p {
+    margin: 0 0 15px;
+    text-align: left;
+}
+
+/* LISTS */
+
+ul {
+    margin: 10px 0 18px;
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 9px;
+    padding-left: 3px;
+}
+
+/* EMPHASIS */
+
+strong {
+    color: #102A43;
+    font-weight: 600;
+}
+
+/* DIAGRAM */
+
+.diagram {
+    margin: 18px 0 22px;
+    text-align: center;
+}
+
+.diagram img {
+    display: block;
+    width: 100%;
+    max-width: 680px;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* BOTTOM NAVIGATION */
+
+.page-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 25px;
+}
+
+.page-nav a {
+    color: #315F83;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.page-nav a:hover {
+    text-decoration: underline;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .container {
+        padding: 14px 10px 35px;
+    }
+
+    .back-link {
+        margin-bottom: 14px;
+        font-size: 13px;
+    }
+
+    .answer {
+        padding: 24px 19px 30px;
+        border-radius: 7px;
+    }
+
+    h1 {
+        font-size: 21px;
+        line-height: 1.5;
+        margin-bottom: 23px;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+
+    ul {
+        padding-left: 22px;
+    }
+
+    .diagram img {
+        max-width: 100%;
+    }
+
+    .page-nav a {
+        font-size: 13px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- BACK TO UNIT -->
+
+<nav>
+    <a href="index.html" class="back-link">
+        &#8592; Back to Unit I
+    </a>
+</nav>
+
+<main class="answer">
+
+    <!-- QUESTION 4 -->
+
+    <h1>
+        Q4. Explain the Concept of Transaction Management in a Database System.
+    </h1>
+
+    <!-- SECTION 1 -->
+
+    <h2>1. Meaning of Transaction Management</h2>
+
+    <p>
+        Transaction Management is the process of managing database transactions so that they are completed correctly, safely, and reliably.
+    </p>
+
+    <p>
+        A transaction is a single logical unit of work in a database. It follows an all-or-nothing approach.
+    </p>
+
+    <p>
+        <strong>Example:</strong>
+    </p>
+
+    <p>
+        In a bank transfer of ₹5,000:
+    </p>
+
+    <ul>
+        <li>₹5,000 is debited from Account A.</li>
+        <li>₹5,000 is credited to Account B.</li>
+    </ul>
+
+    <p>
+        Both operations must be completed. If an error occurs, the transaction should be cancelled to avoid incorrect data.
+    </p>
+
+    <!-- SECTION 2 -->
+
+    <h2>2. Diagram of Transaction States</h2>
+
+    <div class="diagram">
+        <img
+            src="../q4.png"
+            alt="Transaction States Diagram"
+            loading="lazy"
+        >
+    </div>
+
+    <p>
+        <strong>States shown in the diagram:</strong>
+    </p>
+
+    <ul>
+        <li>
+            <strong>Active:</strong> Transaction is being executed.
+        </li>
+
+        <li>
+            <strong>Committed:</strong> Transaction completed successfully and changes become permanent.
+        </li>
+
+        <li>
+            <strong>Failed:</strong> An error occurs during the transaction.
+        </li>
+
+        <li>
+            <strong>Aborted:</strong> Failed transaction is cancelled and its changes are undone.
+        </li>
+    </ul>
+
+    <!-- SECTION 3 -->
+
+    <h2>3. ACID Properties</h2>
+
+    <p>
+        <strong>A – Atomicity:</strong><br>
+        All operations of a transaction are completed, or none are completed.
+    </p>
+
+    <p>
+        <strong>C – Consistency:</strong><br>
+        The database remains in a valid state before and after the transaction.
+    </p>
+
+    <p>
+        <strong>I – Isolation:</strong><br>
+        Multiple transactions can run at the same time without interfering with each other.
+    </p>
+
+    <p>
+        <strong>D – Durability:</strong><br>
+        Once a transaction is committed, its changes remain permanent even after a system failure.
+    </p>
+
+    <p>
+        ACID properties help maintain the integrity and consistency of the database.
+    </p>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="page-nav">
+
+    <a href="q3.html">
+        &#8592; Previous: Q3
+    </a>
+
+    <a href="q5.html">
+        Next: Q5 &#8594;
+    </a>
+
+</nav>
+
+</div>
+
+</body>
+</html>
