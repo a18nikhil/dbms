@@ -1,0 +1,588 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Unit I | Database Management Systems</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: #F4F4F1;
+    color: #252525;
+    font-family: Georgia, Cambria, "Times New Roman", serif;
+    line-height: 1.65;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 22px 16px 45px;
+}
+
+/* Navigation */
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 19px;
+    color: #315F83;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Unit Header */
+
+.unit-header {
+    background: #FFFFFF;
+    border-top: 4px solid #315F83;
+    border-radius: 9px;
+    padding: 25px 25px 23px;
+    margin-bottom: 22px;
+}
+
+.unit-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 11px;
+}
+
+.unit-label {
+    font-family: system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    color: #315F83;
+}
+
+.question-count {
+    font-family: system-ui, sans-serif;
+    font-size: 11px;
+    color: #828B90;
+}
+
+.unit-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.35;
+    color: #1D2F4D;
+}
+
+/* Syllabus */
+
+.syllabus {
+    background: #FFFFFF;
+    border: 1px solid #E4E6E3;
+    border-radius: 9px;
+    padding: 23px 25px;
+    margin-bottom: 28px;
+}
+
+.section-heading {
+    margin: 0 0 14px;
+    font-size: 21px;
+    font-weight: 400;
+    color: #1D2F4D;
+}
+
+.syllabus p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.85;
+    color: #4B545B;
+}
+
+/* Question Section */
+
+.question-section {
+    margin-top: 4px;
+}
+
+.question-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #D2D7D3;
+}
+
+.question-heading h2 {
+    margin: 0;
+    color: #1D2F4D;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.question-heading span {
+    font-family: system-ui, sans-serif;
+    color: #8A9195;
+    font-size: 11px;
+}
+
+/* Question Cards */
+
+.question-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.question-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #FFFFFF;
+    border: 1px solid #E4E6E3;
+    border-radius: 8px;
+    padding: 16px 17px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.question-card:hover {
+    background: #FCFDFC;
+    border-color: #9BAEBB;
+}
+
+.question-card:focus-visible {
+    outline: 2px solid #315F83;
+    outline-offset: 2px;
+}
+
+.question-number {
+    flex: 0 0 47px;
+    width: 47px;
+    padding: 9px 0;
+    background: #E8F0F5;
+    color: #315F83;
+    border-radius: 6px;
+    text-align: center;
+    font-family: system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.question-text {
+    flex: 1;
+    min-width: 0;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #293541;
+}
+
+.arrow {
+    flex-shrink: 0;
+    color: #7B929F;
+    font-size: 19px;
+}
+
+/* Footer Navigation */
+
+.bottom-nav {
+    text-align: center;
+    margin-top: 32px;
+}
+
+.bottom-nav a {
+    color: #315F83;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.bottom-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 14px 10px 35px;
+    }
+
+    .back-link {
+        margin-bottom: 14px;
+        font-size: 13px;
+    }
+
+    .unit-header {
+        padding: 21px 17px;
+        margin-bottom: 15px;
+    }
+
+    .unit-header h1 {
+        font-size: 23px;
+    }
+
+    .syllabus {
+        padding: 19px 17px;
+        margin-bottom: 24px;
+    }
+
+    .section-heading {
+        font-size: 19px;
+        margin-bottom: 10px;
+    }
+
+    .syllabus p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .question-heading h2 {
+        font-size: 20px;
+    }
+
+    .question-card {
+        gap: 12px;
+        padding: 14px 12px;
+    }
+
+    .question-number {
+        flex-basis: 42px;
+        width: 42px;
+        font-size: 12px;
+    }
+
+    .question-text {
+        font-size: 14px;
+    }
+
+    .arrow {
+        font-size: 17px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .question-card {
+        transition: none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<nav>
+    <a href="../index.html" class="back-link">
+        &#8592; All Units
+    </a>
+</nav>
+
+<!-- UNIT HEADER -->
+
+<header class="unit-header">
+
+    <div class="unit-meta">
+
+        <span class="unit-label">UNIT I</span>
+
+        <span class="question-count">
+            13 Questions
+        </span>
+
+    </div>
+
+    <h1>
+        Introduction to Databases and Database Design
+    </h1>
+
+</header>
+
+<main>
+
+<!-- OFFICIAL SYLLABUS -->
+
+<section class="syllabus">
+
+    <h2 class="section-heading">
+        Syllabus Topics
+    </h2>
+
+    <p>
+        What is Database System,
+        Purpose of Database System,
+        View of Data,
+        Relational Databases,
+        Database Architecture,
+        Transaction Management,
+        Data Models,
+        Business Rules,
+        Evolution of Data Models,
+        Degrees of Abstraction,
+        Database Design,
+        ER Model,
+        Constraints,
+        ER Diagrams,
+        Weak Entity Sets,
+        Codd's Rules,
+        Relational Schemas,
+        Introduction to UML.
+    </p>
+
+</section>
+
+<!-- QUESTION BANK -->
+
+<section class="question-section">
+
+    <div class="question-heading">
+
+        <h2>Question Bank</h2>
+
+        <span>13 Questions</span>
+
+    </div>
+
+    <div class="question-list">
+
+        <!-- Q1 -->
+
+        <a href="q1.html" class="question-card">
+
+            <span class="question-number">Q1</span>
+
+            <span class="question-text">
+                What is a Database System?
+                Explain its purpose and importance
+                in modern organizations.
+            </span>
+
+            <span class="arrow">&#8250;</span>
+
+        </a>
+
+        <!-- Q2 -->
+
+        <a href="q2.html" class="question-card">
+
+            <span class="question-number">Q2</span>
+
+            <span class="question-text">
+                Design an ER Diagram for a Library
+                Management System, identifying entities,
+                attributes, keys, and relationships.
+            </span>
+
+            <span class="arrow">&#8250;</span>
+
+        </a>
+
+        <!-- Q3 -->
+
+        <a href="q3.html" class="question-card">
+
+            <span class="question-number">Q3</span>
+
+            <span class="question-text">
+                Assess the concept of Relational Databases
+                and their key characteristics.
+            </span>
+
+            <span class="arrow">&#8250;</span>
+
+        </a>
+
+        <!-- Q4 -->
+
+        <a href="q4.html" class="question-card">
+
+            <span class="question-number">Q4</span>
+
+            <span class="question-text">
+                Explain the concept of Transaction
+                Management in a database system.
+            </span>
+
+            <span class="arrow">&#8250;</span>
+
+        </a>
+
+        <!-- Q5 -->
+
+        <a href="q5.html" class="question-card">
+
+            <span class="question-number">Q5</span>
+
+            <span class="question-text">
+                Discuss the concept of "View of Data"
+                in a database system with the help
+                of the three-level architecture.
+            </span>
+
+            <span class="arrow">&#8250;</span>
+
+        </a>
+
+        <!-- Q6 -->
+
+        <a href="q6.html" class="question-card">
+
+            <span class="question-number">Q6</span>
+
+            <span class="question-text">
+                Create a UML class diagram for a
+                College Management System and map
+                it to relational schemas.
+            </span>
+
+            <span class="arrow">&#8250;</span>
+
+        </a>
+
+        <!-- Q7 -->
+
+        <a href="q7.html" class="question-card">
+
+            <span class="question-number">Q7</span>
+
+            <span class="question-text">
+                Describe the Database Architecture
+                (client-server, centralized, distributed)
+                with a suitable diagram.
+            </span>
+
+            <span class="arrow">&#8250;</span>
+
+        </a>
+
+        <!-- Q8 -->
+
+        <a href="q8.html" class="question-card">
+
+            <span class="question-number">Q8</span>
+
+            <span class="question-text">
+                What are Data Models?
+                Discuss the evolution of data models
+                from hierarchical to relational
+                and object-oriented models.
+            </span>
+
+            <span class="arrow">&#8250;</span>
+
+        </a>
+
+        <!-- Q9 -->
+
+        <a href="q9.html" class="question-card">
+
+            <span class="question-number">Q9</span>
+
+            <span class="question-text">
+                Create a database schema with appropriate
+                tables, primary keys, and foreign keys
+                for a Student Management System.
+            </span>
+
+            <span class="arrow">&#8250;</span>
+
+        </a>
+
+        <!-- Q25 -->
+
+        <a href="q25.html" class="question-card">
+
+            <span class="question-number">Q25</span>
+
+            <span class="question-text">
+                Explain Weak Entity Sets, Codd's Rules,
+                and Relational Schemas with suitable examples.
+            </span>
+
+            <span class="arrow">&#8250;</span>
+
+        </a>
+
+        <!-- Q27 -->
+
+        <a href="q27.html" class="question-card">
+
+            <span class="question-number">Q27</span>
+
+            <span class="question-text">
+                Discuss the Degrees of Abstraction
+                in a database system with a neat diagram.
+            </span>
+
+            <span class="arrow">&#8250;</span>
+
+        </a>
+
+        <!-- Q29 -->
+
+        <a href="q29.html" class="question-card">
+
+            <span class="question-number">Q29</span>
+
+            <span class="question-text">
+                Discuss the ER Model.
+                Construct an ER Diagram for a University
+                Management System, clearly showing
+                entities, attributes, and relationships.
+            </span>
+
+            <span class="arrow">&#8250;</span>
+
+        </a>
+
+        <!-- Q31 -->
+
+        <a href="q31.html" class="question-card">
+
+            <span class="question-number">Q31</span>
+
+            <span class="question-text">
+                Explain the concept of Business Rules
+                and their role in database design.
+            </span>
+
+            <span class="arrow">&#8250;</span>
+
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="bottom-nav">
+
+    <a href="../index.html">
+        &#8592; Back to All Units
+    </a>
+
+</nav>
+
+</div>
+
+</body>
+</html>
