@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Q3 - Relational Databases | DBMS</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: #F4F4F2;
+    color: #1A1A1A;
+    font-family: Georgia, Cambria, "Times New Roman", serif;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 790px;
+    margin: 0 auto;
+    padding: 24px 16px 50px;
+}
+
+/* TOP NAVIGATION */
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #315F83;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* ANSWER PAGE */
+
+.answer {
+    background: #FAFAF7;
+    border: 1px solid #E5E5E0;
+    border-radius: 8px;
+    padding: 36px 42px 40px;
+}
+
+/* QUESTION HEADING */
+
+h1 {
+    margin: 0 0 28px;
+    color: #102A43;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+/* SECTION HEADINGS */
+
+h2 {
+    margin: 28px 0 12px;
+    color: #102A43;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+/* PARAGRAPHS */
+
+p {
+    margin: 0 0 15px;
+    text-align: left;
+}
+
+/* LISTS */
+
+ol {
+    margin: 10px 0 18px;
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 14px;
+    padding-left: 3px;
+}
+
+/* EMPHASIS */
+
+strong {
+    color: #102A43;
+    font-weight: 600;
+}
+
+/* DIAGRAM */
+
+.diagram {
+    margin: 18px 0 22px;
+    text-align: center;
+}
+
+.diagram img {
+    display: block;
+    width: 100%;
+    max-width: 680px;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* BOTTOM NAVIGATION */
+
+.page-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 25px;
+}
+
+.page-nav a {
+    color: #315F83;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.page-nav a:hover {
+    text-decoration: underline;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .container {
+        padding: 14px 10px 35px;
+    }
+
+    .back-link {
+        margin-bottom: 14px;
+        font-size: 13px;
+    }
+
+    .answer {
+        padding: 24px 19px 30px;
+        border-radius: 7px;
+    }
+
+    h1 {
+        font-size: 21px;
+        line-height: 1.5;
+        margin-bottom: 23px;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+
+    ol {
+        padding-left: 22px;
+    }
+
+    li {
+        margin-bottom: 12px;
+    }
+
+    .diagram img {
+        max-width: 100%;
+    }
+
+    .page-nav a {
+        font-size: 13px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- BACK TO UNIT -->
+
+<nav>
+    <a href="index.html" class="back-link">
+        &#8592; Back to Unit I
+    </a>
+</nav>
+
+<main class="answer">
+
+    <!-- QUESTION 3 -->
+
+    <h1>
+        Q3. Assess the Concept of Relational Databases and Their Key Characteristics.
+    </h1>
+
+    <p>
+        A Relational Database stores data in the form of tables. Each table contains rows and columns. The relational model was introduced by E. F. Codd in 1970.
+    </p>
+
+    <p>
+        <strong>Example of Relational Database:</strong>
+    </p>
+
+    <div class="diagram">
+        <img
+            src="../q3.png"
+            alt="Example of Relational Database"
+            loading="lazy"
+        >
+    </div>
+
+    <!-- KEY CHARACTERISTICS -->
+
+    <h2>Key Characteristics:</h2>
+
+    <ol>
+
+        <li>
+            <strong>Table-based Structure</strong><br>
+            Data is organized in tables containing rows and columns.<br>
+            Example: STUDENT TABLE.
+        </li>
+
+        <li>
+            <strong>Relation</strong><br>
+            A table is called a relation.<br>
+            Example: STUDENT TABLE is a relation.
+        </li>
+
+        <li>
+            <strong>Tuple</strong><br>
+            A row is called a tuple or record.<br>
+            Example: 101 | Rahul | B.Sc. CS | 8.2 is one tuple.
+        </li>
+
+        <li>
+            <strong>Attribute</strong><br>
+            A column is called an attribute or field.<br>
+            Example: ID, Name, Program, CGPA are attributes.
+        </li>
+
+        <li>
+            <strong>Domain</strong><br>
+            A domain specifies the allowed values or data type of an attribute.<br>
+            Example: CGPA contains numeric values.
+        </li>
+
+        <li>
+            <strong>Keys</strong><br>
+            Keys identify records and help establish relationships between tables.<br>
+            Primary Key: uniquely identifies a record. ID can be the primary key in this table.<br>
+            Foreign Key: refers to the primary key of another table.
+        </li>
+
+        <li>
+            <strong>Degree</strong><br>
+            The number of columns in a relation is called its degree.<br>
+            Here, Degree = 4 (ID, Name, Program, CGPA).
+        </li>
+
+        <li>
+            <strong>Cardinality</strong><br>
+            The number of rows in a relation is called its cardinality.<br>
+            Here, Cardinality = 3 because there are 3 student records.
+        </li>
+
+    </ol>
+
+    <!-- CONCLUSION -->
+
+    <h2>Conclusion</h2>
+
+    <p>
+        A relational database organizes data into relations (tables) using attributes, tuples, domains, and keys. Degree and cardinality describe the structure of a relation.
+    </p>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="page-nav">
+
+    <a href="q2.html">
+        &#8592; Previous: Q2
+    </a>
+
+    <a href="q4.html">
+        Next: Q4 &#8594;
+    </a>
+
+</nav>
+
+</div>
+
+</body>
+</html>
