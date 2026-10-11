@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,16 +27,16 @@
     <!-- QUESTION 2 -->
 
     <h1>
-        Q2. Design an ER Diagram for a Library Management System, identifying entities, attributes, keys, and relationships.
+        Q2. Design an ER Diagram for a Library Management System, Identifying Entities, Attributes, Keys, and Relationships.
     </h1>
 
     <p>
         An ER (Entity-Relationship) Diagram is a graphical representation of the structure of a database. It shows entities, their attributes, keys, and relationships between entities.
     </p>
 
-    <p>
-        <strong>ER Diagram of Library Management System:</strong>
-    </p>
+    <!-- ER DIAGRAM -->
+
+    <h2>ER Diagram of Library Management System</h2>
 
     <div class="diagram">
         <img
@@ -59,15 +60,18 @@
 
     <ul>
         <li>
-            <strong>BOOK:</strong> Represents books in the library.
+            <strong>BOOK:</strong>
+            Represents books in the library.
         </li>
 
         <li>
-            <strong>MEMBER:</strong> Represents people who borrow books.
+            <strong>MEMBER:</strong>
+            Represents people who borrow books.
         </li>
 
         <li>
-            <strong>PUBLISHER:</strong> Represents publishers of books.
+            <strong>PUBLISHER:</strong>
+            Represents publishers of books.
         </li>
     </ul>
 
@@ -85,15 +89,18 @@
 
     <ul>
         <li>
-            <strong>BOOK:</strong> Book_ID, Title, Author, Price
+            <strong>BOOK:</strong>
+            Book_ID, Title, Author, Price.
         </li>
 
         <li>
-            <strong>MEMBER:</strong> Member_ID, Name, Phone, Address
+            <strong>MEMBER:</strong>
+            Member_ID, Name, Phone, Address.
         </li>
 
         <li>
-            <strong>PUBLISHER:</strong> Pub_ID, Name, Address
+            <strong>PUBLISHER:</strong>
+            Pub_ID, Name, Address.
         </li>
     </ul>
 
@@ -106,20 +113,23 @@
     <h2>3. Keys</h2>
 
     <p>
-        A key is an attribute that uniquely identifies each entity record.
+        A key is an attribute or a set of attributes used to uniquely identify each entity.
     </p>
 
     <ul>
         <li>
-            <strong>Book_ID</strong> &rarr; Primary Key of BOOK
+            <strong>Book_ID:</strong>
+            Primary Key of BOOK.
         </li>
 
         <li>
-            <strong>Member_ID</strong> &rarr; Primary Key of MEMBER
+            <strong>Member_ID:</strong>
+            Primary Key of MEMBER.
         </li>
 
         <li>
-            <strong>Pub_ID</strong> &rarr; Primary Key of PUBLISHER
+            <strong>Pub_ID:</strong>
+            Primary Key of PUBLISHER.
         </li>
     </ul>
 
@@ -135,9 +145,9 @@
         A relationship shows how two or more entities are connected.
     </p>
 
-    <p>
-        <strong>BORROWS</strong>
-    </p>
+    <!-- BORROWS -->
+
+    <h3>BORROWS</h3>
 
     <ul>
         <li>
@@ -145,21 +155,23 @@
         </li>
 
         <li>
-            A member can borrow many books, and a book can be borrowed by many members over time.
+            A member can borrow many books, and the same book can be borrowed by different members at different times.
         </li>
 
         <li>
-            <strong>Cardinality:</strong> Many-to-Many (M:N)
+            <strong>Cardinality:</strong>
+            Many-to-Many (M:N).
         </li>
 
         <li>
-            <strong>Relationship attributes:</strong> Issue_Date, Return_Date
+            <strong>Relationship Attributes:</strong>
+            Issue_Date, Return_Date.
         </li>
     </ul>
 
-    <p>
-        <strong>PUBLISHED_BY</strong>
-    </p>
+    <!-- PUBLISHED_BY -->
+
+    <h3>PUBLISHED_BY</h3>
 
     <ul>
         <li>
@@ -171,7 +183,8 @@
         </li>
 
         <li>
-            <strong>Cardinality:</strong> Many-to-One (N:1)
+            <strong>Cardinality:</strong>
+            Many-to-One (N:1).
         </li>
     </ul>
 
