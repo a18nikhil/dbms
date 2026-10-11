@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,13 +36,17 @@
     </p>
 
     <p>
-        Three levels of Data Abstraction (ANSI/SPARC):
+        The Three-Level Architecture (ANSI/SPARC) divides the database into three levels.
     </p>
+
+    <!-- DIAGRAM -->
+
+    <h2>Diagram of Three-Level Architecture</h2>
 
     <div class="diagram">
         <img
             src="../q5.png"
-            alt="Three-Level Data Abstraction Architecture"
+            alt="Three-Level Database Architecture showing External, Conceptual, and Internal Levels"
             loading="lazy"
         >
     </div>
@@ -50,31 +55,47 @@
 
     <h2>1. Levels of Data Abstraction</h2>
 
-    <ol>
+    <!-- EXTERNAL LEVEL -->
 
-        <li>
-            <strong>External Level (View Level)</strong><br>
-            Highest level of abstraction.<br>
-            Shows only the data required by a particular user or application.<br>
-            Different users can have different views.<br>
-            Example: A student sees marks, while an administrator sees student and fee details.
-        </li>
+    <h3>1. External Level (View Level)</h3>
 
-        <li>
-            <strong>Conceptual Level (Logical Level)</strong><br>
-            Describes the complete logical structure of the database.<br>
-            Shows what data is stored and the relationships between data.<br>
-            It does not describe how data is physically stored.
-        </li>
+    <ul>
+        <li>Highest level of abstraction.</li>
+        <li>Shows only the data required by a particular user or application.</li>
+        <li>Different users can have different views.</li>
+    </ul>
 
-        <li>
-            <strong>Internal Level (Physical Level)</strong><br>
-            Lowest level of abstraction.<br>
-            Describes how data is actually stored in the computer.<br>
-            Includes files, indexes, pointers, and storage structures.
-        </li>
+    <p>
+        <strong>Example:</strong> A student sees marks, while an administrator sees student and fee details.
+    </p>
 
-    </ol>
+    <!-- CONCEPTUAL LEVEL -->
+
+    <h3>2. Conceptual Level (Logical Level)</h3>
+
+    <ul>
+        <li>Describes the complete logical structure of the database.</li>
+        <li>Shows what data is stored and the relationships between data.</li>
+        <li>It does not describe how data is physically stored.</li>
+    </ul>
+
+    <p>
+        <strong>Example:</strong> A college database contains STUDENT, COURSE, and MARKS tables connected through common keys.
+    </p>
+
+    <!-- INTERNAL LEVEL -->
+
+    <h3>3. Internal Level (Physical Level)</h3>
+
+    <ul>
+        <li>Lowest level of abstraction.</li>
+        <li>Describes how data is actually stored in the computer.</li>
+        <li>Includes files, indexes, pointers, and storage structures.</li>
+    </ul>
+
+    <p>
+        <strong>Example:</strong> Student records are stored in database files on disk, and indexes help retrieve them quickly.
+    </p>
 
     <!-- SECTION 2 -->
 
@@ -83,12 +104,22 @@
     <ul>
         <li>
             <strong>Schema:</strong>
-            Overall logical design or structure of the database. It changes rarely.
+            The overall logical design or structure of the database. It changes rarely.
+
+            <p>
+                <strong>Example:</strong>
+                <code>STUDENT(Student_ID, Name, Marks)</code>
+            </p>
         </li>
 
         <li>
             <strong>Instance:</strong>
-            Actual data stored in the database at a particular moment. It changes frequently.
+            The actual data stored in the database at a particular moment. It changes frequently.
+
+            <p>
+                <strong>Example:</strong>
+                <code>(101, Rahul, 85)</code>
+            </p>
         </li>
     </ul>
 
@@ -97,11 +128,25 @@
     <h2>3. Importance of Three-Level Architecture</h2>
 
     <ul>
-        <li>Hides unnecessary database details.</li>
-        <li>Provides different views for different users.</li>
-        <li>Makes database management easier.</li>
-        <li>Provides data independence.</li>
-        <li>Changes at one level can be made with less effect on other levels.</li>
+        <li>
+            <strong>Hides Unnecessary Details:</strong>
+            Users do not need to know how data is physically stored.
+        </li>
+
+        <li>
+            <strong>Provides Different Views:</strong>
+            Different users can access different parts of the same database.
+        </li>
+
+        <li>
+            <strong>Easy Database Management:</strong>
+            Makes the database easier to understand and manage.
+        </li>
+
+        <li>
+            <strong>Provides Data Independence:</strong>
+            Changes at one level can be made without necessarily affecting the higher levels.
+        </li>
     </ul>
 
 </main>
