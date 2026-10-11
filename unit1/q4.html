@@ -56,7 +56,7 @@
     </ul>
 
     <p>
-        Both operations must be completed. If an error occurs, the transaction should be cancelled to avoid incorrect data.
+        Both operations must be completed. If an error occurs, the transaction is rolled back, meaning its changes are undone to avoid incorrect data.
     </p>
 
     <!-- SECTION 2 -->
@@ -77,19 +77,28 @@
 
     <ul>
         <li>
-            <strong>Active:</strong> Transaction is being executed.
+            <strong>Active:</strong>
+            The transaction is being executed.
         </li>
 
         <li>
-            <strong>Committed:</strong> Transaction completed successfully and changes become permanent.
+            <strong>Partially Committed:</strong>
+            The final operation has been executed, but the transaction is not yet fully committed.
         </li>
 
         <li>
-            <strong>Failed:</strong> An error occurs during the transaction.
+            <strong>Committed:</strong>
+            The transaction has completed successfully, and its changes become permanent.
         </li>
 
         <li>
-            <strong>Aborted:</strong> Failed transaction is cancelled and its changes are undone.
+            <strong>Failed:</strong>
+            An error occurs, and the transaction cannot continue.
+        </li>
+
+        <li>
+            <strong>Aborted:</strong>
+            The failed transaction is rolled back, and its changes are undone.
         </li>
     </ul>
 
