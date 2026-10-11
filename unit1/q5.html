@@ -60,9 +60,17 @@
     <h3>1. External Level (View Level)</h3>
 
     <ul>
-        <li>Highest level of abstraction.</li>
-        <li>Shows only the data required by a particular user or application.</li>
-        <li>Different users can have different views.</li>
+        <li>
+            Highest level of abstraction.
+        </li>
+
+        <li>
+            Shows only the data required by a particular user or application.
+        </li>
+
+        <li>
+            Different users can have different views of the same database.
+        </li>
     </ul>
 
     <p>
@@ -74,9 +82,17 @@
     <h3>2. Conceptual Level (Logical Level)</h3>
 
     <ul>
-        <li>Describes the complete logical structure of the database.</li>
-        <li>Shows what data is stored and the relationships between data.</li>
-        <li>It does not describe how data is physically stored.</li>
+        <li>
+            Describes the complete logical structure of the database.
+        </li>
+
+        <li>
+            Shows what data is stored and the relationships between data.
+        </li>
+
+        <li>
+            Hides how data is physically stored.
+        </li>
     </ul>
 
     <p>
@@ -88,9 +104,17 @@
     <h3>3. Internal Level (Physical Level)</h3>
 
     <ul>
-        <li>Lowest level of abstraction.</li>
-        <li>Describes how data is actually stored in the computer.</li>
-        <li>Includes files, indexes, pointers, and storage structures.</li>
+        <li>
+            Lowest level of abstraction.
+        </li>
+
+        <li>
+            Describes how data is actually stored in the computer.
+        </li>
+
+        <li>
+            Includes files, indexes, pointers, and storage structures.
+        </li>
     </ul>
 
     <p>
@@ -99,53 +123,27 @@
 
     <!-- SECTION 2 -->
 
-    <h2>2. Schema and Instance</h2>
+    <h2>2. Importance of Three-Level Architecture</h2>
 
     <ul>
         <li>
-            <strong>Schema:</strong>
-            The overall logical design or structure of the database. It changes rarely.
-
-            <p>
-                <strong>Example:</strong>
-                <code>STUDENT(Student_ID, Name, Marks)</code>
-            </p>
+            <strong>Data Abstraction:</strong>
+            Hides unnecessary storage details from users.
         </li>
 
         <li>
-            <strong>Instance:</strong>
-            The actual data stored in the database at a particular moment. It changes frequently.
-
-            <p>
-                <strong>Example:</strong>
-                <code>(101, Rahul, 85)</code>
-            </p>
-        </li>
-    </ul>
-
-    <!-- SECTION 3 -->
-
-    <h2>3. Importance of Three-Level Architecture</h2>
-
-    <ul>
-        <li>
-            <strong>Hides Unnecessary Details:</strong>
-            Users do not need to know how data is physically stored.
+            <strong>Different User Views:</strong>
+            Allows different users to see only the information they need.
         </li>
 
         <li>
-            <strong>Provides Different Views:</strong>
-            Different users can access different parts of the same database.
+            <strong>Data Security:</strong>
+            Helps restrict access to sensitive information through user-specific views.
         </li>
 
         <li>
-            <strong>Easy Database Management:</strong>
-            Makes the database easier to understand and manage.
-        </li>
-
-        <li>
-            <strong>Provides Data Independence:</strong>
-            Changes at one level can be made without necessarily affecting the higher levels.
+            <strong>Data Independence:</strong>
+            Allows changes at one level without necessarily affecting higher levels.
         </li>
     </ul>
 
