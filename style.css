@@ -283,3 +283,35 @@ th {
         font-size: 12px;
     }
 }
+
+/* SQL Queries and Relational Schemas */
+
+.answer code,
+.answer .sql-query {
+    font-family: "Consolas", "DejaVu Sans Mono", "Courier New", monospace;
+    font-size: 0.98em;
+    font-weight: 600;
+    line-height: 1.8;
+    color: #173A56;
+    overflow-wrap: anywhere;
+}
+
+/* Inline SQL and Schema Text */
+
+.answer code {
+    background: #EEF2F5;
+    padding: 3px 5px;
+    border-radius: 4px;
+}
+
+/* SQL Query Blocks */
+
+.answer .sql-query {
+    background: #F0F3F5;
+    border-left: 3px solid var(--unit-color, #315F83);
+    padding: 12px 15px;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+
