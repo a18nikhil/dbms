@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,79 +36,134 @@
     <h2>1. Meaning of Data Model</h2>
 
     <p>
-        A data model is a collection of concepts and notations used to describe:
+        A Data Model is a collection of concepts used to describe how data is organized, stored, and related in a database.
+    </p>
+
+    <p>
+        It describes three main things:
     </p>
 
     <ul>
-        <li>Data</li>
-        <li>Relationships between data</li>
-        <li>Constraints on data</li>
+        <li>
+            <strong>Data:</strong>
+            Information stored in the database.
+        </li>
+
+        <li>
+            <strong>Relationships:</strong>
+            Connections between different data.
+        </li>
+
+        <li>
+            <strong>Constraints:</strong>
+            Rules that control the data.
+        </li>
     </ul>
 
     <p>
-        It provides a common language for database designers, developers, and users to understand how data is organized.
+        Data models help database designers understand and organize data properly.
     </p>
 
     <!-- SECTION 2 -->
 
     <h2>2. Evolution of Data Models</h2>
 
+    <p>
+        Data models have changed over time to organize and manage data more easily.
+    </p>
+
     <div class="diagram">
         <img
             src="../q8.png"
-            alt="Evolution of Data Models"
+            alt="Evolution of Data Models from File-Based to Hierarchical, Network, Relational, and Object-Oriented Models"
             loading="lazy"
         >
     </div>
-
-    <p>
-        Data models evolved over time to handle increasingly complex data and requirements.
-    </p>
 
     <!-- SECTION 3 -->
 
     <h2>3. Major Data Models</h2>
 
-    <ol>
+    <!-- FILE-BASED MODEL -->
 
-        <li>
-            <strong>File-Based Model</strong><br>
-            Used in the early 1960s.<br>
-            Data was stored in separate files.<br>
-            Managing relationships between files was difficult.
-        </li>
+    <h3>1. File-Based Model</h3>
 
-        <li>
-            <strong>Hierarchical Model</strong><br>
-            Developed during the 1960s–1970s.<br>
-            Organizes data in a tree-like structure.<br>
-            Supports parent-child relationships.<br>
-            One parent can have many children.
-        </li>
+    <ul>
+        <li>Used in the early 1960s.</li>
+        <li>Data was stored in separate files.</li>
+        <li>Managing relationships between files was difficult.</li>
+        <li>It often caused data duplication and inconsistency.</li>
+    </ul>
 
-        <li>
-            <strong>Network Model</strong><br>
-            Developed during the 1960s–1970s.<br>
-            Represents data using a network of relationships.<br>
-            Supports more complex relationships than the hierarchical model.
-        </li>
+    <p>
+        <strong>Example:</strong>
+        Student information stored in separate files.
+    </p>
 
-        <li>
-            <strong>Relational Model</strong><br>
-            Introduced by E. F. Codd in 1970.<br>
-            Organizes data into tables consisting of rows and columns.<br>
-            Uses keys and relationships to connect tables.<br>
-            Became the dominant traditional database model.
-        </li>
+    <!-- HIERARCHICAL MODEL -->
 
-        <li>
-            <strong>Object-Oriented Model</strong><br>
-            Became important during the 1980s–1990s.<br>
-            Represents data as objects, combining data and behavior.<br>
-            Useful for complex data and object-oriented applications.
-        </li>
+    <h3>2. Hierarchical Model</h3>
 
-    </ol>
+    <ul>
+        <li>Developed during the 1960s–1970s.</li>
+        <li>Organizes data in a tree-like structure.</li>
+        <li>Each child record has only one parent.</li>
+        <li>Supports One-to-Many (1:N) relationships.</li>
+    </ul>
+
+    <p>
+        <strong>Example:</strong>
+        One department has many students.
+    </p>
+
+    <!-- NETWORK MODEL -->
+
+    <h3>3. Network Model</h3>
+
+    <ul>
+        <li>Developed during the 1960s–1970s.</li>
+        <li>Organizes data using a network of connected records.</li>
+        <li>A child record can have multiple parents.</li>
+        <li>Supports Many-to-Many (M:N) relationships.</li>
+    </ul>
+
+    <p>
+        <strong>Example:</strong>
+        A student can enroll in many courses, and each course can have many students.
+    </p>
+
+    <!-- RELATIONAL MODEL -->
+
+    <h3>4. Relational Model</h3>
+
+    <ul>
+        <li>Introduced by E. F. Codd in 1970.</li>
+        <li>Organizes data into tables containing rows and columns.</li>
+        <li>Uses Primary Keys and Foreign Keys to connect tables.</li>
+        <li>SQL is used to store, retrieve, and manage data.</li>
+    </ul>
+
+    <p>
+        <strong>Example:</strong>
+        STUDENT and ENROLLMENT tables connected using Student_ID.
+    </p>
+
+    <!-- OBJECT-ORIENTED MODEL -->
+
+    <h3>5. Object-Oriented Model</h3>
+
+    <ul>
+        <li>Became important during the 1980s–1990s.</li>
+        <li>Stores data in the form of objects.</li>
+        <li>Objects contain both data (attributes) and operations (methods).</li>
+        <li>Useful for handling complex data and object-oriented applications.</li>
+    </ul>
+
+    <p>
+        <strong>Example:</strong>
+        A STUDENT object contains Student_ID, Name, and a
+        <code>ViewMarks()</code> method.
+    </p>
 
 </main>
 
