@@ -1,50 +1,324 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Q15 - Design SQL Queries to Perform Different Types of Joins (Inner, Left, Right, Full Outer) on Given Tables. | DBMS</title>
+
+<title>Q15 - Types of SQL Joins | DBMS</title>
+
 <link rel="stylesheet" href="../style.css">
+
+<style>
+/* Q15 SQL Query Formatting */
+
+.answer .q15-query {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+
+    margin: 10px 0 16px;
+    padding: 12px 14px;
+
+    background: #EEF2F5;
+    border-left: 4px solid #315F83;
+    border-radius: 5px;
+
+    text-align: left;
+    overflow: visible;
+}
+
+.answer .q15-query code {
+    display: block;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.8;
+    letter-spacing: 0;
+
+    color: #102A43;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    text-align: left;
+}
+
+/* Q15 Table Formatting */
+
+.answer .q15-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+</style>
+
 </head>
+
 <body class="unit2">
+
 <div class="container">
-<nav><a href="index.html" class="back-link">&#8592; Back to Unit II</a></nav>
+
+<!-- BACK TO UNIT -->
+
+<nav>
+    <a href="index.html" class="back-link">
+        &#8592; Back to Unit II
+    </a>
+</nav>
+
 <main class="answer">
-<h1>Q15. Design SQL Queries to Perform Different Types of Joins (Inner, Left, Right, Full Outer) on Given Tables.</h1>
-<p>A Join is used to combine related records from two tables based on a common attribute.</p>
-<p>Consider the following tables:</p>
-<div class="diagram"><img src="../q15-1.png" alt="STUDENT and COURSE Tables" loading="lazy"></div>
-<p>Here, Student_ID is the common attribute.</p>
-<h2>1. Inner Join</h2>
-<p>Inner Join returns only the records that have matching values in both tables.</p>
-<p><strong>Query:</strong></p>
-<div class="sql-query">SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT INNER JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;</div>
-<p><strong>Output:</strong></p>
-<div class="diagram"><img src="../q15-2.png" alt="Inner Join Output" loading="lazy"></div>
-<h2>2. Left Join</h2>
-<p>Left Join returns all records from the left table and matching records from the right table. If there is no match, NULL is returned.</p>
-<p><strong>Query:</strong></p>
-<div class="sql-query">SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT LEFT JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;</div>
-<p><strong>Output:</strong></p>
-<div class="diagram"><img src="../q15-3.png" alt="Left Join Output" loading="lazy"></div>
-<h2>3. Right Join</h2>
-<p>Right Join returns all records from the right table and matching records from the left table. If there is no match, NULL is returned.</p>
-<p><strong>Query:</strong></p>
-<div class="sql-query">SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT RIGHT JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;</div>
-<p><strong>Output:</strong></p>
-<div class="diagram"><img src="../q15-4.png" alt="Right Join Output" loading="lazy"></div>
-<h2>4. Full Outer Join</h2>
-<p>Full Outer Join returns all records from both tables. Matching records are combined, and unmatched records contain NULL values.</p>
-<p><strong>Query:</strong></p>
-<div class="sql-query">SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT FULL OUTER JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;</div>
-<p><strong>Output:</strong></p>
-<div class="diagram"><img src="../q15-5.png" alt="Full Outer Join Output" loading="lazy"></div>
+
+    <!-- QUESTION 15 -->
+
+    <h1>
+        Q15. Design SQL Queries to Perform Different Types of Joins (Inner, Left, Right, Full Outer) on Given Tables.
+    </h1>
+
+    <p>
+        A Join is used to combine related records from two tables based on a common column.
+    </p>
+
+    <!-- GIVEN TABLES -->
+
+    <h2>Consider the Following Tables</h2>
+
+    <h3>STUDENT</h3>
+
+    <div class="q15-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student_ID</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Rahul</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Priya</td>
+                </tr>
+                <tr>
+                    <td>103</td>
+                    <td>Amit</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>COURSE</h3>
+
+    <div class="q15-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student_ID</th>
+                    <th>Course_Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>DBMS</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Python</td>
+                </tr>
+                <tr>
+                    <td>104</td>
+                    <td>Java</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECTION 1 -->
+
+    <h2>1. Inner Join</h2>
+
+    <p>
+        Inner Join returns only the matching records from both tables.
+    </p>
+
+    <h3>SQL Query:</h3>
+
+    <div class="q15-query"><code>SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT INNER JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;</code></div>
+
+    <h3>Output:</h3>
+
+    <div class="q15-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Course_Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Rahul</td>
+                    <td>DBMS</td>
+                </tr>
+                <tr>
+                    <td>Priya</td>
+                    <td>Python</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECTION 2 -->
+
+    <h2>2. Left Join</h2>
+
+    <p>
+        Left Join returns all records from the left table and matching records from the right table. If no match exists, NULL is displayed.
+    </p>
+
+    <h3>SQL Query:</h3>
+
+    <div class="q15-query"><code>SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT LEFT JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;</code></div>
+
+    <h3>Output:</h3>
+
+    <div class="q15-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Course_Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Rahul</td>
+                    <td>DBMS</td>
+                </tr>
+                <tr>
+                    <td>Priya</td>
+                    <td>Python</td>
+                </tr>
+                <tr>
+                    <td>Amit</td>
+                    <td>NULL</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECTION 3 -->
+
+    <h2>3. Right Join</h2>
+
+    <p>
+        Right Join returns all records from the right table and matching records from the left table. If no match exists, NULL is displayed.
+    </p>
+
+    <h3>SQL Query:</h3>
+
+    <div class="q15-query"><code>SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT RIGHT JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;</code></div>
+
+    <h3>Output:</h3>
+
+    <div class="q15-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Course_Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Rahul</td>
+                    <td>DBMS</td>
+                </tr>
+                <tr>
+                    <td>Priya</td>
+                    <td>Python</td>
+                </tr>
+                <tr>
+                    <td>NULL</td>
+                    <td>Java</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECTION 4 -->
+
+    <h2>4. Full Outer Join</h2>
+
+    <p>
+        Full Outer Join returns all records from both tables. If no match exists, NULL is displayed.
+    </p>
+
+    <h3>SQL Query:</h3>
+
+    <div class="q15-query"><code>SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT FULL OUTER JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;</code></div>
+
+    <h3>Output:</h3>
+
+    <div class="q15-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Course_Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Rahul</td>
+                    <td>DBMS</td>
+                </tr>
+                <tr>
+                    <td>Priya</td>
+                    <td>Python</td>
+                </tr>
+                <tr>
+                    <td>Amit</td>
+                    <td>NULL</td>
+                </tr>
+                <tr>
+                    <td>NULL</td>
+                    <td>Java</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </main>
+
+<!-- BOTTOM NAVIGATION -->
+
 <nav class="page-nav">
-<a href="q14.html">&#8592; Previous: Q14</a>
-<a href="q16.html">Next: Q16 &#8594;</a>
+
+    <a href="q14.html">
+        &#8592; Previous: Q14
+    </a>
+
+    <a href="q16.html">
+        Next: Q16 &#8594;
+    </a>
+
 </nav>
+
 </div>
+
 </body>
 </html>
