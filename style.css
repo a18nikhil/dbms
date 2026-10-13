@@ -314,4 +314,30 @@ th {
     margin: 15px 0;
 }
 
+/* Relational Schema Formatting */
+
+.answer .relational-schema {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 12px 0;
+    padding: 12px 14px;
+
+    background: #F0F3F5;
+    border-left: 3px solid var(--unit-color, #315F83);
+    border-radius: 4px;
+
+    font-family: Consolas, "DejaVu Sans Mono", monospace;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.7;
+    letter-spacing: normal;
+    text-align: left;
+
+    color: #173A56;
+    overflow-wrap: anywhere;
+    white-space: normal;
+}
+
+
 
