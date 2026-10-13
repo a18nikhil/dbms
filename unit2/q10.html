@@ -1,41 +1,217 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Q10 - Explain the Logical View of Data and the Concept of Keys in a Relational Database with Examples. | DBMS</title>
+
+<title>Q10 - Logical View of Data and Keys | DBMS</title>
+
 <link rel="stylesheet" href="../style.css">
 </head>
-<body class="unit2">
-<div class="container">
-<nav><a href="index.html" class="back-link">&#8592; Back to Unit II</a></nav>
-<main class="answer">
-<h1>Q10. Explain the Logical View of Data and the Concept of Keys in a Relational Database with Examples.</h1>
 
-<h2>1. Logical View of Data</h2>
-<p>The logical view of data describes how data is organized in a database as tables, rows, and columns, without showing how the data is physically stored on disk.</p>
-<p>For example, in a college application, users can see student IDs, names, marks, and other required information. They do not need to know where or how these records are physically stored.</p>
-<h2>2. Concept of Keys in a Relational Database</h2>
-<p>A key is an attribute or a set of attributes used to uniquely identify a record in a relational table and to establish relationships between tables.</p>
-<p>Consider the following STUDENT table:</p>
-<div class="diagram"><img src="../q10-1.png" alt="STUDENT Table" loading="lazy"></div>
-<ol>
-<li><strong>Super Key</strong><br>A Super Key is an attribute or combination of attributes that can uniquely identify a record in a table.<br>Example: Student_ID can uniquely identify a student. A combination such as Student_ID + Name can also uniquely identify a student. Therefore, both are Super Keys.</li>
-<li><strong>Candidate Key</strong><br>A Candidate Key is a minimal Super Key, meaning it uniquely identifies a record without any unnecessary attribute.<br>Example: If both Student_ID and Email are unique, then Student_ID and Email can be Candidate Keys.</li>
-<li><strong>Primary Key</strong><br>A Primary Key is the Candidate Key selected as the main identifier of records in a table. It cannot contain NULL values.<br>Example: Student_ID can be selected as the Primary Key of the STUDENT table.</li>
-<li><strong>Alternate Key</strong><br>An Alternate Key is a Candidate Key that is not selected as the Primary Key.<br>Example: If Student_ID is selected as the Primary Key and Email is another Candidate Key, then Email becomes the Alternate Key.</li>
-<li><strong>Foreign Key</strong><br>A Foreign Key is an attribute in one table that refers to the Primary Key of another table. It is used to establish a relationship between tables.</li>
-</ol>
-<div class="diagram"><img src="../q10-2.png" alt="Foreign Key Relationship" loading="lazy"></div>
-<p>Here, Student_ID in the ENROLLMENT table refers to Student_ID in the STUDENT table.</p>
-<ol start="6"><li><strong>Composite Key</strong><br>A Composite Key is a key consisting of two or more attributes that together uniquely identify a record.</li></ol>
-<div class="diagram"><img src="../q10-3.png" alt="Composite Key Example" loading="lazy"></div>
-<p>Here, Student_ID alone is not unique and Course_ID alone is not unique. Together, Student_ID and Course_ID uniquely identify an enrollment record. Therefore, they form a Composite Key.</p>
-</main>
-<nav class="page-nav">
-<a href="index.html">&#8592; Unit II</a>
-<a href="q11.html">Next: Q11 &#8594;</a>
+<body class="unit2">
+
+<div class="container">
+
+<!-- BACK TO UNIT -->
+
+<nav>
+    <a href="index.html" class="back-link">
+        &#8592; Back to Unit II
+    </a>
 </nav>
+
+<main class="answer">
+
+    <!-- QUESTION 10 -->
+
+    <h1>
+        Q10. Explain the Logical View of Data and the Concept of Keys in a Relational Database with Examples.
+    </h1>
+
+    <!-- SECTION 1 -->
+
+    <h2>1. Logical View of Data</h2>
+
+    <p>
+        The Logical View of Data describes how data is organized into tables in a relational database without showing how it is physically stored on disk.
+    </p>
+
+    <h3>Example: STUDENT Table</h3>
+
+    <div class="diagram">
+        <img
+            src="../q10-1.png"
+            alt="STUDENT table showing Student_ID, Name, and Email"
+            loading="lazy"
+        >
+    </div>
+
+    <!-- SECTION 2 -->
+
+    <h2>2. Main Components of the Logical View</h2>
+
+    <ul>
+        <li>
+            <strong>Relation:</strong>
+            A table containing rows and columns.
+            Example: STUDENT.
+        </li>
+
+        <li>
+            <strong>Tuple:</strong>
+            A single row in a table.
+            Example: (101, Rahul, rahul@gmail.com).
+        </li>
+
+        <li>
+            <strong>Attribute:</strong>
+            A column in a table.
+            Example: Student_ID, Name.
+        </li>
+
+        <li>
+            <strong>Domain:</strong>
+            The set of allowed values for an attribute.
+            Example: Marks can be between 0 and 100.
+        </li>
+
+        <li>
+            <strong>Degree:</strong>
+            The number of columns in a table.
+            Example: STUDENT has degree 3.
+        </li>
+
+        <li>
+            <strong>Cardinality:</strong>
+            The number of rows in a table.
+            Example: STUDENT has cardinality 3.
+        </li>
+    </ul>
+
+    <!-- SECTION 3 -->
+
+    <h2>3. Concept of Keys</h2>
+
+    <p>
+        A Key is an attribute or a combination of attributes used to uniquely identify records in a relational table.
+    </p>
+
+    <p>
+        Keys also help prevent duplicate records and establish relationships between different tables.
+    </p>
+
+    <!-- SECTION 4 -->
+
+    <h2>4. Types of Keys</h2>
+
+    <!-- SUPER KEY -->
+
+    <h3>1. Super Key</h3>
+
+    <p>
+        A Super Key is an attribute or combination of attributes that uniquely identifies a record in a table.
+    </p>
+
+    <p>
+        <strong>Example:</strong>
+        Student_ID and (Student_ID, Name) are Super Keys.
+    </p>
+
+    <!-- CANDIDATE KEY -->
+
+    <h3>2. Candidate Key</h3>
+
+    <p>
+        A Candidate Key is a minimal Super Key that uniquely identifies a record without any unnecessary attribute.
+    </p>
+
+    <p>
+        <strong>Example:</strong>
+        Student_ID and Email can be Candidate Keys if both are unique.
+    </p>
+
+    <!-- PRIMARY KEY -->
+
+    <h3>3. Primary Key</h3>
+
+    <p>
+        A Primary Key is the Candidate Key selected as the main identifier of records in a table. It cannot contain NULL values.
+    </p>
+
+    <p>
+        <strong>Example:</strong>
+        Student_ID is the Primary Key of the STUDENT table.
+    </p>
+
+    <!-- ALTERNATE KEY -->
+
+    <h3>4. Alternate Key</h3>
+
+    <p>
+        An Alternate Key is a Candidate Key that is not selected as the Primary Key.
+    </p>
+
+    <p>
+        <strong>Example:</strong>
+        If Student_ID is the Primary Key, Email can be an Alternate Key.
+    </p>
+
+    <!-- FOREIGN KEY -->
+
+    <h3>5. Foreign Key</h3>
+
+    <p>
+        A Foreign Key is an attribute in one table that refers to the Primary Key of another table. It connects related tables.
+    </p>
+
+    <p>
+        <strong>Example:</strong>
+        Student_ID in the ENROLLMENT table refers to Student_ID in the STUDENT table.
+    </p>
+
+    <h3>Diagram: Primary Key and Foreign Key</h3>
+
+    <div class="diagram">
+        <img
+            src="../q10-2.png"
+            alt="STUDENT and ENROLLMENT tables showing the Primary Key and Foreign Key relationship"
+            loading="lazy"
+        >
+    </div>
+
+    <!-- COMPOSITE KEY -->
+
+    <h3>6. Composite Key</h3>
+
+    <p>
+        A Composite Key consists of two or more attributes that together uniquely identify a record.
+    </p>
+
+    <p>
+        <strong>Example:</strong>
+        (Student_ID, Course_ID) together form a Composite Key in the ENROLLMENT table.
+    </p>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="page-nav">
+
+    <a href="index.html">
+        &#8592; Unit II
+    </a>
+
+    <a href="q11.html">
+        Next: Q11 &#8594;
+    </a>
+
+</nav>
+
 </div>
+
 </body>
 </html>
