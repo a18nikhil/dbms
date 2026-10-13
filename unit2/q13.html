@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,15 +21,15 @@
     height: auto;
     min-height: 0;
 
-    margin: 10px 0 16px;
+    margin: 10px 0 14px;
     padding: 12px 14px;
 
     background: #EEF2F5;
     border-left: 4px solid #315F83;
     border-radius: 5px;
 
-    overflow: visible;
     text-align: left;
+    overflow: visible;
 }
 
 .answer .q13-query code {
@@ -43,15 +44,15 @@
     font-weight: 700;
     line-height: 1.8;
     letter-spacing: 0;
-    color: #102A43;
 
-    white-space: pre-wrap;
+    color: #102A43;
+    white-space: normal;
     overflow-wrap: anywhere;
     word-break: normal;
     text-align: left;
 }
 
-/* Mobile-Friendly Tables */
+/* Q13 Table Formatting */
 
 .answer .q13-table {
     width: 100%;
@@ -103,6 +104,7 @@
                     <th>Salary</th>
                 </tr>
             </thead>
+
             <tbody>
                 <tr>
                     <td>101</td>
@@ -110,24 +112,28 @@
                     <td>IT</td>
                     <td>30000</td>
                 </tr>
+
                 <tr>
                     <td>102</td>
                     <td>Priya</td>
                     <td>HR</td>
                     <td>25000</td>
                 </tr>
+
                 <tr>
                     <td>103</td>
                     <td>Amit</td>
                     <td>IT</td>
                     <td>40000</td>
                 </tr>
+
                 <tr>
                     <td>104</td>
                     <td>Neha</td>
                     <td>HR</td>
                     <td>35000</td>
                 </tr>
+
                 <tr>
                     <td>105</td>
                     <td>Raj</td>
@@ -227,9 +233,7 @@
 
     <h3>SQL Query:</h3>
 
-    <div class="q13-query"><code>SELECT Department, SUM(Salary) AS Total_Salary
-FROM EMPLOYEE
-GROUP BY Department;</code></div>
+    <div class="q13-query"><code>SELECT Department, SUM(Salary) AS Total_Salary FROM EMPLOYEE GROUP BY Department;</code></div>
 
     <h3>Output:</h3>
 
@@ -241,11 +245,13 @@ GROUP BY Department;</code></div>
                     <th>Total_Salary</th>
                 </tr>
             </thead>
+
             <tbody>
                 <tr>
                     <td>IT</td>
                     <td>120000</td>
                 </tr>
+
                 <tr>
                     <td>HR</td>
                     <td>60000</td>
@@ -269,10 +275,7 @@ GROUP BY Department;</code></div>
 
     <h3>SQL Query:</h3>
 
-    <div class="q13-query"><code>SELECT Department, SUM(Salary) AS Total_Salary
-FROM EMPLOYEE
-GROUP BY Department
-HAVING SUM(Salary) &gt; 70000;</code></div>
+    <div class="q13-query"><code>SELECT Department, SUM(Salary) AS Total_Salary FROM EMPLOYEE GROUP BY Department HAVING SUM(Salary) &gt; 70000;</code></div>
 
     <h3>Output:</h3>
 
@@ -284,6 +287,7 @@ HAVING SUM(Salary) &gt; 70000;</code></div>
                     <th>Total_Salary</th>
                 </tr>
             </thead>
+
             <tbody>
                 <tr>
                     <td>IT</td>
