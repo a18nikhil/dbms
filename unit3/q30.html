@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,79 +11,22 @@
 <link rel="stylesheet" href="../style.css">
 
 <style>
-/* Q30 Wait-For Graph */
+/* Q30 Diagram Formatting */
 
 .answer .q30-diagram {
-    box-sizing: border-box;
     width: 100%;
     max-width: 100%;
-    margin: 16px 0 22px;
-    padding: 20px 12px;
-
-    background: #F3F6F8;
-    border: 1px solid #D8E1E8;
-    border-radius: 6px;
-
+    margin: 18px auto 24px;
     text-align: center;
 }
 
-.answer .q30-graph {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-}
-
-.answer .q30-node {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 65px;
-    height: 65px;
-
-    background: #FFFFFF;
-    border: 2px solid #315F83;
-    border-radius: 50%;
-
-    color: #102A43;
-    font-size: 17px;
-    font-weight: 700;
-}
-
-.answer .q30-arrows {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-
-    color: #315F83;
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1;
-}
-
-.answer .q30-diagram p {
-    margin: 14px 0 0;
-    color: #334155;
-    font-size: 14px;
-    text-align: center;
-}
-
-@media (max-width: 480px) {
-    .answer .q30-diagram {
-        padding: 16px 10px;
-    }
-
-    .answer .q30-graph {
-        gap: 14px;
-    }
-
-    .answer .q30-node {
-        width: 55px;
-        height: 55px;
-        font-size: 15px;
-    }
+.answer .q30-diagram img {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
 }
 </style>
 
@@ -171,29 +115,11 @@
     <!-- DEADLOCK DIAGRAM -->
 
     <div class="q30-diagram">
-
-        <div class="q30-graph">
-
-            <div class="q30-node">
-                T1
-            </div>
-
-            <div class="q30-arrows">
-                <span>&#8594;</span>
-                <span>&#8592;</span>
-            </div>
-
-            <div class="q30-node">
-                T2
-            </div>
-
-        </div>
-
-        <p>
-            T1 waits for T2, and T2 waits for T1.
-            A cycle exists, indicating a deadlock.
-        </p>
-
+        <img
+            src="../q30.png"
+            alt="Wait-For Graph showing a deadlock between transactions T1 and T2"
+            loading="lazy"
+        >
     </div>
 
     <p>
