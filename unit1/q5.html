@@ -31,50 +31,69 @@
         Q5. Discuss the Concept of "View of Data" in a Database System with the Help of Three-Level Architecture.
     </h1>
 
+    <!-- SECTION 1 -->
+
+    <h2>1. Introduction</h2>
+
     <p>
         View of Data means showing database information at different levels of abstraction. It hides unnecessary details and allows users to see only the data they need.
     </p>
 
     <p>
-        The Three-Level Architecture (ANSI/SPARC) divides the database into three levels.
+        The Three-Level Architecture (ANSI/SPARC) divides the database into three levels:
     </p>
 
-    <!-- DIAGRAM -->
+    <ul>
+        <li>
+            Internal Level (Physical Level)
+        </li>
 
-    <h2>Diagram of Three-Level Architecture</h2>
+        <li>
+            Conceptual Level (Logical Level)
+        </li>
+
+        <li>
+            External Level (View Level)
+        </li>
+    </ul>
+
+    <!-- SECTION 2 -->
+
+    <h2>2. Diagram: Three-Level Architecture</h2>
 
     <div class="diagram">
         <img
             src="../q5.png"
-            alt="Three-Level Database Architecture showing External, Conceptual, and Internal Levels"
+            alt="Three-Level Database Architecture showing Internal, Conceptual, and External Levels"
             loading="lazy"
         >
     </div>
 
-    <!-- SECTION 1 -->
+    <!-- SECTION 3 -->
 
-    <h2>1. Levels of Data Abstraction</h2>
+    <h2>3. Levels of Data Abstraction</h2>
 
-    <!-- EXTERNAL LEVEL -->
+    <!-- INTERNAL LEVEL -->
 
-    <h3>1. External Level (View Level)</h3>
+    <h3>1. Internal Level (Physical Level)</h3>
 
     <ul>
         <li>
-            Highest level of abstraction.
+            It is the lowest level of abstraction.
         </li>
 
         <li>
-            Shows only the data required by a particular user or application.
+            It describes how data is actually stored in the computer.
         </li>
 
         <li>
-            Different users can have different views of the same database.
+            It includes files, indexes, pointers, and storage structures.
         </li>
     </ul>
 
     <p>
-        <strong>Example:</strong> A student sees marks, while an administrator sees student and fee details.
+        <strong>Example:</strong>
+        Student records are stored in database files on disk, and indexes help retrieve them quickly.
     </p>
 
     <!-- CONCEPTUAL LEVEL -->
@@ -83,47 +102,53 @@
 
     <ul>
         <li>
-            Describes the complete logical structure of the database.
+            It is the middle level of abstraction.
         </li>
 
         <li>
-            Shows what data is stored and the relationships between data.
+            It describes the complete logical structure of the database.
         </li>
 
         <li>
-            Hides how data is physically stored.
+            It shows what data is stored and the relationships between data.
+        </li>
+
+        <li>
+            It hides how data is physically stored.
         </li>
     </ul>
 
     <p>
-        <strong>Example:</strong> A college database contains STUDENT, COURSE, and MARKS tables connected through common keys.
+        <strong>Example:</strong>
+        A college database contains STUDENT, COURSE, and MARKS tables connected through common keys.
     </p>
 
-    <!-- INTERNAL LEVEL -->
+    <!-- EXTERNAL LEVEL -->
 
-    <h3>3. Internal Level (Physical Level)</h3>
+    <h3>3. External Level (View Level)</h3>
 
     <ul>
         <li>
-            Lowest level of abstraction.
+            It is the highest level of abstraction.
         </li>
 
         <li>
-            Describes how data is actually stored in the computer.
+            It shows only the data required by a particular user or application.
         </li>
 
         <li>
-            Includes files, indexes, pointers, and storage structures.
+            Different users can have different views of the same database.
         </li>
     </ul>
 
     <p>
-        <strong>Example:</strong> Student records are stored in database files on disk, and indexes help retrieve them quickly.
+        <strong>Example:</strong>
+        A student sees their marks, while an administrator sees student and fee details.
     </p>
 
-    <!-- SECTION 2 -->
+    <!-- SECTION 4 -->
 
-    <h2>2. Importance of Three-Level Architecture</h2>
+    <h2>4. Importance of Three-Level Architecture</h2>
 
     <ul>
         <li>
