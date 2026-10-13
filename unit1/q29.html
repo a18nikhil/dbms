@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Q29 - ER Model of University Management System | DBMS</title>
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="unit1">
+
+<div class="container">
+
+<!-- BACK TO UNIT -->
+
+<nav>
+    <a href="index.html" class="back-link">
+        &#8592; Back to Unit I
+    </a>
+</nav>
+
+<main class="answer">
+
+    <!-- QUESTION 29 -->
+
+    <h1>
+        Q29. Discuss the ER Model. Construct an ER Diagram for a University Management System, Clearly Showing Entities, Attributes, and Relationships.
+    </h1>
+
+    <!-- SECTION 1 -->
+
+    <h2>1. Introduction</h2>
+
+    <p>
+        The Entity-Relationship (ER) Model is a database model used to represent entities, their attributes, and the relationships between them.
+    </p>
+
+    <p>
+        It was introduced by Peter Chen in 1976 and is used to design the structure of a database.
+    </p>
+
+    <!-- SECTION 2 -->
+
+    <h2>2. ER Diagram of University Management System</h2>
+
+    <div class="diagram">
+        <img
+            src="../q29.png"
+            alt="ER Diagram of University Management System showing STUDENT, COURSE, TEACHER, their attributes, primary keys, and relationships"
+            loading="lazy"
+        >
+    </div>
+
+    <!-- SECTION 3 -->
+
+    <h2>3. Main Components of the ER Model</h2>
+
+    <!-- ENTITY -->
+
+    <h3>1. Entity</h3>
+
+    <p>
+        An entity is a real-world object about which data is stored.
+    </p>
+
+    <ul>
+        <li>
+            <strong>STUDENT:</strong>
+            Represents students studying at the university.
+        </li>
+
+        <li>
+            <strong>COURSE:</strong>
+            Represents courses offered by the university.
+        </li>
+
+        <li>
+            <strong>TEACHER:</strong>
+            Represents teachers who teach courses.
+        </li>
+    </ul>
+
+    <p>
+        In an ER diagram, an entity is represented by a rectangle.
+    </p>
+
+    <!-- ATTRIBUTES -->
+
+    <h3>2. Attributes</h3>
+
+    <p>
+        An attribute is a property that describes an entity.
+    </p>
+
+    <ul>
+        <li>
+            <strong>STUDENT:</strong>
+            Student_ID, Name, Email.
+        </li>
+
+        <li>
+            <strong>COURSE:</strong>
+            Course_ID, Course_Name, Credits.
+        </li>
+
+        <li>
+            <strong>TEACHER:</strong>
+            Teacher_ID, Name.
+        </li>
+    </ul>
+
+    <p>
+        In an ER diagram, an attribute is represented by an oval.
+    </p>
+
+    <!-- PRIMARY KEYS -->
+
+    <h3>3. Primary Keys</h3>
+
+    <p>
+        A primary key is an attribute that uniquely identifies each record of an entity.
+    </p>
+
+    <ul>
+        <li>
+            <strong>Student_ID:</strong>
+            Primary Key of STUDENT.
+        </li>
+
+        <li>
+            <strong>Course_ID:</strong>
+            Primary Key of COURSE.
+        </li>
+
+        <li>
+            <strong>Teacher_ID:</strong>
+            Primary Key of TEACHER.
+        </li>
+    </ul>
+
+    <p>
+        In an ER diagram, a primary key is shown by underlining the attribute name.
+    </p>
+
+    <!-- RELATIONSHIPS -->
+
+    <h3>4. Relationships</h3>
+
+    <p>
+        A relationship shows how two entities are connected.
+    </p>
+
+    <!-- ENROLLS -->
+
+    <h3>ENROLLS (STUDENT – COURSE)</h3>
+
+    <ul>
+        <li>
+            A student can enroll in many courses.
+        </li>
+
+        <li>
+            A course can have many students.
+        </li>
+
+        <li>
+            <strong>Cardinality:</strong>
+            Many-to-Many (M:N).
+        </li>
+    </ul>
+
+    <!-- TEACHES -->
+
+    <h3>TEACHES (TEACHER – COURSE)</h3>
+
+    <ul>
+        <li>
+            A teacher can teach many courses.
+        </li>
+
+        <li>
+            Each course is taught by one teacher.
+        </li>
+
+        <li>
+            <strong>Cardinality:</strong>
+            One-to-Many (1:N).
+        </li>
+    </ul>
+
+    <p>
+        In an ER diagram, a relationship is represented by a diamond.
+    </p>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="page-nav">
+
+    <a href="q27.html">
+        &#8592; Previous: Q27
+    </a>
+
+    <a href="q31.html">
+        Next: Q31 &#8594;
+    </a>
+
+</nav>
+
+</div>
+
+</body>
+</html>
