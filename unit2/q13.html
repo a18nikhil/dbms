@@ -1,67 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Q13 - Write SQL Queries Using Aggregate Functions (SUM, AVG, COUNT, MAX, MIN) with GROUP BY and HAVING Clauses. | DBMS</title>
+
+<title>Q13 - Aggregate Functions, GROUP BY and HAVING | DBMS</title>
+
 <link rel="stylesheet" href="../style.css">
+
+<style>
+/* Q13 SQL Query Formatting */
+
+.answer .q13-query {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+
+    margin: 10px 0 16px;
+    padding: 12px 14px;
+
+    background: #EEF2F5;
+    border-left: 4px solid #315F83;
+    border-radius: 5px;
+
+    overflow: visible;
+    text-align: left;
+}
+
+.answer .q13-query code {
+    display: block;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.8;
+    letter-spacing: 0;
+    color: #102A43;
+
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    text-align: left;
+}
+
+/* Mobile-Friendly Tables */
+
+.answer .q13-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+</style>
+
 </head>
+
 <body class="unit2">
+
 <div class="container">
-<nav><a href="index.html" class="back-link">&#8592; Back to Unit II</a></nav>
+
+<!-- BACK TO UNIT -->
+
+<nav>
+    <a href="index.html" class="back-link">
+        &#8592; Back to Unit II
+    </a>
+</nav>
+
 <main class="answer">
-<h1>Q13. Write SQL Queries Using Aggregate Functions (SUM, AVG, COUNT, MAX, MIN) with GROUP BY and HAVING Clauses.</h1>
-<p>Aggregate Functions perform calculations on a group of values and return a single result.</p>
-<p>Consider the following STUDENT table:</p>
-<div class="diagram"><img src="../q13-1.png" alt="STUDENT Table" loading="lazy"></div>
-<h2>1. SUM()</h2>
-<p>SUM() calculates the total of numeric values.</p>
-<p><strong>Query:</strong></p>
-<div class="sql-query">SELECT SUM(Marks) AS Total_Marks FROM STUDENT;</div>
-<p><strong>Output:</strong></p>
-<div class="diagram"><img src="../q13-2.png" alt="SUM Output" loading="lazy"></div>
-<h2>2. AVG()</h2>
-<p>AVG() calculates the average of numeric values.</p>
-<p><strong>Query:</strong></p>
-<div class="sql-query">SELECT AVG(Marks) AS Average_Marks FROM STUDENT;</div>
-<p><strong>Output:</strong></p>
-<div class="diagram"><img src="../q13-3.png" alt="AVG Output" loading="lazy"></div>
-<h2>3. COUNT()</h2>
-<p>COUNT() returns the number of records.</p>
-<p><strong>Query:</strong></p>
-<div class="sql-query">SELECT COUNT(*) AS Total_Students FROM STUDENT;</div>
-<p><strong>Output:</strong></p>
-<div class="diagram"><img src="../q13-4.png" alt="COUNT Output" loading="lazy"></div>
-<h2>4. MAX()</h2>
-<p>MAX() returns the highest value.</p>
-<p><strong>Query:</strong></p>
-<div class="sql-query">SELECT MAX(Marks) AS Highest_Marks FROM STUDENT;</div>
-<p><strong>Output:</strong></p>
-<div class="diagram"><img src="../q13-5.png" alt="MAX Output" loading="lazy"></div>
-<h2>5. MIN()</h2>
-<p>MIN() returns the lowest value.</p>
-<p><strong>Query:</strong></p>
-<div class="sql-query">SELECT MIN(Marks) AS Lowest_Marks FROM STUDENT;</div>
-<p><strong>Output:</strong></p>
-<div class="diagram"><img src="../q13-6.png" alt="MIN Output" loading="lazy"></div>
-<h2>6. GROUP BY Clause</h2>
-<p>GROUP BY is used to group rows having the same value and apply aggregate functions to each group.</p>
-<p><strong>Query:</strong></p>
-<div class="sql-query">SELECT Branch, AVG(Marks) AS Avg_Marks FROM STUDENT GROUP BY Branch;</div>
-<p><strong>Output:</strong></p>
-<div class="diagram"><img src="../q13-7.png" alt="GROUP BY Output" loading="lazy"></div>
-<h2>7. HAVING Clause</h2>
-<p>HAVING is used to filter groups after GROUP BY based on a condition.</p>
-<p><strong>Query:</strong></p>
-<div class="sql-query">SELECT Branch, AVG(Marks) AS Avg_Marks FROM STUDENT GROUP BY Branch HAVING AVG(Marks) &gt; 80;</div>
-<p><strong>Output:</strong></p>
-<div class="diagram"><img src="../q13-8.png" alt="HAVING Output" loading="lazy"></div>
+
+    <!-- QUESTION 13 -->
+
+    <h1>
+        Q13. Write SQL Queries Using Aggregate Functions (SUM, AVG, COUNT, MAX, MIN) with GROUP BY and HAVING Clauses.
+    </h1>
+
+    <p>
+        Aggregate Functions are SQL functions used to perform calculations on multiple rows and return a single result.
+    </p>
+
+    <!-- SECTION 1 -->
+
+    <h2>1. Consider the Following Table</h2>
+
+    <h3>EMPLOYEE</h3>
+
+    <div class="q13-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Emp_ID</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Rahul</td>
+                    <td>IT</td>
+                    <td>30000</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Priya</td>
+                    <td>HR</td>
+                    <td>25000</td>
+                </tr>
+                <tr>
+                    <td>103</td>
+                    <td>Amit</td>
+                    <td>IT</td>
+                    <td>40000</td>
+                </tr>
+                <tr>
+                    <td>104</td>
+                    <td>Neha</td>
+                    <td>HR</td>
+                    <td>35000</td>
+                </tr>
+                <tr>
+                    <td>105</td>
+                    <td>Raj</td>
+                    <td>IT</td>
+                    <td>50000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECTION 2 -->
+
+    <h2>2. Aggregate Functions</h2>
+
+    <!-- SUM -->
+
+    <h3>a) SUM()</h3>
+
+    <p>
+        Calculates the total of values.
+    </p>
+
+    <div class="q13-query"><code>SELECT SUM(Salary) FROM EMPLOYEE;</code></div>
+
+    <p>
+        <strong>Output:</strong> 180000
+    </p>
+
+    <!-- AVG -->
+
+    <h3>b) AVG()</h3>
+
+    <p>
+        Calculates the average of values.
+    </p>
+
+    <div class="q13-query"><code>SELECT AVG(Salary) FROM EMPLOYEE;</code></div>
+
+    <p>
+        <strong>Output:</strong> 36000
+    </p>
+
+    <!-- COUNT -->
+
+    <h3>c) COUNT()</h3>
+
+    <p>
+        Counts the number of rows.
+    </p>
+
+    <div class="q13-query"><code>SELECT COUNT(*) FROM EMPLOYEE;</code></div>
+
+    <p>
+        <strong>Output:</strong> 5
+    </p>
+
+    <!-- MAX -->
+
+    <h3>d) MAX()</h3>
+
+    <p>
+        Finds the highest value.
+    </p>
+
+    <div class="q13-query"><code>SELECT MAX(Salary) FROM EMPLOYEE;</code></div>
+
+    <p>
+        <strong>Output:</strong> 50000
+    </p>
+
+    <!-- MIN -->
+
+    <h3>e) MIN()</h3>
+
+    <p>
+        Finds the lowest value.
+    </p>
+
+    <div class="q13-query"><code>SELECT MIN(Salary) FROM EMPLOYEE;</code></div>
+
+    <p>
+        <strong>Output:</strong> 25000
+    </p>
+
+    <!-- SECTION 3 -->
+
+    <h2>3. GROUP BY Clause</h2>
+
+    <p>
+        The GROUP BY clause groups rows having the same value in a column.
+    </p>
+
+    <p>
+        <strong>Example:</strong>
+        Find the total salary of each department.
+    </p>
+
+    <h3>SQL Query:</h3>
+
+    <div class="q13-query"><code>SELECT Department, SUM(Salary) AS Total_Salary
+FROM EMPLOYEE
+GROUP BY Department;</code></div>
+
+    <h3>Output:</h3>
+
+    <div class="q13-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Department</th>
+                    <th>Total_Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>IT</td>
+                    <td>120000</td>
+                </tr>
+                <tr>
+                    <td>HR</td>
+                    <td>60000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECTION 4 -->
+
+    <h2>4. HAVING Clause</h2>
+
+    <p>
+        The HAVING clause filters groups based on a condition.
+    </p>
+
+    <p>
+        <strong>Example:</strong>
+        Display departments whose total salary is greater than 70000.
+    </p>
+
+    <h3>SQL Query:</h3>
+
+    <div class="q13-query"><code>SELECT Department, SUM(Salary) AS Total_Salary
+FROM EMPLOYEE
+GROUP BY Department
+HAVING SUM(Salary) &gt; 70000;</code></div>
+
+    <h3>Output:</h3>
+
+    <div class="q13-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Department</th>
+                    <th>Total_Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>IT</td>
+                    <td>120000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </main>
+
+<!-- BOTTOM NAVIGATION -->
+
 <nav class="page-nav">
-<a href="q12.html">&#8592; Previous: Q12</a>
-<a href="q14.html">Next: Q14 &#8594;</a>
+
+    <a href="q12.html">
+        &#8592; Previous: Q12
+    </a>
+
+    <a href="q14.html">
+        Next: Q14 &#8594;
+    </a>
+
 </nav>
+
 </div>
+
 </body>
 </html>
