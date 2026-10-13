@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Q18 - ACID Properties of a Transaction | DBMS</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+/* Q18 Diagram Formatting */
+
+.answer .q18-diagram {
+    width: 100%;
+    max-width: 100%;
+    margin: 18px auto 24px;
+    text-align: center;
+}
+
+.answer .q18-diagram img {
+    display: block;
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
+</style>
+
+</head>
+
+<body class="unit3">
+
+<div class="container">
+
+<!-- BACK TO UNIT III -->
+
+<nav>
+    <a href="index.html" class="back-link">
+        &#8592; Back to Unit III
+    </a>
+</nav>
+
+<main class="answer">
+
+    <!-- QUESTION 18 -->
+
+    <h1>
+        Q18. State the ACID Properties of a Transaction with Suitable Examples.
+    </h1>
+
+    <p>
+        ACID Properties are four important properties of a database transaction that ensure data remains correct and reliable.
+    </p>
+
+    <p>
+        ACID stands for Atomicity, Consistency, Isolation, and Durability.
+    </p>
+
+    <!-- ACID DIAGRAM -->
+
+    <h2>Diagram: ACID Properties</h2>
+
+    <div class="q18-diagram">
+        <img
+            src="../q18.png"
+            alt="Diagram showing the four ACID properties: Atomicity, Consistency, Isolation, and Durability"
+            loading="lazy"
+        >
+    </div>
+
+    <!-- SECTION 1 -->
+
+    <h2>1. Atomicity</h2>
+
+    <p>
+        Atomicity means either all operations of a transaction are completed, or none of them are performed.
+    </p>
+
+    <p>
+        <strong>Example:</strong>
+        Rahul transfers ₹2,000 from Account A to Account B.
+    </p>
+
+    <ul>
+        <li>
+            ₹2,000 is deducted from Account A.
+        </li>
+
+        <li>
+            ₹2,000 is added to Account B.
+        </li>
+
+        <li>
+            If the second operation fails, the first operation is also cancelled.
+        </li>
+    </ul>
+
+    <!-- SECTION 2 -->
+
+    <h2>2. Consistency</h2>
+
+    <p>
+        Consistency means a transaction must follow all database rules and maintain data correctness.
+    </p>
+
+    <p>
+        <strong>Example:</strong>
+        A bank account has ₹5,000, and the bank does not allow a negative balance.
+    </p>
+
+    <ul>
+        <li>
+            A customer tries to withdraw ₹6,000.
+        </li>
+
+        <li>
+            The transaction violates the bank's balance rule.
+        </li>
+
+        <li>
+            Therefore, the transaction is rejected, and the balance remains ₹5,000.
+        </li>
+    </ul>
+
+    <!-- SECTION 3 -->
+
+    <h2>3. Isolation</h2>
+
+    <p>
+        Isolation means multiple transactions can execute at the same time without interfering with each other's incomplete changes.
+    </p>
+
+    <p>
+        <strong>Example:</strong>
+        Account A has ₹10,000.
+    </p>
+
+    <ul>
+        <li>
+            Transaction T1 withdraws ₹2,000.
+        </li>
+
+        <li>
+            Transaction T2 withdraws ₹3,000 at the same time.
+        </li>
+
+        <li>
+            The database ensures both transactions are handled correctly without interfering with each other.
+        </li>
+    </ul>
+
+    <p>
+        <strong>Final balance = ₹5,000.</strong>
+    </p>
+
+    <!-- SECTION 4 -->
+
+    <h2>4. Durability</h2>
+
+    <p>
+        Durability means once a transaction is committed, its changes remain permanently saved in the database.
+    </p>
+
+    <p>
+        <strong>Example:</strong>
+        Rahul transfers ₹2,000 from Account A to Account B.
+    </p>
+
+    <ul>
+        <li>
+            The transfer is completed and committed.
+        </li>
+
+        <li>
+            Immediately afterward, the system crashes.
+        </li>
+
+        <li>
+            When the system restarts, the updated balances are still saved in the database.
+        </li>
+    </ul>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="page-nav">
+
+    <a href="index.html">
+        &#8592; Back to Unit III
+    </a>
+
+    <a href="q20.html">
+        Next: Q20 &#8594;
+    </a>
+
+</nav>
+
+</div>
+
+</body>
+</html>
