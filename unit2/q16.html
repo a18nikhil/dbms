@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Q16 - BCNF and 3NF | DBMS</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+/* Q16 Mobile-Friendly Tables */
+
+.answer .q16-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+</style>
+
+</head>
+
+<body class="unit2">
+
+<div class="container">
+
+<!-- BACK TO UNIT -->
+
+<nav>
+    <a href="index.html" class="back-link">
+        &#8592; Back to Unit II
+    </a>
+</nav>
+
+<main class="answer">
+
+    <!-- QUESTION 16 -->
+
+    <h1>
+        Q16. What is BCNF (Boyce-Codd Normal Form)? Explain How It Differs from 3NF with an Example.
+    </h1>
+
+    <p>
+        BCNF (Boyce-Codd Normal Form) is a higher level of database normalization. It is a stricter form of Third Normal Form (3NF).
+    </p>
+
+    <p>
+        A table is in BCNF when every determinant is a Super Key.
+    </p>
+
+    <ul>
+        <li>
+            <strong>Determinant:</strong>
+            A column or combination of columns that determines the value of another column.
+        </li>
+
+        <li>
+            <strong>Super Key:</strong>
+            A column or group of columns that uniquely identifies each row.
+        </li>
+    </ul>
+
+    <!-- SECTION 1 -->
+
+    <h2>1. Difference Between 3NF and BCNF</h2>
+
+    <div class="q16-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>3NF</th>
+                    <th>BCNF</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>
+                        Removes transitive dependency of non-key columns.
+                    </td>
+
+                    <td>
+                        Every determinant must be a Super Key.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Allows some determinants that are not Super Keys.
+                    </td>
+
+                    <td>
+                        Does not allow determinants that are not Super Keys.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Less strict than BCNF.
+                    </td>
+
+                    <td>
+                        More strict than 3NF.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        A table in 3NF may not be in BCNF.
+                    </td>
+
+                    <td>
+                        Every BCNF table is also in 3NF.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECTION 2 -->
+
+    <h2>2. Example of BCNF</h2>
+
+    <p>
+        Consider the following table:
+    </p>
+
+    <h3>STUDENT_COURSE</h3>
+
+    <div class="q16-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student_ID</th>
+                    <th>Course</th>
+                    <th>Instructor</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>DBMS</td>
+                    <td>Rahul</td>
+                </tr>
+
+                <tr>
+                    <td>102</td>
+                    <td>DBMS</td>
+                    <td>Rahul</td>
+                </tr>
+
+                <tr>
+                    <td>101</td>
+                    <td>Python</td>
+                    <td>Priya</td>
+                </tr>
+
+                <tr>
+                    <td>103</td>
+                    <td>Python</td>
+                    <td>Priya</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>
+        Assume that:
+    </p>
+
+    <ul>
+        <li>
+            A student can study multiple courses.
+        </li>
+
+        <li>
+            A course can have multiple instructors.
+        </li>
+
+        <li>
+            Each instructor teaches only one course.
+        </li>
+
+        <li>
+            Each student has only one instructor for each course.
+        </li>
+    </ul>
+
+    <p>
+        Here:
+    </p>
+
+    <ul>
+        <li>
+            <strong>Candidate Key 1:</strong>
+            (Student_ID, Course)
+        </li>
+
+        <li>
+            <strong>Candidate Key 2:</strong>
+            (Student_ID, Instructor)
+        </li>
+
+        <li>
+            <strong>Functional Dependency:</strong>
+            Instructor &rarr; Course means each instructor teaches only one course.
+        </li>
+    </ul>
+
+    <p>
+        The table is in 3NF because Course is part of a Candidate Key. However, it is not in BCNF because Instructor determines Course, but Instructor is not a Super Key.
+    </p>
+
+    <!-- SECTION 3 -->
+
+    <h2>3. Converting the Table into BCNF</h2>
+
+    <p>
+        To convert the table into BCNF, divide it into two tables.
+    </p>
+
+    <!-- INSTRUCTOR_COURSE -->
+
+    <h3>INSTRUCTOR_COURSE</h3>
+
+    <div class="q16-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Instructor</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Rahul</td>
+                    <td>DBMS</td>
+                </tr>
+
+                <tr>
+                    <td>Priya</td>
+                    <td>Python</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- STUDENT_INSTRUCTOR -->
+
+    <h3>STUDENT_INSTRUCTOR</h3>
+
+    <div class="q16-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student_ID</th>
+                    <th>Instructor</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Rahul</td>
+                </tr>
+
+                <tr>
+                    <td>102</td>
+                    <td>Rahul</td>
+                </tr>
+
+                <tr>
+                    <td>101</td>
+                    <td>Priya</td>
+                </tr>
+
+                <tr>
+                    <td>103</td>
+                    <td>Priya</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>
+        Now both tables are in BCNF because every determinant is a Super Key.
+    </p>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="page-nav">
+
+    <a href="q15.html">
+        &#8592; Previous: Q15
+    </a>
+
+    <a href="q17.html">
+        Next: Q17 &#8594;
+    </a>
+
+</nav>
+
+</div>
+
+</body>
+</html>
