@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Q19 - Relational Calculus | DBMS</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+/* Q19 Mobile-Friendly Tables */
+
+.answer .q19-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Q19 Mathematical Expressions */
+
+.answer .q19-formula {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin: 12px 0 18px;
+    padding: 13px 14px;
+
+    background: #EEF2F5;
+    border-left: 4px solid #315F83;
+    border-radius: 5px;
+
+    color: #102A43;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.8;
+
+    text-align: left;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    white-space: normal;
+}
+
+.answer .q19-formula .variable {
+    font-style: italic;
+}
+
+/* Comparison Table */
+
+.answer .q19-comparison {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.answer .q19-comparison th,
+.answer .q19-comparison td {
+    overflow-wrap: break-word;
+    word-break: normal;
+    vertical-align: top;
+}
+
+@media (max-width: 480px) {
+    .answer .q19-formula {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .answer .q19-comparison th,
+    .answer .q19-comparison td {
+        padding: 8px 6px;
+        font-size: 13px;
+    }
+}
+</style>
+
+</head>
+
+<body class="unit2">
+
+<div class="container">
+
+<!-- BACK TO UNIT -->
+
+<nav>
+    <a href="index.html" class="back-link">
+        &#8592; Back to Unit II
+    </a>
+</nav>
+
+<main class="answer">
+
+    <!-- QUESTION 19 -->
+
+    <h1>
+        Q19. Discuss Relational Calculus and Differentiate Between Tuple Relational Calculus and Domain Relational Calculus.
+    </h1>
+
+    <p>
+        Relational Calculus is a non-procedural query language used to retrieve data from relational databases.
+    </p>
+
+    <p>
+        It describes what data is needed, without explaining how to retrieve it.
+    </p>
+
+    <p>
+        There are two types of Relational Calculus: Tuple Relational Calculus (TRC) and Domain Relational Calculus (DRC).
+    </p>
+
+    <!-- SECTION 1 -->
+
+    <h2>1. Tuple Relational Calculus (TRC)</h2>
+
+    <p>
+        Tuple Relational Calculus uses tuple variables to retrieve data from a table.
+    </p>
+
+    <p>
+        A tuple means a complete row in a table.
+    </p>
+
+    <h3>Syntax:</h3>
+
+    <div class="q19-formula">
+        {<span class="variable">t</span> | P(<span class="variable">t</span>)}
+    </div>
+
+    <p>Where:</p>
+
+    <ul>
+        <li>
+            <strong>t</strong> represents a row.
+        </li>
+
+        <li>
+            <strong>P(t)</strong> represents a condition.
+        </li>
+    </ul>
+
+    <h3>Example: STUDENT Table</h3>
+
+    <div class="q19-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student_ID</th>
+                    <th>Name</th>
+                    <th>Marks</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Rahul</td>
+                    <td>80</td>
+                </tr>
+
+                <tr>
+                    <td>102</td>
+                    <td>Priya</td>
+                    <td>60</td>
+                </tr>
+
+                <tr>
+                    <td>103</td>
+                    <td>Amit</td>
+                    <td>90</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>
+        <strong>Query:</strong>
+        Display students whose marks are greater than 70.
+    </p>
+
+    <div class="q19-formula">
+        {<span class="variable">t</span> |
+        <span class="variable">t</span> ∈ STUDENT
+        ∧ <span class="variable">t</span>.Marks &gt; 70}
+    </div>
+
+    <h3>Output:</h3>
+
+    <div class="q19-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student_ID</th>
+                    <th>Name</th>
+                    <th>Marks</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Rahul</td>
+                    <td>80</td>
+                </tr>
+
+                <tr>
+                    <td>103</td>
+                    <td>Amit</td>
+                    <td>90</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECTION 2 -->
+
+    <h2>2. Domain Relational Calculus (DRC)</h2>
+
+    <p>
+        Domain Relational Calculus uses domain variables to retrieve data from a table.
+    </p>
+
+    <p>
+        A domain variable represents an individual attribute value.
+    </p>
+
+    <h3>Syntax:</h3>
+
+    <div class="q19-formula">
+        {⟨<span class="variable">x</span>,
+        <span class="variable">y</span>,
+        <span class="variable">z</span>⟩ |
+        P(<span class="variable">x</span>,
+        <span class="variable">y</span>,
+        <span class="variable">z</span>)}
+    </div>
+
+    <p>Where:</p>
+
+    <ul>
+        <li>
+            <strong>x, y, z</strong> represent attribute values.
+        </li>
+
+        <li>
+            <strong>P(x, y, z)</strong> represents a condition.
+        </li>
+    </ul>
+
+    <p>
+        <strong>Example:</strong>
+        Display students whose marks are greater than 70.
+    </p>
+
+    <div class="q19-formula">
+        {⟨<span class="variable">x</span>,
+        <span class="variable">y</span>,
+        <span class="variable">z</span>⟩ |
+        STUDENT(<span class="variable">x</span>,
+        <span class="variable">y</span>,
+        <span class="variable">z</span>)
+        ∧ <span class="variable">z</span> &gt; 70}
+    </div>
+
+    <h3>Output:</h3>
+
+    <div class="q19-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student_ID</th>
+                    <th>Name</th>
+                    <th>Marks</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Rahul</td>
+                    <td>80</td>
+                </tr>
+
+                <tr>
+                    <td>103</td>
+                    <td>Amit</td>
+                    <td>90</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECTION 3 -->
+
+    <h2>3. Difference Between TRC and DRC</h2>
+
+    <div class="q19-table">
+        <table class="q19-comparison">
+            <thead>
+                <tr>
+                    <th>Tuple Relational Calculus (TRC)</th>
+                    <th>Domain Relational Calculus (DRC)</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Uses tuple variables.</td>
+                    <td>Uses domain variables.</td>
+                </tr>
+
+                <tr>
+                    <td>Variables represent complete rows.</td>
+                    <td>Variables represent individual attribute values.</td>
+                </tr>
+
+                <tr>
+                    <td>Conditions are applied to row attributes.</td>
+                    <td>Conditions are applied to individual values.</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <strong>Syntax:</strong>
+                        {t | P(t)}
+                    </td>
+
+                    <td>
+                        <strong>Syntax:</strong>
+                        {⟨x, y, z⟩ | P(x, y, z)}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="page-nav">
+
+    <a href="q17.html">
+        &#8592; Previous: Q17
+    </a>
+
+    <a href="q21.html">
+        Next: Q21 &#8594;
+    </a>
+
+</nav>
+
+</div>
+
+</body>
+</html>
