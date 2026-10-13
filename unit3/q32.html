@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Q32 - Cursors in PL/SQL | DBMS</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+/* Q32 PL/SQL Code Formatting */
+
+.answer .q32-code {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+
+    margin: 12px 0 16px;
+    padding: 14px 16px;
+
+    background: #EEF2F5;
+    border-left: 4px solid #315F83;
+    border-radius: 5px;
+
+    overflow: visible;
+    text-align: left;
+}
+
+.answer .q32-code pre {
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: normal;
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.8;
+    color: #102A43;
+
+    text-align: left;
+}
+
+.answer .q32-code code {
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    white-space: inherit;
+    padding: 0;
+    border: none;
+}
+
+/* Q32 Diagram Formatting */
+
+.answer .q32-diagram {
+    width: 100%;
+    max-width: 100%;
+    margin: 18px auto 24px;
+    text-align: center;
+}
+
+.answer .q32-diagram img {
+    display: block;
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+/* Q32 Comparison Table */
+
+.answer .q32-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 480px) {
+    .answer .q32-code {
+        padding: 12px;
+    }
+
+    .answer .q32-code pre {
+        font-size: 13px;
+    }
+}
+</style>
+
+</head>
+
+<body class="unit3">
+
+<div class="container">
+
+<!-- BACK TO UNIT III -->
+
+<nav>
+    <a href="index.html" class="back-link">
+        &#8592; Back to Unit III
+    </a>
+</nav>
+
+<main class="answer">
+
+    <!-- QUESTION 32 -->
+
+    <h1>
+        Q32. What Are Cursors in PL/SQL? Explain Implicit and Explicit Cursors with an Example Program.
+    </h1>
+
+    <!-- SECTION 1 -->
+
+    <h2>1. Cursor in PL/SQL</h2>
+
+    <p>
+        A Cursor is a pointer used in PL/SQL to access and process the results of an SQL query.
+    </p>
+
+    <p>
+        It allows a program to handle database records one by one.
+    </p>
+
+    <p>
+        There are two types of cursors:
+    </p>
+
+    <ul>
+        <li>Implicit Cursor</li>
+        <li>Explicit Cursor</li>
+    </ul>
+
+    <!-- SECTION 2 -->
+
+    <h2>2. Implicit Cursor</h2>
+
+    <p>
+        An Implicit Cursor is automatically created and managed by Oracle when an SQL statement is executed.
+    </p>
+
+    <p>
+        It is commonly used with INSERT, UPDATE, DELETE, and single-row SELECT INTO statements.
+    </p>
+
+    <h3>Example Program:</h3>
+
+    <div class="q32-code">
+<pre><code>BEGIN
+    DELETE FROM Student
+    WHERE id = 101;
+
+    DBMS_OUTPUT.PUT_LINE(SQL%ROWCOUNT);
+END;
+/</code></pre>
+    </div>
+
+    <p>
+        <strong>Output:</strong> 1 (if one student with ID 101 exists).
+    </p>
+
+    <p>
+        Here, <code>SQL%ROWCOUNT</code> displays the number of deleted rows.
+    </p>
+
+    <!-- SECTION 3 -->
+
+    <h2>3. Explicit Cursor</h2>
+
+    <p>
+        An Explicit Cursor is created by the programmer to access and process the results of an SQL query.
+    </p>
+
+    <p>
+        It works in four steps:
+    </p>
+
+    <ul>
+        <li>
+            <strong>DECLARE:</strong>
+            Define the cursor.
+        </li>
+
+        <li>
+            <strong>OPEN:</strong>
+            Execute the query.
+        </li>
+
+        <li>
+            <strong>FETCH:</strong>
+            Retrieve a record.
+        </li>
+
+        <li>
+            <strong>CLOSE:</strong>
+            Release the cursor.
+        </li>
+    </ul>
+
+    <!-- EXPLICIT CURSOR DIAGRAM -->
+
+    <div class="q32-diagram">
+        <img
+            src="../q32.png"
+            alt="Four-step flowchart of Explicit Cursor operations: DECLARE, OPEN, FETCH, and CLOSE"
+            loading="lazy"
+        >
+    </div>
+
+    <h3>Example Program:</h3>
+
+    <div class="q32-code">
+<pre><code>DECLARE
+    CURSOR c1 IS SELECT name FROM Student;
+    n Student.name%TYPE;
+BEGIN
+    OPEN c1;
+    FETCH c1 INTO n;
+    DBMS_OUTPUT.PUT_LINE(n);
+    CLOSE c1;
+END;
+/</code></pre>
+    </div>
+
+    <p>
+        <strong>Output (Example):</strong> Rahul
+    </p>
+
+    <p>
+        The program fetches and displays one student's name. A loop can be used to process multiple records one by one.
+    </p>
+
+    <!-- SECTION 4 -->
+
+    <h2>4. Difference Between Implicit and Explicit Cursors</h2>
+
+    <div class="q32-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Implicit Cursor</th>
+                    <th>Explicit Cursor</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Created automatically by Oracle.</td>
+                    <td>Created by the programmer.</td>
+                </tr>
+
+                <tr>
+                    <td>Managed automatically.</td>
+                    <td>Managed using OPEN, FETCH, and CLOSE.</td>
+                </tr>
+
+                <tr>
+                    <td>Commonly used for DML and single-row queries.</td>
+                    <td>Commonly used to process multiple rows.</td>
+                </tr>
+
+                <tr>
+                    <td>Requires less code.</td>
+                    <td>Requires more code.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="page-nav">
+
+    <a href="q30.html">
+        &#8592; Previous: Q30
+    </a>
+
+    <a href="index.html">
+        Back to Unit III &#8594;
+    </a>
+
+</nav>
+
+</div>
+
+</body>
+</html>
