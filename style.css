@@ -339,18 +339,21 @@ th {
     white-space: normal;
 }
 
+
 /* Global Diagram Size Fix */
 
+/* Desktop */
 @media (min-width: 768px) {
     .answer img {
         width: auto !important;
-        max-width: min(100%, 460px) !important;
-        max-height: 340px !important;
+        max-width: min(100%, 550px) !important;
+        max-height: 420px !important;
         height: auto !important;
         object-fit: contain;
     }
 }
 
+/* Mobile */
 @media (max-width: 767px) {
     .answer img {
         width: auto !important;
@@ -360,7 +363,6 @@ th {
         object-fit: contain;
     }
 }
-
 
 
 
