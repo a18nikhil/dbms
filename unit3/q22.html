@@ -11,14 +11,14 @@
 <link rel="stylesheet" href="../style.css">
 
 <style>
-/* Q22 Diagram Formatting */
+/* Q22 Diagram Containers */
 
 .answer .q22-diagram {
     box-sizing: border-box;
     width: 100%;
     max-width: 100%;
     margin: 14px 0 20px;
-    padding: 18px 14px;
+    padding: 18px 12px;
 
     background: #F3F6F8;
     border: 1px solid #D8E1E8;
@@ -27,18 +27,20 @@
     text-align: center;
 }
 
-.answer .q22-flow {
+/* Horizontal Serial Schedule */
+
+.answer .q22-serial {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
+    gap: 14px;
+    flex-wrap: nowrap;
 }
 
-.answer .q22-node {
-    display: inline-block;
-    min-width: 65px;
-    padding: 10px 18px;
+.answer .q22-serial-node {
+    flex: 0 1 120px;
+    min-width: 0;
+    padding: 12px 8px;
 
     background: #FFFFFF;
     border: 2px solid #315F83;
@@ -50,72 +52,131 @@
 }
 
 .answer .q22-arrow {
+    flex-shrink: 0;
     color: #315F83;
-    font-size: 24px;
+    font-size: 23px;
     font-weight: 700;
 }
 
-.answer .q22-diagram p {
-    margin: 12px 0 0;
-    color: #334155;
-    font-size: 14px;
-    text-align: center;
-}
+/* Horizontal Non-Serial Schedule */
 
-.answer .q22-steps {
+.answer .q22-operations {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 8px;
+    justify-content: space-between;
+    gap: 7px;
+    width: 100%;
 }
 
-.answer .q22-step {
-    width: 100%;
-    max-width: 250px;
-    padding: 9px 12px;
+.answer .q22-operation {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 2px;
 
     background: #FFFFFF;
-    border: 1px solid #315F83;
+    border: 2px solid #315F83;
     border-radius: 5px;
 
+    color: #102A43;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.answer .q22-time {
+    position: relative;
+    width: 94%;
+    height: 2px;
+    margin: 26px auto 18px;
+    background: #315F83;
+}
+
+.answer .q22-time::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -5px;
+
+    width: 10px;
+    height: 10px;
+
+    border-top: 2px solid #315F83;
+    border-right: 2px solid #315F83;
+    transform: rotate(45deg);
+}
+
+.answer .q22-time-label {
+    margin: 0 0 8px;
     color: #102A43;
     font-weight: 600;
     text-align: center;
 }
 
-.answer .q22-down {
-    color: #315F83;
-    font-size: 22px;
-    font-weight: 700;
-}
+/* Precedence Graphs */
 
-.answer .q22-cycle {
+.answer .q22-graph {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
+    gap: 14px;
+    flex-wrap: nowrap;
 }
 
-.answer .q22-label {
-    margin: 12px 0 0;
-    font-size: 14px;
-    font-weight: 600;
+.answer .q22-graph-node {
+    min-width: 55px;
+    padding: 10px 15px;
+
+    background: #FFFFFF;
+    border: 2px solid #315F83;
+    border-radius: 5px;
+
+    color: #102A43;
+    font-weight: 700;
     text-align: center;
 }
 
+.answer .q22-diagram p {
+    margin: 14px 0 0;
+    color: #334155;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Mobile Optimization */
+
 @media (max-width: 480px) {
+
     .answer .q22-diagram {
-        padding: 14px 10px;
+        padding: 16px 10px;
     }
 
-    .answer .q22-flow {
+    .answer .q22-serial {
         gap: 10px;
     }
 
-    .answer .q22-node {
-        min-width: 50px;
-        padding: 9px 12px;
+    .answer .q22-serial-node {
+        flex-basis: 100px;
+        padding: 10px 6px;
+    }
+
+    .answer .q22-operations {
+        gap: 5px;
+    }
+
+    .answer .q22-operation {
+        padding: 11px 1px;
+        font-size: 12px;
+        border-width: 1.5px;
+    }
+
+    .answer .q22-arrow {
+        font-size: 20px;
+    }
+
+    .answer .q22-graph {
+        gap: 10px;
     }
 }
 </style>
@@ -177,13 +238,25 @@
     </ul>
 
     <div class="q22-diagram">
-        <div class="q22-steps">
-            <div class="q22-step">Transaction T1</div>
-            <div class="q22-down">&#8595;</div>
-            <div class="q22-step">Transaction T2</div>
+
+        <div class="q22-serial">
+
+            <div class="q22-serial-node">
+                T1
+            </div>
+
+            <div class="q22-arrow">
+                &#8594;
+            </div>
+
+            <div class="q22-serial-node">
+                T2
+            </div>
+
         </div>
 
-        <p>One transaction completes before the next begins.</p>
+        <p>One after another</p>
+
     </div>
 
     <!-- NON-SERIAL SCHEDULE -->
@@ -205,17 +278,37 @@
     </ul>
 
     <div class="q22-diagram">
-        <div class="q22-steps">
-            <div class="q22-step">T1 - Operation 1</div>
-            <div class="q22-down">&#8595;</div>
-            <div class="q22-step">T2 - Operation 1</div>
-            <div class="q22-down">&#8595;</div>
-            <div class="q22-step">T1 - Operation 2</div>
-            <div class="q22-down">&#8595;</div>
-            <div class="q22-step">T2 - Operation 2</div>
+
+        <div class="q22-operations">
+
+            <div class="q22-operation">
+                R1(A)
+            </div>
+
+            <div class="q22-operation">
+                R2(B)
+            </div>
+
+            <div class="q22-operation">
+                W1(A)
+            </div>
+
+            <div class="q22-operation">
+                W2(B)
+            </div>
+
         </div>
 
-        <p>Operations of T1 and T2 are interleaved.</p>
+        <div class="q22-time"></div>
+
+        <div class="q22-time-label">
+            Time
+        </div>
+
+        <p>
+            Operations of T1 and T2 are interleaved.
+        </p>
+
     </div>
 
     <!-- SECTION 3 -->
@@ -247,25 +340,53 @@
     <h3>Conflict Serializable</h3>
 
     <div class="q22-diagram">
-        <div class="q22-flow">
-            <div class="q22-node">T1</div>
-            <div class="q22-arrow">&#8594;</div>
-            <div class="q22-node">T2</div>
+
+        <div class="q22-graph">
+
+            <div class="q22-graph-node">
+                T1
+            </div>
+
+            <div class="q22-arrow">
+                &#8594;
+            </div>
+
+            <div class="q22-graph-node">
+                T2
+            </div>
+
         </div>
 
-        <p>No cycle in the precedence graph.</p>
+        <p>
+            No cycle in the precedence graph.
+        </p>
+
     </div>
 
     <h3>Not Conflict Serializable</h3>
 
     <div class="q22-diagram">
-        <div class="q22-cycle">
-            <div class="q22-node">T1</div>
-            <div class="q22-arrow">&#8644;</div>
-            <div class="q22-node">T2</div>
+
+        <div class="q22-graph">
+
+            <div class="q22-graph-node">
+                T1
+            </div>
+
+            <div class="q22-arrow">
+                &#8644;
+            </div>
+
+            <div class="q22-graph-node">
+                T2
+            </div>
+
         </div>
 
-        <p>A cycle exists between T1 and T2.</p>
+        <p>
+            A cycle exists between T1 and T2.
+        </p>
+
     </div>
 
     <!-- VIEW SERIALIZABILITY -->
@@ -281,6 +402,7 @@
     <h2>4. Importance of Serializability in Database Consistency</h2>
 
     <ol>
+
         <li>
             <strong>Maintains Consistency:</strong>
             Ensures concurrent transactions produce results equivalent to serial execution.
@@ -300,6 +422,7 @@
             <strong>Maintains Data Integrity:</strong>
             Helps preserve database rules when transactions are executed concurrently.
         </li>
+
     </ol>
 
     <p>
