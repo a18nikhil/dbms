@@ -339,5 +339,28 @@ th {
     white-space: normal;
 }
 
+/* Global Diagram Size Fix */
+
+@media (min-width: 768px) {
+    .answer img {
+        width: auto !important;
+        max-width: min(100%, 460px) !important;
+        max-height: 340px !important;
+        height: auto !important;
+        object-fit: contain;
+    }
+}
+
+@media (max-width: 767px) {
+    .answer img {
+        width: auto !important;
+        max-width: 100% !important;
+        max-height: 320px !important;
+        height: auto !important;
+        object-fit: contain;
+    }
+}
+
+
 
 
