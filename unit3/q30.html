@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Q30 - Deadlocks in DBMS | DBMS</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+/* Q30 Wait-For Graph */
+
+.answer .q30-diagram {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin: 16px 0 22px;
+    padding: 20px 12px;
+
+    background: #F3F6F8;
+    border: 1px solid #D8E1E8;
+    border-radius: 6px;
+
+    text-align: center;
+}
+
+.answer .q30-graph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+.answer .q30-node {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 65px;
+    height: 65px;
+
+    background: #FFFFFF;
+    border: 2px solid #315F83;
+    border-radius: 50%;
+
+    color: #102A43;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.answer .q30-arrows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    color: #315F83;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.answer .q30-diagram p {
+    margin: 14px 0 0;
+    color: #334155;
+    font-size: 14px;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .answer .q30-diagram {
+        padding: 16px 10px;
+    }
+
+    .answer .q30-graph {
+        gap: 14px;
+    }
+
+    .answer .q30-node {
+        width: 55px;
+        height: 55px;
+        font-size: 15px;
+    }
+}
+</style>
+
+</head>
+
+<body class="unit3">
+
+<div class="container">
+
+<!-- BACK TO UNIT III -->
+
+<nav>
+    <a href="index.html" class="back-link">
+        &#8592; Back to Unit III
+    </a>
+</nav>
+
+<main class="answer">
+
+    <!-- QUESTION 30 -->
+
+    <h1>
+        Q30. What Are Deadlocks? Explain the Methods Used for Deadlock Detection, Prevention, and Avoidance.
+    </h1>
+
+    <!-- SECTION 1 -->
+
+    <h2>1. Deadlock</h2>
+
+    <p>
+        A Deadlock is a situation in DBMS where two or more transactions wait for each other to release locked resources.
+    </p>
+
+    <p>
+        As a result, none of the transactions can continue execution.
+    </p>
+
+    <!-- SECTION 2 -->
+
+    <h2>2. Example of Deadlock</h2>
+
+    <p>
+        Suppose two transactions, T1 and T2, are accessing data items A and B.
+    </p>
+
+    <ul>
+        <li>
+            <strong>T1:</strong>
+            Locks A and waits for B.
+        </li>
+
+        <li>
+            <strong>T2:</strong>
+            Locks B and waits for A.
+        </li>
+    </ul>
+
+    <p>
+        Both transactions keep waiting for each other, causing a deadlock.
+    </p>
+
+    <!-- SECTION 3 -->
+
+    <h2>3. Deadlock Detection</h2>
+
+    <p>
+        Deadlock detection is used to identify whether a deadlock has occurred.
+    </p>
+
+    <h3>Wait-For Graph Method:</h3>
+
+    <ul>
+        <li>
+            Each transaction is represented by a node.
+        </li>
+
+        <li>
+            An arrow from T1 to T2 means T1 is waiting for T2.
+        </li>
+
+        <li>
+            If the graph contains a cycle, a deadlock exists.
+        </li>
+    </ul>
+
+    <!-- DEADLOCK DIAGRAM -->
+
+    <div class="q30-diagram">
+
+        <div class="q30-graph">
+
+            <div class="q30-node">
+                T1
+            </div>
+
+            <div class="q30-arrows">
+                <span>&#8594;</span>
+                <span>&#8592;</span>
+            </div>
+
+            <div class="q30-node">
+                T2
+            </div>
+
+        </div>
+
+        <p>
+            T1 waits for T2, and T2 waits for T1.
+            A cycle exists, indicating a deadlock.
+        </p>
+
+    </div>
+
+    <p>
+        After detecting a deadlock, the DBMS rolls back one transaction to release its locks.
+    </p>
+
+    <!-- SECTION 4 -->
+
+    <h2>4. Deadlock Prevention</h2>
+
+    <p>
+        Deadlock prevention uses rules to stop deadlocks from occurring.
+    </p>
+
+    <h3>a) Wait-Die Scheme</h3>
+
+    <ul>
+        <li>
+            Older transactions can wait for younger transactions.
+        </li>
+
+        <li>
+            Younger transactions are rolled back if they request a lock held by an older transaction.
+        </li>
+    </ul>
+
+    <h3>b) Wound-Wait Scheme</h3>
+
+    <ul>
+        <li>
+            Older transactions can force younger transactions to roll back.
+        </li>
+
+        <li>
+            Younger transactions must wait if the lock is held by an older transaction.
+        </li>
+    </ul>
+
+    <p>
+        Both methods use timestamps to prevent deadlocks.
+    </p>
+
+    <!-- SECTION 5 -->
+
+    <h2>5. Deadlock Avoidance</h2>
+
+    <p>
+        Deadlock avoidance checks whether granting a lock may lead to a deadlock.
+    </p>
+
+    <h3>Safe State Method:</h3>
+
+    <ul>
+        <li>
+            Before granting a lock, the DBMS checks whether all transactions can still complete safely.
+        </li>
+
+        <li>
+            If granting the lock may lead to an unsafe state, the transaction must wait.
+        </li>
+
+        <li>
+            The lock is granted only when the system can remain in a safe state.
+        </li>
+    </ul>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="page-nav">
+
+    <a href="q28.html">
+        &#8592; Previous: Q28
+    </a>
+
+    <a href="q32.html">
+        Next: Q32 &#8594;
+    </a>
+
+</nav>
+
+</div>
+
+</body>
+</html>
