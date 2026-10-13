@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Q20 - Lock-Based Concurrency Control and 2PL | DBMS</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+/* Q20 Diagram Formatting */
+
+.answer .q20-diagram {
+    width: 100%;
+    max-width: 100%;
+    margin: 18px auto 24px;
+    text-align: center;
+}
+
+.answer .q20-diagram img {
+    display: block;
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+/* Q20 Mobile-Friendly Table */
+
+.answer .q20-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+</style>
+
+</head>
+
+<body class="unit3">
+
+<div class="container">
+
+<!-- BACK TO UNIT III -->
+
+<nav>
+    <a href="index.html" class="back-link">
+        &#8592; Back to Unit III
+    </a>
+</nav>
+
+<main class="answer">
+
+    <!-- QUESTION 20 -->
+
+    <h1>
+        Q20. Describe Lock-Based Concurrency Control and Explain the Two-Phase Locking (2PL) Protocol.
+    </h1>
+
+    <!-- SECTION 1 -->
+
+    <h2>1. Lock-Based Concurrency Control</h2>
+
+    <p>
+        Lock-Based Concurrency Control is a technique used in DBMS to control multiple transactions accessing the same data at the same time.
+    </p>
+
+    <p>
+        It uses locks to prevent transactions from interfering with each other.
+    </p>
+
+    <p>
+        There are two types of locks:
+    </p>
+
+    <!-- SHARED LOCK -->
+
+    <h3>a) Shared Lock (S-Lock)</h3>
+
+    <ul>
+        <li>
+            Used to read data.
+        </li>
+
+        <li>
+            Multiple transactions can hold shared locks on the same data at the same time.
+        </li>
+
+        <li>
+            Other transactions cannot modify the data while shared locks are held.
+        </li>
+    </ul>
+
+    <!-- EXCLUSIVE LOCK -->
+
+    <h3>b) Exclusive Lock (X-Lock)</h3>
+
+    <ul>
+        <li>
+            Used to read and modify data.
+        </li>
+
+        <li>
+            Only one transaction can hold an exclusive lock on a data item at a time.
+        </li>
+
+        <li>
+            Other transactions cannot read or modify that data until the lock is released.
+        </li>
+    </ul>
+
+    <p>
+        <strong>Example:</strong>
+        If Transaction T1 holds an exclusive lock on Account A to update its balance, Transaction T2 must wait until T1 releases the lock before accessing Account A.
+    </p>
+
+    <!-- SECTION 2 -->
+
+    <h2>2. Two-Phase Locking (2PL) Protocol</h2>
+
+    <p>
+        Two-Phase Locking (2PL) is a locking protocol that ensures conflict serializability by dividing a transaction into two phases.
+    </p>
+
+    <!-- GROWING PHASE -->
+
+    <h3>a) Growing Phase</h3>
+
+    <ul>
+        <li>
+            A transaction can acquire new locks.
+        </li>
+
+        <li>
+            It cannot release any locks.
+        </li>
+    </ul>
+
+    <!-- SHRINKING PHASE -->
+
+    <h3>b) Shrinking Phase</h3>
+
+    <ul>
+        <li>
+            A transaction can release locks.
+        </li>
+
+        <li>
+            It cannot acquire any new locks.
+        </li>
+    </ul>
+
+    <!-- 2PL DIAGRAM -->
+
+    <div class="q20-diagram">
+        <img
+            src="../q20.png"
+            alt="Two-Phase Locking protocol diagram showing Growing Phase and Shrinking Phase"
+            loading="lazy"
+        >
+    </div>
+
+    <!-- SECTION 3 -->
+
+    <h2>3. Example of Two-Phase Locking</h2>
+
+    <p>
+        Consider Transaction T1 transferring money from Account A to Account B.
+    </p>
+
+    <div class="q20-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Step</th>
+                    <th>Operation</th>
+                    <th>Phase</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Acquire lock on Account A</td>
+                    <td>Growing</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Acquire lock on Account B</td>
+                    <td>Growing</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Update both account balances</td>
+                    <td>Growing</td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>Release lock on Account A</td>
+                    <td>Shrinking</td>
+                </tr>
+
+                <tr>
+                    <td>5</td>
+                    <td>Release lock on Account B</td>
+                    <td>Shrinking</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>
+        Once T1 releases its first lock, it cannot acquire any new locks.
+    </p>
+
+    <p>
+        2PL ensures conflict serializability, but deadlocks can still occur.
+    </p>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="page-nav">
+
+    <a href="q18.html">
+        &#8592; Previous: Q18
+    </a>
+
+    <a href="q22.html">
+        Next: Q22 &#8594;
+    </a>
+
+</nav>
+
+</div>
+
+</body>
+</html>
