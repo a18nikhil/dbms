@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Q12 - Normalization (1NF, 2NF, 3NF) | DBMS</title>
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="unit2">
+
+<div class="container">
+
+<!-- BACK TO UNIT -->
+
+<nav>
+    <a href="index.html" class="back-link">
+        &#8592; Back to Unit II
+    </a>
+</nav>
+
+<main class="answer">
+
+    <!-- QUESTION 12 -->
+
+    <h1>
+        Q12. Explain the Process of Normalization. Discuss 1NF, 2NF, and 3NF with Suitable Examples.
+    </h1>
+
+    <p>
+        Normalization is the process of organizing data into smaller, related tables to reduce duplicate data and avoid insertion, update, and deletion problems.
+    </p>
+
+    <!-- SECTION 1 -->
+
+    <h2>1. First Normal Form (1NF)</h2>
+
+    <p>
+        A table is in 1NF when each cell contains only one value. A cell should not contain multiple values.
+    </p>
+
+    <h3>Example: Before 1NF</h3>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student_ID</th>
+                    <th>Name</th>
+                    <th>Courses</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Rahul</td>
+                    <td>DBMS, Java</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Priya</td>
+                    <td>Python</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>
+        Here, Rahul has two courses in one cell.
+    </p>
+
+    <h3>After 1NF</h3>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student_ID</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Rahul</td>
+                    <td>DBMS</td>
+                </tr>
+                <tr>
+                    <td>101</td>
+                    <td>Rahul</td>
+                    <td>Java</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Priya</td>
+                    <td>Python</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>
+        Now each cell contains only one value.
+    </p>
+
+    <!-- SECTION 2 -->
+
+    <h2>2. Second Normal Form (2NF)</h2>
+
+    <p>
+        A table is in 2NF when:
+    </p>
+
+    <ul>
+        <li>
+            It is already in 1NF.
+        </li>
+        <li>
+            Every non-key column depends on the complete Primary Key, not just part of it.
+        </li>
+    </ul>
+
+    <p>
+        This removes Partial Dependency.
+    </p>
+
+    <h3>Example: Before 2NF</h3>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student_ID</th>
+                    <th>Course_ID</th>
+                    <th>Student_Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>C01</td>
+                    <td>Rahul</td>
+                </tr>
+                <tr>
+                    <td>101</td>
+                    <td>C02</td>
+                    <td>Rahul</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>C01</td>
+                    <td>Priya</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>
+        Here, the Composite Primary Key is (Student_ID, Course_ID), but Student_Name depends only on Student_ID.
+    </p>
+
+    <h3>After 2NF</h3>
+
+    <h3>STUDENT</h3>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student_ID</th>
+                    <th>Student_Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Rahul</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Priya</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>ENROLLMENT</h3>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student_ID</th>
+                    <th>Course_ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>C01</td>
+                </tr>
+                <tr>
+                    <td>101</td>
+                    <td>C02</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>C01</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>
+        Now student names are stored separately, removing Partial Dependency.
+    </p>
+
+    <!-- SECTION 3 -->
+
+    <h2>3. Third Normal Form (3NF)</h2>
+
+    <p>
+        A table is in 3NF when:
+    </p>
+
+    <ul>
+        <li>
+            It is already in 2NF.
+        </li>
+        <li>
+            Non-key columns do not depend on other non-key columns.
+        </li>
+    </ul>
+
+    <p>
+        This removes Transitive Dependency.
+    </p>
+
+    <h3>Example: Before 3NF</h3>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student_ID</th>
+                    <th>Student_Name</th>
+                    <th>Dept_ID</th>
+                    <th>Dept_Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Rahul</td>
+                    <td>D01</td>
+                    <td>CS</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Priya</td>
+                    <td>D02</td>
+                    <td>IT</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>
+        Here, Student_ID determines Dept_ID, and Dept_ID determines Dept_Name. This is called Transitive Dependency.
+    </p>
+
+    <h3>After 3NF</h3>
+
+    <h3>STUDENT</h3>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student_ID</th>
+                    <th>Student_Name</th>
+                    <th>Dept_ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Rahul</td>
+                    <td>D01</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Priya</td>
+                    <td>D02</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>DEPARTMENT</h3>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Dept_ID</th>
+                    <th>Dept_Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>D01</td>
+                    <td>CS</td>
+                </tr>
+                <tr>
+                    <td>D02</td>
+                    <td>IT</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>
+        Now department details are stored separately, removing Transitive Dependency.
+    </p>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="page-nav">
+
+    <a href="q11.html">
+        &#8592; Previous: Q11
+    </a>
+
+    <a href="q13.html">
+        Next: Q13 &#8594;
+    </a>
+
+</nav>
+
+</div>
+
+</body>
+</html>
