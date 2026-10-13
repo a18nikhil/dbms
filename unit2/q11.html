@@ -1,44 +1,313 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Q11 - Write SQL Queries to Demonstrate Selection, Projection, and Join Operations on Given Relational Tables. | DBMS</title>
-<link rel="stylesheet" href="../style.css">
-</head>
-<body class="unit2">
-<div class="container">
-<nav><a href="index.html" class="back-link">&#8592; Back to Unit II</a></nav>
-<main class="answer">
-<h1>Q11. Write SQL Queries to Demonstrate Selection, Projection, and Join Operations on Given Relational Tables.</h1>
 
-<p>Consider the following two tables:</p>
-<div class="diagram"><img src="../q11-1.png" alt="STUDENT and COURSE Tables" loading="lazy"></div>
-<h2>1. Selection</h2>
-<p>Selection retrieves specific rows from a table based on a condition.</p>
-<p><strong>SQL Query:</strong></p>
-<div class="sql-query">SELECT * FROM STUDENT WHERE Branch = 'CS';</div>
-<p><strong>Output:</strong></p>
-<div class="diagram"><img src="../q11-2.png" alt="Selection Output" loading="lazy"></div>
-<h2>2. Projection</h2>
-<p>Projection retrieves specific columns from a table.</p>
-<p><strong>SQL Query:</strong></p>
-<div class="sql-query">SELECT Name, Marks FROM STUDENT;</div>
-<p><strong>Output:</strong></p>
-<div class="diagram"><img src="../q11-3.png" alt="Projection Output" loading="lazy"></div>
-<h2>3. Join</h2>
-<p>Join combines related data from two tables using a common attribute.</p>
-<p>Here, Student_ID is the common attribute.</p>
-<p><strong>SQL Query:</strong></p>
-<div class="sql-query">SELECT STUDENT.Name, COURSE.Course_Name FROM STUDENT JOIN COURSE ON STUDENT.Student_ID = COURSE.Student_ID;</div>
-<p><strong>Output:</strong></p>
-<div class="diagram"><img src="../q11-4.png" alt="Join Output" loading="lazy"></div>
-<p>This demonstrates that Selection retrieves rows, Projection retrieves columns, and Join combines related data from two tables.</p>
-</main>
-<nav class="page-nav">
-<a href="q10.html">&#8592; Previous: Q10</a>
-<a href="q12.html">Next: Q12 &#8594;</a>
+<title>Q11 - Selection, Projection and Join | DBMS</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+/* Q11 SQL query formatting */
+
+.answer .q11-query {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin: 12px 0 18px;
+    padding: 12px 14px;
+    background: #EEF2F5;
+    border-left: 3px solid #315F83;
+    border-radius: 4px;
+    text-align: left;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.answer .q11-query code {
+    display: block;
+    padding: 0;
+    background: transparent;
+    border: none;
+    color: #173A56;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.7;
+    text-align: left;
+    white-space: pre;
+    overflow-wrap: normal;
+}
+
+.answer .q11-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+</style>
+
+</head>
+
+<body class="unit2">
+
+<div class="container">
+
+<!-- BACK TO UNIT -->
+
+<nav>
+    <a href="index.html" class="back-link">
+        &#8592; Back to Unit II
+    </a>
 </nav>
+
+<main class="answer">
+
+    <!-- QUESTION 11 -->
+
+    <h1>
+        Q11. Write SQL Queries to Demonstrate Selection, Projection, and Join Operations on Given Relational Tables.
+    </h1>
+
+    <!-- SECTION 1 -->
+
+    <h2>1. Introduction</h2>
+
+    <p>
+        Selection, Projection, and Join are relational algebra operations used to retrieve data from relational tables.
+    </p>
+
+    <ul>
+        <li>
+            <strong>Selection (&sigma;):</strong>
+            Selects rows based on a condition.
+        </li>
+
+        <li>
+            <strong>Projection (&pi;):</strong>
+            Selects specific columns.
+        </li>
+
+        <li>
+            <strong>Join (&bowtie;):</strong>
+            Combines related records from two tables.
+        </li>
+    </ul>
+
+    <!-- SECTION 2 -->
+
+    <h2>2. Consider the Following Tables</h2>
+
+    <h3>STUDENT</h3>
+
+    <div class="q11-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student_ID</th>
+                    <th>Name</th>
+                    <th>Branch</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Rahul</td>
+                    <td>CS</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Priya</td>
+                    <td>IT</td>
+                </tr>
+                <tr>
+                    <td>103</td>
+                    <td>Amit</td>
+                    <td>CS</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>ENROLLMENT</h3>
+
+    <div class="q11-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student_ID</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>DBMS</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Python</td>
+                </tr>
+                <tr>
+                    <td>103</td>
+                    <td>Java</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECTION 3 -->
+
+    <h2>3. Selection Operation (&sigma;)</h2>
+
+    <p>
+        Selection retrieves rows that satisfy a given condition.
+    </p>
+
+    <p>
+        <strong>Example:</strong>
+        Display students belonging to the CS branch.
+    </p>
+
+    <h3>SQL Query:</h3>
+
+    <div class="q11-query"><code>SELECT * FROM STUDENT WHERE Branch = 'CS';</code></div>
+
+    <h3>Output:</h3>
+
+    <div class="q11-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student_ID</th>
+                    <th>Name</th>
+                    <th>Branch</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Rahul</td>
+                    <td>CS</td>
+                </tr>
+                <tr>
+                    <td>103</td>
+                    <td>Amit</td>
+                    <td>CS</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECTION 4 -->
+
+    <h2>4. Projection Operation (&pi;)</h2>
+
+    <p>
+        Projection retrieves only the required columns from a table.
+    </p>
+
+    <p>
+        <strong>Example:</strong>
+        Display the names and branches of students.
+    </p>
+
+    <h3>SQL Query:</h3>
+
+    <div class="q11-query"><code>SELECT DISTINCT Name, Branch FROM STUDENT;</code></div>
+
+    <h3>Output:</h3>
+
+    <div class="q11-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Branch</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Rahul</td>
+                    <td>CS</td>
+                </tr>
+                <tr>
+                    <td>Priya</td>
+                    <td>IT</td>
+                </tr>
+                <tr>
+                    <td>Amit</td>
+                    <td>CS</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECTION 5 -->
+
+    <h2>5. Join Operation (&bowtie;)</h2>
+
+    <p>
+        Join combines related records from two tables using a common attribute.
+    </p>
+
+    <p>
+        <strong>Example:</strong>
+        Display student names along with their enrolled courses.
+    </p>
+
+    <h3>SQL Query:</h3>
+
+    <div class="q11-query"><code>SELECT STUDENT.Name, ENROLLMENT.Course FROM STUDENT INNER JOIN ENROLLMENT ON STUDENT.Student_ID = ENROLLMENT.Student_ID;</code></div>
+
+    <h3>Output:</h3>
+
+    <div class="q11-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Rahul</td>
+                    <td>DBMS</td>
+                </tr>
+                <tr>
+                    <td>Priya</td>
+                    <td>Python</td>
+                </tr>
+                <tr>
+                    <td>Amit</td>
+                    <td>Java</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="page-nav">
+
+    <a href="q10.html">
+        &#8592; Previous: Q10
+    </a>
+
+    <a href="q12.html">
+        Next: Q12 &#8594;
+    </a>
+
+</nav>
+
 </div>
+
 </body>
 </html>
