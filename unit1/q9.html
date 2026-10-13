@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Q9 - Student Management System Database Schema | DBMS</title>
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="unit1">
+
+<div class="container">
+
+<!-- BACK TO UNIT -->
+
+<nav>
+    <a href="index.html" class="back-link">
+        &#8592; Back to Unit I
+    </a>
+</nav>
+
+<main class="answer">
+
+    <!-- QUESTION 9 -->
+
+    <h1>
+        Q9. Create a Database Schema with Appropriate Tables, Primary Keys, and Foreign Keys for a Student Management System.
+    </h1>
+
+    <!-- SECTION 1 -->
+
+    <h2>1. Introduction</h2>
+
+    <p>
+        A Student Management System is a database system used to store and manage information about students, departments, courses, and enrollments.
+    </p>
+
+    <p>
+        A Database Schema defines the structure of tables, their attributes, Primary Keys, Foreign Keys, and relationships.
+    </p>
+
+    <!-- SECTION 2 -->
+
+    <h2>2. Database Schema Diagram</h2>
+
+    <div class="diagram">
+        <img
+            src="../q9.png"
+            alt="Student Management System Database Schema showing DEPARTMENT, STUDENT, COURSE, ENROLLMENT, Primary Keys, Foreign Keys, and Relationships"
+            loading="lazy"
+        >
+    </div>
+
+    <!-- SECTION 3 -->
+
+    <h2>3. Tables and Keys</h2>
+
+    <p>
+        The Student Management System consists of four main tables.
+    </p>
+
+    <!-- DEPARTMENT TABLE -->
+
+    <h3>1. DEPARTMENT Table</h3>
+
+    <p>
+        Stores information about different departments.
+    </p>
+
+    <ul>
+        <li>
+            <strong>Dept_ID (PK):</strong>
+            Uniquely identifies each department.
+        </li>
+
+        <li>
+            <strong>Dept_Name:</strong>
+            Stores the department name.
+        </li>
+    </ul>
+
+    <!-- STUDENT TABLE -->
+
+    <h3>2. STUDENT Table</h3>
+
+    <p>
+        Stores personal and academic information about students.
+    </p>
+
+    <ul>
+        <li>
+            <strong>Student_ID (PK):</strong>
+            Uniquely identifies each student.
+        </li>
+
+        <li>
+            <strong>Name:</strong>
+            Stores the student's name.
+        </li>
+
+        <li>
+            <strong>Email:</strong>
+            Stores the student's email address.
+        </li>
+
+        <li>
+            <strong>Dept_ID (FK):</strong>
+            References <code>DEPARTMENT(Dept_ID)</code>.
+        </li>
+    </ul>
+
+    <!-- COURSE TABLE -->
+
+    <h3>3. COURSE Table</h3>
+
+    <p>
+        Stores information about available courses.
+    </p>
+
+    <ul>
+        <li>
+            <strong>Course_ID (PK):</strong>
+            Uniquely identifies each course.
+        </li>
+
+        <li>
+            <strong>Course_Name:</strong>
+            Stores the course name.
+        </li>
+
+        <li>
+            <strong>Credits:</strong>
+            Stores the course credits.
+        </li>
+
+        <li>
+            <strong>Dept_ID (FK):</strong>
+            References <code>DEPARTMENT(Dept_ID)</code>.
+        </li>
+    </ul>
+
+    <!-- ENROLLMENT TABLE -->
+
+    <h3>4. ENROLLMENT Table</h3>
+
+    <p>
+        Stores information about students enrolled in different courses.
+    </p>
+
+    <ul>
+        <li>
+            <strong>Student_ID (PK, FK):</strong>
+            References <code>STUDENT(Student_ID)</code>.
+        </li>
+
+        <li>
+            <strong>Course_ID (PK, FK):</strong>
+            References <code>COURSE(Course_ID)</code>.
+        </li>
+
+        <li>
+            <strong>Enrollment_Date:</strong>
+            Stores the date of enrollment.
+        </li>
+    </ul>
+
+    <p>
+        <strong>Composite Primary Key:</strong>
+        <code>(Student_ID, Course_ID)</code>.
+        Both attributes together uniquely identify each enrollment.
+    </p>
+
+    <!-- SECTION 4 -->
+
+    <h2>4. Relationships Between Tables</h2>
+
+    <ul>
+        <li>
+            <strong>DEPARTMENT &rarr; STUDENT (1:N):</strong>
+            One department can have many students, but each student belongs to one department.
+        </li>
+
+        <li>
+            <strong>DEPARTMENT &rarr; COURSE (1:N):</strong>
+            One department can offer many courses, but each course belongs to one department.
+        </li>
+
+        <li>
+            <strong>STUDENT &rarr; ENROLLMENT (1:N):</strong>
+            One student can have many enrollment records.
+        </li>
+
+        <li>
+            <strong>COURSE &rarr; ENROLLMENT (1:N):</strong>
+            One course can have many enrollment records.
+        </li>
+    </ul>
+
+    <p>
+        The ENROLLMENT table connects STUDENT and COURSE, allowing a Many-to-Many (M:N) relationship between them.
+    </p>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="page-nav">
+
+    <a href="q8.html">
+        &#8592; Previous: Q8
+    </a>
+
+    <a href="q25.html">
+        Next: Q25 &#8594;
+    </a>
+
+</nav>
+
+</div>
+
+</body>
+</html>
