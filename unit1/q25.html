@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +9,47 @@
 <title>Q25 - Weak Entity Sets, Codd's Rules and Relational Schemas | DBMS</title>
 
 <link rel="stylesheet" href="../style.css">
+
+<style>
+/* Q25 Relational Schema Boxes */
+
+.answer .schema-box {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+
+    margin: 10px 0;
+    padding: 12px 14px;
+
+    background: #EEF2F5;
+    border-left: 3px solid #315F83;
+    border-radius: 4px;
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.7;
+    letter-spacing: normal;
+    text-align: left;
+
+    color: #173A56;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+/* Mobile Table Scrolling */
+
+.answer .rules-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+</style>
+
 </head>
 
 <body class="unit1">
@@ -83,7 +125,7 @@
     <div class="diagram">
         <img
             src="../q25.png"
-            alt="ER Diagram of Weak Entity Set showing EMPLOYEE, HAS relationship, and DEPENDENT"
+            alt="ER Diagram showing EMPLOYEE as a strong entity, HAS relationship, and DEPENDENT as a weak entity"
             loading="lazy"
         >
     </div>
@@ -100,7 +142,7 @@
         There are 13 rules, numbered from Rule 0 to Rule 12.
     </p>
 
-    <div style="overflow-x:auto; -webkit-overflow-scrolling:touch;">
+    <div class="rules-table">
 
         <table>
             <thead>
@@ -204,15 +246,17 @@
 
     <h3>Example: Student and Department Database</h3>
 
+    <!-- RELATIONAL SCHEMA BOXES -->
 
-<div class="relational-schema">
-    DEPARTMENT(Dept_ID, Dept_Name)
-</div>
+    <div class="schema-box">
+        DEPARTMENT(Dept_ID, Dept_Name)
+    </div>
 
-<div class="relational-schema">
-    STUDENT(Student_ID, Name, Email, Dept_ID)
-</div>
+    <div class="schema-box">
+        STUDENT(Student_ID, Name, Email, Dept_ID)
+    </div>
 
+    <!-- KEYS -->
 
     <h3>Keys</h3>
 
@@ -233,6 +277,8 @@
             <code>DEPARTMENT(Dept_ID)</code>.
         </li>
     </ul>
+
+    <!-- RELATIONSHIP -->
 
     <h3>Relationship</h3>
 
