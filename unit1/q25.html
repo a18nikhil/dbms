@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Q25 - Weak Entity Sets, Codd's Rules and Relational Schemas | DBMS</title>
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="unit1">
+
+<div class="container">
+
+<!-- BACK TO UNIT -->
+
+<nav>
+    <a href="index.html" class="back-link">
+        &#8592; Back to Unit I
+    </a>
+</nav>
+
+<main class="answer">
+
+    <!-- QUESTION 25 -->
+
+    <h1>
+        Q25. Explain Weak Entity Sets, Codd's Rules, and Relational Schemas with Suitable Examples.
+    </h1>
+
+    <!-- SECTION 1 -->
+
+    <h2>1. Weak Entity Sets</h2>
+
+    <p>
+        A Weak Entity Set is an entity that cannot be uniquely identified by its own attributes. It depends on a Strong Entity Set.
+    </p>
+
+    <h3>Characteristics</h3>
+
+    <ul>
+        <li>
+            It does not have a complete Primary Key of its own.
+        </li>
+
+        <li>
+            It depends on a strong entity for identification.
+        </li>
+
+        <li>
+            It is represented by a double rectangle in an ER diagram.
+        </li>
+    </ul>
+
+    <h3>Example</h3>
+
+    <p>
+        Consider an EMPLOYEE and their DEPENDENT.
+    </p>
+
+    <ul>
+        <li>
+            <strong>EMPLOYEE:</strong>
+            Emp_ID (Primary Key), Name.
+        </li>
+
+        <li>
+            <strong>DEPENDENT:</strong>
+            Dependent_Name, Age.
+        </li>
+    </ul>
+
+    <p>
+        EMPLOYEE is the strong entity, and DEPENDENT is the weak entity.
+    </p>
+
+    <!-- WEAK ENTITY DIAGRAM -->
+
+    <h3>Diagram: Weak Entity Set</h3>
+
+    <div class="diagram">
+        <img
+            src="../q25.png"
+            alt="ER Diagram of Weak Entity Set showing EMPLOYEE, HAS relationship, and DEPENDENT"
+            loading="lazy"
+        >
+    </div>
+
+    <!-- SECTION 2 -->
+
+    <h2>2. Codd's Rules</h2>
+
+    <p>
+        Codd's Rules were introduced by E. F. Codd to define the requirements of a Relational Database Management System (RDBMS).
+    </p>
+
+    <p>
+        There are 13 rules, numbered from Rule 0 to Rule 12.
+    </p>
+
+    <div style="overflow-x:auto; -webkit-overflow-scrolling:touch;">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Rule</th>
+                    <th>Name</th>
+                    <th>Explanation</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>Foundation Rule</td>
+                    <td>The system must manage data using relational methods.</td>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>Information Rule</td>
+                    <td>All data must be stored in tables.</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Guaranteed Access Rule</td>
+                    <td>Every data value must be accessible using table name, Primary Key, and column name.</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Systematic Treatment of NULL</td>
+                    <td>NULL values must be handled consistently.</td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>Dynamic Online Catalog</td>
+                    <td>Database information must be stored in tables and accessible through the database language.</td>
+                </tr>
+
+                <tr>
+                    <td>5</td>
+                    <td>Comprehensive Data Sublanguage</td>
+                    <td>The system must support a language such as SQL for database operations.</td>
+                </tr>
+
+                <tr>
+                    <td>6</td>
+                    <td>View Updating Rule</td>
+                    <td>Views that can logically be updated should support updates.</td>
+                </tr>
+
+                <tr>
+                    <td>7</td>
+                    <td>High-Level Insert, Update, Delete</td>
+                    <td>The system must support operations on multiple rows at once.</td>
+                </tr>
+
+                <tr>
+                    <td>8</td>
+                    <td>Physical Data Independence</td>
+                    <td>Changes in physical storage should not affect applications.</td>
+                </tr>
+
+                <tr>
+                    <td>9</td>
+                    <td>Logical Data Independence</td>
+                    <td>Changes in logical structure should not affect applications where possible.</td>
+                </tr>
+
+                <tr>
+                    <td>10</td>
+                    <td>Integrity Independence</td>
+                    <td>Integrity constraints must be defined and stored in the database.</td>
+                </tr>
+
+                <tr>
+                    <td>11</td>
+                    <td>Distribution Independence</td>
+                    <td>Users should not need to know whether data is stored at different locations.</td>
+                </tr>
+
+                <tr>
+                    <td>12</td>
+                    <td>Non-Subversion Rule</td>
+                    <td>Low-level access must not bypass integrity rules.</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- SECTION 3 -->
+
+    <h2>3. Relational Schemas</h2>
+
+    <p>
+        A Relational Schema defines the structure of a table, including its name, attributes, Primary Key, and Foreign Keys.
+    </p>
+
+    <h3>Example: Student and Department Database</h3>
+
+    <div class="sql-query">
+        DEPARTMENT(Dept_ID, Dept_Name)
+    </div>
+
+    <div class="sql-query">
+        STUDENT(Student_ID, Name, Email, Dept_ID)
+    </div>
+
+    <h3>Keys</h3>
+
+    <ul>
+        <li>
+            <strong>DEPARTMENT:</strong>
+            Dept_ID is the Primary Key.
+        </li>
+
+        <li>
+            <strong>STUDENT:</strong>
+            Student_ID is the Primary Key.
+        </li>
+
+        <li>
+            <strong>STUDENT:</strong>
+            Dept_ID is a Foreign Key referencing
+            <code>DEPARTMENT(Dept_ID)</code>.
+        </li>
+    </ul>
+
+    <h3>Relationship</h3>
+
+    <p>
+        One department can have many students, but each student belongs to one department. This represents a One-to-Many (1:N) relationship.
+    </p>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="page-nav">
+
+    <a href="q9.html">
+        &#8592; Previous: Q9
+    </a>
+
+    <a href="q27.html">
+        Next: Q27 &#8594;
+    </a>
+
+</nav>
+
+</div>
+
+</body>
+</html>
