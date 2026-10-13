@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +36,7 @@
     <h2>1. Introduction</h2>
 
     <p>
-        Degrees of Data Abstraction describe how data is represented at different levels, from its actual storage to the way users understand it.
+        Degrees of Data Abstraction explain how data is described at different levels, from how it is stored in a computer to how users understand it.
     </p>
 
     <p>
@@ -43,9 +44,17 @@
     </p>
 
     <ul>
-        <li>Low-Level / Physical Model</li>
-        <li>Representational / Logical Model</li>
-        <li>High-Level / Conceptual Model</li>
+        <li>
+            Low-Level / Physical Model
+        </li>
+
+        <li>
+            Representational / Logical Model
+        </li>
+
+        <li>
+            High-Level / Conceptual Model
+        </li>
     </ul>
 
     <!-- SECTION 2 -->
@@ -55,7 +64,7 @@
     <div class="diagram">
         <img
             src="../q27.png"
-            alt="Degrees of Data Abstraction showing High-Level Conceptual Model, Representational Logical Model, and Low-Level Physical Model"
+            alt="Degrees of Data Abstraction showing Low-Level Physical Model, Representational Logical Model, and High-Level Conceptual Model"
             loading="lazy"
         >
     </div>
@@ -74,17 +83,21 @@
         </li>
 
         <li>
-            It describes how data is actually stored on disk.
+            It explains how and where data is actually stored in the computer.
         </li>
 
         <li>
-            It includes files, indexes, and storage structures.
+            Data is stored in files on a disk.
+        </li>
+
+        <li>
+            Indexes are used to find stored data quickly.
         </li>
     </ul>
 
     <p>
         <strong>Example:</strong>
-        Student marks stored in a disk file using a B+-tree index.
+        Student marks are stored in a file on disk. An index helps the database find a student's marks quickly.
     </p>
 
     <!-- LOGICAL MODEL -->
@@ -97,21 +110,21 @@
         </li>
 
         <li>
-            It describes how data is organized in a DBMS.
+            It explains how data is arranged inside a database.
         </li>
 
         <li>
-            It represents data using tables, columns, and relationships.
+            Data is organized into tables with rows and columns.
         </li>
 
         <li>
-            It hides physical storage details.
+            It also shows how different tables are connected, without explaining how they are stored on disk.
         </li>
     </ul>
 
     <p>
         <strong>Example:</strong>
-        A STUDENT_MARKS table containing Student_ID, Course_ID, and Marks.
+        A STUDENT_MARKS table contains three columns: Student_ID, Course_ID, and Marks.
     </p>
 
     <!-- CONCEPTUAL MODEL -->
@@ -124,21 +137,21 @@
         </li>
 
         <li>
-            It describes data as users understand it.
+            It explains data in a way that people can easily understand.
         </li>
 
         <li>
-            It focuses on entities, attributes, and relationships.
+            It identifies the main entities and the relationships between them.
         </li>
 
         <li>
-            It is represented using ER Diagrams and UML Class Diagrams.
+            ER Diagrams and UML Class Diagrams are used to represent this level.
         </li>
     </ul>
 
     <p>
         <strong>Example:</strong>
-        A student receives marks in different courses.
+        A student studies different courses and receives marks in each course.
     </p>
 
 </main>
