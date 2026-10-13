@@ -340,14 +340,16 @@ th {
 }
 
 
+
+
 /* Global Diagram Size Fix */
 
 /* Desktop */
 @media (min-width: 768px) {
     .answer img {
         width: auto !important;
-        max-width: min(100%, 550px) !important;
-        max-height: 420px !important;
+        max-width: min(100%, 600px) !important;
+        max-height: 460px !important;
         height: auto !important;
         object-fit: contain;
     }
