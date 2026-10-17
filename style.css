@@ -346,3 +346,1456 @@ th {
 
 
 
+
+
+/* ===== HOME PAGE ===== */
+
+
+/* =====================================
+   DBMS HOMEPAGE - EMERALD THEME
+   ===================================== */
+
+body.dbms-home {
+    margin: 0;
+    min-height: 100vh;
+
+    background-color: #092C2B;
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            ellipse at 20% 10%,
+            #14504B 0%,
+            #092C2B 55%,
+            #061D1D 100%
+        );
+
+    background-size:
+        32px 32px,
+        32px 32px,
+        100% 100%;
+
+    color: #F6F4EC;
+    font-family: Georgia, Cambria, "Times New Roman", serif;
+}
+
+/* Main Container */
+
+.dbms-home .home-container {
+    width: min(100% - 36px, 900px);
+    margin: 0 auto;
+    padding: 0 0 65px;
+    box-sizing: border-box;
+}
+
+/* Subject Header */
+
+.dbms-home .home-header {
+    padding: 76px 16px 52px;
+    text-align: center;
+}
+
+.dbms-home .home-header h1 {
+    margin: 0;
+
+    color: #E8C59B;
+    font-family: Georgia, Cambria, serif;
+    font-size: clamp(34px, 7vw, 58px);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+
+/* Decorative Divider */
+
+.dbms-home .header-divider {
+    width: 85px;
+    height: 2px;
+    margin: 25px auto 0;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #CDA675,
+        transparent
+    );
+}
+
+/* Unit Cards */
+
+.dbms-home .unit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.dbms-home .unit-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 116px;
+    padding: 20px 28px;
+
+    background: linear-gradient(
+        120deg,
+        rgba(29, 80, 72, 0.96),
+        rgba(13, 52, 48, 0.96)
+    );
+
+    border: 1px solid rgba(205,166,117,0.12);
+    border-radius: 12px;
+
+    box-sizing: border-box;
+    overflow: hidden;
+
+    text-decoration: none;
+    text-align: center;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+/* Copper Accent */
+
+.dbms-home .unit-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 3px;
+    background: #CDA675;
+}
+
+/* Unit Number */
+
+.dbms-home .unit-number {
+    display: block;
+    margin-bottom: 9px;
+
+    color: #D9B88D;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Unit Title */
+
+.dbms-home .unit-title {
+    display: block;
+
+    color: #F8F6F0;
+    font-size: clamp(17px, 3.8vw, 22px);
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* Question Count */
+
+.dbms-home .unit-count {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+
+    color: rgba(245,241,229,0.55);
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+/* Hover */
+
+@media (hover: hover) {
+    .dbms-home .unit-card:hover {
+        transform: translateY(-3px);
+        background: linear-gradient(
+            120deg,
+            #225E54,
+            #12443E
+        );
+        border-color: rgba(205,166,117,0.35);
+    }
+}
+
+.dbms-home .unit-card:focus-visible {
+    outline: 2px solid #E8C59B;
+    outline-offset: 4px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .dbms-home .home-container {
+        width: calc(100% - 48px);
+    }
+
+    .dbms-home .home-header {
+        padding: 80px 10px 48px;
+    }
+
+    .dbms-home .home-header h1 {
+        font-size: clamp(31px, 8vw, 42px);
+    }
+
+    .dbms-home .unit-list {
+        gap: 13px;
+    }
+
+    .dbms-home .unit-card {
+        min-height: 116px;
+        padding: 23px 18px;
+    }
+
+    .dbms-home .unit-title {
+        font-size: clamp(16px, 4.3vw, 21px);
+    }
+
+    .dbms-home .unit-number {
+        font-size: 10px;
+    }
+
+    .dbms-home .unit-count {
+        font-size: 9px;
+    }
+}
+
+
+
+/* ===== ALL UNIT INDEX PAGES ===== */
+
+
+/* ==========================================
+   DBMS UNIT I - EMERALD GREEN THEME
+   ========================================== */
+
+body.dbms-unit-index {
+    margin: 0;
+    min-height: 100vh;
+
+    background-color: #092C2B;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            ellipse at 20% 10%,
+            #14504B 0%,
+            #092C2B 55%,
+            #061D1D 100%
+        );
+
+    background-size:
+        32px 32px,
+        32px 32px,
+        100% 100%;
+
+    color: #F6F4EC;
+    font-family: Georgia, Cambria, "Times New Roman", serif;
+}
+
+/* Main Container */
+
+.dbms-unit-index .unit-container {
+    box-sizing: border-box;
+    width: min(100% - 36px, 900px);
+    margin: 0 auto;
+    padding: 16px 0 80px;
+}
+
+/* Back Button */
+
+.dbms-unit-index .unit-back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    margin-bottom: 26px;
+    padding: 9px 17px;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(232,197,155,0.40);
+    border-radius: 8px;
+
+    color: #F6F4EC;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: background 0.2s ease;
+}
+
+.dbms-unit-index .unit-back:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+/* Syllabus Card */
+
+.dbms-unit-index .syllabus-card {
+    box-sizing: border-box;
+    width: 100%;
+
+    margin-bottom: 24px;
+    padding: 23px 25px;
+
+    background: #FAFAF7;
+    border: 1px solid #E2E6E1;
+    border-top: 4px solid #CDA675;
+    border-radius: 11px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+}
+
+.dbms-unit-index .syllabus-card h1 {
+    margin: 0 0 14px;
+
+    color: #153D39;
+    font-family: Georgia, Cambria, serif;
+    font-size: clamp(21px, 4.5vw, 26px);
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.dbms-unit-index .syllabus-card p {
+    margin: 0;
+
+    color: #59646A;
+    font-size: 14px;
+    line-height: 1.9;
+    text-align: left;
+}
+
+/* Questions Header */
+
+.dbms-unit-index .questions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    margin: 0 0 12px;
+}
+
+.dbms-unit-index .questions-header h2 {
+    margin: 0;
+
+    color: #E8C59B;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.dbms-unit-index .questions-count {
+    color: rgba(246,244,236,0.60);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+/* Question List */
+
+.dbms-unit-index .question-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+/* Question Cards */
+
+.dbms-unit-index .question-card {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    width: 100%;
+    min-height: 66px;
+    padding: 13px 15px;
+
+    background: #FAFAF7;
+    border: 1px solid #E2E6E1;
+    border-radius: 9px;
+
+    color: #34434A;
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+/* Question Number */
+
+.dbms-unit-index .question-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 42px;
+    height: 37px;
+
+    background: #E5EFEB;
+    border-radius: 7px;
+
+    color: #37665D;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Question Text */
+
+.dbms-unit-index .question-text {
+    flex: 1;
+    min-width: 0;
+
+    color: #3C4850;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
+    text-align: left;
+}
+
+/* Right Arrow */
+
+.dbms-unit-index .question-arrow {
+    flex-shrink: 0;
+
+    color: #80928E;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+}
+
+/* Hover */
+
+@media (hover: hover) {
+    .dbms-unit-index .question-card:hover {
+        background: #F0F5F1;
+        border-color: #B5CFC4;
+        transform: translateX(3px);
+    }
+}
+
+/* Keyboard Accessibility */
+
+.dbms-unit-index a:focus-visible {
+    outline: 2px solid #E8C59B;
+    outline-offset: 3px;
+}
+
+/* Bottom Back Button */
+
+.dbms-unit-index .bottom-navigation {
+    margin-top: 25px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .dbms-unit-index .unit-container {
+        width: calc(100% - 48px);
+        padding-top: 16px;
+    }
+
+    .dbms-unit-index .syllabus-card {
+        padding: 20px 20px;
+    }
+
+    .dbms-unit-index .syllabus-card p {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .dbms-unit-index .questions-header h2 {
+        font-size: 21px;
+    }
+
+    .dbms-unit-index .question-card {
+        gap: 11px;
+        padding: 12px 12px;
+    }
+
+    .dbms-unit-index .question-number {
+        flex-basis: 40px;
+        height: 36px;
+        font-size: 11px;
+    }
+
+    .dbms-unit-index .question-text {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+}
+
+
+
+/* ===== SHARED QUESTION PAGE THEME ===== */
+body.dbms-question {
+  margin:0; min-height:100vh; color:#243B42;
+  background-color:#092C2B;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px),radial-gradient(ellipse at 20% 10%,#14504B 0%,#092C2B 55%,#061D1D 100%);
+  background-size:32px 32px,32px 32px,100% 100%;
+  font-family:Georgia,Cambria,"Times New Roman",serif;
+}
+body.dbms-question .container {box-sizing:border-box;width:min(calc(100% - 36px),900px);max-width:900px;margin:0 auto;padding:16px 0 60px;}
+body.dbms-question .back-link, body.dbms-question .page-nav a {
+ display:inline-flex;align-items:center;justify-content:center;padding:9px 16px;
+ background:rgba(255,255,255,.05);border:1px solid rgba(232,197,155,.4);border-radius:8px;
+ color:#F6F4EC;font:600 12px Arial,sans-serif;text-decoration:none;
+}
+body.dbms-question .back-link {margin:0 0 18px;}
+body.dbms-question .back-link:hover,body.dbms-question .page-nav a:hover {background:rgba(255,255,255,.12);text-decoration:none;}
+body.dbms-question .answer {box-sizing:border-box;width:100%;max-width:100%;margin:0;padding:28px 30px 32px;background:#FAFAF7;border:1px solid #E2E6E1;border-top:4px solid #CDA675;border-radius:11px;box-shadow:0 6px 22px rgba(0,0,0,.12);color:#243B42;font:15px/1.75 Georgia,Cambria,"Times New Roman",serif;text-align:left;}
+body.dbms-question .answer h1 {margin:0 0 24px;padding:0;color:#153D39;font-size:clamp(18px,3vw,22px);font-weight:700;line-height:1.45;text-align:left;}
+body.dbms-question .answer h2 {margin:25px 0 10px;padding:0;color:#174B43;font-size:17px;font-weight:700;line-height:1.45;text-align:left;}
+body.dbms-question .answer h3 {margin:19px 0 8px;color:#174B43;font-size:15px;font-weight:700;line-height:1.45;text-align:left;}
+body.dbms-question .answer p {margin:0 0 13px;color:#34454A;font-size:15px;line-height:1.75;text-align:left;}
+body.dbms-question .answer ul,body.dbms-question .answer ol {margin:10px 0 18px;padding-left:24px;}
+body.dbms-question .answer li {margin-bottom:9px;padding-left:2px;color:#34454A;font-size:15px;line-height:1.7;text-align:left;}
+body.dbms-question .answer li::marker {color:#547B72;}
+body.dbms-question .answer strong {color:#153D39;font-weight:700;}
+body.dbms-question .answer img {display:block;width:auto!important;max-width:min(100%,600px)!important;max-height:460px!important;height:auto!important;margin-left:auto;margin-right:auto;object-fit:contain;}
+body.dbms-question .page-nav {display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center;margin-top:18px;padding:0;border:0;background:transparent;}
+body.dbms-question .page-nav .nav-prev {justify-self:start;}
+body.dbms-question .page-nav .nav-next {justify-self:end;}
+body.dbms-question a:focus-visible {outline:2px solid #E8C59B;outline-offset:3px;}
+@media(max-width:600px){
+ body.dbms-question .container {width:calc(100% - 48px);padding-top:16px;}
+ body.dbms-question .answer {padding:25px 21px 28px;font-size:14px;}
+ body.dbms-question .answer h1 {font-size:17px;line-height:1.45;}
+ body.dbms-question .answer h2 {font-size:15px;margin-top:23px;}
+ body.dbms-question .answer h3 {font-size:14px;}
+ body.dbms-question .answer p,body.dbms-question .answer li {font-size:14px;line-height:1.7;}
+ body.dbms-question .answer img {max-width:100%!important;max-height:320px!important;}
+ body.dbms-question .page-nav a {padding:9px 12px;font-size:11px;}
+}
+/* The Unit I index styles from the original design apply to every unit. */
+
+
+/* ===== SPECIALIZED DIAGRAM, TABLE, SQL AND CODE STYLES ===== */
+/* unit1 Q25 page-specific formatting */
+
+/* Q25 Relational Schema Boxes */
+
+.answer .schema-box {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+
+    margin: 10px 0;
+    padding: 12px 14px;
+
+    background: #EEF2F5;
+    border-left: 3px solid #315F83;
+    border-radius: 4px;
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.7;
+    letter-spacing: normal;
+    text-align: left;
+
+    color: #173A56;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+/* Mobile Table Scrolling */
+
+.answer .rules-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* unit2 Q11 page-specific formatting */
+
+/* Q11 SQL Query Formatting */
+
+.answer .q11-query {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+
+    margin: 12px 0 18px;
+    padding: 13px 15px;
+
+    background: #EEF2F5;
+    border-left: 4px solid #315F83;
+    border-radius: 5px;
+
+    overflow: visible;
+    text-align: left;
+}
+
+.answer .q11-query code {
+    display: block;
+
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.8;
+    letter-spacing: 0;
+
+    color: #102A43;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+
+    text-align: left;
+}
+
+/* Q11 Table Formatting */
+
+.answer .q11-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* unit2 Q13 page-specific formatting */
+
+/* Q13 SQL Query Formatting */
+
+.answer .q13-query {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+
+    margin: 10px 0 14px;
+    padding: 12px 14px;
+
+    background: #EEF2F5;
+    border-left: 4px solid #315F83;
+    border-radius: 5px;
+
+    text-align: left;
+    overflow: visible;
+}
+
+.answer .q13-query code {
+    display: block;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.8;
+    letter-spacing: 0;
+
+    color: #102A43;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    text-align: left;
+}
+
+/* Q13 Table Formatting */
+
+.answer .q13-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* unit2 Q14 page-specific formatting */
+
+/* Q14 Mobile-Friendly Tables */
+
+.answer .q14-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* unit2 Q15 page-specific formatting */
+
+/* Q15 SQL Query Formatting */
+
+.answer .q15-query {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+
+    margin: 10px 0 16px;
+    padding: 12px 14px;
+
+    background: #EEF2F5;
+    border-left: 4px solid #315F83;
+    border-radius: 5px;
+
+    text-align: left;
+    overflow: visible;
+}
+
+.answer .q15-query code {
+    display: block;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.8;
+    letter-spacing: 0;
+
+    color: #102A43;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    text-align: left;
+}
+
+/* Q15 Table Formatting */
+
+.answer .q15-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* unit2 Q16 page-specific formatting */
+
+/* Q16 Mobile-Friendly Tables */
+
+.answer .q16-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* unit2 Q17 page-specific formatting */
+
+/* Q17 SQL Query Formatting */
+
+.answer .q17-query {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+
+    margin: 10px 0 16px;
+    padding: 12px 14px;
+
+    background: #EEF2F5;
+    border-left: 4px solid #315F83;
+    border-radius: 5px;
+
+    overflow: visible;
+    text-align: left;
+}
+
+.answer .q17-query code {
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.8;
+    color: #102A43;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    text-align: left;
+}
+
+/* Q17 Mobile-Friendly Tables */
+
+.answer .q17-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* unit2 Q19 page-specific formatting */
+
+/* Q19 Mobile-Friendly Tables */
+
+.answer .q19-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Q19 Mathematical Expressions */
+
+.answer .q19-formula {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin: 12px 0 18px;
+    padding: 13px 14px;
+
+    background: #EEF2F5;
+    border-left: 4px solid #315F83;
+    border-radius: 5px;
+
+    color: #102A43;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.8;
+
+    text-align: left;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    white-space: normal;
+}
+
+.answer .q19-formula .variable {
+    font-style: italic;
+}
+
+/* Comparison Table */
+
+.answer .q19-comparison {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.answer .q19-comparison th,
+.answer .q19-comparison td {
+    overflow-wrap: break-word;
+    word-break: normal;
+    vertical-align: top;
+}
+
+@media (max-width: 480px) {
+    .answer .q19-formula {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .answer .q19-comparison th,
+    .answer .q19-comparison td {
+        padding: 8px 6px;
+        font-size: 13px;
+    }
+}
+
+
+/* unit2 Q21 page-specific formatting */
+
+/* Q21 SQL Query Formatting */
+
+.answer .q21-query {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+
+    margin: 10px 0 14px;
+    padding: 12px 14px;
+
+    background: #EEF2F5;
+    border-left: 4px solid #315F83;
+    border-radius: 5px;
+
+    overflow: visible;
+    text-align: left;
+}
+
+.answer .q21-query code {
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.8;
+    color: #102A43;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    text-align: left;
+}
+
+/* Q21 Mobile-Friendly Tables */
+
+.answer .q21-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* unit2 Q23 page-specific formatting */
+
+/* Q23 Relational Algebra Expressions */
+
+.answer .q23-formula {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin: 12px 0 18px;
+    padding: 13px 14px;
+
+    background: #EEF2F5;
+    border-left: 4px solid #315F83;
+    border-radius: 5px;
+
+    color: #102A43;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.8;
+
+    text-align: left;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    white-space: normal;
+}
+
+.answer .q23-formula sub {
+    font-size: 0.75em;
+    font-weight: 500;
+}
+
+/* Mobile-Friendly Tables */
+
+.answer .q23-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 480px) {
+    .answer .q23-formula {
+        font-size: 15px;
+        padding: 12px;
+    }
+}
+
+
+/* unit3 Q18 page-specific formatting */
+
+/* Q18 Diagram Formatting */
+
+.answer .q18-diagram {
+    width: 100%;
+    max-width: 100%;
+    margin: 18px auto 24px;
+    text-align: center;
+}
+
+.answer .q18-diagram img {
+    display: block;
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+
+/* unit3 Q20 page-specific formatting */
+
+/* Q20 Diagram Formatting */
+
+.answer .q20-diagram {
+    width: 100%;
+    max-width: 100%;
+    margin: 18px auto 24px;
+    text-align: center;
+}
+
+.answer .q20-diagram img {
+    display: block;
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+/* Q20 Mobile-Friendly Table */
+
+.answer .q20-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* unit3 Q22 page-specific formatting */
+
+/* Q22 Diagram Containers */
+
+.answer .q22-diagram {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin: 14px 0 20px;
+    padding: 18px 12px;
+
+    background: #F3F6F8;
+    border: 1px solid #D8E1E8;
+    border-radius: 6px;
+
+    text-align: center;
+}
+
+/* Horizontal Serial Schedule */
+
+.answer .q22-serial {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: nowrap;
+}
+
+.answer .q22-serial-node {
+    flex: 0 1 120px;
+    min-width: 0;
+    padding: 12px 8px;
+
+    background: #FFFFFF;
+    border: 2px solid #315F83;
+    border-radius: 5px;
+
+    color: #102A43;
+    font-weight: 700;
+    text-align: center;
+}
+
+.answer .q22-arrow {
+    flex-shrink: 0;
+    color: #315F83;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+/* Horizontal Non-Serial Schedule */
+
+.answer .q22-operations {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7px;
+    width: 100%;
+}
+
+.answer .q22-operation {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 2px;
+
+    background: #FFFFFF;
+    border: 2px solid #315F83;
+    border-radius: 5px;
+
+    color: #102A43;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.answer .q22-time {
+    position: relative;
+    width: 94%;
+    height: 2px;
+    margin: 26px auto 18px;
+    background: #315F83;
+}
+
+.answer .q22-time::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -5px;
+
+    width: 10px;
+    height: 10px;
+
+    border-top: 2px solid #315F83;
+    border-right: 2px solid #315F83;
+    transform: rotate(45deg);
+}
+
+.answer .q22-time-label {
+    margin: 0 0 8px;
+    color: #102A43;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Precedence Graphs */
+
+.answer .q22-graph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: nowrap;
+}
+
+.answer .q22-graph-node {
+    min-width: 55px;
+    padding: 10px 15px;
+
+    background: #FFFFFF;
+    border: 2px solid #315F83;
+    border-radius: 5px;
+
+    color: #102A43;
+    font-weight: 700;
+    text-align: center;
+}
+
+.answer .q22-diagram p {
+    margin: 14px 0 0;
+    color: #334155;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Mobile Optimization */
+
+@media (max-width: 480px) {
+
+    .answer .q22-diagram {
+        padding: 16px 10px;
+    }
+
+    .answer .q22-serial {
+        gap: 10px;
+    }
+
+    .answer .q22-serial-node {
+        flex-basis: 100px;
+        padding: 10px 6px;
+    }
+
+    .answer .q22-operations {
+        gap: 5px;
+    }
+
+    .answer .q22-operation {
+        padding: 11px 1px;
+        font-size: 12px;
+        border-width: 1.5px;
+    }
+
+    .answer .q22-arrow {
+        font-size: 20px;
+    }
+
+    .answer .q22-graph {
+        gap: 10px;
+    }
+}
+
+
+/* unit3 Q24 page-specific formatting */
+
+/* Q24 Diagram Formatting */
+
+.answer .q24-diagram {
+    width: 100%;
+    max-width: 100%;
+    margin: 18px auto 24px;
+    text-align: center;
+}
+
+.answer .q24-diagram img {
+    display: block;
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+
+/* unit3 Q26 page-specific formatting */
+
+/* Q26 Diagram Formatting */
+
+.answer .q26-diagram {
+    width: 100%;
+    max-width: 100%;
+    margin: 18px auto 24px;
+    text-align: center;
+}
+
+.answer .q26-diagram img {
+    display: block;
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+
+/* unit3 Q28 page-specific formatting */
+
+/* Q28 PL/SQL Code Formatting */
+
+.answer .q28-code {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+
+    margin: 12px 0 16px;
+    padding: 14px 16px;
+
+    background: #EEF2F5;
+    border-left: 4px solid #315F83;
+    border-radius: 5px;
+
+    overflow: visible;
+    text-align: left;
+}
+
+.answer .q28-code pre {
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: normal;
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.8;
+    color: #102A43;
+
+    text-align: left;
+}
+
+.answer .q28-code code {
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    white-space: inherit;
+    padding: 0;
+    border: none;
+}
+
+/* Q28 Diagram Formatting */
+
+.answer .q28-diagram {
+    width: 100%;
+    max-width: 100%;
+    margin: 18px auto 24px;
+    text-align: center;
+}
+
+.answer .q28-diagram img {
+    display: block;
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+@media (max-width: 480px) {
+    .answer .q28-code {
+        padding: 12px;
+    }
+
+    .answer .q28-code pre {
+        font-size: 13px;
+    }
+}
+
+
+/* unit3 Q30 page-specific formatting */
+
+/* Q30 Diagram Formatting */
+
+.answer .q30-diagram {
+    width: 100%;
+    max-width: 100%;
+    margin: 18px auto 24px;
+    text-align: center;
+}
+
+.answer .q30-diagram img {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+
+/* unit3 Q32 page-specific formatting */
+
+/* Q32 PL/SQL Code Formatting */
+
+.answer .q32-code {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+
+    margin: 12px 0 16px;
+    padding: 14px 16px;
+
+    background: #EEF2F5;
+    border-left: 4px solid #315F83;
+    border-radius: 5px;
+
+    overflow: visible;
+    text-align: left;
+}
+
+.answer .q32-code pre {
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: normal;
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.8;
+    color: #102A43;
+
+    text-align: left;
+}
+
+.answer .q32-code code {
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    white-space: inherit;
+    padding: 0;
+    border: none;
+}
+
+/* Q32 Diagram Formatting */
+
+.answer .q32-diagram {
+    width: 100%;
+    max-width: 100%;
+    margin: 18px auto 24px;
+    text-align: center;
+}
+
+.answer .q32-diagram img {
+    display: block;
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+/* Q32 Comparison Table */
+
+.answer .q32-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 480px) {
+    .answer .q32-code {
+        padding: 12px;
+    }
+
+    .answer .q32-code pre {
+        font-size: 13px;
+    }
+}

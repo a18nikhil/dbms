@@ -1,327 +1,64 @@
 
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Database Management Systems | Exam Oriented Questions & Answers</title>
-
-<link rel="stylesheet" href="style.css">
-
-<style>
-/* =====================================
-   DBMS HOMEPAGE - EMERALD THEME
-   ===================================== */
-
-body.dbms-home {
-    margin: 0;
-    min-height: 100vh;
-
-    background-color: #092C2B;
-    background-image:
-        linear-gradient(
-            rgba(255,255,255,0.025) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,0.025) 1px,
-            transparent 1px
-        ),
-        radial-gradient(
-            ellipse at 20% 10%,
-            #14504B 0%,
-            #092C2B 55%,
-            #061D1D 100%
-        );
-
-    background-size:
-        32px 32px,
-        32px 32px,
-        100% 100%;
-
-    color: #F6F4EC;
-    font-family: Georgia, Cambria, "Times New Roman", serif;
-}
-
-/* Main Container */
-
-.dbms-home .home-container {
-    width: min(100% - 36px, 900px);
-    margin: 0 auto;
-    padding: 0 0 65px;
-    box-sizing: border-box;
-}
-
-/* Subject Header */
-
-.dbms-home .home-header {
-    padding: 76px 16px 52px;
-    text-align: center;
-}
-
-.dbms-home .home-header h1 {
-    margin: 0;
-
-    color: #E8C59B;
-    font-family: Georgia, Cambria, serif;
-    font-size: clamp(34px, 7vw, 58px);
-    font-weight: 700;
-    line-height: 1.12;
-    letter-spacing: -0.5px;
-    text-align: center;
-}
-
-/* Decorative Divider */
-
-.dbms-home .header-divider {
-    width: 85px;
-    height: 2px;
-    margin: 25px auto 0;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        #CDA675,
-        transparent
-    );
-}
-
-/* Unit Cards */
-
-.dbms-home .unit-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.dbms-home .unit-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    min-height: 116px;
-    padding: 20px 28px;
-
-    background: linear-gradient(
-        120deg,
-        rgba(29, 80, 72, 0.96),
-        rgba(13, 52, 48, 0.96)
-    );
-
-    border: 1px solid rgba(205,166,117,0.12);
-    border-radius: 12px;
-
-    box-sizing: border-box;
-    overflow: hidden;
-
-    text-decoration: none;
-    text-align: center;
-
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease;
-}
-
-/* Copper Accent */
-
-.dbms-home .unit-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-
-    width: 3px;
-    background: #CDA675;
-}
-
-/* Unit Number */
-
-.dbms-home .unit-number {
-    display: block;
-    margin-bottom: 9px;
-
-    color: #D9B88D;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-/* Unit Title */
-
-.dbms-home .unit-title {
-    display: block;
-
-    color: #F8F6F0;
-    font-size: clamp(17px, 3.8vw, 22px);
-    font-weight: 700;
-    line-height: 1.4;
-    text-align: center;
-}
-
-/* Question Count */
-
-.dbms-home .unit-count {
-    position: absolute;
-    top: 13px;
-    right: 13px;
-
-    color: rgba(245,241,229,0.55);
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-    font-weight: 400;
-}
-
-/* Hover */
-
-@media (hover: hover) {
-    .dbms-home .unit-card:hover {
-        transform: translateY(-3px);
-        background: linear-gradient(
-            120deg,
-            #225E54,
-            #12443E
-        );
-        border-color: rgba(205,166,117,0.35);
-    }
-}
-
-.dbms-home .unit-card:focus-visible {
-    outline: 2px solid #E8C59B;
-    outline-offset: 4px;
-}
-
-/* Mobile */
-
-@media (max-width: 600px) {
-
-    .dbms-home .home-container {
-        width: calc(100% - 48px);
-    }
-
-    .dbms-home .home-header {
-        padding: 80px 10px 48px;
-    }
-
-    .dbms-home .home-header h1 {
-        font-size: clamp(31px, 8vw, 42px);
-    }
-
-    .dbms-home .unit-list {
-        gap: 13px;
-    }
-
-    .dbms-home .unit-card {
-        min-height: 116px;
-        padding: 23px 18px;
-    }
-
-    .dbms-home .unit-title {
-        font-size: clamp(16px, 4.3vw, 21px);
-    }
-
-    .dbms-home .unit-number {
-        font-size: 10px;
-    }
-
-    .dbms-home .unit-count {
-        font-size: 9px;
-    }
-}
-
-</style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Database Management Systems | Exam Oriented Questions &amp; Answers</title>
+<link href="style.css" rel="stylesheet"/>
 
 </head>
-
 <body class="dbms-home">
-
 <div class="home-container">
-
-    <!-- SUBJECT HEADER -->
-
-    <header class="home-header">
-
-        <h1>
-            Database<br>
-            Management<br>
+<!-- SUBJECT HEADER -->
+<header class="home-header">
+<h1>
+            Database<br/>
+            Management<br/>
             Systems
         </h1>
-
-        <div class="header-divider"></div>
-
-    </header>
-
-    <!-- UNIT CARDS -->
-
-    <main class="unit-list">
-
-        <!-- UNIT I -->
-
-        <a href="unit1/index.html" class="unit-card">
-
-            <span class="unit-count">
+<div class="header-divider"></div>
+</header>
+<!-- UNIT CARDS -->
+<main class="unit-list">
+<!-- UNIT I -->
+<a class="unit-card" href="unit1/index.html">
+<span class="unit-count">
                 13 Questions
             </span>
-
-            <span class="unit-number">
+<span class="unit-number">
                 UNIT I
             </span>
-
-            <span class="unit-title">
+<span class="unit-title">
                 Introduction to Databases and Database Design
             </span>
-
-        </a>
-
-        <!-- UNIT II -->
-
-        <a href="unit2/index.html" class="unit-card">
-
-            <span class="unit-count">
+</a>
+<!-- UNIT II -->
+<a class="unit-card" href="unit2/index.html">
+<span class="unit-count">
                 11 Questions
             </span>
-
-            <span class="unit-number">
+<span class="unit-number">
                 UNIT II
             </span>
-
-            <span class="unit-title">
+<span class="unit-title">
                 Relational Database Model and SQL
             </span>
-
-        </a>
-
-        <!-- UNIT III -->
-
-        <a href="unit3/index.html" class="unit-card">
-
-            <span class="unit-count">
+</a>
+<!-- UNIT III -->
+<a class="unit-card" href="unit3/index.html">
+<span class="unit-count">
                 8 Questions
             </span>
-
-            <span class="unit-number">
+<span class="unit-number">
                 UNIT III
             </span>
-
-            <span class="unit-title">
+<span class="unit-title">
                 Transaction Management and PL/SQL
             </span>
-
-        </a>
-
-    </main>
-
+</a>
+</main>
 </div>
-
 </body>
 </html>
