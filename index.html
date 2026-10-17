@@ -6,364 +6,320 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>DBMS | Questions & Answers</title>
+<title>Database Management Systems | Exam Oriented Questions & Answers</title>
+
+<link rel="stylesheet" href="style.css">
 
 <style>
+/* =====================================
+   DBMS HOMEPAGE - EMERALD THEME
+   ===================================== */
 
-/* GENERAL */
+body.dbms-home {
+    margin: 0;
+    min-height: 100vh;
 
-* {
+    background-color: #092C2B;
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            ellipse at 20% 10%,
+            #14504B 0%,
+            #092C2B 55%,
+            #061D1D 100%
+        );
+
+    background-size:
+        32px 32px,
+        32px 32px,
+        100% 100%;
+
+    color: #F6F4EC;
+    font-family: Georgia, Cambria, "Times New Roman", serif;
+}
+
+/* Main Container */
+
+.dbms-home .home-container {
+    width: min(100% - 36px, 900px);
+    margin: 0 auto;
+    padding: 0 0 65px;
     box-sizing: border-box;
 }
 
-html {
-    -webkit-text-size-adjust: 100%;
-}
+/* Subject Header */
 
-body {
-    margin: 0;
-    background: #F4F4F1;
-    color: #242424;
-    font-family: Georgia, Cambria, "Times New Roman", serif;
-    line-height: 1.4;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 12px 12px 20px;
-}
-
-/* HEADER */
-
-.header {
-    background: #FFFFFF;
-    border-top: 4px solid #263B5E;
-    border-radius: 9px;
+.dbms-home .home-header {
+    padding: 76px 16px 52px;
     text-align: center;
-    padding: 19px 12px 17px;
-    margin-bottom: 20px;
 }
 
-.header h1 {
+.dbms-home .home-header h1 {
     margin: 0;
-    color: #1D2F4D;
-    font-size: 27px;
-    font-weight: 400;
-    letter-spacing: 0.3px;
-    line-height: 1.25;
+
+    color: #E8C59B;
+    font-family: Georgia, Cambria, serif;
+    font-size: clamp(34px, 7vw, 58px);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.5px;
+    text-align: center;
 }
 
-.subtitle {
-    margin: 8px 0 0;
-    color: #526A7D;
-    font-family: system-ui, sans-serif;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 1.2px;
+/* Decorative Divider */
+
+.dbms-home .header-divider {
+    width: 85px;
+    height: 2px;
+    margin: 25px auto 0;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #CDA675,
+        transparent
+    );
+}
+
+/* Unit Cards */
+
+.dbms-home .unit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.dbms-home .unit-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 116px;
+    padding: 20px 28px;
+
+    background: linear-gradient(
+        120deg,
+        rgba(29, 80, 72, 0.96),
+        rgba(13, 52, 48, 0.96)
+    );
+
+    border: 1px solid rgba(205,166,117,0.12);
+    border-radius: 12px;
+
+    box-sizing: border-box;
+    overflow: hidden;
+
+    text-decoration: none;
+    text-align: center;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+/* Copper Accent */
+
+.dbms-home .unit-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 3px;
+    background: #CDA675;
+}
+
+/* Unit Number */
+
+.dbms-home .unit-number {
+    display: block;
+    margin-bottom: 9px;
+
+    color: #D9B88D;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
-/* SECTION HEADING */
+/* Unit Title */
 
-.section-title {
-    color: #1D2F4D;
-    font-size: 20px;
-    font-weight: 400;
-    margin: 0 0 13px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #D1D4D1;
-}
-
-/* UNIT CARDS */
-
-.unit-card {
+.dbms-home .unit-title {
     display: block;
-    background: #FFFFFF;
-    border-left: 4px solid var(--accent);
-    border-radius: 8px;
-    padding: 16px 17px;
-    margin-bottom: 11px;
-    text-decoration: none;
-    color: inherit;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
+    color: #F8F6F0;
+    font-size: clamp(17px, 3.8vw, 22px);
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
 }
 
-.unit-one {
-    --accent: #315F83;
-    --light: #E8F0F5;
-}
+/* Question Count */
 
-.unit-two {
-    --accent: #926D30;
-    --light: #F5EFE3;
-}
+.dbms-home .unit-count {
+    position: absolute;
+    top: 13px;
+    right: 13px;
 
-.unit-three {
-    --accent: #376B5A;
-    --light: #E9F2ED;
-}
-
-/* UNIT TOP */
-
-.unit-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-}
-
-.unit-number {
-    background: var(--light);
-    color: var(--accent);
-    border-radius: 20px;
-    padding: 4px 10px;
-    font-size: 12px;
-}
-
-.question-count {
-    color: #93999B;
-    font-family: system-ui, sans-serif;
+    color: rgba(245,241,229,0.55);
+    font-family: Arial, sans-serif;
     font-size: 10px;
-    white-space: nowrap;
-}
-
-/* UNIT TITLE */
-
-.unit-card h2 {
-    color: #1D2F4D;
-    font-size: 19px;
     font-weight: 400;
-    line-height: 1.35;
-    margin: 10px 0 8px;
 }
 
-/* NAVIGATION */
+/* Hover */
 
-.open-unit {
-    color: var(--accent);
-    font-size: 13px;
-}
-
-.unit-card:hover {
-    background: #FCFCFA;
-}
-
-.unit-card:focus-visible {
-    outline: 2px solid #245487;
-    outline-offset: 3px;
-}
-
-/* DESKTOP */
-
-@media (min-width: 700px) {
-
-    .container {
-        padding-top: 28px;
-    }
-
-    .header {
-        padding: 25px 20px;
-        margin-bottom: 25px;
-    }
-
-    .header h1 {
-        font-size: 32px;
-    }
-
-    .subtitle {
-        font-size: 12px;
-    }
-
-    .unit-card {
-        padding: 20px 22px;
-        margin-bottom: 14px;
-    }
-
-    .unit-card h2 {
-        font-size: 22px;
-    }
-
-    .open-unit {
-        font-size: 15px;
+@media (hover: hover) {
+    .dbms-home .unit-card:hover {
+        transform: translateY(-3px);
+        background: linear-gradient(
+            120deg,
+            #225E54,
+            #12443E
+        );
+        border-color: rgba(205,166,117,0.35);
     }
 }
 
-/* SMALL MOBILE */
+.dbms-home .unit-card:focus-visible {
+    outline: 2px solid #E8C59B;
+    outline-offset: 4px;
+}
 
-@media (max-width: 400px) {
+/* Mobile */
 
-    .container {
-        padding: 9px 9px 12px;
+@media (max-width: 600px) {
+
+    .dbms-home .home-container {
+        width: calc(100% - 48px);
     }
 
-    .header {
-        padding: 15px 10px 14px;
-        margin-bottom: 16px;
+    .dbms-home .home-header {
+        padding: 80px 10px 48px;
     }
 
-    .header h1 {
-        font-size: 23px;
+    .dbms-home .home-header h1 {
+        font-size: clamp(31px, 8vw, 42px);
     }
 
-    .subtitle {
+    .dbms-home .unit-list {
+        gap: 13px;
+    }
+
+    .dbms-home .unit-card {
+        min-height: 116px;
+        padding: 23px 18px;
+    }
+
+    .dbms-home .unit-title {
+        font-size: clamp(16px, 4.3vw, 21px);
+    }
+
+    .dbms-home .unit-number {
+        font-size: 10px;
+    }
+
+    .dbms-home .unit-count {
         font-size: 9px;
-        letter-spacing: 0.7px;
-    }
-
-    .section-title {
-        font-size: 19px;
-        margin-bottom: 11px;
-    }
-
-    .unit-card {
-        padding: 13px 14px;
-        margin-bottom: 9px;
-    }
-
-    .unit-card h2 {
-        font-size: 17px;
-        margin: 9px 0 7px;
-    }
-
-    .open-unit {
-        font-size: 12px;
-    }
-}
-
-/* SHORT SCREENS */
-
-@media (max-height: 700px) and (max-width: 699px) {
-
-    .header {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        margin-bottom: 13px;
-    }
-
-    .unit-card {
-        padding-top: 11px;
-        padding-bottom: 11px;
-        margin-bottom: 8px;
-    }
-
-    .unit-card h2 {
-        margin-top: 7px;
-        margin-bottom: 6px;
     }
 }
 
 </style>
+
 </head>
 
-<body>
+<body class="dbms-home">
 
-<div class="container">
+<div class="home-container">
 
-<!-- HEADER -->
+    <!-- SUBJECT HEADER -->
 
-<header class="header">
+    <header class="home-header">
 
-    <h1>
-        DATABASE MANAGEMENT SYSTEMS
-    </h1>
+        <h1>
+            Database<br>
+            Management<br>
+            Systems
+        </h1>
 
-    <p class="subtitle">
-        EXAM ORIENTED QUESTIONS &amp; ANSWERS
-    </p>
+        <div class="header-divider"></div>
 
-</header>
+    </header>
 
-<!-- MAIN -->
+    <!-- UNIT CARDS -->
 
-<main>
+    <main class="unit-list">
 
-<h2 class="section-title">
-    Select a Unit
-</h2>
+        <!-- UNIT I -->
 
-<!-- UNIT I -->
+        <a href="unit1/index.html" class="unit-card">
 
-<a href="unit1/index.html"
-   class="unit-card unit-one">
+            <span class="unit-count">
+                13 Questions
+            </span>
 
-    <div class="unit-top">
+            <span class="unit-number">
+                UNIT I
+            </span>
 
-        <span class="unit-number">
-            UNIT I
-        </span>
+            <span class="unit-title">
+                Introduction to Databases and Database Design
+            </span>
 
-        <span class="question-count">
-            13 Questions
-        </span>
+        </a>
 
-    </div>
+        <!-- UNIT II -->
 
-    <h2>
-        Introduction to Databases and Database Design
-    </h2>
+        <a href="unit2/index.html" class="unit-card">
 
-    <div class="open-unit">
-        View Unit I &#8594;
-    </div>
+            <span class="unit-count">
+                11 Questions
+            </span>
 
-</a>
+            <span class="unit-number">
+                UNIT II
+            </span>
 
-<!-- UNIT II -->
+            <span class="unit-title">
+                Relational Database Model and SQL
+            </span>
 
-<a href="unit2/index.html"
-   class="unit-card unit-two">
+        </a>
 
-    <div class="unit-top">
+        <!-- UNIT III -->
 
-        <span class="unit-number">
-            UNIT II
-        </span>
+        <a href="unit3/index.html" class="unit-card">
 
-        <span class="question-count">
-            11 Questions
-        </span>
+            <span class="unit-count">
+                8 Questions
+            </span>
 
-    </div>
+            <span class="unit-number">
+                UNIT III
+            </span>
 
-    <h2>
-        Relational Database Model and SQL
-    </h2>
+            <span class="unit-title">
+                Transaction Management and PL/SQL
+            </span>
 
-    <div class="open-unit">
-        View Unit II &#8594;
-    </div>
+        </a>
 
-</a>
-
-<!-- UNIT III -->
-
-<a href="unit3/index.html"
-   class="unit-card unit-three">
-
-    <div class="unit-top">
-
-        <span class="unit-number">
-            UNIT III
-        </span>
-
-        <span class="question-count">
-            8 Questions
-        </span>
-
-    </div>
-
-    <h2>
-        Transaction Management and PL/SQL
-    </h2>
-
-    <div class="open-unit">
-        View Unit III &#8594;
-    </div>
-
-</a>
-
-</main>
+    </main>
 
 </div>
 
