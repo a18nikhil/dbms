@@ -1,228 +1,132 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Q24 - Timestamping Methods for Concurrency Control | DBMS</title>
-
-<link rel="stylesheet" href="../style.css">
-
-<style>
-/* Q24 Diagram Formatting */
-
-.answer .q24-diagram {
-    width: 100%;
-    max-width: 100%;
-    margin: 18px auto 24px;
-    text-align: center;
-}
-
-.answer .q24-diagram img {
-    display: block;
-    width: 100%;
-    max-width: 550px;
-    height: auto;
-    margin: 0 auto;
-    object-fit: contain;
-}
-</style>
+<link href="../style.css" rel="stylesheet"/>
 
 </head>
-
-<body class="unit3">
-
+<body class="unit3 dbms-question page-q24">
 <div class="container">
-
 <!-- BACK TO UNIT III -->
 
-<nav>
-    <a href="index.html" class="back-link">
-        &#8592; Back to Unit III
-    </a>
-</nav>
-
-<main class="answer">
-
-    <!-- QUESTION 24 -->
-
-    <h1>
+<nav class="top-navigation"><a class="back-link" href="index.html">← Unit III</a></nav><main class="answer">
+<!-- QUESTION 24 -->
+<h1>
         Q24. Extend the Concepts of Timestamping Methods Used for Concurrency Control in Database Transactions.
     </h1>
-
-    <!-- SECTION 1 -->
-
-    <h2>1. Timestamping Method</h2>
-
-    <p>
+<!-- SECTION 1 -->
+<h2>1. Timestamping Method</h2>
+<p>
         Timestamping is a method used in DBMS to control multiple transactions using timestamps instead of locks.
     </p>
-
-    <p>
+<p>
         Each transaction receives a unique timestamp.
     </p>
-
-    <ul>
-        <li>
-            <strong>Older Transaction:</strong>
+<ul>
+<li>
+<strong>Older Transaction:</strong>
             Smaller timestamp.
         </li>
-
-        <li>
-            <strong>Younger Transaction:</strong>
+<li>
+<strong>Younger Transaction:</strong>
             Larger timestamp.
         </li>
-    </ul>
-
-    <p>
+</ul>
+<p>
         It helps maintain serializability.
     </p>
-
-    <!-- SECTION 2 -->
-
-    <h2>2. Working of Timestamping</h2>
-
-    <p>
+<!-- SECTION 2 -->
+<h2>2. Working of Timestamping</h2>
+<p>
         Each data item X maintains two timestamps:
     </p>
-
-    <ul>
-        <li>
-            <strong>Read_TS(X):</strong>
+<ul>
+<li>
+<strong>Read_TS(X):</strong>
             Timestamp of the latest successful read.
         </li>
-
-        <li>
-            <strong>Write_TS(X):</strong>
+<li>
+<strong>Write_TS(X):</strong>
             Timestamp of the latest successful write.
         </li>
-    </ul>
-
-    <h3>Rules:</h3>
-
-    <ul>
-        <li>
-            <strong>Read:</strong>
-            Allowed if the transaction's timestamp &ge; Write_TS(X).
+</ul>
+<h3>Rules:</h3>
+<ul>
+<li>
+<strong>Read:</strong>
+            Allowed if the transaction's timestamp ≥ Write_TS(X).
         </li>
-
-        <li>
-            <strong>Write:</strong>
-            Allowed if the transaction's timestamp &ge; both Read_TS(X) and Write_TS(X).
+<li>
+<strong>Write:</strong>
+            Allowed if the transaction's timestamp ≥ both Read_TS(X) and Write_TS(X).
         </li>
-    </ul>
-
-    <p>
+</ul>
+<p>
         If a rule is broken, the transaction is aborted and restarted.
     </p>
-
-    <!-- TIMESTAMPING DIAGRAM -->
-
-    <h3>Diagram: Working of Timestamping</h3>
-
-    <div class="q24-diagram">
-        <img
-            src="../q24.png"
-            alt="Diagram showing timestamp ordering using Read_TS(X), Write_TS(X), and transaction timestamps"
-            loading="lazy"
-        >
-    </div>
-
-    <!-- SECTION 3 -->
-
-    <h2>3. Types of Timestamping Methods</h2>
-
-    <h3>a) Basic Timestamp Ordering</h3>
-
-    <p>
+<!-- TIMESTAMPING DIAGRAM -->
+<h3>Diagram: Working of Timestamping</h3>
+<div class="q24-diagram">
+<img alt="Diagram showing timestamp ordering using Read_TS(X), Write_TS(X), and transaction timestamps" loading="lazy" src="../q24.png"/>
+</div>
+<!-- SECTION 3 -->
+<h2>3. Types of Timestamping Methods</h2>
+<h3>a) Basic Timestamp Ordering</h3>
+<p>
         Transactions follow timestamp order. If the order is broken, the transaction restarts.
     </p>
-
-    <h3>b) Strict Timestamp Ordering</h3>
-
-    <p>
+<h3>b) Strict Timestamp Ordering</h3>
+<p>
         A transaction waits if another transaction has changed the required data but has not committed.
     </p>
-
-    <h3>c) Thomas Write Rule</h3>
-
-    <p>
+<h3>c) Thomas Write Rule</h3>
+<p>
         An outdated write may be ignored instead of restarting the transaction.
     </p>
-
-    <h3>d) Multiversion Timestamp Ordering</h3>
-
-    <p>
+<h3>d) Multiversion Timestamp Ordering</h3>
+<p>
         Different versions of data are stored so transactions can read the correct version.
     </p>
-
-    <!-- SECTION 4 -->
-
-    <h2>4. Example</h2>
-
-    <ul>
-        <li>
-            <strong>T1:</strong>
+<!-- SECTION 4 -->
+<h2>4. Example</h2>
+<ul>
+<li>
+<strong>T1:</strong>
             Timestamp = 10 (Older)
         </li>
-
-        <li>
-            <strong>T2:</strong>
+<li>
+<strong>T2:</strong>
             Timestamp = 20 (Younger)
         </li>
-    </ul>
-
-    <p>
+</ul>
+<p>
         If T2 writes X first and T1 later tries to read X, T1 is aborted and restarted because it breaks timestamp order.
     </p>
-
-    <!-- SECTION 5 -->
-
-    <h2>5. Advantages and Limitations</h2>
-
-    <h3>Advantages:</h3>
-
-    <ul>
-        <li>
+<!-- SECTION 5 -->
+<h2>5. Advantages and Limitations</h2>
+<h3>Advantages:</h3>
+<ul>
+<li>
             Maintains serializability.
         </li>
-
-        <li>
+<li>
             Avoids deadlocks in basic timestamp ordering.
         </li>
-    </ul>
-
-    <h3>Limitations:</h3>
-
-    <ul>
-        <li>
+</ul>
+<h3>Limitations:</h3>
+<ul>
+<li>
             Transactions may restart frequently.
         </li>
-
-        <li>
+<li>
             Repeated restarts may cause starvation.
         </li>
-    </ul>
-
+</ul>
 </main>
-
 <!-- BOTTOM NAVIGATION -->
 
-<nav class="page-nav">
-
-    <a href="q22.html">
-        &#8592; Previous: Q22
-    </a>
-
-    <a href="q26.html">
-        Next: Q26 &#8594;
-    </a>
-
-</nav>
-
-</div>
-
+<nav aria-label="Question navigation" class="page-nav"><div class="nav-slot nav-prev"><a href="q22.html">← Q22</a></div><div class="nav-slot nav-next"><a href="q26.html">Q26 →</a></div></nav></div>
 </body>
 </html>

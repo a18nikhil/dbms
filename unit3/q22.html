@@ -1,452 +1,178 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Q22 - Serializability | DBMS</title>
-
-<link rel="stylesheet" href="../style.css">
-
-<style>
-/* Q22 Diagram Containers */
-
-.answer .q22-diagram {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 100%;
-    margin: 14px 0 20px;
-    padding: 18px 12px;
-
-    background: #F3F6F8;
-    border: 1px solid #D8E1E8;
-    border-radius: 6px;
-
-    text-align: center;
-}
-
-/* Horizontal Serial Schedule */
-
-.answer .q22-serial {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    flex-wrap: nowrap;
-}
-
-.answer .q22-serial-node {
-    flex: 0 1 120px;
-    min-width: 0;
-    padding: 12px 8px;
-
-    background: #FFFFFF;
-    border: 2px solid #315F83;
-    border-radius: 5px;
-
-    color: #102A43;
-    font-weight: 700;
-    text-align: center;
-}
-
-.answer .q22-arrow {
-    flex-shrink: 0;
-    color: #315F83;
-    font-size: 23px;
-    font-weight: 700;
-}
-
-/* Horizontal Non-Serial Schedule */
-
-.answer .q22-operations {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 7px;
-    width: 100%;
-}
-
-.answer .q22-operation {
-    flex: 1;
-    min-width: 0;
-    padding: 12px 2px;
-
-    background: #FFFFFF;
-    border: 2px solid #315F83;
-    border-radius: 5px;
-
-    color: #102A43;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 15px;
-    font-weight: 700;
-    text-align: center;
-    white-space: nowrap;
-}
-
-.answer .q22-time {
-    position: relative;
-    width: 94%;
-    height: 2px;
-    margin: 26px auto 18px;
-    background: #315F83;
-}
-
-.answer .q22-time::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: -5px;
-
-    width: 10px;
-    height: 10px;
-
-    border-top: 2px solid #315F83;
-    border-right: 2px solid #315F83;
-    transform: rotate(45deg);
-}
-
-.answer .q22-time-label {
-    margin: 0 0 8px;
-    color: #102A43;
-    font-weight: 600;
-    text-align: center;
-}
-
-/* Precedence Graphs */
-
-.answer .q22-graph {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    flex-wrap: nowrap;
-}
-
-.answer .q22-graph-node {
-    min-width: 55px;
-    padding: 10px 15px;
-
-    background: #FFFFFF;
-    border: 2px solid #315F83;
-    border-radius: 5px;
-
-    color: #102A43;
-    font-weight: 700;
-    text-align: center;
-}
-
-.answer .q22-diagram p {
-    margin: 14px 0 0;
-    color: #334155;
-    font-size: 14px;
-    text-align: center;
-}
-
-/* Mobile Optimization */
-
-@media (max-width: 480px) {
-
-    .answer .q22-diagram {
-        padding: 16px 10px;
-    }
-
-    .answer .q22-serial {
-        gap: 10px;
-    }
-
-    .answer .q22-serial-node {
-        flex-basis: 100px;
-        padding: 10px 6px;
-    }
-
-    .answer .q22-operations {
-        gap: 5px;
-    }
-
-    .answer .q22-operation {
-        padding: 11px 1px;
-        font-size: 12px;
-        border-width: 1.5px;
-    }
-
-    .answer .q22-arrow {
-        font-size: 20px;
-    }
-
-    .answer .q22-graph {
-        gap: 10px;
-    }
-}
-</style>
+<link href="../style.css" rel="stylesheet"/>
 
 </head>
-
-<body class="unit3">
-
+<body class="unit3 dbms-question page-q22">
 <div class="container">
-
 <!-- BACK TO UNIT III -->
 
-<nav>
-    <a href="index.html" class="back-link">
-        &#8592; Back to Unit III
-    </a>
-</nav>
-
-<main class="answer">
-
-    <!-- QUESTION 22 -->
-
-    <h1>
+<nav class="top-navigation"><a class="back-link" href="index.html">← Unit III</a></nav><main class="answer">
+<!-- QUESTION 22 -->
+<h1>
         Q22. Assess the Concept of Serializability and Its Importance in Maintaining Database Consistency.
     </h1>
-
-    <!-- SECTION 1 -->
-
-    <h2>1. Serializability</h2>
-
-    <p>
+<!-- SECTION 1 -->
+<h2>1. Serializability</h2>
+<p>
         Serializability is a concept in DBMS that ensures multiple transactions executing at the same time produce the same result as executing them one after another.
     </p>
-
-    <p>
+<p>
         It helps maintain database consistency by ensuring correct results during concurrent execution.
     </p>
-
-    <!-- SECTION 2 -->
-
-    <h2>2. Types of Schedules</h2>
-
-    <!-- SERIAL SCHEDULE -->
-
-    <h3>a) Serial Schedule</h3>
-
-    <ul>
-        <li>
+<!-- SECTION 2 -->
+<h2>2. Types of Schedules</h2>
+<!-- SERIAL SCHEDULE -->
+<h3>a) Serial Schedule</h3>
+<ul>
+<li>
             Transactions execute one after another.
         </li>
-
-        <li>
+<li>
             One transaction completes before the next transaction begins.
         </li>
-
-        <li>
+<li>
             There is no overlapping of operations.
         </li>
-    </ul>
-
-    <div class="q22-diagram">
-
-        <div class="q22-serial">
-
-            <div class="q22-serial-node">
+</ul>
+<div class="q22-diagram">
+<div class="q22-serial">
+<div class="q22-serial-node">
                 T1
             </div>
-
-            <div class="q22-arrow">
-                &#8594;
+<div class="q22-arrow">
+                →
             </div>
-
-            <div class="q22-serial-node">
+<div class="q22-serial-node">
                 T2
             </div>
-
-        </div>
-
-        <p>One after another</p>
-
-    </div>
-
-    <!-- NON-SERIAL SCHEDULE -->
-
-    <h3>b) Non-Serial Schedule</h3>
-
-    <ul>
-        <li>
+</div>
+<p>One after another</p>
+</div>
+<!-- NON-SERIAL SCHEDULE -->
+<h3>b) Non-Serial Schedule</h3>
+<ul>
+<li>
             Operations of multiple transactions are mixed together.
         </li>
-
-        <li>
+<li>
             Transactions can execute at the same time.
         </li>
-
-        <li>
+<li>
             A non-serial schedule is serializable if it is equivalent to a serial schedule.
         </li>
-    </ul>
-
-    <div class="q22-diagram">
-
-        <div class="q22-operations">
-
-            <div class="q22-operation">
+</ul>
+<div class="q22-diagram">
+<div class="q22-operations">
+<div class="q22-operation">
                 R1(A)
             </div>
-
-            <div class="q22-operation">
+<div class="q22-operation">
                 R2(B)
             </div>
-
-            <div class="q22-operation">
+<div class="q22-operation">
                 W1(A)
             </div>
-
-            <div class="q22-operation">
+<div class="q22-operation">
                 W2(B)
             </div>
-
-        </div>
-
-        <div class="q22-time"></div>
-
-        <div class="q22-time-label">
+</div>
+<div class="q22-time"></div>
+<div class="q22-time-label">
             Time
         </div>
-
-        <p>
+<p>
             Operations of T1 and T2 are interleaved.
         </p>
-
-    </div>
-
-    <!-- SECTION 3 -->
-
-    <h2>3. Types of Serializability</h2>
-
-    <!-- CONFLICT SERIALIZABILITY -->
-
-    <h3>a) Conflict Serializability</h3>
-
-    <p>
+</div>
+<!-- SECTION 3 -->
+<h2>3. Types of Serializability</h2>
+<!-- CONFLICT SERIALIZABILITY -->
+<h3>a) Conflict Serializability</h3>
+<p>
         A schedule is conflict serializable if it can be rearranged into a serial schedule without changing the order of conflicting operations.
     </p>
-
-    <p>
+<p>
         A precedence graph is used to check it.
     </p>
-
-    <ul>
-        <li>
+<ul>
+<li>
             A graph without a cycle is conflict serializable.
         </li>
-
-        <li>
+<li>
             A graph with a cycle is not conflict serializable.
         </li>
-    </ul>
-
-    <h3>Conflict Serializable</h3>
-
-    <div class="q22-diagram">
-
-        <div class="q22-graph">
-
-            <div class="q22-graph-node">
+</ul>
+<h3>Conflict Serializable</h3>
+<div class="q22-diagram">
+<div class="q22-graph">
+<div class="q22-graph-node">
                 T1
             </div>
-
-            <div class="q22-arrow">
-                &#8594;
+<div class="q22-arrow">
+                →
             </div>
-
-            <div class="q22-graph-node">
+<div class="q22-graph-node">
                 T2
             </div>
-
-        </div>
-
-        <p>
+</div>
+<p>
             No cycle in the precedence graph.
         </p>
-
-    </div>
-
-    <h3>Not Conflict Serializable</h3>
-
-    <div class="q22-diagram">
-
-        <div class="q22-graph">
-
-            <div class="q22-graph-node">
+</div>
+<h3>Not Conflict Serializable</h3>
+<div class="q22-diagram">
+<div class="q22-graph">
+<div class="q22-graph-node">
                 T1
             </div>
-
-            <div class="q22-arrow">
-                &#8644;
+<div class="q22-arrow">
+                ⇄
             </div>
-
-            <div class="q22-graph-node">
+<div class="q22-graph-node">
                 T2
             </div>
-
-        </div>
-
-        <p>
+</div>
+<p>
             A cycle exists between T1 and T2.
         </p>
-
-    </div>
-
-    <!-- VIEW SERIALIZABILITY -->
-
-    <h3>b) View Serializability</h3>
-
-    <p>
+</div>
+<!-- VIEW SERIALIZABILITY -->
+<h3>b) View Serializability</h3>
+<p>
         A schedule is view serializable if transactions read from the same sources and have the same final writes as a serial schedule.
     </p>
-
-    <!-- SECTION 4 -->
-
-    <h2>4. Importance of Serializability in Database Consistency</h2>
-
-    <ol>
-
-        <li>
-            <strong>Maintains Consistency:</strong>
+<!-- SECTION 4 -->
+<h2>4. Importance of Serializability in Database Consistency</h2>
+<ol>
+<li>
+<strong>Maintains Consistency:</strong>
             Ensures concurrent transactions produce results equivalent to serial execution.
         </li>
-
-        <li>
-            <strong>Prevents Incorrect Results:</strong>
+<li>
+<strong>Prevents Incorrect Results:</strong>
             Helps avoid problems such as lost updates and incorrect calculations.
         </li>
-
-        <li>
-            <strong>Supports Concurrent Execution:</strong>
+<li>
+<strong>Supports Concurrent Execution:</strong>
             Allows multiple transactions to execute together while maintaining correctness.
         </li>
-
-        <li>
-            <strong>Maintains Data Integrity:</strong>
+<li>
+<strong>Maintains Data Integrity:</strong>
             Helps preserve database rules when transactions are executed concurrently.
         </li>
-
-    </ol>
-
-    <p>
-        <strong>Example:</strong>
+</ol>
+<p>
+<strong>Example:</strong>
         If two transactions update the same bank account, serializability ensures the final balance is the same as if the transactions were executed one after another.
     </p>
-
 </main>
-
 <!-- BOTTOM NAVIGATION -->
 
-<nav class="page-nav">
-
-    <a href="q20.html">
-        &#8592; Previous: Q20
-    </a>
-
-    <a href="q24.html">
-        Next: Q24 &#8594;
-    </a>
-
-</nav>
-
-</div>
-
+<nav aria-label="Question navigation" class="page-nav"><div class="nav-slot nav-prev"><a href="q20.html">← Q20</a></div><div class="nav-slot nav-next"><a href="q24.html">Q24 →</a></div></nav></div>
 </body>
 </html>

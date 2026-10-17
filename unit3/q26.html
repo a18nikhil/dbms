@@ -1,196 +1,106 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Q26 - Concurrency Control in Multi-User Database | DBMS</title>
-
-<link rel="stylesheet" href="../style.css">
-
-<style>
-/* Q26 Diagram Formatting */
-
-.answer .q26-diagram {
-    width: 100%;
-    max-width: 100%;
-    margin: 18px auto 24px;
-    text-align: center;
-}
-
-.answer .q26-diagram img {
-    display: block;
-    width: 100%;
-    max-width: 550px;
-    height: auto;
-    margin: 0 auto;
-    object-fit: contain;
-}
-</style>
+<link href="../style.css" rel="stylesheet"/>
 
 </head>
-
-<body class="unit3">
-
+<body class="unit3 dbms-question page-q26">
 <div class="container">
-
 <!-- BACK TO UNIT III -->
 
-<nav>
-    <a href="index.html" class="back-link">
-        &#8592; Back to Unit III
-    </a>
-</nav>
-
-<main class="answer">
-
-    <!-- QUESTION 26 -->
-
-    <h1>
+<nav class="top-navigation"><a class="back-link" href="index.html">← Unit III</a></nav><main class="answer">
+<!-- QUESTION 26 -->
+<h1>
         Q26. Extend Concurrency Control and the Need for It in a Multi-User Database Environment.
     </h1>
-
-    <!-- SECTION 1 -->
-
-    <h2>1. Concurrency Control</h2>
-
-    <p>
+<!-- SECTION 1 -->
+<h2>1. Concurrency Control</h2>
+<p>
         Concurrency Control is a method used in DBMS to manage multiple transactions accessing the same database at the same time.
     </p>
-
-    <p>
+<p>
         It prevents conflicts between transactions and maintains data consistency and accuracy.
     </p>
-
-    <!-- CONCURRENCY CONTROL DIAGRAM -->
-
-    <div class="q26-diagram">
-        <img
-            src="../q26.png"
-            alt="Concurrency Control flowchart showing how multiple transactions are managed to maintain database consistency"
-            loading="lazy"
-        >
-    </div>
-
-    <!-- SECTION 2 -->
-
-    <h2>2. Need for Concurrency Control</h2>
-
-    <p>
+<!-- CONCURRENCY CONTROL DIAGRAM -->
+<div class="q26-diagram">
+<img alt="Concurrency Control flowchart showing how multiple transactions are managed to maintain database consistency" loading="lazy" src="../q26.png"/>
+</div>
+<!-- SECTION 2 -->
+<h2>2. Need for Concurrency Control</h2>
+<p>
         In a multi-user database, many users may read or update the same data simultaneously.
     </p>
-
-    <p>
+<p>
         Concurrency control is needed to prevent the following problems:
     </p>
-
-    <h3>a) Lost Update</h3>
-
-    <p>
+<h3>a) Lost Update</h3>
+<p>
         When two transactions update the same data, one transaction's changes may overwrite the other's changes.
     </p>
-
-    <h3>b) Dirty Read</h3>
-
-    <p>
+<h3>b) Dirty Read</h3>
+<p>
         A transaction reads changes made by another transaction before they are committed.
     </p>
-
-    <h3>c) Unrepeatable Read</h3>
-
-    <p>
+<h3>c) Unrepeatable Read</h3>
+<p>
         A transaction reads the same data twice but gets different values because another transaction updated it.
     </p>
-
-    <!-- SECTION 3 -->
-
-    <h2>3. Methods of Concurrency Control</h2>
-
-    <h3>a) Lock-Based Protocol</h3>
-
-    <p>
+<!-- SECTION 3 -->
+<h2>3. Methods of Concurrency Control</h2>
+<h3>a) Lock-Based Protocol</h3>
+<p>
         Uses shared and exclusive locks to control access to data.
     </p>
-
-    <h3>b) Two-Phase Locking (2PL)</h3>
-
-    <p>
+<h3>b) Two-Phase Locking (2PL)</h3>
+<p>
         Transactions acquire locks in the growing phase and release locks in the shrinking phase.
     </p>
-
-    <h3>c) Timestamp Ordering</h3>
-
-    <p>
+<h3>c) Timestamp Ordering</h3>
+<p>
         Uses timestamps to control the order of transactions.
     </p>
-
-    <!-- SECTION 4 -->
-
-    <h2>4. Example</h2>
-
-    <p>
+<!-- SECTION 4 -->
+<h2>4. Example</h2>
+<p>
         Suppose a bank account has ₹10,000.
     </p>
-
-    <p>
+<p>
         Two users withdraw money at the same time:
     </p>
-
-    <ul>
-        <li>
-            <strong>T1:</strong>
+<ul>
+<li>
+<strong>T1:</strong>
             Withdraws ₹2,000.
         </li>
-
-        <li>
-            <strong>T2:</strong>
+<li>
+<strong>T2:</strong>
             Withdraws ₹3,000.
         </li>
-    </ul>
-
-    <p>
+</ul>
+<p>
         Without concurrency control, one update may overwrite the other.
     </p>
-
-    <p>
+<p>
         With concurrency control, both withdrawals are handled correctly, and the final balance is ₹5,000.
     </p>
-
-    <!-- SECTION 5 -->
-
-    <h2>5. Importance of Concurrency Control</h2>
-
-    <ul>
-        <li>
-            <strong>Supports Multiple Users:</strong>
+<!-- SECTION 5 -->
+<h2>5. Importance of Concurrency Control</h2>
+<ul>
+<li>
+<strong>Supports Multiple Users:</strong>
             Allows users to access the database simultaneously.
         </li>
-
-        <li>
-            <strong>Ensures Isolation:</strong>
+<li>
+<strong>Ensures Isolation:</strong>
             Prevents transactions from interfering with each other's incomplete changes.
         </li>
-    </ul>
-
+</ul>
 </main>
-
 <!-- BOTTOM NAVIGATION -->
 
-<nav class="page-nav">
-
-    <a href="q24.html">
-        &#8592; Previous: Q24
-    </a>
-
-    <a href="q28.html">
-        Next: Q28 &#8594;
-    </a>
-
-</nav>
-
-</div>
-
+<nav aria-label="Question navigation" class="page-nav"><div class="nav-slot nav-prev"><a href="q24.html">← Q24</a></div><div class="nav-slot nav-next"><a href="q28.html">Q28 →</a></div></nav></div>
 </body>
 </html>
