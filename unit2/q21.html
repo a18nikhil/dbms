@@ -1,285 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Q21 - Aggregate Functions and NULL Values | DBMS</title>
-
-<link rel="stylesheet" href="../style.css">
-
-<style>
-/* Q21 SQL Query Formatting */
-
-.answer .q21-query {
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 100%;
-
-    margin: 10px 0 14px;
-    padding: 12px 14px;
-
-    background: #EEF2F5;
-    border-left: 4px solid #315F83;
-    border-radius: 5px;
-
-    overflow: visible;
-    text-align: left;
-}
-
-.answer .q21-query code {
-    display: block;
-    margin: 0;
-    padding: 0;
-
-    background: transparent;
-    border: none;
-
-    font-family: Consolas, "Courier New", monospace;
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.8;
-    color: #102A43;
-
-    white-space: normal;
-    overflow-wrap: anywhere;
-    word-break: normal;
-    text-align: left;
-}
-
-/* Q21 Mobile-Friendly Tables */
-
-.answer .q21-table {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-</style>
+<link href="../style.css" rel="stylesheet"/>
 
 </head>
-
-<body class="unit2">
-
+<body class="unit2 dbms-question page-q21">
 <div class="container">
-
 <!-- BACK TO UNIT -->
 
-<nav>
-    <a href="index.html" class="back-link">
-        &#8592; Back to Unit II
-    </a>
-</nav>
-
-<main class="answer">
-
-    <!-- QUESTION 21 -->
-
-    <h1>
+<nav class="top-navigation"><a class="back-link" href="index.html">← Unit II</a></nav><main class="answer">
+<!-- QUESTION 21 -->
+<h1>
         Q21. Explain Aggregate Functions and Null Values in SQL with Suitable Examples.
     </h1>
-
-    <!-- SECTION 1 -->
-
-    <h2>1. Aggregate Functions in SQL</h2>
-
-    <p>
+<!-- SECTION 1 -->
+<h2>1. Aggregate Functions in SQL</h2>
+<p>
         Aggregate Functions are SQL functions used to perform calculations on multiple rows and return a single result.
     </p>
-
-    <h3>Example: EMPLOYEE Table</h3>
-
-    <div class="q21-table">
-        <table>
-            <thead>
-                <tr>
-                    <th>Emp_ID</th>
-                    <th>Name</th>
-                    <th>Salary</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>101</td>
-                    <td>Rahul</td>
-                    <td>30000</td>
-                </tr>
-
-                <tr>
-                    <td>102</td>
-                    <td>Priya</td>
-                    <td>20000</td>
-                </tr>
-
-                <tr>
-                    <td>103</td>
-                    <td>Amit</td>
-                    <td>40000</td>
-                </tr>
-
-                <tr>
-                    <td>104</td>
-                    <td>Neha</td>
-                    <td>NULL</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- SUM -->
-
-    <h3>a) SUM()</h3>
-
-    <p>
+<h3>Example: EMPLOYEE Table</h3>
+<div class="q21-table">
+<table>
+<thead>
+<tr>
+<th>Emp_ID</th>
+<th>Name</th>
+<th>Salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>101</td>
+<td>Rahul</td>
+<td>30000</td>
+</tr>
+<tr>
+<td>102</td>
+<td>Priya</td>
+<td>20000</td>
+</tr>
+<tr>
+<td>103</td>
+<td>Amit</td>
+<td>40000</td>
+</tr>
+<tr>
+<td>104</td>
+<td>Neha</td>
+<td>NULL</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- SUM -->
+<h3>a) SUM()</h3>
+<p>
         Calculates the total of values.
     </p>
-
-    <div class="q21-query"><code>SELECT SUM(Salary) FROM EMPLOYEE;</code></div>
-
-    <p>
-        <strong>Output:</strong> 90000
+<div class="q21-query"><code>SELECT SUM(Salary) FROM EMPLOYEE;</code></div>
+<p>
+<strong>Output:</strong> 90000
     </p>
-
-    <!-- AVG -->
-
-    <h3>b) AVG()</h3>
-
-    <p>
+<!-- AVG -->
+<h3>b) AVG()</h3>
+<p>
         Calculates the average of values.
     </p>
-
-    <div class="q21-query"><code>SELECT AVG(Salary) FROM EMPLOYEE;</code></div>
-
-    <p>
-        <strong>Output:</strong> 30000
+<div class="q21-query"><code>SELECT AVG(Salary) FROM EMPLOYEE;</code></div>
+<p>
+<strong>Output:</strong> 30000
     </p>
-
-    <!-- COUNT -->
-
-    <h3>c) COUNT()</h3>
-
-    <p>
+<!-- COUNT -->
+<h3>c) COUNT()</h3>
+<p>
         Counts the number of rows.
     </p>
-
-    <div class="q21-query"><code>SELECT COUNT(*) FROM EMPLOYEE;</code></div>
-
-    <p>
-        <strong>Output:</strong> 4
+<div class="q21-query"><code>SELECT COUNT(*) FROM EMPLOYEE;</code></div>
+<p>
+<strong>Output:</strong> 4
     </p>
-
-    <!-- MAX -->
-
-    <h3>d) MAX()</h3>
-
-    <p>
+<!-- MAX -->
+<h3>d) MAX()</h3>
+<p>
         Finds the highest value.
     </p>
-
-    <div class="q21-query"><code>SELECT MAX(Salary) FROM EMPLOYEE;</code></div>
-
-    <p>
-        <strong>Output:</strong> 40000
+<div class="q21-query"><code>SELECT MAX(Salary) FROM EMPLOYEE;</code></div>
+<p>
+<strong>Output:</strong> 40000
     </p>
-
-    <!-- MIN -->
-
-    <h3>e) MIN()</h3>
-
-    <p>
+<!-- MIN -->
+<h3>e) MIN()</h3>
+<p>
         Finds the lowest value.
     </p>
-
-    <div class="q21-query"><code>SELECT MIN(Salary) FROM EMPLOYEE;</code></div>
-
-    <p>
-        <strong>Output:</strong> 20000
+<div class="q21-query"><code>SELECT MIN(Salary) FROM EMPLOYEE;</code></div>
+<p>
+<strong>Output:</strong> 20000
     </p>
-
-    <!-- SECTION 2 -->
-
-    <h2>2. NULL Values in SQL</h2>
-
-    <p>
+<!-- SECTION 2 -->
+<h2>2. NULL Values in SQL</h2>
+<p>
         A NULL value represents missing, unknown, or unavailable data in a database.
     </p>
-
-    <p>
+<p>
         NULL is not the same as zero or an empty string.
     </p>
-
-    <p>
-        <strong>Example:</strong>
+<p>
+<strong>Example:</strong>
         In the EMPLOYEE table, Neha's salary is NULL because it is not available.
     </p>
-
-    <!-- IS NULL -->
-
-    <h3>a) IS NULL</h3>
-
-    <p>
+<!-- IS NULL -->
+<h3>a) IS NULL</h3>
+<p>
         Finds records containing NULL values.
     </p>
-
-    <div class="q21-query"><code>SELECT Name FROM EMPLOYEE WHERE Salary IS NULL;</code></div>
-
-    <p>
-        <strong>Output:</strong> Neha
+<div class="q21-query"><code>SELECT Name FROM EMPLOYEE WHERE Salary IS NULL;</code></div>
+<p>
+<strong>Output:</strong> Neha
     </p>
-
-    <!-- IS NOT NULL -->
-
-    <h3>b) IS NOT NULL</h3>
-
-    <p>
+<!-- IS NOT NULL -->
+<h3>b) IS NOT NULL</h3>
+<p>
         Finds records without NULL values.
     </p>
-
-    <div class="q21-query"><code>SELECT Name FROM EMPLOYEE WHERE Salary IS NOT NULL;</code></div>
-
-    <p>
-        <strong>Output:</strong> Rahul, Priya, Amit
+<div class="q21-query"><code>SELECT Name FROM EMPLOYEE WHERE Salary IS NOT NULL;</code></div>
+<p>
+<strong>Output:</strong> Rahul, Priya, Amit
     </p>
-
-    <!-- SECTION 3 -->
-
-    <h2>3. Effect of NULL on Aggregate Functions</h2>
-
-    <ul>
-        <li>
+<!-- SECTION 3 -->
+<h2>3. Effect of NULL on Aggregate Functions</h2>
+<ul>
+<li>
             SUM(), AVG(), MAX(), and MIN() ignore NULL values.
         </li>
-
-        <li>
+<li>
             COUNT(*) counts all rows, while COUNT(Salary) counts only non-NULL salary values.
         </li>
-    </ul>
-
-    <p>
-        <strong>Example:</strong>
+</ul>
+<p>
+<strong>Example:</strong>
         COUNT(*) returns 4, while COUNT(Salary) returns 3.
     </p>
-
 </main>
-
 <!-- BOTTOM NAVIGATION -->
 
-<nav class="page-nav">
-
-    <a href="q19.html">
-        &#8592; Previous: Q19
-    </a>
-
-    <a href="q23.html">
-        Next: Q23 &#8594;
-    </a>
-
-</nav>
-
-</div>
-
+<nav aria-label="Question navigation" class="page-nav"><div class="nav-slot nav-prev"><a href="q19.html">← Q19</a></div><div class="nav-slot nav-next"><a href="q23.html">Q23 →</a></div></nav></div>
 </body>
 </html>

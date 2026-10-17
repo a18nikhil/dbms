@@ -1,362 +1,230 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Q17 - Nested Subqueries and Joined Relations | DBMS</title>
-
-<link rel="stylesheet" href="../style.css">
-
-<style>
-/* Q17 SQL Query Formatting */
-
-.answer .q17-query {
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 100%;
-
-    margin: 10px 0 16px;
-    padding: 12px 14px;
-
-    background: #EEF2F5;
-    border-left: 4px solid #315F83;
-    border-radius: 5px;
-
-    overflow: visible;
-    text-align: left;
-}
-
-.answer .q17-query code {
-    display: block;
-    margin: 0;
-    padding: 0;
-
-    background: transparent;
-    border: none;
-
-    font-family: Consolas, "Courier New", monospace;
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.8;
-    color: #102A43;
-
-    white-space: normal;
-    overflow-wrap: anywhere;
-    word-break: normal;
-    text-align: left;
-}
-
-/* Q17 Mobile-Friendly Tables */
-
-.answer .q17-table {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-</style>
+<link href="../style.css" rel="stylesheet"/>
 
 </head>
-
-<body class="unit2">
-
+<body class="unit2 dbms-question page-q17">
 <div class="container">
-
 <!-- BACK TO UNIT -->
 
-<nav>
-    <a href="index.html" class="back-link">
-        &#8592; Back to Unit II
-    </a>
-</nav>
-
-<main class="answer">
-
-    <!-- QUESTION 17 -->
-
-    <h1>
+<nav class="top-navigation"><a class="back-link" href="index.html">← Unit II</a></nav><main class="answer">
+<!-- QUESTION 17 -->
+<h1>
         Q17. Discuss Nested Subqueries and Joined Relations in SQL with Appropriate Examples.
     </h1>
-
-    <p>
+<p>
         Nested Subqueries and Joined Relations are used in SQL to retrieve data from one or more tables.
     </p>
-
-    <!-- SECTION 1 -->
-
-    <h2>1. Nested Subqueries</h2>
-
-    <p>
+<!-- SECTION 1 -->
+<h2>1. Nested Subqueries</h2>
+<p>
         A Nested Subquery is a SQL query written inside another query.
     </p>
-
-    <p>
+<p>
         The inner query returns a result, which is used by the outer query.
     </p>
-
-    <h3>Example: EMPLOYEE Table</h3>
-
-    <div class="q17-table">
-        <table>
-            <thead>
-                <tr>
-                    <th>Emp_ID</th>
-                    <th>Name</th>
-                    <th>Salary</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>101</td>
-                    <td>Rahul</td>
-                    <td>30000</td>
-                </tr>
-
-                <tr>
-                    <td>102</td>
-                    <td>Priya</td>
-                    <td>20000</td>
-                </tr>
-
-                <tr>
-                    <td>103</td>
-                    <td>Amit</td>
-                    <td>40000</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <p>
-        <strong>Example:</strong>
+<h3>Example: EMPLOYEE Table</h3>
+<div class="q17-table">
+<table>
+<thead>
+<tr>
+<th>Emp_ID</th>
+<th>Name</th>
+<th>Salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>101</td>
+<td>Rahul</td>
+<td>30000</td>
+</tr>
+<tr>
+<td>102</td>
+<td>Priya</td>
+<td>20000</td>
+</tr>
+<tr>
+<td>103</td>
+<td>Amit</td>
+<td>40000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>
+<strong>Example:</strong>
         Display employees whose salary is greater than the average salary.
     </p>
-
-    <h3>SQL Query:</h3>
-
-    <div class="q17-query"><code>SELECT Name, Salary FROM EMPLOYEE WHERE Salary &gt; (SELECT AVG(Salary) FROM EMPLOYEE);</code></div>
-
-    <h3>Output:</h3>
-
-    <div class="q17-table">
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Salary</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>Amit</td>
-                    <td>40000</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <h3>Explanation:</h3>
-
-    <ul>
-        <li>
+<h3>SQL Query:</h3>
+<div class="q17-query"><code>SELECT Name, Salary FROM EMPLOYEE WHERE Salary &gt; (SELECT AVG(Salary) FROM EMPLOYEE);</code></div>
+<h3>Output:</h3>
+<div class="q17-table">
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amit</td>
+<td>40000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>Explanation:</h3>
+<ul>
+<li>
             The inner query calculates the average salary, which is 30000.
         </li>
-
-        <li>
+<li>
             The outer query displays employees whose salary is greater than 30000.
         </li>
-    </ul>
-
-    <!-- SECTION 2 -->
-
-    <h2>2. Joined Relations</h2>
-
-    <p>
+</ul>
+<!-- SECTION 2 -->
+<h2>2. Joined Relations</h2>
+<p>
         A Joined Relation combines related records from two or more tables using a common column.
     </p>
-
-    <h3>Example: Consider the Following Tables</h3>
-
-    <h3>STUDENT</h3>
-
-    <div class="q17-table">
-        <table>
-            <thead>
-                <tr>
-                    <th>Student_ID</th>
-                    <th>Name</th>
-                    <th>Dept_ID</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>101</td>
-                    <td>Rahul</td>
-                    <td>D01</td>
-                </tr>
-
-                <tr>
-                    <td>102</td>
-                    <td>Priya</td>
-                    <td>D02</td>
-                </tr>
-
-                <tr>
-                    <td>103</td>
-                    <td>Amit</td>
-                    <td>D01</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <h3>DEPARTMENT</h3>
-
-    <div class="q17-table">
-        <table>
-            <thead>
-                <tr>
-                    <th>Dept_ID</th>
-                    <th>Dept_Name</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>D01</td>
-                    <td>CS</td>
-                </tr>
-
-                <tr>
-                    <td>D02</td>
-                    <td>IT</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <p>
-        <strong>Example:</strong>
+<h3>Example: Consider the Following Tables</h3>
+<h3>STUDENT</h3>
+<div class="q17-table">
+<table>
+<thead>
+<tr>
+<th>Student_ID</th>
+<th>Name</th>
+<th>Dept_ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>101</td>
+<td>Rahul</td>
+<td>D01</td>
+</tr>
+<tr>
+<td>102</td>
+<td>Priya</td>
+<td>D02</td>
+</tr>
+<tr>
+<td>103</td>
+<td>Amit</td>
+<td>D01</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>DEPARTMENT</h3>
+<div class="q17-table">
+<table>
+<thead>
+<tr>
+<th>Dept_ID</th>
+<th>Dept_Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D01</td>
+<td>CS</td>
+</tr>
+<tr>
+<td>D02</td>
+<td>IT</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>
+<strong>Example:</strong>
         Display student names along with their department names.
     </p>
-
-    <h3>SQL Query:</h3>
-
-    <div class="q17-query"><code>SELECT STUDENT.Name, DEPARTMENT.Dept_Name FROM STUDENT INNER JOIN DEPARTMENT ON STUDENT.Dept_ID = DEPARTMENT.Dept_ID;</code></div>
-
-    <h3>Output:</h3>
-
-    <div class="q17-table">
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Dept_Name</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>Rahul</td>
-                    <td>CS</td>
-                </tr>
-
-                <tr>
-                    <td>Priya</td>
-                    <td>IT</td>
-                </tr>
-
-                <tr>
-                    <td>Amit</td>
-                    <td>CS</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <h3>Explanation:</h3>
-
-    <ul>
-        <li>
+<h3>SQL Query:</h3>
+<div class="q17-query"><code>SELECT STUDENT.Name, DEPARTMENT.Dept_Name FROM STUDENT INNER JOIN DEPARTMENT ON STUDENT.Dept_ID = DEPARTMENT.Dept_ID;</code></div>
+<h3>Output:</h3>
+<div class="q17-table">
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Dept_Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rahul</td>
+<td>CS</td>
+</tr>
+<tr>
+<td>Priya</td>
+<td>IT</td>
+</tr>
+<tr>
+<td>Amit</td>
+<td>CS</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>Explanation:</h3>
+<ul>
+<li>
             Dept_ID is the common column in both tables.
         </li>
-
-        <li>
+<li>
             INNER JOIN combines records where Dept_ID matches.
         </li>
-    </ul>
-
-    <!-- SECTION 3 -->
-
-    <h2>3. Difference Between Nested Subqueries and Joined Relations</h2>
-
-    <div class="q17-table">
-        <table>
-            <thead>
-                <tr>
-                    <th>Nested Subqueries</th>
-                    <th>Joined Relations</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>
+</ul>
+<!-- SECTION 3 -->
+<h2>3. Difference Between Nested Subqueries and Joined Relations</h2>
+<div class="q17-table">
+<table>
+<thead>
+<tr>
+<th>Nested Subqueries</th>
+<th>Joined Relations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
                         Uses a query inside another query.
                     </td>
-
-                    <td>
+<td>
                         Combines data from two or more tables.
                     </td>
-                </tr>
-
-                <tr>
-                    <td>
+</tr>
+<tr>
+<td>
                         The inner query provides a result to the outer query.
                     </td>
-
-                    <td>
+<td>
                         Tables are connected using a common column.
                     </td>
-                </tr>
-
-                <tr>
-                    <td>
+</tr>
+<tr>
+<td>
                         Mainly used to filter records based on another query.
                     </td>
-
-                    <td>
+<td>
                         Mainly used to display related data from different tables.
                     </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
+</tr>
+</tbody>
+</table>
+</div>
 </main>
-
 <!-- BOTTOM NAVIGATION -->
 
-<nav class="page-nav">
-
-    <a href="q16.html">
-        &#8592; Previous: Q16
-    </a>
-
-    <a href="q19.html">
-        Next: Q19 &#8594;
-    </a>
-
-</nav>
-
-</div>
-
+<nav aria-label="Question navigation" class="page-nav"><div class="nav-slot nav-prev"><a href="q16.html">← Q16</a></div><div class="nav-slot nav-next"><a href="q19.html">Q19 →</a></div></nav></div>
 </body>
 </html>
