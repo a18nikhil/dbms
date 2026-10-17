@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +9,305 @@
 <title>Q1 - Database System | DBMS</title>
 
 <link rel="stylesheet" href="../style.css">
+
+<style>
+/* ==========================================
+   DBMS QUESTION PAGE - EMERALD THEME
+   ========================================== */
+
+body.unit1 {
+    margin: 0;
+    min-height: 100vh;
+
+    background-color: #092C2B;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            ellipse at 20% 10%,
+            #14504B 0%,
+            #092C2B 55%,
+            #061D1D 100%
+        );
+
+    background-size:
+        32px 32px,
+        32px 32px,
+        100% 100%;
+
+    color: #243B42;
+    font-family: Georgia, Cambria, "Times New Roman", serif;
+}
+
+/* Main Container */
+
+body.unit1 .container {
+    box-sizing: border-box;
+    width: min(100% - 36px, 900px);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px 0 60px;
+}
+
+/* Top Back Button */
+
+body.unit1 .back-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 0 18px;
+    padding: 9px 16px;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(232,197,155,0.40);
+    border-radius: 8px;
+
+    color: #F6F4EC;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: background 0.2s ease;
+}
+
+body.unit1 .back-link:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+/* Answer Sheet */
+
+body.unit1 .answer {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+    padding: 28px 30px 32px;
+
+    background: #FAFAF7;
+    border: 1px solid #E2E6E1;
+    border-top: 4px solid #CDA675;
+    border-radius: 11px;
+
+    box-shadow: 0 6px 22px rgba(0,0,0,0.12);
+
+    color: #243B42;
+    font-family: Georgia, Cambria, "Times New Roman", serif;
+    font-size: 15px;
+    line-height: 1.75;
+    text-align: left;
+}
+
+/* Question Heading */
+
+body.unit1 .answer h1 {
+    margin: 0 0 24px;
+    padding: 0;
+
+    color: #153D39;
+    font-family: Georgia, Cambria, serif;
+    font-size: clamp(18px, 3vw, 22px);
+    font-weight: 700;
+    line-height: 1.45;
+    text-align: left;
+}
+
+/* Section Headings */
+
+body.unit1 .answer h2 {
+    margin: 25px 0 10px;
+    padding: 0;
+
+    color: #174B43;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.45;
+    text-align: left;
+}
+
+body.unit1 .answer h3 {
+    margin: 19px 0 8px;
+
+    color: #174B43;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.45;
+    text-align: left;
+}
+
+/* Paragraphs */
+
+body.unit1 .answer p {
+    margin: 0 0 13px;
+
+    color: #34454A;
+    font-size: 15px;
+    line-height: 1.75;
+    text-align: left;
+}
+
+/* Lists */
+
+body.unit1 .answer ul,
+body.unit1 .answer ol {
+    margin: 10px 0 18px;
+    padding-left: 24px;
+}
+
+body.unit1 .answer li {
+    margin-bottom: 9px;
+    padding-left: 2px;
+
+    color: #34454A;
+    font-size: 15px;
+    line-height: 1.7;
+    text-align: left;
+}
+
+body.unit1 .answer li::marker {
+    color: #547B72;
+}
+
+/* Bold Text */
+
+body.unit1 .answer strong {
+    color: #153D39;
+    font-weight: 700;
+}
+
+/* Diagram */
+
+body.unit1 .answer .diagram {
+    width: 100%;
+    max-width: 100%;
+    margin: 16px auto 18px;
+    text-align: center;
+}
+
+body.unit1 .answer .diagram img {
+    display: block;
+    width: auto !important;
+    max-width: min(100%, 600px) !important;
+    max-height: 460px !important;
+    height: auto !important;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+/* Bottom Navigation */
+
+body.unit1 .page-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    margin-top: 18px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+}
+
+body.unit1 .page-nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 15px;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(232,197,155,0.40);
+    border-radius: 7px;
+
+    color: #F6F4EC;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: background 0.2s ease;
+}
+
+body.unit1 .page-nav a:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+/* Keyboard Accessibility */
+
+body.unit1 a:focus-visible {
+    outline: 2px solid #E8C59B;
+    outline-offset: 3px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    body.unit1 .container {
+        width: calc(100% - 48px);
+        padding-top: 16px;
+    }
+
+    body.unit1 .answer {
+        padding: 25px 21px 28px;
+        font-size: 14px;
+    }
+
+    body.unit1 .answer h1 {
+        font-size: 17px;
+        line-height: 1.45;
+    }
+
+    body.unit1 .answer h2 {
+        font-size: 15px;
+        margin-top: 23px;
+    }
+
+    body.unit1 .answer h3 {
+        font-size: 14px;
+    }
+
+    body.unit1 .answer p,
+    body.unit1 .answer li {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    body.unit1 .answer .diagram img {
+        max-width: 100% !important;
+        max-height: 320px !important;
+    }
+
+    body.unit1 .page-nav a {
+        padding: 9px 12px;
+        font-size: 11px;
+    }
+}
+
+</style>
+
 </head>
 
 <body class="unit1">
 
 <div class="container">
 
-<!-- BACK TO UNIT -->
+<!-- TOP NAVIGATION -->
 
 <nav>
     <a href="index.html" class="back-link">
-        &#8592; Back to Unit I
+        &#8592; Unit I
     </a>
 </nav>
 
@@ -173,7 +462,7 @@
     </a>
 
     <a href="q2.html">
-        Next: Q2 &#8594;
+        Q2 &#8594;
     </a>
 
 </nav>
