@@ -1,201 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Q6 - UML Class Diagram | DBMS</title>
-
-<link rel="stylesheet" href="../style.css">
+<link href="../style.css" rel="stylesheet"/>
 </head>
-
-<body class="unit1">
-
+<body class="unit1 dbms-question page-q6">
 <div class="container">
-
 <!-- BACK TO UNIT -->
 
-<nav>
-    <a href="index.html" class="back-link">
-        &#8592; Back to Unit I
-    </a>
-</nav>
-
-<main class="answer">
-
-    <!-- QUESTION 6 -->
-
-    <h1>
+<nav class="top-navigation"><a class="back-link" href="index.html">← Unit I</a></nav><main class="answer">
+<!-- QUESTION 6 -->
+<h1>
         Q6. Create a UML Class Diagram for a College Management System and Map It to Relational Schemas.
     </h1>
-
-    <!-- SECTION 1 -->
-
-    <h2>1. UML Class Diagram</h2>
-
-    <p>
+<!-- SECTION 1 -->
+<h2>1. UML Class Diagram</h2>
+<p>
         A UML (Unified Modeling Language) Class Diagram shows the classes, attributes, methods, and relationships in a system.
     </p>
-
-    <p>
+<p>
         In a College Management System, the main classes are STUDENT, COURSE, and TEACHER.
     </p>
-
-    <!-- SECTION 2 -->
-
-    <h2>2. UML Class Diagram of College Management System</h2>
-
-    <div class="diagram">
-        <img
-            src="../q6.png"
-            alt="UML Class Diagram of College Management System showing STUDENT, COURSE, TEACHER and their multiplicities"
-            loading="lazy"
-        >
-    </div>
-
-    <!-- SECTION 3 -->
-
-    <h2>3. Relationships Between Classes</h2>
-
-    <!-- RELATIONSHIP 1 -->
-
-    <h3>1. STUDENT and COURSE – Many-to-Many (M:N)</h3>
-
-    <ul>
-        <li>
+<!-- SECTION 2 -->
+<h2>2. UML Class Diagram of College Management System</h2>
+<div class="diagram">
+<img alt="UML Class Diagram of College Management System showing STUDENT, COURSE, TEACHER and their multiplicities" loading="lazy" src="../q6.png"/>
+</div>
+<!-- SECTION 3 -->
+<h2>3. Relationships Between Classes</h2>
+<!-- RELATIONSHIP 1 -->
+<h3>1. STUDENT and COURSE – Many-to-Many (M:N)</h3>
+<ul>
+<li>
             One student can enroll in many courses.
         </li>
-
-        <li>
+<li>
             One course can have many students.
         </li>
-
-        <li>
+<li>
             In UML, <code>0..*</code> means zero or many.
         </li>
-    </ul>
-
-    <!-- RELATIONSHIP 2 -->
-
-    <h3>2. TEACHER and COURSE – One-to-Many (1:N)</h3>
-
-    <ul>
-        <li>
+</ul>
+<!-- RELATIONSHIP 2 -->
+<h3>2. TEACHER and COURSE – One-to-Many (1:N)</h3>
+<ul>
+<li>
             One teacher can teach many courses.
         </li>
-
-        <li>
+<li>
             Each course is taught by one teacher.
         </li>
-
-        <li>
+<li>
             In UML, <code>1</code> means exactly one, and <code>0..*</code> means zero or many.
         </li>
-    </ul>
-
-    <!-- SECTION 4 -->
-
-    <h2>4. Mapping UML Classes to Relational Schemas</h2>
-
-    <p>
+</ul>
+<!-- SECTION 4 -->
+<h2>4. Mapping UML Classes to Relational Schemas</h2>
+<p>
         Mapping means converting UML classes into database tables.
     </p>
-
-    <ul>
-        <li>Each class becomes a table.</li>
-        <li>Each attribute becomes a column.</li>
-        <li>Primary Key (PK) uniquely identifies each record.</li>
-        <li>Foreign Key (FK) connects related tables.</li>
-    </ul>
-
-    <!-- STUDENT TABLE -->
-
-    <h3>1. STUDENT Table</h3>
-
-    <p>
-        <code>STUDENT(Student_ID, Name, Email)</code>
+<ul>
+<li>Each class becomes a table.</li>
+<li>Each attribute becomes a column.</li>
+<li>Primary Key (PK) uniquely identifies each record.</li>
+<li>Foreign Key (FK) connects related tables.</li>
+</ul>
+<!-- STUDENT TABLE -->
+<h3>1. STUDENT Table</h3>
+<p>
+<code>STUDENT(Student_ID, Name, Email)</code>
+</p>
+<p>
+<strong>Primary Key:</strong> Student_ID
     </p>
-
-    <p>
-        <strong>Primary Key:</strong> Student_ID
+<!-- TEACHER TABLE -->
+<h3>2. TEACHER Table</h3>
+<p>
+<code>TEACHER(Teacher_ID, Name, Department)</code>
+</p>
+<p>
+<strong>Primary Key:</strong> Teacher_ID
     </p>
-
-    <!-- TEACHER TABLE -->
-
-    <h3>2. TEACHER Table</h3>
-
-    <p>
-        <code>TEACHER(Teacher_ID, Name, Department)</code>
+<!-- COURSE TABLE -->
+<h3>3. COURSE Table</h3>
+<p>
+<code>COURSE(Course_ID, Course_Name, Credits, Teacher_ID)</code>
+</p>
+<p>
+<strong>Primary Key:</strong> Course_ID
     </p>
-
-    <p>
-        <strong>Primary Key:</strong> Teacher_ID
+<p>
+<strong>Foreign Key:</strong> Teacher_ID references TEACHER.
     </p>
-
-    <!-- COURSE TABLE -->
-
-    <h3>3. COURSE Table</h3>
-
-    <p>
-        <code>COURSE(Course_ID, Course_Name, Credits, Teacher_ID)</code>
+<!-- ENROLLMENT TABLE -->
+<h3>4. ENROLLMENT Table</h3>
+<p>
+<code>ENROLLMENT(Student_ID, Course_ID)</code>
+</p>
+<p>
+<strong>Primary Key:</strong> (Student_ID, Course_ID)
     </p>
-
-    <p>
-        <strong>Primary Key:</strong> Course_ID
-    </p>
-
-    <p>
-        <strong>Foreign Key:</strong> Teacher_ID references TEACHER.
-    </p>
-
-    <!-- ENROLLMENT TABLE -->
-
-    <h3>4. ENROLLMENT Table</h3>
-
-    <p>
-        <code>ENROLLMENT(Student_ID, Course_ID)</code>
-    </p>
-
-    <p>
-        <strong>Primary Key:</strong> (Student_ID, Course_ID)
-    </p>
-
-    <p>
-        <strong>Foreign Keys:</strong>
-    </p>
-
-    <ul>
-        <li>
+<p>
+<strong>Foreign Keys:</strong>
+</p>
+<ul>
+<li>
             Student_ID references STUDENT.
         </li>
-
-        <li>
+<li>
             Course_ID references COURSE.
         </li>
-    </ul>
-
-    <p>
+</ul>
+<p>
         The ENROLLMENT table is created to represent the Many-to-Many (M:N) relationship between STUDENT and COURSE.
     </p>
-
 </main>
-
 <!-- BOTTOM NAVIGATION -->
 
-<nav class="page-nav">
-
-    <a href="q5.html">
-        &#8592; Previous: Q5
-    </a>
-
-    <a href="q7.html">
-        Next: Q7 &#8594;
-    </a>
-
-</nav>
-
-</div>
-
+<nav aria-label="Question navigation" class="page-nav"><div class="nav-slot nav-prev"><a href="q5.html">← Q5</a></div><div class="nav-slot nav-next"><a href="q7.html">Q7 →</a></div></nav></div>
 </body>
 </html>

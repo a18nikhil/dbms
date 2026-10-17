@@ -1,194 +1,123 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Q5 - View of Data | DBMS</title>
-
-<link rel="stylesheet" href="../style.css">
+<link href="../style.css" rel="stylesheet"/>
 </head>
-
-<body class="unit1">
-
+<body class="unit1 dbms-question page-q5">
 <div class="container">
-
 <!-- BACK TO UNIT -->
 
-<nav>
-    <a href="index.html" class="back-link">
-        &#8592; Back to Unit I
-    </a>
-</nav>
-
-<main class="answer">
-
-    <!-- QUESTION 5 -->
-
-    <h1>
+<nav class="top-navigation"><a class="back-link" href="index.html">← Unit I</a></nav><main class="answer">
+<!-- QUESTION 5 -->
+<h1>
         Q5. Discuss the Concept of "View of Data" in a Database System with the Help of Three-Level Architecture.
     </h1>
-
-    <!-- SECTION 1 -->
-
-    <h2>1. Introduction</h2>
-
-    <p>
+<!-- SECTION 1 -->
+<h2>1. Introduction</h2>
+<p>
         View of Data means showing database information at different levels of abstraction. It hides unnecessary details and allows users to see only the data they need.
     </p>
-
-    <p>
+<p>
         The Three-Level Architecture (ANSI/SPARC) divides the database into three levels:
     </p>
-
-    <ul>
-        <li>
+<ul>
+<li>
             Internal Level (Physical Level)
         </li>
-
-        <li>
+<li>
             Conceptual Level (Logical Level)
         </li>
-
-        <li>
+<li>
             External Level (View Level)
         </li>
-    </ul>
-
-    <!-- SECTION 2 -->
-
-    <h2>2. Diagram: Three-Level Architecture</h2>
-
-    <div class="diagram">
-        <img
-            src="../q5.png"
-            alt="Three-Level Database Architecture showing Internal, Conceptual, and External Levels"
-            loading="lazy"
-        >
-    </div>
-
-    <!-- SECTION 3 -->
-
-    <h2>3. Levels of Data Abstraction</h2>
-
-    <!-- INTERNAL LEVEL -->
-
-    <h3>1. Internal Level (Physical Level)</h3>
-
-    <ul>
-        <li>
+</ul>
+<!-- SECTION 2 -->
+<h2>2. Diagram: Three-Level Architecture</h2>
+<div class="diagram">
+<img alt="Three-Level Database Architecture showing Internal, Conceptual, and External Levels" loading="lazy" src="../q5.png"/>
+</div>
+<!-- SECTION 3 -->
+<h2>3. Levels of Data Abstraction</h2>
+<!-- INTERNAL LEVEL -->
+<h3>1. Internal Level (Physical Level)</h3>
+<ul>
+<li>
             It is the lowest level of abstraction.
         </li>
-
-        <li>
+<li>
             It describes how data is actually stored in the computer.
         </li>
-
-        <li>
+<li>
             It includes files, indexes, pointers, and storage structures.
         </li>
-    </ul>
-
-    <p>
-        <strong>Example:</strong>
+</ul>
+<p>
+<strong>Example:</strong>
         Student records are stored in database files on disk, and indexes help retrieve them quickly.
     </p>
-
-    <!-- CONCEPTUAL LEVEL -->
-
-    <h3>2. Conceptual Level (Logical Level)</h3>
-
-    <ul>
-        <li>
+<!-- CONCEPTUAL LEVEL -->
+<h3>2. Conceptual Level (Logical Level)</h3>
+<ul>
+<li>
             It is the middle level of abstraction.
         </li>
-
-        <li>
+<li>
             It describes the complete logical structure of the database.
         </li>
-
-        <li>
+<li>
             It shows what data is stored and the relationships between data.
         </li>
-
-        <li>
+<li>
             It hides how data is physically stored.
         </li>
-    </ul>
-
-    <p>
-        <strong>Example:</strong>
+</ul>
+<p>
+<strong>Example:</strong>
         A college database contains STUDENT, COURSE, and MARKS tables connected through common keys.
     </p>
-
-    <!-- EXTERNAL LEVEL -->
-
-    <h3>3. External Level (View Level)</h3>
-
-    <ul>
-        <li>
+<!-- EXTERNAL LEVEL -->
+<h3>3. External Level (View Level)</h3>
+<ul>
+<li>
             It is the highest level of abstraction.
         </li>
-
-        <li>
+<li>
             It shows only the data required by a particular user or application.
         </li>
-
-        <li>
+<li>
             Different users can have different views of the same database.
         </li>
-    </ul>
-
-    <p>
-        <strong>Example:</strong>
+</ul>
+<p>
+<strong>Example:</strong>
         A student sees their marks, while an administrator sees student and fee details.
     </p>
-
-    <!-- SECTION 4 -->
-
-    <h2>4. Importance of Three-Level Architecture</h2>
-
-    <ul>
-        <li>
-            <strong>Data Abstraction:</strong>
+<!-- SECTION 4 -->
+<h2>4. Importance of Three-Level Architecture</h2>
+<ul>
+<li>
+<strong>Data Abstraction:</strong>
             Hides unnecessary storage details from users.
         </li>
-
-        <li>
-            <strong>Different User Views:</strong>
+<li>
+<strong>Different User Views:</strong>
             Allows different users to see only the information they need.
         </li>
-
-        <li>
-            <strong>Data Security:</strong>
+<li>
+<strong>Data Security:</strong>
             Helps restrict access to sensitive information through user-specific views.
         </li>
-
-        <li>
-            <strong>Data Independence:</strong>
+<li>
+<strong>Data Independence:</strong>
             Allows changes at one level without necessarily affecting higher levels.
         </li>
-    </ul>
-
+</ul>
 </main>
-
 <!-- BOTTOM NAVIGATION -->
 
-<nav class="page-nav">
-
-    <a href="q4.html">
-        &#8592; Previous: Q4
-    </a>
-
-    <a href="q6.html">
-        Next: Q6 &#8594;
-    </a>
-
-</nav>
-
-</div>
-
+<nav aria-label="Question navigation" class="page-nav"><div class="nav-slot nav-prev"><a href="q4.html">← Q4</a></div><div class="nav-slot nav-next"><a href="q6.html">Q6 →</a></div></nav></div>
 </body>
 </html>

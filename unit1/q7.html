@@ -1,139 +1,77 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Q7 - Database Architecture | DBMS</title>
-
-<link rel="stylesheet" href="../style.css">
+<link href="../style.css" rel="stylesheet"/>
 </head>
-
-<body class="unit1">
-
+<body class="unit1 dbms-question page-q7">
 <div class="container">
-
 <!-- BACK TO UNIT -->
 
-<nav>
-    <a href="index.html" class="back-link">
-        &#8592; Back to Unit I
-    </a>
-</nav>
-
-<main class="answer">
-
-    <!-- QUESTION 7 -->
-
-    <h1>
+<nav class="top-navigation"><a class="back-link" href="index.html">← Unit I</a></nav><main class="answer">
+<!-- QUESTION 7 -->
+<h1>
         Q7. Describe the Database Architecture (Client-Server, Centralized, Distributed) with a Suitable Diagram.
     </h1>
-
-    <p>
+<p>
         Database Architecture describes how the database, DBMS, users, and applications are organized and connected.
     </p>
-
-    <p>
+<p>
         The three common types are Centralized, Client-Server, and Distributed Database Architecture.
     </p>
-
-    <!-- SECTION 1 -->
-
-    <h2>1. Centralized Database Architecture</h2>
-
-    <p>
+<!-- SECTION 1 -->
+<h2>1. Centralized Database Architecture</h2>
+<p>
         In Centralized Database Architecture, the database and DBMS are located at one central system. All users access the same central database.
     </p>
-
-    <div class="diagram">
-        <img
-            src="../q7-1.png"
-            alt="Centralized Database Architecture Diagram"
-            loading="lazy"
-        >
-    </div>
-
-    <p>
-        <strong>Example:</strong>
+<div class="diagram">
+<img alt="Centralized Database Architecture Diagram" loading="lazy" src="../q7-1.png"/>
+</div>
+<p>
+<strong>Example:</strong>
         A college stores all student records in one central database.
     </p>
-
-    <p>
-        <strong>Main Feature:</strong>
+<p>
+<strong>Main Feature:</strong>
         Data is stored and managed at one central location.
     </p>
-
-    <!-- SECTION 2 -->
-
-    <h2>2. Client-Server Architecture</h2>
-
-    <p>
+<!-- SECTION 2 -->
+<h2>2. Client-Server Architecture</h2>
+<p>
         In Client-Server Architecture, clients send requests to a database server. The server processes database requests, retrieves or updates the required data, and sends the results back to the clients.
     </p>
-
-    <div class="diagram">
-        <img
-            src="../q7-2.png"
-            alt="Client-Server Database Architecture Diagram"
-            loading="lazy"
-        >
-    </div>
-
-    <p>
-        <strong>Example:</strong>
+<div class="diagram">
+<img alt="Client-Server Database Architecture Diagram" loading="lazy" src="../q7-2.png"/>
+</div>
+<p>
+<strong>Example:</strong>
         A college marks portal where students use an application to request their marks from the database server.
     </p>
-
-    <p>
-        <strong>Main Feature:</strong>
+<p>
+<strong>Main Feature:</strong>
         Clients handle user interaction, while the server manages the database.
     </p>
-
-    <!-- SECTION 3 -->
-
-    <h2>3. Distributed Database Architecture</h2>
-
-    <p>
+<!-- SECTION 3 -->
+<h2>3. Distributed Database Architecture</h2>
+<p>
         In Distributed Database Architecture, data is stored at multiple locations connected through a network. These locations work together as a single database system.
     </p>
-
-    <div class="diagram">
-        <img
-            src="../q7-3.png"
-            alt="Distributed Database Architecture Diagram"
-            loading="lazy"
-        >
-    </div>
-
-    <p>
-        <strong>Example:</strong>
+<div class="diagram">
+<img alt="Distributed Database Architecture Diagram" loading="lazy" src="../q7-3.png"/>
+</div>
+<p>
+<strong>Example:</strong>
         A bank maintains databases at different branches connected through a network.
     </p>
-
-    <p>
-        <strong>Main Feature:</strong>
+<p>
+<strong>Main Feature:</strong>
         Data is stored at different locations but can be accessed as part of one database system.
     </p>
-
 </main>
-
 <!-- BOTTOM NAVIGATION -->
 
-<nav class="page-nav">
-
-    <a href="q6.html">
-        &#8592; Previous: Q6
-    </a>
-
-    <a href="q8.html">
-        Next: Q8 &#8594;
-    </a>
-
-</nav>
-
-</div>
-
+<nav aria-label="Question navigation" class="page-nav"><div class="nav-slot nav-prev"><a href="q6.html">← Q6</a></div><div class="nav-slot nav-next"><a href="q8.html">Q8 →</a></div></nav></div>
 </body>
 </html>

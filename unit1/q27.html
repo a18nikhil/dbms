@@ -1,176 +1,109 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Q27 - Degrees of Data Abstraction | DBMS</title>
-
-<link rel="stylesheet" href="../style.css">
+<link href="../style.css" rel="stylesheet"/>
 </head>
-
-<body class="unit1">
-
+<body class="unit1 dbms-question page-q27">
 <div class="container">
-
 <!-- BACK TO UNIT -->
 
-<nav>
-    <a href="index.html" class="back-link">
-        &#8592; Back to Unit I
-    </a>
-</nav>
-
-<main class="answer">
-
-    <!-- QUESTION 27 -->
-
-    <h1>
+<nav class="top-navigation"><a class="back-link" href="index.html">← Unit I</a></nav><main class="answer">
+<!-- QUESTION 27 -->
+<h1>
         Q27. Discuss the Degrees of Abstraction in a Database System with a Neat Diagram.
     </h1>
-
-    <!-- SECTION 1 -->
-
-    <h2>1. Introduction</h2>
-
-    <p>
+<!-- SECTION 1 -->
+<h2>1. Introduction</h2>
+<p>
         Degrees of Data Abstraction explain how data is described at different levels, from how it is stored in a computer to how users understand it.
     </p>
-
-    <p>
+<p>
         There are three degrees of data abstraction:
     </p>
-
-    <ul>
-        <li>
+<ul>
+<li>
             Low-Level / Physical Model
         </li>
-
-        <li>
+<li>
             Representational / Logical Model
         </li>
-
-        <li>
+<li>
             High-Level / Conceptual Model
         </li>
-    </ul>
-
-    <!-- SECTION 2 -->
-
-    <h2>2. Diagram: Degrees of Data Abstraction</h2>
-
-    <div class="diagram">
-        <img
-            src="../q27.png"
-            alt="Degrees of Data Abstraction showing Low-Level Physical Model, Representational Logical Model, and High-Level Conceptual Model"
-            loading="lazy"
-        >
-    </div>
-
-    <!-- SECTION 3 -->
-
-    <h2>3. Degrees of Data Abstraction</h2>
-
-    <!-- PHYSICAL MODEL -->
-
-    <h3>1. Low-Level / Physical Model</h3>
-
-    <ul>
-        <li>
+</ul>
+<!-- SECTION 2 -->
+<h2>2. Diagram: Degrees of Data Abstraction</h2>
+<div class="diagram">
+<img alt="Degrees of Data Abstraction showing Low-Level Physical Model, Representational Logical Model, and High-Level Conceptual Model" loading="lazy" src="../q27.png"/>
+</div>
+<!-- SECTION 3 -->
+<h2>3. Degrees of Data Abstraction</h2>
+<!-- PHYSICAL MODEL -->
+<h3>1. Low-Level / Physical Model</h3>
+<ul>
+<li>
             It is the lowest level of data abstraction.
         </li>
-
-        <li>
+<li>
             It explains how and where data is actually stored in the computer.
         </li>
-
-        <li>
+<li>
             Data is stored in files on a disk.
         </li>
-
-        <li>
+<li>
             Indexes are used to find stored data quickly.
         </li>
-    </ul>
-
-    <p>
-        <strong>Example:</strong>
+</ul>
+<p>
+<strong>Example:</strong>
         Student marks are stored in a file on disk. An index helps the database find a student's marks quickly.
     </p>
-
-    <!-- LOGICAL MODEL -->
-
-    <h3>2. Representational / Logical Model</h3>
-
-    <ul>
-        <li>
+<!-- LOGICAL MODEL -->
+<h3>2. Representational / Logical Model</h3>
+<ul>
+<li>
             It is the middle level of data abstraction.
         </li>
-
-        <li>
+<li>
             It explains how data is arranged inside a database.
         </li>
-
-        <li>
+<li>
             Data is organized into tables with rows and columns.
         </li>
-
-        <li>
+<li>
             It also shows how different tables are connected, without explaining how they are stored on disk.
         </li>
-    </ul>
-
-    <p>
-        <strong>Example:</strong>
+</ul>
+<p>
+<strong>Example:</strong>
         A STUDENT_MARKS table contains three columns: Student_ID, Course_ID, and Marks.
     </p>
-
-    <!-- CONCEPTUAL MODEL -->
-
-    <h3>3. High-Level / Conceptual Model</h3>
-
-    <ul>
-        <li>
+<!-- CONCEPTUAL MODEL -->
+<h3>3. High-Level / Conceptual Model</h3>
+<ul>
+<li>
             It is the highest level of data abstraction.
         </li>
-
-        <li>
+<li>
             It explains data in a way that people can easily understand.
         </li>
-
-        <li>
+<li>
             It identifies the main entities and the relationships between them.
         </li>
-
-        <li>
+<li>
             ER Diagrams and UML Class Diagrams are used to represent this level.
         </li>
-    </ul>
-
-    <p>
-        <strong>Example:</strong>
+</ul>
+<p>
+<strong>Example:</strong>
         A student studies different courses and receives marks in each course.
     </p>
-
 </main>
-
 <!-- BOTTOM NAVIGATION -->
 
-<nav class="page-nav">
-
-    <a href="q25.html">
-        &#8592; Previous: Q25
-    </a>
-
-    <a href="q29.html">
-        Next: Q29 &#8594;
-    </a>
-
-</nav>
-
-</div>
-
+<nav aria-label="Question navigation" class="page-nav"><div class="nav-slot nav-prev"><a href="q25.html">← Q25</a></div><div class="nav-slot nav-next"><a href="q29.html">Q29 →</a></div></nav></div>
 </body>
 </html>

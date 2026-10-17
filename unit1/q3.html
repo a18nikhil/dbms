@@ -1,177 +1,104 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Q3 - Relational Databases | DBMS</title>
-
-<link rel="stylesheet" href="../style.css">
+<link href="../style.css" rel="stylesheet"/>
 </head>
-
-<body class="unit1">
-
+<body class="unit1 dbms-question page-q3">
 <div class="container">
-
 <!-- BACK TO UNIT -->
 
-<nav>
-    <a href="index.html" class="back-link">
-        &#8592; Back to Unit I
-    </a>
-</nav>
-
-<main class="answer">
-
-    <!-- QUESTION 3 -->
-
-    <h1>
+<nav class="top-navigation"><a class="back-link" href="index.html">← Unit I</a></nav><main class="answer">
+<!-- QUESTION 3 -->
+<h1>
         Q3. Assess the Concept of Relational Databases and Their Key Characteristics.
     </h1>
-
-    <p>
+<p>
         A Relational Database stores data in the form of tables. Each table contains rows and columns. The relational model was introduced by E. F. Codd in 1970.
     </p>
-
-    <!-- EXAMPLE TABLE IMAGE -->
-
-    <h2>Example of Relational Database</h2>
-
-    <div class="diagram">
-        <img
-            src="../q3.png"
-            alt="STUDENT table showing Student_ID, Name, Program, and CGPA with three student records"
-            loading="lazy"
-        >
-    </div>
-
-    <!-- KEY CHARACTERISTICS -->
-
-    <h2>Key Characteristics</h2>
-
-    <!-- 1 -->
-
-    <h3>1. Table-Based Structure</h3>
-
-    <p>
+<!-- EXAMPLE TABLE IMAGE -->
+<h2>Example of Relational Database</h2>
+<div class="diagram">
+<img alt="STUDENT table showing Student_ID, Name, Program, and CGPA with three student records" loading="lazy" src="../q3.png"/>
+</div>
+<!-- KEY CHARACTERISTICS -->
+<h2>Key Characteristics</h2>
+<!-- 1 -->
+<h3>1. Table-Based Structure</h3>
+<p>
         Data is organized into tables containing rows and columns.
     </p>
-
-    <p>
-        <strong>Example:</strong> STUDENT table.
+<p>
+<strong>Example:</strong> STUDENT table.
     </p>
-
-    <!-- 2 -->
-
-    <h3>2. Relation</h3>
-
-    <p>
+<!-- 2 -->
+<h3>2. Relation</h3>
+<p>
         A table in a relational database is called a relation.
     </p>
-
-    <p>
-        <strong>Example:</strong> STUDENT table is a relation.
+<p>
+<strong>Example:</strong> STUDENT table is a relation.
     </p>
-
-    <!-- 3 -->
-
-    <h3>3. Tuple</h3>
-
-    <p>
+<!-- 3 -->
+<h3>3. Tuple</h3>
+<p>
         A row in a table is called a tuple or record.
     </p>
-
-    <p>
-        <strong>Example:</strong> (101, Rahul, B.Sc. CS, 8.2) is one tuple.
+<p>
+<strong>Example:</strong> (101, Rahul, B.Sc. CS, 8.2) is one tuple.
     </p>
-
-    <!-- 4 -->
-
-    <h3>4. Attribute</h3>
-
-    <p>
+<!-- 4 -->
+<h3>4. Attribute</h3>
+<p>
         A column in a table is called an attribute or field.
     </p>
-
-    <p>
-        <strong>Example:</strong> Student_ID, Name, Program, and CGPA are attributes.
+<p>
+<strong>Example:</strong> Student_ID, Name, Program, and CGPA are attributes.
     </p>
-
-    <!-- 5 -->
-
-    <h3>5. Domain</h3>
-
-    <p>
+<!-- 5 -->
+<h3>5. Domain</h3>
+<p>
         A domain specifies the set of allowed values or data type of an attribute.
     </p>
-
-    <p>
-        <strong>Example:</strong> CGPA contains numerical values, usually between 0 and 10.
+<p>
+<strong>Example:</strong> CGPA contains numerical values, usually between 0 and 10.
     </p>
-
-    <!-- 6 -->
-
-    <h3>6. Keys</h3>
-
-    <p>
+<!-- 6 -->
+<h3>6. Keys</h3>
+<p>
         Keys are used to uniquely identify records and establish relationships between tables.
     </p>
-
-    <ul>
-        <li>
-            <strong>Primary Key:</strong>
+<ul>
+<li>
+<strong>Primary Key:</strong>
             Uniquely identifies each record. Example: Student_ID is the primary key of the STUDENT table.
         </li>
-
-        <li>
-            <strong>Foreign Key:</strong>
+<li>
+<strong>Foreign Key:</strong>
             An attribute that refers to the primary key of another table.
         </li>
-    </ul>
-
-    <!-- 7 -->
-
-    <h3>7. Degree</h3>
-
-    <p>
+</ul>
+<!-- 7 -->
+<h3>7. Degree</h3>
+<p>
         The number of columns in a relation is called its degree.
     </p>
-
-    <p>
-        <strong>Example:</strong> Degree = 4 (Student_ID, Name, Program, CGPA).
+<p>
+<strong>Example:</strong> Degree = 4 (Student_ID, Name, Program, CGPA).
     </p>
-
-    <!-- 8 -->
-
-    <h3>8. Cardinality</h3>
-
-    <p>
+<!-- 8 -->
+<h3>8. Cardinality</h3>
+<p>
         The number of rows in a relation is called its cardinality.
     </p>
-
-    <p>
-        <strong>Example:</strong> Cardinality = 3 because the STUDENT table contains three student records.
+<p>
+<strong>Example:</strong> Cardinality = 3 because the STUDENT table contains three student records.
     </p>
-
 </main>
-
 <!-- BOTTOM NAVIGATION -->
 
-<nav class="page-nav">
-
-    <a href="q2.html">
-        &#8592; Previous: Q2
-    </a>
-
-    <a href="q4.html">
-        Next: Q4 &#8594;
-    </a>
-
-</nav>
-
-</div>
-
+<nav aria-label="Question navigation" class="page-nav"><div class="nav-slot nav-prev"><a href="q2.html">← Q2</a></div><div class="nav-slot nav-next"><a href="q4.html">Q4 →</a></div></nav></div>
 </body>
 </html>

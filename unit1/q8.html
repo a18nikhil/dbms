@@ -1,187 +1,119 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Q8 - Data Models and Their Evolution | DBMS</title>
-
-<link rel="stylesheet" href="../style.css">
+<link href="../style.css" rel="stylesheet"/>
 </head>
-
-<body class="unit1">
-
+<body class="unit1 dbms-question page-q8">
 <div class="container">
-
 <!-- BACK TO UNIT -->
 
-<nav>
-    <a href="index.html" class="back-link">
-        &#8592; Back to Unit I
-    </a>
-</nav>
-
-<main class="answer">
-
-    <!-- QUESTION 8 -->
-
-    <h1>
+<nav class="top-navigation"><a class="back-link" href="index.html">← Unit I</a></nav><main class="answer">
+<!-- QUESTION 8 -->
+<h1>
         Q8. What are Data Models? Discuss the Evolution of Data Models from Hierarchical to Relational and Object-Oriented Models.
     </h1>
-
-    <!-- SECTION 1 -->
-
-    <h2>1. Meaning of Data Model</h2>
-
-    <p>
+<!-- SECTION 1 -->
+<h2>1. Meaning of Data Model</h2>
+<p>
         A Data Model is a collection of concepts used to describe how data is organized, stored, and related in a database.
     </p>
-
-    <p>
+<p>
         It describes three main things:
     </p>
-
-    <ul>
-        <li>
-            <strong>Data:</strong>
+<ul>
+<li>
+<strong>Data:</strong>
             Information stored in the database.
         </li>
-
-        <li>
-            <strong>Relationships:</strong>
+<li>
+<strong>Relationships:</strong>
             Connections between different data.
         </li>
-
-        <li>
-            <strong>Constraints:</strong>
+<li>
+<strong>Constraints:</strong>
             Rules that control the data.
         </li>
-    </ul>
-
-    <p>
+</ul>
+<p>
         Data models help database designers understand and organize data properly.
     </p>
-
-    <!-- SECTION 2 -->
-
-    <h2>2. Evolution of Data Models</h2>
-
-    <p>
+<!-- SECTION 2 -->
+<h2>2. Evolution of Data Models</h2>
+<p>
         Data models have changed over time to organize and manage data more easily.
     </p>
-
-    <div class="diagram">
-        <img
-            src="../q8.png"
-            alt="Evolution of Data Models from File-Based to Hierarchical, Network, Relational, and Object-Oriented Models"
-            loading="lazy"
-        >
-    </div>
-
-    <!-- SECTION 3 -->
-
-    <h2>3. Major Data Models</h2>
-
-    <!-- FILE-BASED MODEL -->
-
-    <h3>1. File-Based Model</h3>
-
-    <ul>
-        <li>Used in the early 1960s.</li>
-        <li>Data was stored in separate files.</li>
-        <li>Managing relationships between files was difficult.</li>
-        <li>It often caused data duplication and inconsistency.</li>
-    </ul>
-
-    <p>
-        <strong>Example:</strong>
+<div class="diagram">
+<img alt="Evolution of Data Models from File-Based to Hierarchical, Network, Relational, and Object-Oriented Models" loading="lazy" src="../q8.png"/>
+</div>
+<!-- SECTION 3 -->
+<h2>3. Major Data Models</h2>
+<!-- FILE-BASED MODEL -->
+<h3>1. File-Based Model</h3>
+<ul>
+<li>Used in the early 1960s.</li>
+<li>Data was stored in separate files.</li>
+<li>Managing relationships between files was difficult.</li>
+<li>It often caused data duplication and inconsistency.</li>
+</ul>
+<p>
+<strong>Example:</strong>
         Student information stored in separate files.
     </p>
-
-    <!-- HIERARCHICAL MODEL -->
-
-    <h3>2. Hierarchical Model</h3>
-
-    <ul>
-        <li>Developed during the 1960s–1970s.</li>
-        <li>Organizes data in a tree-like structure.</li>
-        <li>Each child record has only one parent.</li>
-        <li>Supports One-to-Many (1:N) relationships.</li>
-    </ul>
-
-    <p>
-        <strong>Example:</strong>
+<!-- HIERARCHICAL MODEL -->
+<h3>2. Hierarchical Model</h3>
+<ul>
+<li>Developed during the 1960s–1970s.</li>
+<li>Organizes data in a tree-like structure.</li>
+<li>Each child record has only one parent.</li>
+<li>Supports One-to-Many (1:N) relationships.</li>
+</ul>
+<p>
+<strong>Example:</strong>
         One department has many students.
     </p>
-
-    <!-- NETWORK MODEL -->
-
-    <h3>3. Network Model</h3>
-
-    <ul>
-        <li>Developed during the 1960s–1970s.</li>
-        <li>Organizes data using a network of connected records.</li>
-        <li>A child record can have multiple parents.</li>
-        <li>Supports Many-to-Many (M:N) relationships.</li>
-    </ul>
-
-    <p>
-        <strong>Example:</strong>
+<!-- NETWORK MODEL -->
+<h3>3. Network Model</h3>
+<ul>
+<li>Developed during the 1960s–1970s.</li>
+<li>Organizes data using a network of connected records.</li>
+<li>A child record can have multiple parents.</li>
+<li>Supports Many-to-Many (M:N) relationships.</li>
+</ul>
+<p>
+<strong>Example:</strong>
         A student can enroll in many courses, and each course can have many students.
     </p>
-
-    <!-- RELATIONAL MODEL -->
-
-    <h3>4. Relational Model</h3>
-
-    <ul>
-        <li>Introduced by E. F. Codd in 1970.</li>
-        <li>Organizes data into tables containing rows and columns.</li>
-        <li>Uses Primary Keys and Foreign Keys to connect tables.</li>
-        <li>SQL is used to store, retrieve, and manage data.</li>
-    </ul>
-
-    <p>
-        <strong>Example:</strong>
+<!-- RELATIONAL MODEL -->
+<h3>4. Relational Model</h3>
+<ul>
+<li>Introduced by E. F. Codd in 1970.</li>
+<li>Organizes data into tables containing rows and columns.</li>
+<li>Uses Primary Keys and Foreign Keys to connect tables.</li>
+<li>SQL is used to store, retrieve, and manage data.</li>
+</ul>
+<p>
+<strong>Example:</strong>
         STUDENT and ENROLLMENT tables connected using Student_ID.
     </p>
-
-    <!-- OBJECT-ORIENTED MODEL -->
-
-    <h3>5. Object-Oriented Model</h3>
-
-    <ul>
-        <li>Became important during the 1980s–1990s.</li>
-        <li>Stores data in the form of objects.</li>
-        <li>Objects contain both data (attributes) and operations (methods).</li>
-        <li>Useful for handling complex data and object-oriented applications.</li>
-    </ul>
-
-    <p>
-        <strong>Example:</strong>
+<!-- OBJECT-ORIENTED MODEL -->
+<h3>5. Object-Oriented Model</h3>
+<ul>
+<li>Became important during the 1980s–1990s.</li>
+<li>Stores data in the form of objects.</li>
+<li>Objects contain both data (attributes) and operations (methods).</li>
+<li>Useful for handling complex data and object-oriented applications.</li>
+</ul>
+<p>
+<strong>Example:</strong>
         A STUDENT object contains Student_ID, Name, and a
         <code>ViewMarks()</code> method.
     </p>
-
 </main>
-
 <!-- BOTTOM NAVIGATION -->
 
-<nav class="page-nav">
-
-    <a href="q7.html">
-        &#8592; Previous: Q7
-    </a>
-
-    <a href="q9.html">
-        Next: Q9 &#8594;
-    </a>
-
-</nav>
-
-</div>
-
+<nav aria-label="Question navigation" class="page-nav"><div class="nav-slot nav-prev"><a href="q7.html">← Q7</a></div><div class="nav-slot nav-next"><a href="q9.html">Q9 →</a></div></nav></div>
 </body>
 </html>

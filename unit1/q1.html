@@ -1,473 +1,120 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Q1 - Database System | DBMS</title>
-
-<link rel="stylesheet" href="../style.css">
-
-<style>
-/* ==========================================
-   DBMS QUESTION PAGE - EMERALD THEME
-   ========================================== */
-
-body.unit1 {
-    margin: 0;
-    min-height: 100vh;
-
-    background-color: #092C2B;
-
-    background-image:
-        linear-gradient(
-            rgba(255,255,255,0.025) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,0.025) 1px,
-            transparent 1px
-        ),
-        radial-gradient(
-            ellipse at 20% 10%,
-            #14504B 0%,
-            #092C2B 55%,
-            #061D1D 100%
-        );
-
-    background-size:
-        32px 32px,
-        32px 32px,
-        100% 100%;
-
-    color: #243B42;
-    font-family: Georgia, Cambria, "Times New Roman", serif;
-}
-
-/* Main Container */
-
-body.unit1 .container {
-    box-sizing: border-box;
-    width: min(100% - 36px, 900px);
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 16px 0 60px;
-}
-
-/* Top Back Button */
-
-body.unit1 .back-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    margin: 0 0 18px;
-    padding: 9px 16px;
-
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(232,197,155,0.40);
-    border-radius: 8px;
-
-    color: #F6F4EC;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    text-decoration: none;
-
-    transition: background 0.2s ease;
-}
-
-body.unit1 .back-link:hover {
-    background: rgba(255,255,255,0.12);
-}
-
-/* Answer Sheet */
-
-body.unit1 .answer {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 100%;
-
-    margin: 0;
-    padding: 28px 30px 32px;
-
-    background: #FAFAF7;
-    border: 1px solid #E2E6E1;
-    border-top: 4px solid #CDA675;
-    border-radius: 11px;
-
-    box-shadow: 0 6px 22px rgba(0,0,0,0.12);
-
-    color: #243B42;
-    font-family: Georgia, Cambria, "Times New Roman", serif;
-    font-size: 15px;
-    line-height: 1.75;
-    text-align: left;
-}
-
-/* Question Heading */
-
-body.unit1 .answer h1 {
-    margin: 0 0 24px;
-    padding: 0;
-
-    color: #153D39;
-    font-family: Georgia, Cambria, serif;
-    font-size: clamp(18px, 3vw, 22px);
-    font-weight: 700;
-    line-height: 1.45;
-    text-align: left;
-}
-
-/* Section Headings */
-
-body.unit1 .answer h2 {
-    margin: 25px 0 10px;
-    padding: 0;
-
-    color: #174B43;
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 1.45;
-    text-align: left;
-}
-
-body.unit1 .answer h3 {
-    margin: 19px 0 8px;
-
-    color: #174B43;
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.45;
-    text-align: left;
-}
-
-/* Paragraphs */
-
-body.unit1 .answer p {
-    margin: 0 0 13px;
-
-    color: #34454A;
-    font-size: 15px;
-    line-height: 1.75;
-    text-align: left;
-}
-
-/* Lists */
-
-body.unit1 .answer ul,
-body.unit1 .answer ol {
-    margin: 10px 0 18px;
-    padding-left: 24px;
-}
-
-body.unit1 .answer li {
-    margin-bottom: 9px;
-    padding-left: 2px;
-
-    color: #34454A;
-    font-size: 15px;
-    line-height: 1.7;
-    text-align: left;
-}
-
-body.unit1 .answer li::marker {
-    color: #547B72;
-}
-
-/* Bold Text */
-
-body.unit1 .answer strong {
-    color: #153D39;
-    font-weight: 700;
-}
-
-/* Diagram */
-
-body.unit1 .answer .diagram {
-    width: 100%;
-    max-width: 100%;
-    margin: 16px auto 18px;
-    text-align: center;
-}
-
-body.unit1 .answer .diagram img {
-    display: block;
-    width: auto !important;
-    max-width: min(100%, 600px) !important;
-    max-height: 460px !important;
-    height: auto !important;
-    margin: 0 auto;
-    object-fit: contain;
-}
-
-/* Bottom Navigation */
-
-body.unit1 .page-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-
-    margin-top: 18px;
-    padding: 0;
-
-    background: transparent;
-    border: none;
-}
-
-body.unit1 .page-nav a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 9px 15px;
-
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(232,197,155,0.40);
-    border-radius: 7px;
-
-    color: #F6F4EC;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    text-decoration: none;
-
-    transition: background 0.2s ease;
-}
-
-body.unit1 .page-nav a:hover {
-    background: rgba(255,255,255,0.12);
-}
-
-/* Keyboard Accessibility */
-
-body.unit1 a:focus-visible {
-    outline: 2px solid #E8C59B;
-    outline-offset: 3px;
-}
-
-/* Mobile */
-
-@media (max-width: 600px) {
-
-    body.unit1 .container {
-        width: calc(100% - 48px);
-        padding-top: 16px;
-    }
-
-    body.unit1 .answer {
-        padding: 25px 21px 28px;
-        font-size: 14px;
-    }
-
-    body.unit1 .answer h1 {
-        font-size: 17px;
-        line-height: 1.45;
-    }
-
-    body.unit1 .answer h2 {
-        font-size: 15px;
-        margin-top: 23px;
-    }
-
-    body.unit1 .answer h3 {
-        font-size: 14px;
-    }
-
-    body.unit1 .answer p,
-    body.unit1 .answer li {
-        font-size: 14px;
-        line-height: 1.7;
-    }
-
-    body.unit1 .answer .diagram img {
-        max-width: 100% !important;
-        max-height: 320px !important;
-    }
-
-    body.unit1 .page-nav a {
-        padding: 9px 12px;
-        font-size: 11px;
-    }
-}
-
-</style>
+<link href="../style.css" rel="stylesheet"/>
 
 </head>
-
-<body class="unit1">
-
+<body class="unit1 dbms-question page-q1">
 <div class="container">
-
 <!-- TOP NAVIGATION -->
 
-<nav>
-    <a href="index.html" class="back-link">
-        &#8592; Unit I
-    </a>
-</nav>
-
-<main class="answer">
-
-    <!-- QUESTION 1 -->
-
-    <h1>
+<nav class="top-navigation"><a class="back-link" href="index.html">← Unit I</a></nav><main class="answer">
+<!-- QUESTION 1 -->
+<h1>
         Q1. What is a Database System? Explain its Purpose and Importance in Modern Organizations.
     </h1>
-
-    <!-- SECTION 1 -->
-
-    <h2>1. Definition of Database System</h2>
-
-    <p>
+<!-- SECTION 1 -->
+<h2>1. Definition of Database System</h2>
+<p>
         A Database System is a combination of a database, DBMS, application programs, and users that work together to store, manage, and access data.
     </p>
-
-    <ul>
-        <li>
-            <strong>Database:</strong>
+<ul>
+<li>
+<strong>Database:</strong>
             An organized collection of related data stored and accessed electronically.
         </li>
-
-        <li>
-            <strong>Database Management System (DBMS):</strong>
+<li>
+<strong>Database Management System (DBMS):</strong>
             Software used to create, store, retrieve, update, and manage data in a database. Examples: MySQL, Oracle, PostgreSQL, and SQL Server.
         </li>
-    </ul>
-
-    <p>
-        <strong>Database System</strong> = Database + DBMS + Application Programs + Users
+</ul>
+<p>
+<strong>Database System</strong> = Database + DBMS + Application Programs + Users
     </p>
-
-    <!-- SECTION 2 -->
-
-    <h2>2. Diagram of Database System</h2>
-
-    <div class="diagram">
-        <img
-            src="../q1.png"
-            alt="Database System Diagram showing Users, Application Programs, DBMS, and Database"
-            loading="lazy"
-        >
-    </div>
-
-    <p>
+<!-- SECTION 2 -->
+<h2>2. Diagram of Database System</h2>
+<div class="diagram">
+<img alt="Database System Diagram showing Users, Application Programs, DBMS, and Database" loading="lazy" src="../q1.png"/>
+</div>
+<p>
         Users and applications send requests to the DBMS. The DBMS communicates with the database to store or retrieve data and returns the results to users.
     </p>
-
-    <!-- SECTION 3 -->
-
-    <h2>3. Purpose of a Database System</h2>
-
-    <ol>
-        <li>
-            <strong>Store Data:</strong>
+<!-- SECTION 3 -->
+<h2>3. Purpose of a Database System</h2>
+<ol>
+<li>
+<strong>Store Data:</strong>
             Keeps large amounts of data in an organized way.
         </li>
-
-        <li>
-            <strong>Retrieve Data Easily:</strong>
+<li>
+<strong>Retrieve Data Easily:</strong>
             Allows users to quickly search for required information.
         </li>
-
-        <li>
-            <strong>Update Data:</strong>
+<li>
+<strong>Update Data:</strong>
             Makes adding, modifying, and deleting data easy.
         </li>
-
-        <li>
-            <strong>Reduce Redundancy:</strong>
+<li>
+<strong>Reduce Redundancy:</strong>
             Avoids unnecessary duplication of data.
         </li>
-
-        <li>
-            <strong>Maintain Consistency:</strong>
+<li>
+<strong>Maintain Consistency:</strong>
             Keeps data accurate and consistent.
         </li>
-
-        <li>
-            <strong>Provide Security:</strong>
+<li>
+<strong>Provide Security:</strong>
             Controls who can access or modify data.
         </li>
-
-        <li>
-            <strong>Handle Multiple Users:</strong>
+<li>
+<strong>Handle Multiple Users:</strong>
             Allows many users to access data safely at the same time.
         </li>
-
-        <li>
-            <strong>Maintain Data Integrity:</strong>
+<li>
+<strong>Maintain Data Integrity:</strong>
             Enforces rules and constraints to keep stored data correct and valid.
         </li>
-    </ol>
-
-    <!-- SECTION 4 -->
-
-    <h2>4. Importance in Modern Organizations</h2>
-
-    <p>
+</ol>
+<!-- SECTION 4 -->
+<h2>4. Importance in Modern Organizations</h2>
+<p>
         Database systems are important because organizations need to manage large amounts of information every day.
     </p>
-
-    <p>
+<p>
         They help organizations to:
     </p>
-
-    <ol>
-        <li>
-            <strong>Improve Efficiency:</strong>
+<ol>
+<li>
+<strong>Improve Efficiency:</strong>
             Reduce manual work and save time in managing information.
         </li>
-
-        <li>
-            <strong>Support Decision-Making:</strong>
+<li>
+<strong>Support Decision-Making:</strong>
             Provide accurate and updated information for better decisions.
         </li>
-
-        <li>
-            <strong>Increase Productivity:</strong>
+<li>
+<strong>Increase Productivity:</strong>
             Help employees complete their work faster.
         </li>
-
-        <li>
-            <strong>Improve Reliability:</strong>
+<li>
+<strong>Improve Reliability:</strong>
             Ensure important information is available when needed.
         </li>
-    </ol>
-
-    <!-- EXAMPLE -->
-
-    <h2>Example</h2>
-
-    <p>
+</ol>
+<!-- EXAMPLE -->
+<h2>Example</h2>
+<p>
         In a College Management System, the database stores information about students, courses, faculty, and marks.
     </p>
-
-    <p>
+<p>
         The college portal uses the DBMS to add new students, update marks, and search for students who scored above 90%.
     </p>
-
 </main>
-
 <!-- BOTTOM NAVIGATION -->
 
-<nav class="page-nav">
-
-    <a href="index.html">
-        &#8592; Unit I
-    </a>
-
-    <a href="q2.html">
-        Q2 &#8594;
-    </a>
-
-</nav>
-
-</div>
-
+<nav aria-label="Question navigation" class="page-nav"><div class="nav-slot nav-prev"></div><div class="nav-slot nav-next"><a href="q2.html">Q2 →</a></div></nav></div>
 </body>
 </html>

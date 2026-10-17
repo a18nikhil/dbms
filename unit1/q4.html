@@ -1,152 +1,95 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Q4 - Transaction Management | DBMS</title>
-
-<link rel="stylesheet" href="../style.css">
+<link href="../style.css" rel="stylesheet"/>
 </head>
-
-<body class="unit1">
-
+<body class="unit1 dbms-question page-q4">
 <div class="container">
-
 <!-- BACK TO UNIT -->
 
-<nav>
-    <a href="index.html" class="back-link">
-        &#8592; Back to Unit I
-    </a>
-</nav>
-
-<main class="answer">
-
-    <!-- QUESTION 4 -->
-
-    <h1>
+<nav class="top-navigation"><a class="back-link" href="index.html">← Unit I</a></nav><main class="answer">
+<!-- QUESTION 4 -->
+<h1>
         Q4. Explain the Concept of Transaction Management in a Database System.
     </h1>
-
-    <!-- SECTION 1 -->
-
-    <h2>1. Meaning of Transaction Management</h2>
-
-    <p>
+<!-- SECTION 1 -->
+<h2>1. Meaning of Transaction Management</h2>
+<p>
         Transaction Management is the process of managing database transactions so that they are completed correctly, safely, and reliably.
     </p>
-
-    <p>
+<p>
         A transaction is a single logical unit of work in a database. It follows an all-or-nothing approach.
     </p>
-
-    <p>
-        <strong>Example:</strong>
-    </p>
-
-    <p>
+<p>
+<strong>Example:</strong>
+</p>
+<p>
         In a bank transfer of ₹5,000:
     </p>
-
-    <ul>
-        <li>₹5,000 is debited from Account A.</li>
-        <li>₹5,000 is credited to Account B.</li>
-    </ul>
-
-    <p>
+<ul>
+<li>₹5,000 is debited from Account A.</li>
+<li>₹5,000 is credited to Account B.</li>
+</ul>
+<p>
         Both operations must be completed. If an error occurs, the transaction is rolled back, meaning its changes are undone to avoid incorrect data.
     </p>
-
-    <!-- SECTION 2 -->
-
-    <h2>2. Diagram of Transaction States</h2>
-
-    <div class="diagram">
-        <img
-            src="../q4.png"
-            alt="Transaction States Diagram"
-            loading="lazy"
-        >
-    </div>
-
-    <p>
-        <strong>States shown in the diagram:</strong>
-    </p>
-
-    <ul>
-        <li>
-            <strong>Active:</strong>
+<!-- SECTION 2 -->
+<h2>2. Diagram of Transaction States</h2>
+<div class="diagram">
+<img alt="Transaction States Diagram" loading="lazy" src="../q4.png"/>
+</div>
+<p>
+<strong>States shown in the diagram:</strong>
+</p>
+<ul>
+<li>
+<strong>Active:</strong>
             The transaction is being executed.
         </li>
-
-        <li>
-            <strong>Partially Committed:</strong>
+<li>
+<strong>Partially Committed:</strong>
             The final operation has been executed, but the transaction is not yet fully committed.
         </li>
-
-        <li>
-            <strong>Committed:</strong>
+<li>
+<strong>Committed:</strong>
             The transaction has completed successfully, and its changes become permanent.
         </li>
-
-        <li>
-            <strong>Failed:</strong>
+<li>
+<strong>Failed:</strong>
             An error occurs, and the transaction cannot continue.
         </li>
-
-        <li>
-            <strong>Aborted:</strong>
+<li>
+<strong>Aborted:</strong>
             The failed transaction is rolled back, and its changes are undone.
         </li>
-    </ul>
-
-    <!-- SECTION 3 -->
-
-    <h2>3. ACID Properties</h2>
-
-    <p>
-        <strong>A – Atomicity:</strong><br>
+</ul>
+<!-- SECTION 3 -->
+<h2>3. ACID Properties</h2>
+<p>
+<strong>A – Atomicity:</strong><br/>
         All operations of a transaction are completed, or none are completed.
     </p>
-
-    <p>
-        <strong>C – Consistency:</strong><br>
+<p>
+<strong>C – Consistency:</strong><br/>
         The database remains in a valid state before and after the transaction.
     </p>
-
-    <p>
-        <strong>I – Isolation:</strong><br>
+<p>
+<strong>I – Isolation:</strong><br/>
         Multiple transactions can run at the same time without interfering with each other.
     </p>
-
-    <p>
-        <strong>D – Durability:</strong><br>
+<p>
+<strong>D – Durability:</strong><br/>
         Once a transaction is committed, its changes remain permanent even after a system failure.
     </p>
-
-    <p>
+<p>
         ACID properties help maintain the integrity and consistency of the database.
     </p>
-
 </main>
-
 <!-- BOTTOM NAVIGATION -->
 
-<nav class="page-nav">
-
-    <a href="q3.html">
-        &#8592; Previous: Q3
-    </a>
-
-    <a href="q5.html">
-        Next: Q5 &#8594;
-    </a>
-
-</nav>
-
-</div>
-
+<nav aria-label="Question navigation" class="page-nav"><div class="nav-slot nav-prev"><a href="q3.html">← Q3</a></div><div class="nav-slot nav-next"><a href="q5.html">Q5 →</a></div></nav></div>
 </body>
 </html>

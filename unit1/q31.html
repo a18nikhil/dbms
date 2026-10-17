@@ -1,150 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Q31 - Business Rules in Database Design | DBMS</title>
-
-<link rel="stylesheet" href="../style.css">
+<link href="../style.css" rel="stylesheet"/>
 </head>
-
-<body class="unit1">
-
+<body class="unit1 dbms-question page-q31">
 <div class="container">
-
 <!-- BACK TO UNIT -->
 
-<nav>
-    <a href="index.html" class="back-link">
-        &#8592; Back to Unit I
-    </a>
-</nav>
-
-<main class="answer">
-
-    <!-- QUESTION 31 -->
-
-    <h1>
+<nav class="top-navigation"><a class="back-link" href="index.html">← Unit I</a></nav><main class="answer">
+<!-- QUESTION 31 -->
+<h1>
         Q31. Explain the Concept of Business Rules and Their Role in Database Design.
     </h1>
-
-    <!-- SECTION 1 -->
-
-    <h2>1. Introduction</h2>
-
-    <p>
+<!-- SECTION 1 -->
+<h2>1. Introduction</h2>
+<p>
         Business Rules are rules or conditions that define how an organization operates and how its data should be managed.
     </p>
-
-    <p>
+<p>
         In database design, business rules help determine how data is stored, connected, and controlled.
     </p>
-
-    <p>
-        <strong>Example:</strong>
+<p>
+<strong>Example:</strong>
         Each student must have a unique Student_ID and belong to one department.
     </p>
-
-    <!-- SECTION 2 -->
-
-    <h2>2. Role of Business Rules in Database Design</h2>
-
-    <!-- IDENTIFYING ENTITIES -->
-
-    <h3>1. Identifying Entities</h3>
-
-    <p>
+<!-- SECTION 2 -->
+<h2>2. Role of Business Rules in Database Design</h2>
+<!-- IDENTIFYING ENTITIES -->
+<h3>1. Identifying Entities</h3>
+<p>
         Business rules help identify the main objects for which data must be stored.
     </p>
-
-    <p>
-        <strong>Example:</strong>
+<p>
+<strong>Example:</strong>
         A college database contains STUDENT, COURSE, and DEPARTMENT entities.
     </p>
-
-    <!-- DEFINING RELATIONSHIPS -->
-
-    <h3>2. Defining Relationships</h3>
-
-    <p>
+<!-- DEFINING RELATIONSHIPS -->
+<h3>2. Defining Relationships</h3>
+<p>
         Business rules explain how different entities are connected.
     </p>
-
-    <p>
-        <strong>Example:</strong>
+<p>
+<strong>Example:</strong>
         One department can have many students, but each student belongs to one department.
     </p>
-
-    <!-- DEFINING KEYS AND CONSTRAINTS -->
-
-    <h3>3. Defining Keys and Constraints</h3>
-
-    <p>
+<!-- DEFINING KEYS AND CONSTRAINTS -->
+<h3>3. Defining Keys and Constraints</h3>
+<p>
         Business rules help define keys and conditions that data must follow.
     </p>
-
-    <p>
-        <strong>Example:</strong>
+<p>
+<strong>Example:</strong>
         Student_ID must be unique, and Marks must be between 0 and 100.
     </p>
-
-    <!-- MAINTAINING DATA INTEGRITY -->
-
-    <h3>4. Maintaining Data Integrity</h3>
-
-    <p>
+<!-- MAINTAINING DATA INTEGRITY -->
+<h3>4. Maintaining Data Integrity</h3>
+<p>
         Business rules help keep database information correct and consistent.
     </p>
-
-    <p>
-        <strong>Example:</strong>
+<p>
+<strong>Example:</strong>
         A student cannot enroll in a course that does not exist in the database.
     </p>
-
-    <!-- SUPPORTING DATABASE DESIGN -->
-
-    <h3>5. Supporting Database Design</h3>
-
-    <p>
+<!-- SUPPORTING DATABASE DESIGN -->
+<h3>5. Supporting Database Design</h3>
+<p>
         Business rules guide the creation of tables, keys, and relationships according to organizational requirements.
     </p>
-
-    <p>
-        <strong>Example:</strong>
+<p>
+<strong>Example:</strong>
         The STUDENT table uses Student_ID as its primary key and Dept_ID as a foreign key.
     </p>
-
-    <!-- SECTION 3 -->
-
-    <h2>3. Diagram: Role of Business Rules in Database Design</h2>
-
-    <div class="diagram">
-        <img
-            src="../q31.png"
-            alt="Diagram showing the Role of Business Rules in Database Design"
-            loading="lazy"
-        >
-    </div>
-
+<!-- SECTION 3 -->
+<h2>3. Diagram: Role of Business Rules in Database Design</h2>
+<div class="diagram">
+<img alt="Diagram showing the Role of Business Rules in Database Design" loading="lazy" src="../q31.png"/>
+</div>
 </main>
-
 <!-- BOTTOM NAVIGATION -->
 
-<nav class="page-nav">
-
-    <a href="q29.html">
-        &#8592; Previous: Q29
-    </a>
-
-    <a href="index.html">
-        Unit I &#8594;
-    </a>
-
-</nav>
-
-</div>
-
+<nav aria-label="Question navigation" class="page-nav"><div class="nav-slot nav-prev"><a href="q29.html">← Q29</a></div><div class="nav-slot nav-next"></div></nav></div>
 </body>
 </html>
